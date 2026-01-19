@@ -111,7 +111,7 @@ function populateOpinionGrid(gridItems) {
         // Featured: First Item
         const featuredItem = gridItems[0];
         featuredContainer.innerHTML = `
-            <article class="hero-news" style="grid-template-columns: 1fr 1fr; align-items:center; gap:var(--space-xl); padding:0;">
+            <article class="hero-news" style="align-items:center; padding:0;">
                 <div class="image-container">
                      <img src="${featuredItem.image_url}" style="width:100%; border-radius:4px;" alt="${featuredItem.title}">
                 </div>

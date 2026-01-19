@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+    <channel>
+        <title>PickAI News &amp; Analysis</title>
+        <link>https://pickai.netlify.app</link>
+        <description>Latest artificial intelligence news, research analysis, and tool reviews from PickAI.</description>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 19 Jan 2026 18:58:49 +0530</lastBuildDate>
+        <item>
+            <title>Why Agentic Workflows are Overhyped for Consumers</title>
+            <link>https://pickai.netlify.app/articles/news/agentic-consumer-hype.html</link>
+            <description>While AI agents are thriving in enterprise, the consumer revolution is hitting a wall of complexity, privacy concerns, and lack of trust.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/agentic-consumer-hype.html</guid>
+        </item>
+        <item>
+            <title>The Rise of Agentic Workflows</title>
+            <link>https://pickai.netlify.app/articles/news/agentic-workflows.html</link>
+            <description>2026 is becoming the year of the 'autonomous employee'. We analyze why agentic workflows are taking over enterprise sectors from finance to healthcare.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/agentic-workflows.html</guid>
+        </item>
+        <item>
+            <title>The AI Talent Gap: Spending Surges, Skills Lag</title>
+            <link>https://pickai.netlify.app/articles/news/ai-talent-gap-india.html</link>
+            <description>Despite 90% of Indian C-suite leaders planning to increase AI spending, 27% report a critical shortage of skilled talent to run these systems.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/ai-talent-gap-india.html</guid>
+        </item>
+        <item>
+            <title>The Alignment Problem in 2026: Progress or Stagnation?</title>
+            <link>https://pickai.netlify.app/articles/news/alignment-problem-2026.html</link>
+            <description>As we reach the milestones predicted by early safety researchers, we analyze the current state of AI alignment. Are we closer to solving the control problem?</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/alignment-problem-2026.html</guid>
+        </item>
+        <item>
+            <title>AlphaFold 3 Expands Access to Researchers</title>
+            <link>https://pickai.netlify.app/articles/news/alphafold-3-access.html</link>
+            <description>Google DeepMind provides broader access to AlphaFold 3, allowing non-commercial researchers to model proteins, DNA, and drugs with unprecedented accuracy.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/alphafold-3-access.html</guid>
+        </item>
+        <item>
+            <title>Anthropic Publishes 'Constitutional AI' Whitepaper</title>
+            <link>https://pickai.netlify.app/articles/news/anthropic-constitutional-ai.html</link>
+            <description>Anthropic details its method for training AI assistants using a set of principles rather than just human feedback, aiming for scalable and transparent safety.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/anthropic-constitutional-ai.html</guid>
+        </item>
+        <item>
+            <title>Anthropic’s Economic Index: The Shift to Expect</title>
+            <link>https://pickai.netlify.app/articles/news/anthropic-economic-index.html</link>
+            <description>Anthropic's new Economic Index report reveals AI is now boosting high-skilled, complex tasks faster than routine work, signaling a shift to expert-level automation.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/anthropic-economic-index.html</guid>
+        </item>
+        <item>
+            <title>The "Claude Cowork" Disruption</title>
+            <link>https://pickai.netlify.app/articles/news/claude-cowork-release.html</link>
+            <description>Anthropic's new Claude Cowork tool builds spreadsheets from screenshots and drafts reports, causing a major slump in traditional software stocks.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/claude-cowork-release.html</guid>
+        </item>
+        <item>
+            <title>The Ethics of Digital Sentience</title>
+            <link>https://pickai.netlify.app/articles/news/ethics-digital-sentience.html</link>
+            <description>As models feign emotions more convincingly, do we owe them moral consideration?</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/ethics-digital-sentience.html</guid>
+        </item>
+        <item>
+            <title>EU AI Act: Compliance Deadlines Approaching</title>
+            <link>https://pickai.netlify.app/articles/news/eu-ai-act-compliance.html</link>
+            <description>What enterprise CTOs need to know before the massive Q3 2026 compliance deadline hits.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/eu-ai-act-compliance.html</guid>
+        </item>
+        <item>
+            <title>Explainer: How Quantization Shrinks Models</title>
+            <link>https://pickai.netlify.app/articles/news/explainer-quantization.html</link>
+            <description>Running Llama 3 on a laptop? Thank quantization. We explain 4-bit, 8-bit, and FP16.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/explainer-quantization.html</guid>
+        </item>
+        <item>
+            <title>Explainer: What is Retrieval-Augmented Generation (RAG)?</title>
+            <link>https://pickai.netlify.app/articles/news/explainer-rag.html</link>
+            <description>Understanding the technique that connects LLMs to your private data without retraining.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/explainer-rag.html</guid>
+        </item>
+        <item>
+            <title>Explainer: What is RLHF?</title>
+            <link>https://pickai.netlify.app/articles/news/explainer-rlhf.html</link>
+            <description>Reinforcement Learning from Human Feedback: The secret sauce behind ChatGPT's success.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/explainer-rlhf.html</guid>
+        </item>
+        <item>
+            <title>AI in Protein Design: Beyond Folding</title>
+            <link>https://pickai.netlify.app/articles/news/generative-biotech.html</link>
+            <description>New generative models are moving from predicting structures to designing novel therapeutics from scratch.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/generative-biotech.html</guid>
+        </item>
+        <item>
+            <title>Google Veo 3.1 Update</title>
+            <link>https://pickai.netlify.app/articles/news/google-veo-update.html</link>
+            <description>Google's video generative model Veo now supports vertical content creation (9:16), better reference image control, and 1080p upscaling.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/google-veo-update.html</guid>
+        </item>
+        <item>
+            <title>Hardware Bottlenecks</title>
+            <link>https://pickai.netlify.app/articles/news/hardware-bottlenecks.html</link>
+            <description>New memory architectures are needed to support the next generation of trillion-parameter models. We look beyond the GPU shortage to the Memory Wall.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/hardware-bottlenecks.html</guid>
+        </item>
+        <item>
+            <title>Mistral Releases Lightweight 7B Model for Edge Devices</title>
+            <link>https://pickai.netlify.app/articles/news/mistral-edge-model.html</link>
+            <description>Mistral AI unveils a new 7B parameter model optimized for local inference on laptops and phones, bringing powerful AI to the edge.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/mistral-edge-model.html</guid>
+        </item>
+        <item>
+            <title>Nvidia's New Chip Architecture Explained</title>
+            <link>https://pickai.netlify.app/articles/news/nvidia-next-gen-architecture.html</link>
+            <description>Moving beyond H100s: How Nvidia is pivoting to a memory-first architecture to defend its dominance.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/nvidia-next-gen-architecture.html</guid>
+        </item>
+        <item>
+            <title>Open Source vs Closed: The Security Paradox</title>
+            <link>https://pickai.netlify.app/articles/news/open-source-security.html</link>
+            <description>Does hiding weights make us safer, or just more vulnerable to unpatched exploits?</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/open-source-security.html</guid>
+        </item>
+        <item>
+            <title>OpenAI Releases New Safety Benchmarks for Reasoning Tasks</title>
+            <link>https://pickai.netlify.app/articles/news/openai-safety-benchmarks.html</link>
+            <description>OpenAI introduces a new evaluation framework designed specifically to test the safety and alignment of advanced reasoning models.</description>
+            <pubDate>Mon, 19 Jan 2026 18:54:38 +0530</pubDate>
+            <guid>https://pickai.netlify.app/articles/news/openai-safety-benchmarks.html</guid>
+        </item>
+    </channel>
+</rss>

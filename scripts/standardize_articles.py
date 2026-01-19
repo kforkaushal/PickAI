@@ -12,6 +12,11 @@ LAYOUT_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Google Analytics 4 + Consent Mode -->
+    <script src="../../js/analytics-setup.js"></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
+     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
@@ -30,13 +35,13 @@ LAYOUT_TEMPLATE = """<!DOCTYPE html>
     <!-- Meta -->
     <meta name="description" content="{description}">
     <meta name="author" content="PickAI Editorial Board">
-    <link rel="canonical" href="https://pickai.com/articles/news/{filename}">
+    <link rel="canonical" href="https://pickai.netlify.app/articles/news/{filename}">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{description}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://pickai.com/articles/news/{filename}">
+    <meta property="og:url" content="https://pickai.netlify.app/articles/news/{filename}">
     <meta property="og:image" content="{image_url}">
 
     <!-- Twitter Card -->
@@ -45,6 +50,17 @@ LAYOUT_TEMPLATE = """<!DOCTYPE html>
     <meta name="twitter:title" content="{title}">
     <meta name="twitter:description" content="{description}">
     <meta name="twitter:image" content="{image_url}">
+
+    <!-- OneSignal SDK -->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function (OneSignal) {{
+            await OneSignal.init({{
+                appId: "6d099781-0ba2-48ac-aa7f-a272cde07e32",
+            }});
+        }});
+    </script>
 </head>
 
 <body>
@@ -54,7 +70,6 @@ LAYOUT_TEMPLATE = """<!DOCTYPE html>
             <div class="logo"><a href="../../index.html">PickAI.</a></div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="../../index.html#news">AI News</a></li>
                     <li><a href="../../tools/index.html">Tools</a></li>
                     <li><a href="../../research.html">Research</a></li>
                     <li><a href="../../opinion.html">Opinion</a></li>
@@ -191,6 +206,8 @@ LAYOUT_TEMPLATE = """<!DOCTYPE html>
     <!-- Global Search -->
     <script src="../../js/search.js"></script>
     <script src="../../js/app.js"></script>
+    <!-- Consent Banner -->
+    <script src="../../js/consent.js" defer></script>
 
 </body>
 

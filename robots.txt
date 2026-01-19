@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pickai.com/sitemap.xml
+Sitemap: https://pickai.netlify.app/sitemap.xml
