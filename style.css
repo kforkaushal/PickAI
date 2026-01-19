@@ -1,0 +1,1615 @@
+/* 
+  PickAI - Premium AI News & Editorial 
+  Design System & Core Styles
+*/
+
+/* 
+  1. Variables & Design Tokens
+  =========================================
+*/
+:root {
+    /* Color Palette - Premium Editorial */
+    --color-bg: #FFFFFF;
+    --color-text-primary: #000000;
+    --color-text-secondary: #4a4a4a;
+    /* Softer for summaries */
+    --color-text-meta: #737373;
+    /* Dates, authors */
+    --color-accent: #1F1F1F;
+    /* Neutral Digital Gray */
+    --color-border: #E5E5E5;
+    /* Subtle borders */
+    --color-highlight: #F5F5F5;
+    /* Very subtle hover backgrounds */
+
+    /* Typography - Editorial */
+    /* Headlines: Strong, Authoritative Serif */
+    --font-serif: 'Playfair Display', 'Merriweather', serif;
+    /* Body: Clean, High Readability Sans-Serif */
+    --font-sans: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
+    /* UI / Labels: Technical, Crisp */
+    --font-ui: 'Inter', sans-serif;
+
+    /* Spacing System (8pt grid based) */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 70px;
+}
+
+/* 
+  1b. Ad Infrastructure
+  =========================================
+*/
+/* 
+  1b. Ad Infrastructure (Hidden/Collapsed until monetized)
+  =========================================
+*/
+.ad-container {
+    display: flex;
+    /* Keeps structure ready */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    /* Removed background/padding so it's invisible when empty */
+}
+
+/* Hide the label for now */
+.ad-label {
+    display: none;
+}
+
+/* 
+   Container for the actual ad script. 
+   Removes fixed sizes/colors so it collapses if empty.
+   Google Auto Ads or ad networks will inject distinct sizes.
+*/
+.ad-slot {
+    display: block;
+    width: 100%;
+    /* No fixed height, background, or text */
+}
+
+/* Specific constraints only max-width if needed to prevent blowout */
+.ad-leaderboard {
+    max-width: 970px;
+}
+
+.ad-mpu {
+    max-width: 300px;
+}
+
+.ad-mobile {
+    max-width: 320px;
+}
+
+@media (max-width: 1024px) {
+    .ad-leaderboard {
+        max-width: 728px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ad-leaderboard {
+        max-width: 320px;
+    }
+
+    .ad-mpu {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .ad-leaderboard {
+        max-width: 320px;
+    }
+
+    .ad-mpu {
+        margin: 0 auto;
+    }
+}
+
+/* 
+  1c. Tool Cards (AI Directory)
+  =========================================
+*/
+.tool-card .tool-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.tool-card .tool-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+    /* Soft edge matching brand */
+    /* Optional: background: #f5f5f5; padding: 2px; */
+}
+
+.tool-card h3 {
+    margin-bottom: 0;
+    /* Override default news card margin */
+    font-size: 1.25rem;
+}
+
+.filter-btn.active {
+    background: var(--color-text-primary);
+    color: var(--color-bg);
+    border-color: var(--color-text-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle depth */
+}
+
+/* 
+  1d. Tools Page Layout (Sidebar + Grid)
+  =========================================
+*/
+.tools-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    /* Sidebar wide enough for ad/list */
+    gap: var(--space-xl);
+    margin-top: var(--space-lg);
+    align-items: start;
+}
+
+.tools-sidebar {
+    position: sticky;
+    top: 100px;
+    /* Below fixed header */
+    padding-right: var(--space-lg);
+    border-right: 1px solid var(--color-border);
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar for sidebar */
+.tools-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.tools-sidebar::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.tools-main {
+    min-width: 0;
+}
+
+.featured-tool-mini {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: background 0.2s;
+}
+
+.featured-tool-mini:hover {
+    background: var(--color-highlight);
+    border-radius: 4px;
+    /* Slight rounded hover */
+    padding-left: 4px;
+    /* Indent on hover */
+    padding-right: 4px;
+}
+
+.featured-tool-mini:last-child {
+    border-bottom: none;
+}
+
+.featured-tool-mini img {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.featured-tool-mini h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+    font-family: var(--font-ui);
+}
+
+.featured-tool-mini a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+.featured-tool-mini a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Stack */
+@media (max-width: 768px) {
+    .tools-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .tools-sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        padding-right: 0;
+        margin-bottom: var(--space-xl);
+        padding-bottom: var(--space-lg);
+    }
+}
+
+/* 
+  1e. Tool Sections (Multiple Grids)
+  =========================================
+*/
+.tool-section {
+    margin-bottom: var(--space-3xl);
+    /* Generous spacing between categories */
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+}
+
+.category-title {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.category-count {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--color-text-meta);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* 
+  2. Reset & Base
+  =========================================
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.25rem;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-text-secondary);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 
+  3. Utility Classes
+  =========================================
+*/
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.grid {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.meta-text {
+    font-size: 0.9rem;
+    color: var(--color-text-meta);
+    font-family: var(--font-ui);
+}
+
+.border-t {
+    border-top: 1px solid var(--color-border);
+}
+
+.border-b {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.border-r {
+    border-right: 1px solid var(--color-border);
+}
+
+/* 
+  4. Component: Header 
+  =========================================
+*/
+.site-header {
+    height: var(--header-height);
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.header-inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--color-text-primary);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: var(--space-xl);
+}
+
+.main-nav a {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-accent);
+}
+
+/* Filter Bar - Minimalist Theme Aligned */
+.filter-btn {
+    background: transparent;
+    /* No background by default */
+    border: none;
+    /* Clean look */
+    border-bottom: 2px solid transparent;
+    /* Ready for active state */
+    padding: 8px 12px;
+    border-radius: 0;
+    /* Square/Text based */
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: var(--font-ui);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--color-text-meta);
+    /* Softer gray */
+}
+
+.filter-btn:hover {
+    color: var(--color-text-primary);
+    background: transparent;
+    transform: none;
+    /* Remove lift */
+}
+
+.filter-btn.active {
+    background: transparent;
+    color: var(--color-text-primary);
+    border-bottom: 2px solid var(--color-text-primary);
+    /* Underline style like Nav */
+    box-shadow: none;
+    font-weight: 600;
+}
+
+/* Base Tool Filters (Desktop) */
+.tool-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: var(--space-xl);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .filter-btn {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+        background: var(--color-highlight);
+        /* Add background on mobile for touch targets */
+        border-radius: 20px;
+        /* Pills on mobile for better touch */
+        border-bottom: none;
+    }
+
+    .filter-btn.active {
+        background: var(--color-text-primary);
+        color: var(--color-bg);
+        border-bottom: none;
+    }
+
+    .category-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+    }
+
+    .tool-section {
+        margin-bottom: var(--space-xl);
+        /* Tighten spacing on mobile */
+    }
+
+    /* Scrollable Filters on Mobile */
+    .tool-filters {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 8px;
+        /* Space for scrollbar or touch area */
+        margin-bottom: var(--space-lg);
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scroll iOS */
+        scrollbar-width: none;
+        /* Hide scrollbar Firefox */
+    }
+
+    .tool-filters::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbar Chrome/Safari */
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+        /* Don't shrink buttons */
+        white-space: nowrap;
+    }
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: var(--color-text-primary);
+}
+
+/* 
+  5. Component: Hero News (Text First)
+  =========================================
+*/
+.hero-section {
+    padding: var(--space-2xl) 0;
+}
+
+.hero-news {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* 2/3 Main, 1/3 Sidebar/List */
+    gap: var(--space-2xl);
+}
+
+.main-story {
+    padding-right: var(--space-xl);
+    border-right: 1px solid var(--color-border);
+}
+
+.main-story h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+}
+
+.main-story .summary {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+    max-width: 65ch;
+}
+
+/* 
+  6. Component: Latest Updates (Sidebar)
+  =========================================
+*/
+.latest-updates h3 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
+    display: inline-block;
+}
+
+.update-item {
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.update-item:last-child {
+    border-bottom: none;
+}
+
+.update-item .time {
+    font-size: 0.8rem;
+    color: var(--color-text-meta);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.update-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.update-item a:hover {
+    color: var(--color-text-secondary);
+}
+
+/* 
+  7. Component: Secondary News Grid
+  =========================================
+*/
+.secondary-news {
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-xl);
+}
+
+.section-header {
+    border-top: 1px solid #000;
+    margin-bottom: var(--space-lg);
+    padding-top: var(--space-sm);
+}
+
+.section-title {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.news-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card .category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-meta);
+    margin-bottom: var(--space-xs);
+}
+
+.news-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+.news-card p {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+/* 
+  8. Component: Deep Dive / Analysis
+  =========================================
+*/
+.deep-dive-section {
+    background-color: #FAFAFA;
+    /* Subtle breakout */
+    padding: var(--space-3xl) 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.analysis-card {
+    border: 1px solid var(--color-border);
+    background: #FFF;
+    padding: var(--space-lg);
+    transition: box-shadow 0.2s ease;
+}
+
+.analysis-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Very subtle lift */
+}
+
+/* 
+  9. Footer
+  =========================================
+*/
+.site-footer {
+    border-top: 4px solid #000;
+    /* Editorial accent */
+    padding: var(--space-3xl) 0;
+    margin-top: var(--space-3xl);
+    background: #FFF;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-brand {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-links ul {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+/* 
+  10. Responsive / Mobile Optimized
+  =========================================
+*/
+@media (max-width: 768px) {
+
+    /* Header: Stack Logo/Search + Horizontal Scroll Nav */
+    .site-header {
+        height: auto;
+        padding: var(--space-sm) 0;
+    }
+
+    /* 
+       Flex Order Strategy:
+       We want:
+       Row 1: Logo [Left] ... Search [Right]
+       Row 2: Nav [Full Width, Scrollable]
+       
+       We can achieve this with flex-wrap.
+    */
+    .header-inner {
+        flex-wrap: wrap;
+        align-content: space-between;
+        gap: var(--space-sm);
+    }
+
+    .logo {
+        flex: 1 1 auto;
+        /* Grow to fill space */
+    }
+
+    .header-actions {
+        flex: 0 0 auto;
+        /* Keep intrinsic size */
+    }
+
+    .main-nav {
+        order: 3;
+        /* Push to new line */
+        width: 100%;
+        /* Full width */
+        flex: 1 0 100%;
+
+        overflow-x: auto;
+        /* Horizontal Scroll */
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px;
+        border-top: 1px solid var(--color-highlight);
+        padding-top: var(--space-sm);
+        margin-top: var(--space-xs);
+
+        /* Hide scrollbar */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-nav ul {
+        display: flex;
+        gap: var(--space-lg);
+        padding: 0 var(--space-xs);
+        white-space: nowrap;
+        /* No wrapping of items */
+    }
+
+    .main-nav a {
+        font-size: 0.95rem;
+        padding: 8px 0;
+        /* Larger touch target */
+        color: var(--color-text-primary);
+    }
+
+    /* Hero Section */
+    .hero-news {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .main-story {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: var(--space-lg);
+        margin-bottom: var(--space-lg);
+    }
+
+    .main-story h1 {
+        font-size: 2.25rem;
+        /* Reduced from 3.5rem for mobile */
+    }
+
+    .main-story .summary {
+        font-size: 1.15rem;
+        line-height: 1.5;
+    }
+
+    /* Grid & Lists */
+    .news-grid-3 {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .deep-dive-section .grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-lg) !important;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: var(--space-xl);
+        text-align: center;
+    }
+
+    .footer-links ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var(--space-md);
+    }
+}
+
+/* 
+  8. Search Overlay (Global) 
+  =========================================
+*/
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 15vh;
+    /* Start slightly down */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-modal {
+    width: 100%;
+    max-width: 600px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-20px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    margin: 0 var(--space-md);
+    overflow: hidden;
+}
+
+.search-overlay.active .search-modal {
+    transform: translateY(0);
+}
+
+.search-header {
+    display: flex;
+    align-items: center;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.search-icon-input {
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-meta);
+    margin-right: var(--space-sm);
+}
+
+#global-search-input {
+    flex: 1;
+    border: none;
+    font-size: 1.1rem;
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background: transparent;
+    outline: none;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--color-text-meta);
+    cursor: pointer;
+    padding: 0 var(--space-xs);
+}
+
+.close-btn:hover {
+    color: var(--color-text-primary);
+}
+
+/* Results Area */
+.search-results {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: var(--space-sm) 0;
+}
+
+.empty-state {
+    padding: var(--space-lg);
+    text-align: center;
+    color: var(--color-text-meta);
+    font-size: 0.95rem;
+}
+
+.search-section-title {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-meta);
+    background: var(--color-highlight);
+    margin: 0;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: flex-start;
+    /* items-start for multiline desc */
+    padding: var(--space-md);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    transition: background 0.15s ease;
+    gap: 12px;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: var(--color-highlight);
+    color: inherit;
+    /* Override default link color */
+}
+
+/* Specific Result Types */
+.result-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid var(--color-border);
+}
+
+.result-info {
+    flex: 1;
+}
+
+.result-name {
+    font-weight: 600;
+    font-family: var(--font-ui);
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+}
+
+.result-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}
+
+/* 
+  9. Rich Media Cards (16:9 with Overlay) 
+  =========================================
+*/
+.card-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: var(--space-md);
+    background-color: #f0f0f0;
+    /* Placeholder color */
+}
+
+.card-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-image-container:hover .card-bg-image {
+    transform: scale(1.05);
+    /* Zoom effect */
+}
+
+/* "White Shadow" / Gradient Overlay Style */
+.card-overlay-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    /* Fade starts lower down */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    /* For "White Shadow" specifically requested, usually means white glow or white bg fade for dark text. 
+       But conventionally, text on image needs dark bg for white text. 
+       If user meant WHITE text on image, dark shadow is needed. 
+       If user meant DARK text on image, white shadow is needed. 
+       Given "auto show title on it", usually implies white text on dark bg. 
+       I will stick to dark gradient for readability of white text. */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-md);
+    pointer-events: none;
+}
+
+.card-overlay-title {
+    color: #fff;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 4px;
+}
+
+.card-overlay-category {
+    color: #fff;
+    /* Ensure accent pops */
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Article Hero Image */
+.article-hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: var(--space-xl);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+  10. Article Page Enhancements 
+  =========================================
+*/
+.article-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* 2/3 Content, 1/3 Sidebar */
+    gap: var(--space-3xl);
+    align-items: start;
+}
+
+.article-content {
+    min-width: 0;
+    /* Prevent grid blowout */
+}
+
+.article-sidebar {
+    position: sticky;
+    top: 100px;
+    /* Keeps sidebar visible while scrolling content */
+}
+
+/* Sidebar Widgets */
+.sidebar-widget {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar-widget:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.widget-title {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent);
+    /* Use Accent color like section headers */
+    margin-bottom: var(--space-lg);
+    background: transparent;
+    /* Remove background for cleaner look */
+    padding: 0;
+    display: block;
+    border-left: 3px solid var(--color-accent);
+    /* Editorial accent line */
+    padding-left: 12px;
+}
+
+/* Sidebar List */
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: var(--space-lg);
+    /* More breathing room */
+}
+
+.sidebar-list a {
+    display: block;
+    line-height: 1.5;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 1.05rem;
+    /* Slightly larger for readability */
+    color: var(--color-text-primary);
+    transition: color 0.15s ease;
+}
+
+.sidebar-list a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.list-category {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-meta);
+    margin-bottom: 4px;
+    letter-spacing: 0.03em;
+}
+
+/* Mini Tool List (Premium Card Style) */
+.mini-tool-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    background: transparent;
+    /* Clean bg */
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    /* Softer radius */
+    margin-bottom: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.mini-tool-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-text-primary);
+    /* Darker border on hover */
+    background: var(--color-highlight);
+}
+
+.mini-tool-item img {
+    width: 40px;
+    /* Slightly larger logo */
+    height: 40px;
+    border-radius: 8px;
+    /* Match container radius style */
+    object-fit: cover;
+    background: #fff;
+    border: 1px solid var(--color-border);
+}
+
+.mini-tool-info {
+    flex: 1;
+}
+
+.mini-tool-info .name {
+    display: block;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+}
+
+.mini-tool-info .desc {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+.widget-link {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+}
+
+.widget-link:hover {
+    border-color: var(--color-text-primary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .article-layout {
+        display: block;
+        /* Simpler stack */
+    }
+
+    .article-content {
+        margin-bottom: var(--space-3xl);
+    }
+
+    .article-sidebar {
+        /* Remove sticky on mobile */
+        position: static;
+        border-top: 4px solid var(--color-border);
+        /* Clear Separation */
+        padding-top: var(--space-2xl);
+    }
+}
+
+/* 
+  11. Hero Slideshow (Refined Split Layout)
+  =========================================
+*/
+.hero-slider-container {
+    position: relative;
+    width: 100%;
+    /* Remove fixed aspect ratio padding, let content dictate height, 
+       BUT for absolute slides we need a fixed height container. 
+       Let's use a fixed height that accommodates both. */
+    height: 550px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: var(--space-xl);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    /* Split Layout: Top Image, Bottom Text */
+    background: #fff;
+    pointer-events: none;
+    /* Prevent clicking hidden slides */
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+/* Upper Section: Image + Title Overlay */
+.slide-upper {
+    position: relative;
+    flex: 2;
+    /* Takes up 2/3 space roughly */
+    width: 100%;
+    height: 65%;
+    /* Fixed % for stability */
+    overflow: hidden;
+}
+
+.slide-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradient "Shadow" Overlay */
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-lg) var(--space-xl);
+}
+
+/* Badge (Today's Briefing) */
+.slide-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    padding: 6px 12px;
+    border-radius: 4px;
+    /* Pill shape or slight radius */
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-primary);
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 3px solid var(--color-accent);
+    /* Editorial accent mark */
+}
+
+.slide-title-overlay {
+    color: #fff;
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+}
+
+/* Lower Section: Description */
+.slide-lower {
+    flex: 1;
+    padding: var(--space-lg) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-meta {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.slide-summary {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: 95%;
+}
+
+/* Controls (Arrows) */
+.slider-nav-btn {
+    position: absolute;
+    top: 32.5%;
+    /* Center vertically relative to IMAGE (65% / 2) */
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 1.2rem;
+}
+
+.slider-nav-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* Indicators (Dots) - Moved to bottom right inside image or bottom of container? */
+.slider-indicators {
+    position: absolute;
+    bottom: 20px;
+    /* Inside the description area or absolute bottom */
+    right: 20px;
+    z-index: 4;
+    display: flex;
+    gap: 8px;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-border);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background: var(--color-accent);
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .hero-slider-container {
+        height: 500px;
+        /* Slightly shorter on mobile */
+    }
+
+    .slide-title-overlay {
+        font-size: 1.5rem;
+    }
+
+    .slide-summary {
+        font-size: 0.95rem;
+    }
+
+    .slide-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* 
+  12. Article / Text Page Layout 
+  =========================================
+*/
+.article-container {
+    max-width: 740px;
+    /* Optimal reading width */
+    margin: 0 auto;
+    padding: var(--space-3xl) var(--space-md);
+}
+
+.article-header {
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.article-header .category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-md);
+    display: inline-block;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.article-header h1 {
+    font-size: 3rem;
+    line-height: 1.15;
+    margin-bottom: var(--space-lg);
+    font-family: var(--font-serif);
+}
+
+.article-meta {
+    font-family: var(--font-ui);
+    color: var(--color-text-meta);
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+.article-body {
+    font-family: var(--font-serif);
+    /* Serif for long form reading */
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #1a1a1a;
+}
+
+.article-body p {
+    margin-bottom: var(--space-lg);
+}
+
+.article-body h2,
+.article-body h3 {
+    font-family: var(--font-sans);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+    font-weight: 700;
+}
+
+.article-body h2 {
+    font-size: 1.8rem;
+}
+
+.article-body h3 {
+    font-size: 1.5rem;
+}
+
+.article-body blockquote {
+    border-left: 4px solid var(--color-accent);
+    padding-left: var(--space-lg);
+    margin: var(--space-xl) 0;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+}
+
+.article-body ul,
+.article-body ol {
+    margin-bottom: var(--space-lg);
+    padding-left: var(--space-xl);
+}
+
+.article-body li {
+    margin-bottom: var(--space-xs);
+}

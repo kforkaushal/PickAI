@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- [TODO] Update Title -->
+    <title>Article Title — PickAI</title>
+
+    <!-- Global Design System -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- [TODO] Update Meta Description -->
+    <meta name="description" content="Brief summary of the article for SEO.">
+    <meta name="author" content="PickAI Editorial Board">
+</head>
+
+<body>
+
+    <!-- 1. Master Header (Matches Index) -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo"><a href="index.html">PickAI.</a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#news">AI News</a></li>
+                    <li><a href="tools/index.html">Tools</a></li>
+                    <li><a href="index.html#research">Research</a></li>
+                    <li><a href="index.html#opinion">Opinion</a></li>
+                    <li><a href="index.html#explainers">Explainers</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Main Article Content -->
+    <!-- Usage: keeping 'article-container' ensures consistent 740px width and padding -->
+    <main class="article-container">
+
+        <!-- Article Header -->
+        <header class="article-header">
+            <!-- Category Label -->
+            <span class="category">Category Name</span>
+
+            <!-- [TODO] Article Headline -->
+            <h1>Your Article Title Goes Here</h1>
+
+            <!-- Meta Data (Author, Date, Reading Time) -->
+            <div class="article-meta">
+                <span>By <strong>Author Name</strong></span>
+                <span>|</span>
+                <span>Oct 24, 2026</span>
+                <span>|</span>
+                <span>5 Min Read</span>
+            </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-body">
+
+            <!-- Intro Paragraph (Lead) -->
+            <p class="lead">
+                This is the opening paragraph. It usually has a slightly larger font weight or size to hook the reader.
+                Everything inside this 'article-body' section will automatically have the correct font
+                (Merriweather/Serif) and line-height.
+            </p>
+
+            <hr style="border: 0; border-top: 1px solid var(--color-border); margin: 40px 0;">
+
+            <!-- Content Sections -->
+            <h2>Section Heading</h2>
+            <p>
+                Standard paragraph text. You don't need to add any special classes here. The global CSS handles it all.
+            </p>
+
+            <blockquote>
+                "Use blockquotes for improved visual breaks and to highlight key takeaways."
+            </blockquote>
+
+            <h3>Sub-Heading</h3>
+            <ul>
+                <li><strong>Point 1:</strong> Use bold for emphasis.</li>
+                <li><strong>Point 2:</strong> Lists are automatically styled with proper indentation.</li>
+            </ul>
+
+        </article>
+
+    </main>
+
+    <!-- 3. Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                PickAI.
+                <div class="meta-text" style="font-weight: normal; margin-top: 10px; font-size: 0.8rem;">
+                    &copy; 2026 PickAI Media. <br> All rights reserved.
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="editorial-policy.html">Editorial Policy</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

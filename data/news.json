@@ -1,0 +1,116 @@
+{
+    "hero_slides": [
+        {
+            "id": 1,
+            "title": "Generating Intelligence: The Next Frontier in Reasoning Models",
+            "summary": "As major labs shift focus from raw scale to inference-time compute, we analyze what this means for the future of commercial AI deployment and safety standards.",
+            "author": "Editorial Board",
+            "date": "Today's Briefing",
+            "link": "article.html",
+            "image_url": "https://picsum.photos/seed/hero1/1200/675"
+        },
+        {
+            "id": 2,
+            "title": "The Rise of Agentic Workflows in Enterprise",
+            "summary": "Why 2026 is becoming the year of the 'autonomous employee' and which sectors are adopting agents fastest.",
+            "author": "Tech Analysis",
+            "date": "Deep Dive",
+            "link": "#",
+            "image_url": "https://picsum.photos/seed/hero2/1200/675"
+        },
+        {
+            "id": 3,
+            "title": "Hardware Bottlenecks: Beyond the H100 Shortage",
+            "summary": "New memory architectures are needed to support the next generation of trillion-parameter models.",
+            "author": "Hardware Team",
+            "date": "Just In",
+            "link": "#",
+            "image_url": "https://picsum.photos/seed/hero3/1200/675"
+        }
+    ],
+    "hero": {
+        "title": "Generating Intelligence: The Next Frontier in Reasoning Models",
+        "summary": "As major labs shift focus from raw scale to inference-time compute, we analyze what this means for the future of commercial AI deployment and safety standards.",
+        "author": "Editorial Board",
+        "date": "Today's Briefing",
+        "link": "article.html"
+    },
+    "latest_updates": [
+        {
+            "time": "14:20 GMT",
+            "title": "OpenAI releases new safety benchmarks for reasoning tasks.",
+            "link": "#"
+        },
+        {
+            "time": "12:05 GMT",
+            "title": "Google DeepMind's AlphaFold 3 expands access to researchers.",
+            "link": "#"
+        },
+        {
+            "time": "10:45 GMT",
+            "title": "Mistral releases lightweight 7B model for edge devices.",
+            "link": "#"
+        },
+        {
+            "time": "09:30 GMT",
+            "title": "Anthropic publishes 'Constitutional AI' whitepaper.",
+            "link": "#"
+        },
+        {
+            "time": "08:15 GMT",
+            "title": "TSMC announces new chip packaging technology for AI accelerators.",
+            "link": "#"
+        }
+    ],
+    "analysis_grid": [
+        {
+            "category": "Generative Video",
+            "title": "Google Veo 3.1: The Vertical Video Era Begins",
+            "summary": "Native 9:16 support and 1080p upscaling target the creator economy.",
+            "link": "./news/google-veo-update.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768764660/89dbca524bf04609e5ef7cc22f6c14cd_yd2hjo.webp"
+        },
+        {
+            "category": "Research",
+            "title": "The architecture of transformer replacements",
+            "summary": "Why state-space models are gaining traction in long-context tasks.",
+            "link": "#",
+            "image_url": "https://picsum.photos/seed/ai1/800/450"
+        },
+        {
+            "category": "Policy",
+            "title": "EU AI Act: Compliance deadlines approaching",
+            "summary": "What enterprise CTOs need to know before Q3 2026.",
+            "link": "#",
+            "image_url": "https://picsum.photos/seed/ai2/800/450"
+        },
+        {
+            "category": "Hardware",
+            "title": "Nvidia's new chip architecture explained",
+            "summary": "Moving beyond H100s: The focus on memory bandwidth.",
+            "link": "#",
+            "image_url": "https://picsum.photos/seed/chip/800/450"
+        },
+        {
+            "category": "Startups",
+            "title": "The consolidation of the generative video market",
+            "summary": "As compute costs rise, smaller players are exiting the race.",
+            "link": "#",
+            "image_url": "https://picsum.photos/seed/video/800/450"
+        },
+        {
+            "category": "Science",
+            "title": "AI in protein design: Beyond folding",
+            "summary": "New models are generating novel therapeutics from scratch.",
+            "link": "#",
+            "image_url": "https://picsum.photos/seed/bio/800/450"
+        },
+        {
+            "category": "Opinion",
+            "title": "The open source definition needs an update",
+            "summary": "Why 'weights available' is no longer enough effectively.",
+            "link": "#",
+            "image_url": "https://picsum.photos/seed/code/800/450"
+        }
+    ]
+}

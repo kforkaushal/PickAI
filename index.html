@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickAI — Premium AI News & Insights</title>
+
+    <!-- Design System / CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Typography: Playfair Display (Serif), Inter (Sans), Fira Code (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Meta -->
+    <meta name="description"
+        content="PickAI is your authority for deep-dive AI news, research analysis, and neutral tech updates.">
+    <meta name="keywords" content="AI News, Artificial Intelligence, Machine Learning, DeepMind, OpenAI, Tech Analysis">
+    <meta name="author" content="PickAI Editorial Board">
+
+    <!-- Open Graph (Facebook/LinkedIn) -->
+    <meta property="og:title" content="PickAI — Premium AI News & Insights">
+    <meta property="og:description"
+        content="PickAI is your authority for deep-dive AI news, research analysis, and neutral tech updates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pickai.com/">
+    <meta property="og:image" content="https://pickai.com/assets/og-home.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@PickAI">
+
+    <!-- JSON-LD Structured Data (Organization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PickAI",
+      "url": "https://pickai.com/",
+      "logo": "https://pickai.com/assets/logo.png",
+      "sameAs": [
+        "https://twitter.com/pickai",
+        "https://linkedin.com/company/pickai"
+      ],
+      "description": "A premium editorial source for Artificial Intelligence news and analysis."
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- 1. Editorial Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="/">PickAI.</a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#news">AI News</a></li>
+                    <li><a href="tools/index.html">Tools</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#opinion">Opinion</a></li>
+                    <li><a href="#explainers">Explainers</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Simple search icon SVG -->
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Main Content Area -->
+    <main class="container">
+
+        <!-- Hero Section: Main Story + Sidebar -->
+        <section class="hero-section">
+            <div class="hero-news">
+
+                <!-- Left: Main Feature Story -->
+                <!-- Left: Main Feature Story (Slideshow) -->
+                <div class="hero-slider-container" id="hero-slider">
+                    <!-- Slides injected via JS -->
+                    <div class="hero-slide active">
+                        <div class="slide-content">
+                            <div class="meta-text uppercase">Loading Briefing...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Latest Updates (Vertical List) -->
+                <aside class="latest-updates">
+                    <h3>Latest Wires</h3>
+
+                    <!-- AD SLOT: Sidebar MPU (300x250) -->
+                    <div class="ad-container" style="margin: 0 0 24px 0;">
+                        <span class="ad-label">Advertisement</span>
+                        <div class="ad-slot ad-mpu"></div>
+                    </div>
+
+                    <div id="latest-updates-list">
+                        <!-- Items injected via JS -->
+                        <div class="update-item">
+                            <span class="time">14:20 GMT</span>
+                            <h4><a href="#">OpenAI releases new safety benchmarks for reasoning tasks.</a></h4>
+                        </div>
+                        <div class="update-item">
+                            <span class="time">12:05 GMT</span>
+                            <h4><a href="#">Google DeepMind's AlphaFold 3 expands access to researchers.</a></h4>
+                        </div>
+                        <div class="update-item">
+                            <span class="time">10:45 GMT</span>
+                            <h4><a href="#">Mistral releases lightweight 7B model for edge devices.</a></h4>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- 3. Secondary News Grid -->
+        <section class="secondary-news" id="news">
+            <div class="section-header">
+                <h2 class="section-title">Analysis & Reports</h2>
+            </div>
+
+            <!-- AD SLOT: In-Feed (Optional, spans full width or grid) -->
+            <div class="ad-container" style="margin-top: 0; margin-bottom: 32px;">
+                <span class="ad-label">Advertisement</span>
+                <div class="ad-slot ad-leaderboard"></div>
+            </div>
+
+            <div class="news-grid-3" id="secondary-grid">
+                <!-- Items injected via JS -->
+                <article class="news-card">
+                    <span class="category">Research</span>
+                    <h3><a href="#">The architecture of transformer replacements</a></h3>
+                    <p>Why state-space models are gaining traction in long-context tasks.</p>
+                </article>
+                <article class="news-card">
+                    <span class="category">Policy</span>
+                    <h3><a href="#">EU AI Act: Compliance deadlines approaching</a></h3>
+                    <p>What enterprise CTOs need to know before Q3 2026.</p>
+                </article>
+                <article class="news-card">
+                    <span class="category">Hardware</span>
+                    <h3><a href="#">Nvidia's new chip architecture explained</a></h3>
+                    <p>Moving beyond H100s: The focus on memory bandwidth.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. Deep Dive Section -->
+        <section class="deep-dive-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Deep Dives</h2>
+                </div>
+                <!-- Single wide editorial or different layout? Keeping simple grid for now but styled differently -->
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <article class="analysis-card">
+                        <span class="category">Long Read</span>
+                        <h2><a href="#">The Alignment Problem in 2026: Progress or Stagnation?</a></h2>
+                        <p class="summary" style="margin-top: 10px;">A comprehensive look at the current state of inner
+                            alignment research across top labs.</p>
+                        <div class="meta-text" style="margin-top: 15px;">Read Analysis &rarr;</div>
+                    </article>
+                    <article class="analysis-card">
+                        <span class="category">Opinion</span>
+                        <h2><a href="#">Why Agentic Workflows are Overhyped for Consumers</a></h2>
+                        <p class="summary" style="margin-top: 10px;">While enterprise use cases soar, the consumer "AI
+                            Agent" remains elusive. Here is why.</p>
+                        <div class="meta-text" style="margin-top: 15px;">Read Analysis &rarr;</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 5. Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                PickAI.
+                <div class="meta-text" style="font-weight: normal; margin-top: 10px; font-size: 0.8rem;">
+                    &copy; 2026 PickAI Media. <br> All rights reserved.
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="editorial-policy.html">Editorial Policy</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Search -->
+    <script src="js/search.js"></script>
+
+    <!-- Logic -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

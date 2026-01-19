@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Toolkit — PickAI</title>
+
+    <!-- Design System / CSS (linked from root) -->
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Meta -->
+    <meta name="description"
+        content="A curated directory of the most essential AI tools, research labs, and platforms.">
+</head>
+
+<body>
+
+    <!-- 1. Editorial Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="../index.html">PickAI.</a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html#news">AI News</a></li>
+                    <li><a href="index.html" class="active">Tools</a></li> <!-- Active link -->
+                    <li><a href="../index.html#research">Research</a></li>
+                    <li><a href="../index.html#opinion">Opinion</a></li>
+                    <li><a href="../index.html#explainers">Explainers</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Main Content Area -->
+    <main class="container">
+
+        <div class="section-header" style="margin-top: 40px; border-top: none;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Essential AI Toolkit</h1>
+            <p style="color: var(--color-text-secondary); max-width: 600px;">
+                A curated list of the most impactful artificial intelligence platforms, research labs, and operational
+                tools defining the current landscape.
+            </p>
+        </div>
+
+        <div class="tools-layout">
+
+            <!-- Left Sidebar: Featured / Trending -->
+            <aside class="tools-sidebar">
+                <h3 class="uppercase" style="margin-bottom: var(--space-md);">Trending Now</h3>
+                <div id="featured-tools-list">
+                    <!-- JS Injected Content -->
+                </div>
+
+                <!-- Ad Placeholder (MPU) - Hidden/Structural -->
+                <div class="ad-container ad-mpu"></div>
+            </aside>
+
+            <!-- Right Main Content: Filters + Grid -->
+            <section class="tools-main">
+
+                <!-- Filters -->
+                <div class="tool-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="trending">Trending 🔥</button>
+                    <button class="filter-btn" data-filter="new">New ✨</button>
+                    <button class="filter-btn" data-filter="LLM">LLMs</button>
+                    <button class="filter-btn" data-filter="Image Gen">Image</button>
+                    <button class="filter-btn" data-filter="Video Gen">Video</button>
+                    <button class="filter-btn" data-filter="Coding">Coding</button>
+                    <button class="filter-btn" data-filter="Automation">Automation</button>
+                    <button class="filter-btn" data-filter="Productivity">Productivity</button>
+                </div>
+
+                <!-- Tool Grid / Categorized Sections (Populated via JS) -->
+                <div id="tools-container">
+                    <!-- Dynamic Content Load -->
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- 5. Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                PickAI.
+                <div class="meta-text" style="font-weight: normal; margin-top: 10px; font-size: 0.8rem;">
+                    &copy; 2026 PickAI Media.
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../editorial-policy.html">Editorial Policy</a></li>
+                    <li><a href="../privacy.html">Privacy</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/tools.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+
+</html>

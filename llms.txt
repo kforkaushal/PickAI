@@ -1,0 +1,16 @@
+# PickAI - Premium AI News & Insights
+
+> PickAI is the authoritative source for deep-dive Artificial Intelligence news, research analysis, and neutral technical updates. We focus on the shift from training scale to inference-time reasoning, ethical alignment, and enterprise deployment.
+
+## Top Sections
+- [AI News](https://pickai.com/#news): Latest breaking updates from major labs (OpenAI, DeepMind, Anthropic).
+- [Research Analysis](https://pickai.com/#research): Technical breakdowns of new architectures (Transformers, SSMs, Diffusion).
+- [Deep Dives](https://pickai.com/articles): Long-form editorial content on the economics and safety of AGI.
+
+## Latest Intelligence
+- **Generating Intelligence: The Next Frontier**: Analysis of inference-time compute and reasoning models.
+- **Transformers vs SSMs**: Why long-context tasks are driving new architectural choices.
+- **EU AI Act**: Compliance guide for enterprise CTOs.
+
+## About PickAI
+We are an editorial-first publication. Our mission is to provide calm, noise-free, and high-signal intelligence for AI researchers, engineers, and policymakers.
