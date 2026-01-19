@@ -33,13 +33,6 @@ async function fetchData() {
             prefix = '../';
         }
 
-        // Helper to fix links in JSON data
-        const resolvePath = (link) => {
-            if (link.startsWith('http') || link.startsWith('#')) return link;
-            if (link.startsWith('./')) link = link.substring(2);
-            return prefix + link;
-        };
-
         const response = await fetch(`${prefix}data/news.json`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -229,7 +222,7 @@ function initHeroSlideshow(slides) {
 
         // Split Layout: Upper (Image+Title) & Lower (Description)
         slideEl.innerHTML = `
-            <a href="${resolvePath(slide.link)}" class="slide-upper">
+            <a href="${slide.link}" class="slide-upper">
                 <img src="${slide.image_url}" class="slide-bg-image" alt="${slide.title}" loading="${index === 0 ? 'eager' : 'lazy'}">
                 <div class="slide-badge">${slide.date || "Today's Briefing"}</div>
                 <div class="slide-overlay">
@@ -340,8 +333,7 @@ function populateLatestUpdates(updates) {
 
         updateDiv.innerHTML = `
         <span class="time">${item.time}</span>
-        <span class="time">${item.time}</span>
-        <h4><a href="${resolvePath(item.link)}">${item.title}</a></h4>
+        <h4><a href="${item.link}">${item.title}</a></h4>
     `;
 
         listContainer.appendChild(updateDiv);
@@ -361,7 +353,7 @@ function populateAnalysisGrid(gridItems) {
         if (item.image_url) {
             article.className = 'news-card-rich'; // New class or just structure change
             article.innerHTML = `
-            <a href="${resolvePath(item.link)}" class="card-image-container" style="display:block;">
+            <a href="${item.link}" class="card-image-container" style="display:block;">
                 <img src="${item.image_url}" alt="${item.title}" class="card-bg-image" loading="lazy">
                 <div class="card-overlay-gradient">
                     <span class="card-overlay-category">${item.category}</span>
@@ -375,7 +367,7 @@ function populateAnalysisGrid(gridItems) {
             article.className = 'news-card';
             article.innerHTML = `
             <span class="category">${item.category}</span>
-            <h3><a href="${resolvePath(item.link)}">${item.title}</a></h3>
+            <h3><a href="${item.link}">${item.title}</a></h3>
             <p>${item.summary}</p>
         `;
         }
