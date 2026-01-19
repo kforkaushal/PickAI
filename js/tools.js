@@ -55,7 +55,7 @@ function renderFeatured(tools) {
         div.className = 'featured-tool-mini';
         div.innerHTML = `
             <img src="https://img.logo.dev/${tool.logo_domain}?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="${tool.name}">
-            <h4><a href="${tool.url}" target="_blank">${tool.name}</a></h4>
+            <h4><a href="redirect.html?url=${encodeURIComponent(tool.url)}&name=${encodeURIComponent(tool.name)}" target="_blank">${tool.name}</a></h4>
         `;
         container.appendChild(div);
     });
@@ -164,7 +164,7 @@ function createToolCard(tool) {
     <article class="news-card tool-card">
         <div class="tool-header">
             <img src="https://img.logo.dev/${tool.logo_domain}?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="${tool.name} Logo" class="tool-logo">
-            <h3><a href="${tool.url}" target="_blank">${tool.name}</a></h3>
+            <h3><a href="redirect.html?url=${encodeURIComponent(tool.url)}&name=${encodeURIComponent(tool.name)}" target="_blank">${tool.name}</a></h3>
         </div>
         <span class="category">${tool.category_display}</span>
         <p>${tool.description}</p>

@@ -1849,3 +1849,93 @@ ul {
         grid-template-columns: 1fr !important;
     }
 }
+
+/* 
+  12. Trusted By / Logo Marquee
+  =========================================
+*/
+.trusted-by-section {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-xl) 0;
+    background: var(--color-bg);
+    overflow: hidden;
+}
+
+.trusted-by-label {
+    display: block;
+    text-align: center;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-meta);
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+}
+
+.logo-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+.logo-marquee:hover {
+    animation-play-state: paused;
+}
+
+.logo-marquee-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3xl);
+    padding: 0 var(--space-xl);
+}
+
+.logo-marquee-content img {
+    height: 36px;
+    width: auto;
+    opacity: 0.5;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.logo-marquee-content img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .trusted-by-section {
+        padding: var(--space-lg) 0;
+    }
+
+    .logo-marquee-content {
+        gap: var(--space-xl);
+    }
+
+    .logo-marquee-content img {
+        height: 28px;
+    }
+
+    .logo-marquee {
+        animation-duration: 20s;
+    }
+}

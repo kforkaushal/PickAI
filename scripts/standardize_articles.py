@@ -51,6 +51,62 @@ LAYOUT_TEMPLATE = """<!DOCTYPE html>
     <meta name="twitter:description" content="{description}">
     <meta name="twitter:image" content="{image_url}">
 
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pickai.netlify.app/"
+      }},{{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "News",
+        "item": "https://pickai.netlify.app/#news"
+      }},{{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{title}",
+        "item": "https://pickai.netlify.app/articles/news/{filename}"
+      }}]
+    }}
+    </script>
+
+    <!-- JSON-LD NewsArticle -->
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "{title}",
+      "description": "{description}",
+      "image": "{image_url}",
+      "url": "https://pickai.netlify.app/articles/news/{filename}",
+      "datePublished": "{date_published}",
+      "dateModified": "{date_published}",
+      "author": {{
+        "@type": "Organization",
+        "name": "PickAI Editorial Board",
+        "url": "https://pickai.netlify.app/about.html"
+      }},
+      "publisher": {{
+        "@type": "Organization",
+        "name": "PickAI",
+        "logo": {{
+          "@type": "ImageObject",
+          "url": "https://pickai.netlify.app/assets/logo.png"
+        }}
+      }},
+      "mainEntityOfPage": {{
+        "@type": "WebPage",
+        "@id": "https://pickai.netlify.app/articles/news/{filename}"
+      }},
+      "isAccessibleForFree": true
+    }}
+    </script>
+
     <!-- OneSignal SDK -->
     <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
     <script>
@@ -291,7 +347,8 @@ def process_files():
                 date=data['date'],
                 image_url=data['image_url'],
                 body_content=data['body_content'],
-                filename=filename
+                filename=filename,
+                date_published="2026-01-19"  # ISO 8601 format for JSON-LD
             )
             
             with open(path, 'w', encoding='utf-8') as f:

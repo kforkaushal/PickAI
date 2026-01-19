@@ -24,9 +24,67 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="canonical" href="https://pickai.netlify.app/about.html">
 
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Learn about PickAI, the authority on artificial intelligence news and analysis. Our mission, editorial standards, and the team behind the publication.">
+    <meta name="keywords" content="About PickAI, AI News Website, AI Editorial Team, PickAI Mission, AI Journalism">
+    <meta name="author" content="PickAI Editorial Board">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About PickAI — The Authority on Artificial Intelligence">
+    <meta property="og:description"
+        content="Learn about PickAI, our mission, and the team behind premium AI journalism.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pickai.netlify.app/about.html">
+    <meta property="og:image" content="https://pickai.netlify.app/assets/og-about.jpg">
+    <meta property="og:site_name" content="PickAI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@PickAI">
+    <meta name="twitter:title" content="About PickAI">
+    <meta name="twitter:description"
+        content="Learn about PickAI, our mission, and the team behind premium AI journalism.">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
         rel="stylesheet">
+
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pickai.netlify.app/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://pickai.netlify.app/about.html"
+      }]
+    }
+    </script>
+
+    <!-- JSON-LD AboutPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About PickAI",
+      "description": "Learn about PickAI, the authority on artificial intelligence news and analysis.",
+      "url": "https://pickai.netlify.app/about.html",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "PickAI",
+        "url": "https://pickai.netlify.app/",
+        "description": "A premium editorial source for Artificial Intelligence news and analysis."
+      }
+    }
+    </script>
 </head>
 
 <body>

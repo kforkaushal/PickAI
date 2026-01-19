@@ -1,14 +1,57 @@
 # PickAI - The Authority on Artificial Intelligence
 
-PickAI is a premium editorial source for AI news, research analysis, and tool reviews.
+> PickAI is a premium editorial source for AI news, research analysis, tool reviews, and expert opinion.
 
-## Sections
+## Site Overview
 
-- **News**: Daily updates on models, policy, and industry moves. /index.html#news
-- **Research**: Deep dives into arXiv papers (Transformers, SSMs, Diffusion). /research.html
-- **Tools**: Curated directory of verified AI software (Coding, Writing, Image). /tools/index.html
-- **Opinion**: Perspectives on alignment, ethics, and economics. /opinion.html
+- **Domain**: https://pickai.netlify.app/
+- **Type**: News & Editorial Website
+- **Focus**: Artificial Intelligence, Machine Learning, Deep Learning
+- **Language**: English (en-US)
+
+## Main Sections
+
+### 1. AI News (Homepage)
+- **URL**: /index.html
+- **Content**: Daily updates on models, policy, industry moves, and breaking AI developments
+- **Topics**: OpenAI, Anthropic, Google DeepMind, Meta AI, Model Releases, AI Policy
+
+### 2. Research Journal
+- **URL**: /research.html
+- **Content**: Deep-dive analysis of arXiv papers and academic research
+- **Topics**: Transformers, State Space Models (SSMs), Diffusion Models, RLHF, Multimodal AI
+
+### 3. AI Tools Directory
+- **URL**: /tools/index.html
+- **Content**: Curated directory of verified AI software and platforms
+- **Categories**: LLMs, Image Generation, Video Generation, Coding, Writing, Automation
+
+### 4. Opinion & Perspectives
+- **URL**: /opinion.html
+- **Content**: Expert commentary on AI alignment, ethics, economics, and societal impact
+- **Contributors**: Industry leaders, researchers, and policy experts
+
+### 5. Explainers & Guides
+- **URL**: /explainers.html
+- **Content**: Beginner-friendly explanations of complex AI concepts
+- **Topics**: What is a Transformer, How LLMs Work, Neural Network Basics
 
 ## Content Philosophy
 
-We prioritize technical accuracy and human-verified reporting.
+We prioritize:
+- Technical accuracy over speed
+- Human-verified reporting
+- Independent editorial standards
+- Transparency about AI use in our own workflows
+
+## Contact
+
+- **General**: hello@pickai.netlify.app
+- **Press**: press@pickai.netlify.app
+
+## Technical Details
+
+- **Framework**: Static HTML/CSS/JavaScript
+- **Hosting**: Netlify
+- **Structured Data**: JSON-LD (Organization, WebSite, Article, BreadcrumbList)
+- **Feeds**: RSS (/rss.xml), Sitemap (/sitemap.xml)
