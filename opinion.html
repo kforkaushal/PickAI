@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About PickAI — The Authority on Artificial Intelligence</title>
+    <title>Opinion & Perspectives — PickAI</title>
 
-    <!-- Design System / CSS -->
+    <!-- Global Design System -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Typography -->
@@ -25,23 +25,19 @@
 
 <body>
 
-    <!-- 1. Editorial Header -->
+    <!-- 1. Header -->
     <header class="site-header">
         <div class="container header-inner">
-            <div class="logo">
-                <a href="index.html">PickAI.</a>
-            </div>
-
+            <div class="logo"><a href="index.html">PickAI.</a></div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html#news">AI News</a></li>
                     <li><a href="tools/index.html">Tools</a></li>
                     <li><a href="research.html">Research</a></li>
-                    <li><a href="opinion.html">Opinion</a></li>
+                    <li><a href="opinion.html" class="active">Opinion</a></li>
                     <li><a href="explainers.html">Explainers</a></li>
                 </ul>
             </nav>
-
             <div class="header-actions">
                 <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -52,47 +48,42 @@
         </div>
     </header>
 
-    <!-- 2. Main Content Area (Article Layout) -->
-    <!-- 2. Main Content Area (Article Layout) -->
-    <main class="article-container">
+    <!-- 2. Main Content -->
+    <main class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" style="margin-top: 24px;">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Opinion</span>
+        </nav>
 
-        <header class="article-header">
-            <h1>About PickAI</h1>
-            <p class="summary" style="font-size: 1.25rem; color: var(--color-text-secondary);">
-                Charting the trajectory of comprehensive intelligence.
-            </p>
-        </header>
+        <section class="deep-dive-section" style="border-top:none; padding-top:0; padding-bottom: var(--space-3xl);">
 
-        <section class="article-body">
-            <hr style="border: 0; border-top: 1px solid var(--color-border); margin: 0 0 40px 0;">
+            <div class="section-header">
+                <h1 style="font-size: 3rem; margin-bottom: var(--space-sm);">Opinion & Perspectives</h1>
+            </div>
 
-            <h3>Our Mission</h3>
-            <p>
-                We are entering an era where intelligence is no longer scarce, but abundant. PickAI was founded on the
-                belief that this transition requires a new kind of journalism—one that is technically rigorous, fiercely
-                independent, and deeply human.
-            </p>
-            <p>
-                Our mission is to cut through the noise of the "AI Hype Cycle" to provide decision-makers, researchers,
-                and developers with the clarity they need. We track the models, the money, and the morals defining the
-                next century of human progress.
-            </p>
+            <!-- Section 1: Featured (Large) -->
+            <section style="margin-bottom: var(--space-3xl);">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Voices</h2>
+                </div>
+                <div id="opinion-featured">
+                    <!-- Injected via JS -->
+                </div>
+            </section>
 
-            <h3>What We Cover</h3>
-            <ul>
-                <li><strong>Model Architecture:</strong> Deep dives into the transformers, SSMS, and diffusion models
-                    changing the world.</li>
-                <li><strong>Policy & Regulation:</strong> Analysis of the EU AI Act, US Executive Orders, and global
-                    safety standards.</li>
-                <li><strong>Tools & Utility:</strong> A curated directory of the software actually worth your time.</li>
-            </ul>
-
-            <h3>The Editorial Board</h3>
-            <p>
-                PickAI is maintained by a collective of former ML engineers, tech journalists, and policy researchers.
-                We believe that to cover AI properly, you must understand the code behind the curtain.
-            </p>
-        </section>
+            <!-- Section 2: Latest (Grid) -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">Latest Perspectives</h2>
+                </div>
+                <!-- Reusing ID from app.js logic, but applying the full page grid layout -->
+                <div id="opinion-grid" class="news-grid-3">
+                    <div class="text-center meta-text" style="grid-column: 1 / -1; padding: var(--space-2xl);">Loading
+                        Opinions...</div>
+                </div>
+            </section>
 
     </main>
 
@@ -116,9 +107,9 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/search.js"></script>
+    <!-- Logic -->
     <script src="js/app.js"></script>
+    <script src="js/search.js"></script>
 
 </body>
 

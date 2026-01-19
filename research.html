@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us — PickAI</title>
+    <title>PickAI Research Journal</title>
 
-    <!-- Design System / CSS -->
+    <!-- Global Design System -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Typography -->
@@ -21,11 +21,30 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
         rel="stylesheet">
+
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pickai.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Research",
+        "item": "https://pickai.com/research.html"
+      }]
+    }
+    </script>
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- 1. Editorial Header -->
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo"><a href="index.html">PickAI.</a></div>
@@ -33,7 +52,7 @@
                 <ul>
                     <li><a href="index.html#news">AI News</a></li>
                     <li><a href="tools/index.html">Tools</a></li>
-                    <li><a href="research.html">Research</a></li>
+                    <li><a href="research.html" class="active">Research</a></li>
                     <li><a href="opinion.html">Opinion</a></li>
                     <li><a href="explainers.html">Explainers</a></li>
                 </ul>
@@ -48,38 +67,28 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="article-container">
-        <header class="article-header">
-            <h1>Contact Us</h1>
-            <p class="summary" style="font-size: 1.25rem; color: var(--color-text-secondary);">
-                Get in touch with the editorial team.
-            </p>
-        </header>
+    <!-- 2. Main Research Content -->
+    <main class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-3xl);">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" style="margin-top: 24px;">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Research</span>
+        </nav>
 
-        <section class="article-body">
-            <hr style="border: 0; border-top: 1px solid var(--color-border); margin: 0 0 40px 0;">
+        <div class="section-header">
+            <h1 style="font-size: 3rem; margin-bottom: var(--space-sm);">Research Journal</h1>
+        </div>
 
-            <h3>General Inquiries</h3>
-            <p>For general questions, feedback, or corrections, please email us at:<br>
-                <a href="mailto:hello@pickai.com"
-                    style="color: var(--color-text-primary); text-decoration: underline;">hello@pickai.com</a>
-            </p>
+        <div id="research-paper-list" class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-xl);">
+            <!-- Papers Injected via JS -->
+            <div class="text-center meta-text" style="grid-column: 1 / -1; padding: var(--space-2xl);">Loading
+                Repository...</div>
+        </div>
 
-            <h3>Press & Partnerships</h3>
-            <p>For media inquiries or partnership opportunities:<br>
-                <a href="mailto:press@pickai.com"
-                    style="color: var(--color-text-primary); text-decoration: underline;">press@pickai.com</a>
-            </p>
-
-            <h3>Signal / Tips</h3>
-            <p>Do you have a tip about a new model release or industry news? You can reach us securely via Signal at
-                <strong>@PickAI.99</strong>.
-            </p>
-        </section>
     </main>
 
-    <!-- Footer -->
+    <!-- 3. Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-brand">
@@ -88,20 +97,12 @@
                     &copy; 2026 PickAI Media. <br> All rights reserved.
                 </div>
             </div>
-            <div class="footer-links">
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="editorial-policy.html">Editorial Policy</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/search.js"></script>
+    <!-- Logic -->
     <script src="js/app.js"></script>
+
 </body>
 
 </html>

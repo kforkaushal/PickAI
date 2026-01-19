@@ -354,6 +354,9 @@ img {
     max-width: 100%;
     display: block;
     height: auto;
+    background-color: #f0f0f0;
+    /* Visual placeholder while loading */
+    transition: opacity 0.3s ease-in;
 }
 
 ul {
@@ -418,6 +421,38 @@ ul {
 
 .border-r {
     border-right: 1px solid var(--color-border);
+}
+
+/* 
+  3b. Breadcrumbs
+  =========================================
+*/
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-text-meta);
+    margin-bottom: var(--space-md);
+    font-family: var(--font-ui);
+}
+
+.breadcrumb a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    margin: 0 6px;
+    color: var(--color-border);
+}
+
+.breadcrumb .current {
+    color: var(--color-text-primary);
+    font-weight: 500;
 }
 
 /* 
@@ -769,6 +804,40 @@ ul {
 .footer-links a {
     font-size: 0.9rem;
     color: var(--color-text-secondary);
+}
+
+/* 
+  10. Back to Top Button
+  =========================================
+*/
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-text-primary);
+    color: var(--color-bg);
+    border: none;
+    padding: 10px 15px;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+    border-radius: 2px;
+    /* Editorial square look */
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-2px);
 }
 
 /* 

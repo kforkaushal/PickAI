@@ -80,29 +80,54 @@ function closeSearch() {
 }
 
 async function loadSearchData() {
-    // Determine path prefix based on current location
-    const isToolsPage = window.location.pathname.includes('/tools/');
-    const prefix = isToolsPage ? '../' : './'; // Simple heuristic, might need adjustment
+    // Determine path prefix based on current location depth
+    // Works for file://, localhost, and production paths
+    let prefix = './';
+    const path = window.location.pathname;
+
+    if (path.includes('/articles/news/')) {
+        prefix = '../../';
+    } else if (path.includes('/tools/') || path.includes('/articles/')) {
+        // Covers /tools/index.html and any future /articles/ subfolders if depth is 1
+        prefix = '../';
+    } else if (path.endsWith('.html') && !path.includes('/')) {
+        // Root files like about.html, contact.html
+        prefix = './';
+    }
+
+    // Attempt fetch with fallback
+    const fetchWithFallback = async (filename) => {
+        try {
+            const res = await fetch(`${prefix}data/${filename}`);
+            if (res.ok) return await res.json();
+        } catch (e) {
+            console.warn(`Failed to fetch ${filename} with prefix ${prefix}, trying root...`);
+        }
+        // Fallback: Try absolute path (if hosted) or just fail gracefully
+        try {
+            // If prefix failed, maybe we are at root and didn't know?
+            const res = await fetch(`data/${filename}`);
+            if (res.ok) return await res.json();
+        } catch (e2) {
+            console.error(`Currently unable to load ${filename}`);
+            return null;
+        }
+    };
 
     try {
-        // Fetch Tools
-        const toolsRes = await fetch(`${prefix}data/tools.json`);
-        if (toolsRes.ok) searchData.tools = await toolsRes.json();
+        const toolsJson = await fetchWithFallback('tools.json');
+        if (toolsJson) searchData.tools = toolsJson;
 
-        // Fetch News
-        const newsRes = await fetch(`${prefix}data/news.json`);
-        if (newsRes.ok) {
-            const newsJson = await newsRes.json();
-            // Flatten news structure
+        const newsJson = await fetchWithFallback('news.json');
+        if (newsJson) {
             searchData.news = [
                 ...(newsJson.latest_updates || []),
                 ...(newsJson.analysis_grid || [])
             ];
-            // Add hero if exists
             if (newsJson.hero) searchData.news.push(newsJson.hero);
         }
     } catch (e) {
-        console.error("Search data fetch error:", e);
+        console.error("Critical error loading search data:", e);
     }
 }
 

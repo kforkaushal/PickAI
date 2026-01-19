@@ -12,11 +12,17 @@
     <!-- Typography: Playfair Display (Serif), Inter (Sans), Fira Code (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://picsum.photos">
+    <link rel="preconnect" href="https://img.logo.dev">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
         rel="stylesheet">
 
     <!-- Meta -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
     <meta name="description"
         content="PickAI is your authority for deep-dive AI news, research analysis, and neutral tech updates.">
     <meta name="keywords" content="AI News, Artificial Intelligence, Machine Learning, DeepMind, OpenAI, Tech Analysis">
@@ -64,9 +70,9 @@
                 <ul>
                     <li><a href="#news">AI News</a></li>
                     <li><a href="tools/index.html">Tools</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#opinion">Opinion</a></li>
-                    <li><a href="#explainers">Explainers</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="opinion.html">Opinion</a></li>
+                    <li><a href="explainers.html">Explainers</a></li>
                 </ul>
             </nav>
 
@@ -160,6 +166,29 @@
             </div>
         </section>
 
+        <!-- 4. Opinion Grid Section -->
+        <section class="secondary-news" id="opinion"
+            style="background-color: #fafafa; padding-top: 40px; padding-bottom: 40px;">
+            <div class="section-header">
+                <h2 class="section-title">Opinion & Perspectives</h2>
+            </div>
+            <div class="news-grid-3" id="opinion-grid">
+                <!-- Items injected via JS -->
+                <div style="text-align:center; grid-column: 1 / -1; color: #666;">Loading Opinions...</div>
+            </div>
+        </section>
+
+        <!-- 5. Explainers Grid Section -->
+        <section class="secondary-news" id="explainers" style="padding-top: 40px; padding-bottom: 40px;">
+            <div class="section-header">
+                <h2 class="section-title">Explainers & Guides</h2>
+            </div>
+            <div class="news-grid-3" id="explainers-grid">
+                <!-- Items injected via JS -->
+                <div style="text-align:center; grid-column: 1 / -1; color: #666;">Loading Explainers...</div>
+            </div>
+        </section>
+
         <!-- 4. Deep Dive Section -->
         <section class="deep-dive-section">
             <div class="container">
@@ -170,14 +199,17 @@
                 <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
                     <article class="analysis-card">
                         <span class="category">Long Read</span>
-                        <h2><a href="#">The Alignment Problem in 2026: Progress or Stagnation?</a></h2>
+                        <h2><a href="articles/news/alignment-problem-2026.html">The Alignment Problem in 2026: Progress
+                                or
+                                Stagnation?</a></h2>
                         <p class="summary" style="margin-top: 10px;">A comprehensive look at the current state of inner
                             alignment research across top labs.</p>
                         <div class="meta-text" style="margin-top: 15px;">Read Analysis &rarr;</div>
                     </article>
                     <article class="analysis-card">
                         <span class="category">Opinion</span>
-                        <h2><a href="#">Why Agentic Workflows are Overhyped for Consumers</a></h2>
+                        <h2><a href="articles/news/agentic-consumer-hype.html">Why Agentic Workflows are Overhyped for
+                                Consumers</a></h2>
                         <p class="summary" style="margin-top: 10px;">While enterprise use cases soar, the consumer "AI
                             Agent" remains elusive. Here is why.</p>
                         <div class="meta-text" style="margin-top: 15px;">Read Analysis &rarr;</div>
@@ -207,6 +239,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">&uarr; Top</button>
 
     <!-- Global Search -->
     <script src="js/search.js"></script>
