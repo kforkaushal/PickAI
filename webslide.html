@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics 4 + Consent Mode -->
+    <script src="js/analytics-setup.js"></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Slide — AI News Stories | PickAI</title>
+
+    <!-- Design System / CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://img.logo.dev">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="canonical" href="https://pickai.netlify.app/webslide.html">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Experience AI news like never before. Swipe through stories featuring the latest AI developments, trending tools, and breaking headlines.">
+    <meta name="keywords" content="AI News Stories, AI Stories, Swipe AI News, Visual AI News, AI Updates">
+    <meta name="author" content="PickAI Editorial Board">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Web Slide — AI News Stories">
+    <meta property="og:description" content="Swipe through AI news stories. Visual, immersive, instant.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pickai.netlify.app/webslide.html">
+    <meta property="og:image" content="https://pickai.netlify.app/assets/og-webslide.jpg">
+    <meta property="og:site_name" content="PickAI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@PickAI">
+    <meta name="twitter:title" content="Web Slide — AI News Stories">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pickai.netlify.app/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Web Slide",
+        "item": "https://pickai.netlify.app/webslide.html"
+      }]
+    }
+    </script>
+
+    <style>
+        /* Stories Section */
+        .stories-section {
+            background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+            padding: var(--space-2xl) 0;
+        }
+
+        .stories-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+
+        .stories-header h2 {
+            font-family: var(--font-serif);
+            color: #fff;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .fullscreen-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .fullscreen-btn:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        /* Stories Container */
+        .stories-container {
+            display: flex;
+            gap: var(--space-md);
+            overflow-x: auto;
+            padding-bottom: var(--space-md);
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .stories-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .stories-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .stories-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        .story-card {
+            flex: 0 0 280px;
+            height: 420px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            scroll-snap-align: start;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .story-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+        }
+
+        .story-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.2) 0%,
+                    rgba(0, 0, 0, 0.1) 40%,
+                    rgba(0, 0, 0, 0.8) 100%);
+        }
+
+        .story-card .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .story-card .category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+            color: #fff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .story-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            line-height: 1.3;
+            margin: 0;
+            color: #fff;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 1), 0 1px 4px rgba(0, 0, 0, 0.9);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Progress Ring */
+        .story-card .progress-ring {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .story-card .progress-ring circle {
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .story-card .progress-ring .bg {
+            stroke: rgba(255, 255, 255, 0.3);
+        }
+
+        .story-card .progress-ring .progress {
+            stroke: #fff;
+            stroke-dasharray: 88;
+            stroke-dashoffset: 88;
+            transform: rotate(-90deg);
+            transform-origin: center;
+        }
+
+        .story-card:hover .progress-ring .progress {
+            animation: progressRing 5s linear forwards;
+        }
+
+        @keyframes progressRing {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Fullscreen Modal */
+        .fullscreen-modal {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+        }
+
+        .fullscreen-modal.active {
+            display: flex;
+        }
+
+        .fullscreen-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .fullscreen-header .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        .fullscreen-header .brand .logo {
+            width: 32px;
+            height: 32px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.8rem;
+            color: #000;
+        }
+
+        .fullscreen-header .controls {
+            display: flex;
+            gap: 12px;
+        }
+
+        .fullscreen-header button {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+
+        .fullscreen-header button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .fullscreen-progress {
+            display: flex;
+            gap: 4px;
+            padding: 0 20px;
+        }
+
+        .fullscreen-progress .bar {
+            flex: 1;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .fullscreen-progress .bar .fill {
+            height: 100%;
+            width: 0%;
+            background: #fff;
+        }
+
+        .fullscreen-progress .bar.completed .fill {
+            width: 100%;
+        }
+
+        .fullscreen-progress .bar.active .fill {
+            animation: progressFill 5s linear forwards;
+        }
+
+        @keyframes progressFill {
+            to {
+                width: 100%;
+            }
+        }
+
+        .fullscreen-slides {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fullscreen-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+        }
+
+        .fullscreen-slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .fullscreen-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .fullscreen-slide .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.3) 0%,
+                    rgba(0, 0, 0, 0.1) 30%,
+                    rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        .fullscreen-slide .content {
+            position: absolute;
+            bottom: 60px;
+            left: 40px;
+            right: 40px;
+            color: #fff;
+        }
+
+        .fullscreen-slide .category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .fullscreen-slide h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin: 0 0 16px 0;
+            color: #fff;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.9);
+            max-width: 700px;
+        }
+
+        .fullscreen-slide p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+            max-width: 600px;
+            margin: 0 0 20px 0;
+        }
+
+        .fullscreen-slide .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .fullscreen-slide .cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-zone {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 25%;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .nav-zone.prev {
+            left: 0;
+        }
+
+        .nav-zone.next {
+            right: 0;
+        }
+
+        /* Grid Sections */
+        /* ===== REDESIGNED GRID SECTIONS ===== */
+        .webslide-grid-section {
+            padding: var(--space-2xl) 0;
+            border-radius: 24px;
+        }
+
+        .webslide-grid-section .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-md);
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .webslide-grid-section .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .webslide-grid-section .view-all {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .webslide-grid-section .view-all:hover {
+            background: var(--color-text-primary);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Trending Tools Grid - Horizontal Scroll on Mobile */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: var(--space-md);
+        }
+
+        .tool-card-compact {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: var(--space-lg);
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card-compact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.02), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tool-card-compact:hover {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+            transform: translateY(-6px);
+            border-color: transparent;
+        }
+
+        .tool-card-compact:hover::before {
+            opacity: 1;
+        }
+
+        .tool-card-compact img {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            margin-bottom: var(--space-md);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .tool-card-compact:hover img {
+            transform: scale(1.08);
+        }
+
+        .tool-card-compact h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 0 0 6px 0;
+        }
+
+        .tool-card-compact span {
+            font-size: 0.75rem;
+            color: var(--color-text-meta);
+            background: var(--color-highlight);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        /* Latest Articles Grid - Magazine Style */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .article-card-mini {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card-mini:hover {
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .article-card-mini .img-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card-mini img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .article-card-mini:hover img {
+            transform: scale(1.06);
+        }
+
+        .article-card-mini .content {
+            padding: var(--space-md) var(--space-lg);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card-mini .category {
+            font-size: 0.65rem;
+            color: #fff;
+            background: var(--color-text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: var(--space-sm);
+        }
+
+        .article-card-mini h4 {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            margin: 0;
+            line-height: 1.4;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .article-card-mini h4 a {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-card-mini h4 a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Enhanced responsiveness */
+        @media (max-width: 1200px) {
+            .tools-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .fullscreen-slide h2 {
+                font-size: 2rem;
+            }
+
+            .stories-header {
+                flex-direction: column;
+                gap: var(--space-md);
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stories-section {
+                padding: var(--space-lg) 0;
+            }
+
+            .story-card {
+                flex: 0 0 180px;
+                height: 280px;
+            }
+
+            .story-card h3 {
+                font-size: 0.95rem;
+            }
+
+            .story-card .category {
+                font-size: 0.6rem;
+                padding: 3px 8px;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-md);
+            }
+
+            .tool-card-compact {
+                padding: var(--space-md);
+            }
+
+            .tool-card-compact img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .tool-card-compact h4 {
+                font-size: 0.9rem;
+            }
+
+            .fullscreen-slide .content {
+                left: 16px;
+                right: 16px;
+                bottom: 30px;
+            }
+
+            .fullscreen-slide h2 {
+                font-size: 1.4rem;
+                line-height: 1.3;
+            }
+
+            .fullscreen-slide p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            .fullscreen-slide .cta {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+            }
+
+            .webslide-grid-section {
+                padding: var(--space-lg) 0;
+            }
+
+            .webslide-grid-section .section-header h2 {
+                font-size: 1.25rem;
+            }
+
+            .article-card-mini img {
+                height: 120px;
+            }
+
+            .article-card-mini h4 {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .story-card {
+                flex: 0 0 160px;
+                height: 240px;
+            }
+
+            .story-card h3 {
+                font-size: 0.85rem;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-sm);
+            }
+
+            .tool-card-compact {
+                padding: var(--space-sm);
+            }
+
+            .tool-card-compact img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .tool-card-compact h4 {
+                font-size: 0.85rem;
+            }
+
+            .tool-card-compact span {
+                font-size: 0.7rem;
+            }
+
+            .fullscreen-slide h2 {
+                font-size: 1.2rem;
+            }
+
+            .fullscreen-slide p {
+                font-size: 0.85rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .fullscreen-header {
+                padding: 12px 16px;
+            }
+
+            .fullscreen-header button {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <!-- OneSignal SDK -->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function (OneSignal) {
+            await OneSignal.init({
+                appId: "6d099781-0ba2-48ac-aa7f-a272cde07e32",
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo"><a href="index.html">PickAI.</a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="tools/index.html">Tools</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="opinion.html">Opinion</a></li>
+                    <li><a href="explainers.html">Explainers</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stories Section -->
+    <section class="stories-section">
+        <div class="container">
+            <div class="stories-header">
+                <h2>Today's Stories</h2>
+                <button class="fullscreen-btn" id="open-fullscreen">
+                    View Fullscreen
+                </button>
+            </div>
+            <div class="stories-container" id="stories-container">
+                <!-- Story cards injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Tools Grid -->
+    <section class="webslide-grid-section container">
+        <div class="section-header">
+            <h2>Trending AI Tools</h2>
+            <a href="tools/index.html" class="view-all">View all tools →</a>
+        </div>
+        <div class="tools-grid" id="tools-grid">
+            <!-- Tools injected via JS -->
+        </div>
+    </section>
+
+    <!-- Latest Articles Grid -->
+    <section class="webslide-grid-section container"
+        style="background: var(--color-highlight); margin: 0 auto; padding: var(--space-2xl);">
+        <div class="section-header">
+            <h2>Latest Articles</h2>
+            <a href="index.html#news" class="view-all">View all articles →</a>
+        </div>
+        <div class="articles-grid" id="articles-grid">
+            <!-- Articles injected via JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                PickAI.
+                <div class="meta-text" style="font-weight: normal; margin-top: 10px; font-size: 0.8rem;">
+                    &copy; 2026 PickAI Media.
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="editorial-policy.html">Editorial Policy</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fullscreen Modal -->
+    <div class="fullscreen-modal" id="fullscreen-modal">
+        <div class="fullscreen-header">
+            <div class="brand">
+                <div class="logo">P</div>
+                <span>PickAI Stories</span>
+            </div>
+            <div class="controls">
+                <button id="pause-btn" title="Pause">II</button>
+                <button id="close-fullscreen" title="Close">✕</button>
+            </div>
+        </div>
+        <div class="fullscreen-progress" id="fullscreen-progress">
+            <!-- Progress bars injected via JS -->
+        </div>
+        <div class="fullscreen-slides" id="fullscreen-slides">
+            <!-- Slides injected via JS -->
+            <div class="nav-zone prev" id="nav-prev"></div>
+            <div class="nav-zone next" id="nav-next"></div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">&uarr; Top</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            let stories = [];
+            let currentSlide = 0;
+            let autoAdvanceTimer = null;
+            let isPaused = false;
+            const SLIDE_DURATION = 5000;
+
+            // DOM Elements
+            const storiesContainer = document.getElementById('stories-container');
+            const toolsGrid = document.getElementById('tools-grid');
+            const articlesGrid = document.getElementById('articles-grid');
+            const fullscreenModal = document.getElementById('fullscreen-modal');
+            const fullscreenSlides = document.getElementById('fullscreen-slides');
+            const fullscreenProgress = document.getElementById('fullscreen-progress');
+
+            // Fetch data
+            try {
+                const [newsRes, toolsRes] = await Promise.all([
+                    fetch('data/news.json'),
+                    fetch('data/tools.json')
+                ]);
+
+                const news = await newsRes.json();
+                const tools = await toolsRes.json();
+
+                // Build stories from news
+                stories = [
+                    ...news.hero_slides.map(item => ({
+                        title: item.title,
+                        description: item.summary,
+                        image: item.image_url,
+                        link: item.link,
+                        category: item.date || 'Featured'
+                    })),
+                    ...news.analysis_grid.slice(0, 4).map(item => ({
+                        title: item.title,
+                        description: item.summary,
+                        image: item.image_url || `https://picsum.photos/seed/${encodeURIComponent(item.title)}/800/1200`,
+                        link: item.link,
+                        category: item.category || 'Analysis'
+                    }))
+                ];
+
+                // Render story cards
+                storiesContainer.innerHTML = stories.map((story, i) => `
+                    <div class="story-card" data-index="${i}">
+                        <img src="${story.image}" alt="${story.title}" loading="lazy">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <span class="category">${story.category}</span>
+                            <h3>${story.title}</h3>
+                        </div>
+                        <svg class="progress-ring" viewBox="0 0 32 32">
+                            <circle class="bg" cx="16" cy="16" r="14"/>
+                            <circle class="progress" cx="16" cy="16" r="14"/>
+                        </svg>
+                    </div>
+                `).join('');
+
+                // Render trending tools
+                const trendingTools = tools.filter(t => t.is_trending).slice(0, 6);
+                toolsGrid.innerHTML = trendingTools.map(tool => `
+                    <a href="tools/redirect.html?url=${encodeURIComponent(tool.url)}&name=${encodeURIComponent(tool.name)}" class="tool-card-compact" target="_blank">
+                        <img src="https://img.logo.dev/${tool.logo_domain}?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="${tool.name}">
+                        <h4>${tool.name}</h4>
+                        <span>${tool.category_display}</span>
+                    </a>
+                `).join('');
+
+                // Render articles
+                const articles = news.analysis_grid.slice(0, 6);
+                articlesGrid.innerHTML = articles.map(article => `
+                    <article class="article-card-mini">
+                        <img src="${article.image_url || 'https://picsum.photos/seed/' + encodeURIComponent(article.title) + '/400/200'}" alt="${article.title}" loading="lazy">
+                        <div class="content">
+                            <span class="category">${article.category || 'Analysis'}</span>
+                            <h4><a href="${article.link}">${article.title}</a></h4>
+                        </div>
+                    </article>
+                `).join('');
+
+                // Setup fullscreen
+                setupFullscreen();
+
+            } catch (e) {
+                console.error('Error loading data:', e);
+            }
+
+            function setupFullscreen() {
+                // Build fullscreen slides
+                fullscreenProgress.innerHTML = stories.map((_, i) => `
+                    <div class="bar ${i === 0 ? 'active' : ''}" data-index="${i}">
+                        <div class="fill"></div>
+                    </div>
+                `).join('');
+
+                const slidesHTML = stories.map((story, i) => `
+                    <div class="fullscreen-slide ${i === 0 ? 'active' : ''}" data-index="${i}">
+                        <img src="${story.image}" alt="${story.title}">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <span class="category">${story.category}</span>
+                            <h2>${story.title}</h2>
+                            <p>${story.description}</p>
+                            <a href="${story.link}" class="cta">Read Full Story →</a>
+                        </div>
+                    </div>
+                `).join('');
+
+                fullscreenSlides.insertAdjacentHTML('afterbegin', slidesHTML);
+
+                // Story card click -> open fullscreen
+                document.querySelectorAll('.story-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        currentSlide = parseInt(card.dataset.index);
+                        openFullscreen();
+                    });
+                });
+
+                // Fullscreen button
+                document.getElementById('open-fullscreen').addEventListener('click', () => {
+                    currentSlide = 0;
+                    openFullscreen();
+                });
+
+                // Close fullscreen
+                document.getElementById('close-fullscreen').addEventListener('click', closeFullscreen);
+
+                // Pause button
+                document.getElementById('pause-btn').addEventListener('click', togglePause);
+
+                // Navigation zones
+                document.getElementById('nav-prev').addEventListener('click', prevSlide);
+                document.getElementById('nav-next').addEventListener('click', nextSlide);
+
+                // Keyboard
+                document.addEventListener('keydown', (e) => {
+                    if (!fullscreenModal.classList.contains('active')) return;
+
+                    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+                    else if (e.key === 'ArrowLeft') prevSlide();
+                    else if (e.key === 'Escape') closeFullscreen();
+                });
+            }
+
+            function openFullscreen() {
+                fullscreenModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                goToSlide(currentSlide);
+                startAutoAdvance();
+            }
+
+            function closeFullscreen() {
+                fullscreenModal.classList.remove('active');
+                document.body.style.overflow = '';
+                stopAutoAdvance();
+            }
+
+            function goToSlide(index) {
+                if (index < 0) index = 0;
+                if (index >= stories.length) {
+                    closeFullscreen();
+                    return;
+                }
+
+                currentSlide = index;
+
+                document.querySelectorAll('.fullscreen-slide').forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+
+                document.querySelectorAll('.fullscreen-progress .bar').forEach((bar, i) => {
+                    bar.classList.remove('active', 'completed');
+                    if (i < index) bar.classList.add('completed');
+                    else if (i === index) bar.classList.add('active');
+                });
+
+                if (!isPaused) startAutoAdvance();
+            }
+
+            function nextSlide() { goToSlide(currentSlide + 1); }
+            function prevSlide() { goToSlide(currentSlide - 1); }
+
+            function startAutoAdvance() {
+                stopAutoAdvance();
+                if (!isPaused) {
+                    autoAdvanceTimer = setTimeout(nextSlide, SLIDE_DURATION);
+                }
+            }
+
+            function stopAutoAdvance() {
+                if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
+            }
+
+            function togglePause() {
+                isPaused = !isPaused;
+                const btn = document.getElementById('pause-btn');
+                btn.textContent = isPaused ? '>' : 'II';
+
+                if (isPaused) {
+                    stopAutoAdvance();
+                    document.querySelectorAll('.fullscreen-progress .bar.active .fill').forEach(f => {
+                        f.style.animationPlayState = 'paused';
+                    });
+                } else {
+                    document.querySelectorAll('.fullscreen-progress .bar.active .fill').forEach(f => {
+                        f.style.animationPlayState = 'running';
+                    });
+                    startAutoAdvance();
+                }
+            }
+
+            // Back to Top
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+                });
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+
+    <!-- Consent Banner -->
+    <script src="js/consent.js" defer></script>
+    <script src="js/search.js"></script>
+</body>
+
+</html>
