@@ -1,0 +1,19 @@
+[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  conditions = {Path = "/articles/*"} # Logic: This is tricky on static site. 
+  # Actually simpler:
+  
+[[redirects]]
+  from = "/articles/news/*"
+  to = "/articles/news/index.html" 
+  status = 200
+
+# Fallback for SPA-like behavior if they try to access non-existent HTML directly?
+# No, let's just make sure folders redirect to their index.
