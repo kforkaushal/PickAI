@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://pickai.netlify.app/</loc>
-        <lastmod>2026-01-19</lastmod>
+        <lastmod>2026-01-20</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
@@ -164,5 +164,25 @@
         <loc>https://pickai.netlify.app/articles/news/tsmc-packaging-tech.html</loc>
         <lastmod>2026-01-19</lastmod>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pickai.netlify.app/articles/news/davos-ai-or-die-2026.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pickai.netlify.app/articles/news/ceo-confidence-ai-roi-2026.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pickai.netlify.app/articles/news/agentic-ai-2026.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pickai.netlify.app/articles/news/deepseek-v4-coding.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <priority>0.8</priority>
     </url>
 </urlset>

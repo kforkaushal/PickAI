@@ -74,10 +74,13 @@
     <main class="container"
         style="min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center;">
         <div class="content-404" style="max-width: 600px; padding: var(--space-2xl) 0;">
-            <span class="category" style="margin-bottom: var(--space-md); display: block;">Error 404</span>
-            <h1 style="font-size: 4rem; margin-bottom: var(--space-md);">Page Not Found</h1>
+            <span class="category"
+                style="margin-bottom: var(--space-md); display: block; color: var(--color-accent);">System Error
+                404</span>
+            <h1 style="font-size: 3rem; margin-bottom: var(--space-md); line-height: 1.1;">Context Window Exceeded</h1>
             <p style="font-size: 1.2rem; color: var(--color-text-secondary); margin-bottom: var(--space-xl);">
-                The intelligence you are looking for has been moved, deleted, or never existed.
+                The intelligence you are looking for has hallucinated and cannot be found. It might have been deleted,
+                moved, or never existed in standard training data.
             </p>
 
             <a href="index.html" style="
@@ -100,7 +103,7 @@
             <div class="footer-brand">
                 PickAI.
                 <div class="meta-text" style="font-weight: normal; margin-top: 10px; font-size: 0.8rem;">
-                    &copy; 2026 PickAI Media. <br> All rights reserved.
+                    &copy; 2026 PickAI Editorial. <br> All rights reserved.
                 </div>
             </div>
             <div class="footer-links">
@@ -114,11 +117,10 @@
         </div>
     </footer>
 
-    <!-- Global Search -->
+    <!-- Scripts -->
     <script src="js/search.js"></script>
-
-    <!-- Consent Banner -->
     <script src="js/consent.js" defer></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

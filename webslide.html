@@ -47,6 +47,9 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
+    <!-- Preload Critical Data -->
+    <link rel="preload" href="data/news.json" as="fetch" crossorigin="anonymous">
+
     <!-- JSON-LD BreadcrumbList -->
     <script type="application/ld+json">
     {
@@ -249,19 +252,26 @@
             background: #000;
             z-index: 9999;
             display: none;
-            flex-direction: column;
+            /* Changed from flex-col to block for absolute positioning context */
+            display: none;
         }
 
         .fullscreen-modal.active {
-            display: flex;
+            display: block;
         }
 
         .fullscreen-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 16px 20px;
-            background: rgba(0, 0, 0, 0.8);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+            z-index: 40;
+            /* Higher than slide content */
         }
 
         .fullscreen-header .brand {
@@ -269,6 +279,7 @@
             align-items: center;
             gap: 10px;
             color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .fullscreen-header .brand .logo {
@@ -290,25 +301,36 @@
         }
 
         .fullscreen-header button {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: #fff;
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             cursor: pointer;
             font-size: 1.1rem;
-            transition: background 0.2s;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .fullscreen-header button:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
         }
 
         .fullscreen-progress {
+            position: absolute;
+            top: 70px;
+            /* Below header */
+            left: 0;
+            width: 100%;
             display: flex;
             gap: 4px;
             padding: 0 20px;
+            z-index: 40;
         }
 
         .fullscreen-progress .bar {
@@ -317,12 +339,14 @@
             background: rgba(255, 255, 255, 0.3);
             border-radius: 2px;
             overflow: hidden;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .fullscreen-progress .bar .fill {
             height: 100%;
             width: 0%;
             background: #fff;
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
         }
 
         .fullscreen-progress .bar.completed .fill {
@@ -340,7 +364,8 @@
         }
 
         .fullscreen-slides {
-            flex: 1;
+            width: 100%;
+            height: 100%;
             position: relative;
             overflow: hidden;
         }
@@ -375,10 +400,18 @@
 
         .fullscreen-slide .content {
             position: absolute;
-            bottom: 60px;
-            left: 40px;
-            right: 40px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
             color: #fff;
+            z-index: 15;
         }
 
         .fullscreen-slide .category {
@@ -387,47 +420,49 @@
             backdrop-filter: blur(10px);
             padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 12px;
+            margin-bottom: 24px;
             color: #fff;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .fullscreen-slide h2 {
             font-family: var(--font-serif);
-            font-size: 2.5rem;
+            font-size: 3rem;
             line-height: 1.2;
-            margin: 0 0 16px 0;
+            margin: 0 0 24px 0;
             color: #fff;
             text-shadow: 0 4px 24px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.9);
-            max-width: 700px;
+            max-width: 800px;
         }
 
         .fullscreen-slide p {
-            font-size: 1.1rem;
-            line-height: 1.5;
+            font-size: 1.25rem;
+            line-height: 1.6;
             color: rgba(255, 255, 255, 0.95);
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
-            max-width: 600px;
-            margin: 0 0 20px 0;
+            max-width: 700px;
+            margin: 0 0 40px 0;
         }
 
         .fullscreen-slide .cta {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
+            gap: 12px;
+            padding: 16px 40px;
             background: #fff;
             color: #000;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 50px;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .fullscreen-slide .cta:hover {
@@ -440,7 +475,7 @@
             top: 0;
             bottom: 0;
             width: 25%;
-            z-index: 10;
+            z-index: 30;
             cursor: pointer;
         }
 
@@ -928,6 +963,15 @@
     <button id="back-to-top" class="back-to-top" aria-label="Back to Top">&uarr; Top</button>
 
     <script>
+        // Start fetching immediately
+        const allDataPromise = Promise.all([
+            fetch('data/news.json').then(res => res.json()),
+            fetch('data/tools.json').then(res => res.json())
+        ]).catch(err => {
+            console.error('Error fetching data:', err);
+            return [null, null];
+        });
+
         document.addEventListener('DOMContentLoaded', async () => {
             let stories = [];
             let currentSlide = 0;
@@ -945,15 +989,12 @@
 
             // Fetch data
             try {
-                const [newsRes, toolsRes] = await Promise.all([
-                    fetch('data/news.json'),
-                    fetch('data/tools.json')
-                ]);
+                const [news, tools] = await allDataPromise;
+                if (!news || !tools) throw new Error('Data load failed');
 
-                const news = await newsRes.json();
-                const tools = await toolsRes.json();
+                // Build stories from news (deduplicated)
+                const heroLinks = new Set(news.hero_slides.map(item => item.link));
 
-                // Build stories from news
                 stories = [
                     ...news.hero_slides.map(item => ({
                         title: item.title,
@@ -962,13 +1003,16 @@
                         link: item.link,
                         category: item.date || 'Featured'
                     })),
-                    ...news.analysis_grid.slice(0, 4).map(item => ({
-                        title: item.title,
-                        description: item.summary,
-                        image: item.image_url || `https://picsum.photos/seed/${encodeURIComponent(item.title)}/800/1200`,
-                        link: item.link,
-                        category: item.category || 'Analysis'
-                    }))
+                    ...news.analysis_grid
+                        .filter(item => !heroLinks.has(item.link)) // Exclude if already in hero
+                        .slice(0, 4)
+                        .map(item => ({
+                            title: item.title,
+                            description: item.summary,
+                            image: item.image_url || `https://picsum.photos/seed/${encodeURIComponent(item.title)}/800/1200`,
+                            link: item.link,
+                            category: item.category || 'Analysis'
+                        }))
                 ];
 
                 // Render story cards
@@ -1032,7 +1076,7 @@
                             <span class="category">${story.category}</span>
                             <h2>${story.title}</h2>
                             <p>${story.description}</p>
-                            <a href="${story.link}" class="cta">Read Full Story →</a>
+                            <a href="${story.link}" class="cta">Read Full Story</a>
                         </div>
                     </div>
                 `).join('');

@@ -1,7 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-    fetchData();
+// Start fetching immediately (Optimistic UI)
+const newsDataPromise = fetchNewsData();
+
+document.addEventListener('DOMContentLoaded', async () => {
+    // Pass the promise to the initialization logic
+    await initApp(newsDataPromise);
     initBackToTop();
 });
+
+async function fetchNewsData() {
+    try {
+        let prefix = './';
+        if (window.location.pathname.includes('/articles/news/')) {
+            prefix = '../../';
+        } else if (window.location.pathname.includes('/tools/')) {
+            prefix = '../';
+        }
+        const response = await fetch(`${prefix}data/news.json`);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching news data:', error);
+        return null;
+    }
+}
+
+async function initApp(dataPromise) {
+    const data = await dataPromise;
+    if (!data) return;
+
+    // 1. Populate Hero Section (Slideshow)
+    if (data.hero_slides && data.hero_slides.length > 0) {
+        initHeroSlideshow(data.hero_slides);
+    } else if (data.hero) {
+        populateHero(data.hero);
+    }
+
+    populateLatestUpdates(data.latest_updates);
+    populateAnalysisGrid(data.analysis_grid);
+    populateOpinionGrid(data.opinion_grid);
+    populateExplainersGrid(data.explainers_grid);
+    populateResearchPapers(data.research_papers);
+}
 
 function initBackToTop() {
     const backToTopBtn = document.getElementById('back-to-top');
@@ -23,40 +62,7 @@ function initBackToTop() {
     });
 }
 
-async function fetchData() {
-    try {
-        // Determine path prefix based on depth
-        let prefix = './';
-        if (window.location.pathname.includes('/articles/news/')) {
-            prefix = '../../';
-        } else if (window.location.pathname.includes('/tools/')) {
-            prefix = '../';
-        }
 
-        const response = await fetch(`${prefix}data/news.json`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-
-        // 1. Populate Hero Section (Slideshow)
-        if (data.hero_slides && data.hero_slides.length > 0) {
-            initHeroSlideshow(data.hero_slides);
-        } else if (data.hero) {
-            // Fallback or static hero logic if needed
-            populateHero(data.hero);
-        }
-
-        populateLatestUpdates(data.latest_updates);
-        populateAnalysisGrid(data.analysis_grid);
-        populateOpinionGrid(data.opinion_grid);
-        populateExplainersGrid(data.explainers_grid);
-        populateResearchPapers(data.research_papers);
-
-    } catch (error) {
-        console.error('Error fetching news data:', error);
-    }
-}
 
 function populateResearchPapers(papers) {
     const listContainer = document.getElementById('research-paper-list');

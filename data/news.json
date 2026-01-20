@@ -2,73 +2,94 @@
     "hero_slides": [
         {
             "id": 1,
-            "title": "The Architecture of Transformer Replacements",
-            "summary": "State-space models (SSMs) like Mamba are challenging the Transformer's dominance in long-context tasks, offering linear scaling for infinite streams.",
-            "author": "Research Team",
-            "date": "Deep Dive",
-            "link": "articles/news/transformer-replacements.html",
-            "image_url": "https://picsum.photos/seed/hero1/1200/675"
+            "title": "DeepSeek V4: Coding Model Breakthrough",
+            "summary": "Chinese startup's new model specializes in extremely long prompts, outperforming Western giants in internal tests.",
+            "author": "Tech Analysis",
+            "date": "Breaking News",
+            "link": "articles/news/deepseek-v4-coding.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/e_improve,e_sharpen/v1768917638/Untitled-design-93_o2msdr.jpg"
         },
         {
             "id": 2,
-            "title": "The Rise of Agentic Workflows in Enterprise",
-            "summary": "Why 2026 is becoming the year of the 'autonomous employee' and which sectors are adopting agents fastest.",
-            "author": "Tech Analysis",
-            "date": "Today's Briefing",
-            "link": "articles/news/agentic-workflows.html",
-            "image_url": "https://picsum.photos/seed/hero2/1200/675"
+            "title": "\"AI or Die\" — The Davos 2026 Warning",
+            "summary": "SandboxAQ CEO Jack Hidary delivers a stark message to world leaders: embracing AI is no longer optional—it's survival.",
+            "author": "PickAI Editorial",
+            "date": "Top Story",
+            "link": "articles/news/davos-ai-or-die-2026.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768917841/f5e31b28-884c-4474-b2b0-7b8eaad586f5-Yf46yZ_ilyfpd.avif"
         },
         {
             "id": 3,
-            "title": "Hardware Bottlenecks: Beyond the H100 Shortage",
-            "summary": "New memory architectures are needed to support the next generation of trillion-parameter models.",
-            "author": "Hardware Team",
-            "date": "Just In",
-            "link": "articles/news/hardware-bottlenecks.html",
-            "image_url": "https://picsum.photos/seed/hero3/1200/675"
+            "title": "The Rise of Agentic Workflows",
+            "summary": "2026 is the year of the 'autonomous employee'. We analyze why agentic workflows are taking over sectors from finance to supply chain.",
+            "author": "Trend Analysis",
+            "date": "Feature",
+            "link": "articles/news/agentic-ai-2026.html",
+            "image_url": "https://www.uniconvergetech.in/blog/wp-content/uploads/2024/07/Untitled-design-22.jpg"
         }
     ],
     "hero": {
-        "title": "Generating Intelligence: The Next Frontier in Reasoning Models",
-        "summary": "As major labs shift focus from raw scale to inference-time compute, we analyze what this means for the future of commercial AI deployment and safety standards.",
+        "title": "\"AI or Die\" — The Davos 2026 Warning",
+        "summary": "At the World Economic Forum, leaders are told that AI adoption is now a matter of survival. We break down what this means for global markets.",
         "author": "Editorial Board",
-        "date": "Today's Briefing",
-        "link": "article.html"
+        "date": "Breaking News",
+        "link": "articles/news/davos-ai-or-die-2026.html"
     },
     "latest_updates": [
         {
             "time": "14:20 GMT",
+            "title": "DeepSeek announces V4 coding model reaching 256k context.",
+            "link": "articles/news/deepseek-v4-coding.html"
+        },
+        {
+            "time": "12:05 GMT",
+            "title": "PwC Survey: 56% of CEOs report low AI ROI so far.",
+            "link": "articles/news/ceo-confidence-ai-roi-2026.html"
+        },
+        {
+            "time": "10:45 GMT",
+            "title": "SandboxAQ CEO Jack Hidary issues 'AI or Die' warning at Davos.",
+            "link": "articles/news/davos-ai-or-die-2026.html"
+        },
+        {
+            "time": "09:30 GMT",
             "title": "OpenAI releases new safety benchmarks for reasoning tasks.",
             "link": "articles/news/openai-safety-benchmarks.html"
         },
         {
-            "time": "12:05 GMT",
+            "time": "08:15 GMT",
             "title": "Google DeepMind's AlphaFold 3 expands access to researchers.",
             "link": "articles/news/alphafold-3-access.html"
-        },
-        {
-            "time": "10:45 GMT",
-            "title": "Mistral releases lightweight 7B model for edge devices.",
-            "link": "articles/news/mistral-edge-model.html"
-        },
-        {
-            "time": "09:30 GMT",
-            "title": "Anthropic publishes 'Constitutional AI' whitepaper.",
-            "link": "articles/news/anthropic-constitutional-ai.html"
-        },
-        {
-            "time": "08:15 GMT",
-            "title": "TSMC announces new chip packaging technology for AI accelerators.",
-            "link": "articles/news/tsmc-packaging-tech.html"
         }
     ],
     "analysis_grid": [
         {
+            "category": "Exclusive",
+            "title": "\"AI or Die\" — The Davos 2026 Warning",
+            "summary": "SandboxAQ CEO Jack Hidary delivers a stark message to world leaders: embracing AI is no longer optional—it's survival.",
+            "link": "articles/news/davos-ai-or-die-2026.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768917841/f5e31b28-884c-4474-b2b0-7b8eaad586f5-Yf46yZ_ilyfpd.avif"
+        },
+        {
+            "category": "Trend Watch",
+            "title": "The Rise of Agentic Workflows",
+            "summary": "2026 is the year of the 'autonomous employee'. Why agentic workflows are taking over enterprise sectors.",
+            "link": "articles/news/agentic-ai-2026.html",
+            "image_url": "https://www.uniconvergetech.in/blog/wp-content/uploads/2024/07/Untitled-design-22.jpg"
+        },
+        {
             "category": "Industry Report",
-            "title": "The Talent Gap: Spending vs Skills",
-            "summary": "90% of leaders plan AI spending hikes, but 27% struggle to find talent.",
-            "link": "articles/news/ai-talent-gap-india.html",
-            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768803373/444-800x450_rkxy5a.jpg"
+            "title": "CEO Confidence Hits 5-Year Low",
+            "summary": "PwC survey reveals 56% of leaders see no significant financial benefit from AI investments yet.",
+            "link": "articles/news/ceo-confidence-ai-roi-2026.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768917897/00e667198a8d819268a3f39759d4576883473f4bfbd77fc68d0be954bc2150ed_z2yems.webp"
+        },
+        {
+            "category": "Product Launch",
+            "title": "DeepSeek V4: Coding Model Breakthrough",
+            "summary": "Chinese startup's new model specializes in extremely long prompts, outperforming Western giants in internal tests.",
+            "link": "articles/news/deepseek-v4-coding.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/e_improve,e_sharpen/v1768917638/Untitled-design-93_o2msdr.jpg"
         },
         {
             "category": "Economic Analysis",
