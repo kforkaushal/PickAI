@@ -2,12 +2,30 @@
     "hero_slides": [
         {
             "id": 1,
-            "title": "DeepSeek V4: Coding Model Breakthrough",
-            "summary": "Chinese startup's new model specializes in extremely long prompts, outperforming Western giants in internal tests.",
-            "author": "Tech Analysis",
-            "date": "Breaking News",
-            "link": "articles/news/deepseek-v4-coding.html",
-            "image_url": "https://res.cloudinary.com/pickai/image/upload/e_improve,e_sharpen/v1768917638/Untitled-design-93_o2msdr.jpg"
+            "title": "Thoughtworks Launches AI/works™",
+            "summary": "Agentic platform automates legacy modernization, rewriting millions of lines of code in months.",
+            "author": "Enterprise Tech",
+            "date": "Jan 21, 2026",
+            "link": "articles/news/thoughtworks-ai-works.html",
+            "image_url": "https://loremflickr.com/1200/800/coding,office,technology"
+        },
+        {
+            "id": 2,
+            "title": "DeepMind: China Closing AI Gap",
+            "summary": "Demis Hassabis warns at Davos that China is now only 6-12 months behind the US in AI capabilities.",
+            "author": "Policy Analysis",
+            "date": "Breaking",
+            "link": "articles/news/deepmind-china-ai-race.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/f_auto,q_auto/v1769013178/Demis_Hassabis_DeepMind_qavepp.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Samsung Galaxy Z TriFold Reviews",
+            "summary": "The world's first tri-folding phone hits shelves. Is it the ultimate productivity tool or just a novelty?",
+            "author": "Gadget Lab",
+            "date": "Review",
+            "link": "articles/news/samsung-galaxy-trifold.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/f_auto,q_auto/v1769013063/fA11-16x9-New-25-Nov-Offline-1_wrmo5b.jpg"
         },
         {
             "id": 2,
@@ -37,6 +55,21 @@
     },
     "latest_updates": [
         {
+            "time": "16:00 GMT",
+            "title": "Thoughtworks launches AI/works™ agentic platform.",
+            "link": "articles/news/thoughtworks-ai-works.html"
+        },
+        {
+            "time": "15:45 GMT",
+            "title": "DeepMind's Hassabis: China closing AI gap to 6 months.",
+            "link": "articles/news/deepmind-china-ai-race.html"
+        },
+        {
+            "time": "15:30 GMT",
+            "title": "Artemis II rocket reaches Kennedy Space Center pad.",
+            "link": "articles/news/artemis-ii-launch-pad.html"
+        },
+        {
             "time": "14:20 GMT",
             "title": "DeepSeek announces V4 coding model reaching 256k context.",
             "link": "articles/news/deepseek-v4-coding.html"
@@ -63,6 +96,41 @@
         }
     ],
     "analysis_grid": [
+        {
+            "category": "Space",
+            "title": "Artemis II Hits Launch Pad",
+            "summary": "NASA's SLS rocket arrives at the pad for the first crewed lunar mission in 50 years.",
+            "link": "articles/news/artemis-ii-launch-pad.html",
+            "image_url": "https://loremflickr.com/1200/800/rocket,launch,night"
+        },
+        {
+            "category": "Funding",
+            "title": "Ringg AI Raises $5.5M",
+            "summary": "Voice agent startup proves scale with 1.5M monthly conversations for Flipkart and Cred.",
+            "link": "articles/news/ringg-ai-voice-funding.html",
+            "image_url": "https://loremflickr.com/1200/800/soundwave,neon,technology"
+        },
+        {
+            "category": "Industry",
+            "title": "Rise of 'AI-Native' Deals",
+            "summary": "LTIMindtree CEO reports a massive shift from pilots to full-scale agentic workflow contracts.",
+            "link": "articles/news/ltimindtree-ai-native-deals.html",
+            "image_url": "https://loremflickr.com/1200/800/business,office,technology"
+        },
+        {
+            "category": "Space",
+            "title": "SpaceX Reusability Record",
+            "summary": "Starlink-346 mission marks the 24th landing for a single Falcon 9 booster.",
+            "link": "articles/news/spacex-starlink-mission-346.html",
+            "image_url": "https://loremflickr.com/1200/800/satellite,orbit,space"
+        },
+        {
+            "category": "Reviews",
+            "title": "Pebble Round 2 Returns",
+            "summary": "The minimalist icon is back with an e-paper display and 30-day battery life.",
+            "link": "articles/news/pebble-round-2-smartwatch.html",
+            "image_url": "https://loremflickr.com/1200/800/smartwatch,wrist,tech"
+        },
         {
             "category": "Exclusive",
             "title": "\"AI or Die\" — The Davos 2026 Warning",

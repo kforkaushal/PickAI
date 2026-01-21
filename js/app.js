@@ -331,19 +331,75 @@ function populateLatestUpdates(updates) {
     const listContainer = document.getElementById('latest-updates-list');
     if (!listContainer || !updates) return;
 
-    listContainer.innerHTML = ''; // Clear placeholders
+    // Pagination State
+    const itemsPerPage = 4;
+    let currentPage = 1;
+    const totalPages = Math.ceil(updates.length / itemsPerPage);
 
-    updates.forEach(item => {
-        const updateDiv = document.createElement('div');
-        updateDiv.className = 'update-item';
+    function render() {
+        listContainer.innerHTML = ''; // Clear current
 
-        updateDiv.innerHTML = `
-        <span class="time">${item.time}</span>
-        <h4><a href="${item.link}">${item.title}</a></h4>
-    `;
+        // Validate page
+        if (currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages) currentPage = totalPages;
 
-        listContainer.appendChild(updateDiv);
-    });
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageItems = updates.slice(start, end);
+
+        // Render Items
+        pageItems.forEach(item => {
+            const updateDiv = document.createElement('div');
+            updateDiv.className = 'update-item';
+            updateDiv.innerHTML = `
+            <span class="time">${item.time}</span>
+            <h4><a href="${item.link}">${item.title}</a></h4>
+        `;
+            listContainer.appendChild(updateDiv);
+        });
+
+        // Render Pagination Controls
+        if (totalPages > 1) {
+            const controls = document.createElement('div');
+            controls.className = 'pagination-controls';
+
+            // Prev Button
+            const prevBtn = document.createElement('button');
+            prevBtn.innerHTML = '&laquo; Prev';
+            prevBtn.className = 'pagination-btn';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    render();
+                }
+            };
+
+            // Page Indicator
+            const indicator = document.createElement('span');
+            indicator.className = 'pagination-info';
+            indicator.textContent = `${currentPage} / ${totalPages}`;
+
+            // Next Button
+            const nextBtn = document.createElement('button');
+            nextBtn.innerHTML = 'Next &raquo;';
+            nextBtn.className = 'pagination-btn';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    render();
+                }
+            };
+
+            controls.appendChild(prevBtn);
+            controls.appendChild(indicator);
+            controls.appendChild(nextBtn);
+            listContainer.appendChild(controls);
+        }
+    }
+
+    render();
 }
 
 function populateAnalysisGrid(gridItems) {
