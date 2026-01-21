@@ -2,12 +2,12 @@
     "hero_slides": [
         {
             "id": 1,
-            "title": "Thoughtworks Launches AI/works™",
-            "summary": "Agentic platform automates legacy modernization, rewriting millions of lines of code in months.",
-            "author": "Enterprise Tech",
-            "date": "Jan 21, 2026",
-            "link": "articles/news/thoughtworks-ai-works.html",
-            "image_url": "https://loremflickr.com/1200/800/coding,office,technology"
+            "title": "Top AI Trending Prompts for ChatGPT in 2026",
+            "summary": "From deep reasoning chains to full-stack coding agents, master the art of prompting with these 10 trending structures.",
+            "author": "Practical AI",
+            "date": "Top Guide",
+            "link": "articles/news/top-ai-trending-prompts-chatgpt.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/f_auto,q_auto/v1769017575/best-ai-prompts_dwl2qn.webp"
         },
         {
             "id": 2,
@@ -55,6 +55,12 @@
     },
     "latest_updates": [
         {
+            "time": "16:30 GMT",
+            "title": "Top AI Trending Prompts for ChatGPT in 2026",
+            "link": "articles/news/top-ai-trending-prompts-chatgpt.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/f_auto,q_auto/v1769017575/best-ai-prompts_dwl2qn.webp"
+        },
+        {
             "time": "16:00 GMT",
             "title": "Thoughtworks launches AI/works™ agentic platform.",
             "link": "articles/news/thoughtworks-ai-works.html"
@@ -96,6 +102,13 @@
         }
     ],
     "analysis_grid": [
+        {
+            "category": "Guide",
+            "title": "Top AI Trending Prompts for ChatGPT",
+            "summary": "Master the art of prompting with these 10 trending structures for 2026.",
+            "link": "articles/news/top-ai-trending-prompts-chatgpt.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/f_auto,q_auto/v1769017575/best-ai-prompts_dwl2qn.webp"
+        },
         {
             "category": "Space",
             "title": "Artemis II Hits Launch Pad",
@@ -193,13 +206,6 @@
             "summary": "What enterprise CTOs need to know before Q3 2026.",
             "link": "articles/news/eu-ai-act-compliance.html",
             "image_url": "https://picsum.photos/seed/ai2/800/450"
-        },
-        {
-            "category": "Hardware",
-            "title": "Nvidia's new chip architecture explained",
-            "summary": "Moving beyond H100s: The focus on memory bandwidth.",
-            "link": "articles/news/nvidia-next-gen-architecture.html",
-            "image_url": "https://picsum.photos/seed/chip/800/450"
         }
     ],
     "opinion_grid": [
