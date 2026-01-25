@@ -2,39 +2,53 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics 4 + Consent Mode -->
+    <script src="../../js/analytics-setup.js"></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
+        crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- [TODO] Update Title -->
     <title>Article Title — PickAI</title>
-
-    <!-- Global Design System -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Typography -->
+    <link rel="stylesheet" href="../../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
         rel="stylesheet">
 
-    <!-- [TODO] Update Meta Description -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon-16x16.png">
+    <link rel="manifest" href="../../site.webmanifest">
+
+    <!-- Meta -->
     <meta name="description" content="Brief summary of the article for SEO.">
     <meta name="author" content="PickAI Editorial Board">
+    <meta name="keywords" content="{{META_KEYWORDS}}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Generating Intelligence: The Next Frontier in Reasoning Models">
+    <meta property="og:description" content="Brief summary of the article for SEO.">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:type" content="article">
+
+    <!-- FAQ Schema -->
+    {{FAQ_SCHEMA}}
+
 </head>
 
 <body>
 
-    <!-- 1. Master Header (Matches Index) -->
     <header class="site-header">
         <div class="container header-inner">
-            <div class="logo"><a href="index.html">PickAI.</a></div>
+            <div class="logo"><a href="../../index.html">PickAI.</a></div> <!-- Link back to home -->
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html#news">AI News</a></li>
-                    <li><a href="tools/index.html">Tools</a></li>
-                    <li><a href="index.html#research">Research</a></li>
-                    <li><a href="index.html#opinion">Opinion</a></li>
-                    <li><a href="index.html#explainers">Explainers</a></li>
+                    <li><a href="../../tools/index.html">Tools</a></li>
+                    <li><a href="../../research.html">Research</a></li>
+                    <li><a href="../../opinion.html">Opinion</a></li>
+                    <li><a href="../../explainers.html">Explainers</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -47,83 +61,105 @@
         </div>
     </header>
 
-    <!-- 2. Main Article Content -->
-    <!-- Usage: keeping 'article-container' ensures consistent 740px width and padding -->
-    <main class="article-container">
+    <div class="container article-layout" style="padding-top: 40px; padding-bottom: 80px;">
 
-        <!-- Article Header -->
-        <header class="article-header">
-            <!-- Category Label -->
-            <span class="category">Category Name</span>
+        <!-- Main Content -->
+        <main class="article-content">
+            <header class="article-header">
+                {{BREADCRUMB_HTML}}
+                <span class="category">Category Name</span>
+                <h1>Your Article Title Goes Here</h1>
+                <div class="article-meta">
+                    <span class="author">By PickAI Editorial Board</span>
+                    <span class="divider">|</span>
+                    <span class="date">Oct 24, 2026</span>
+                </div>
+            </header>
 
-            <!-- [TODO] Article Headline -->
-            <h1>Your Article Title Goes Here</h1>
+            <!-- Featured Image (16:9) -->
+            <img src="https://picsum.photos/seed/chip/1200/675" alt="Article Hero" class="article-hero-image"
+                loading="eager">
 
-            <!-- Meta Data (Author, Date, Reading Time) -->
-            <div class="article-meta">
-                <span>By <strong>PickAI</strong></span>
-                <span>|</span>
-                <span>Oct 24, 2026</span>
-                <span>|</span>
-                <span>5 Min Read</span>
+            <div class="article-body">
+                {{ARTICLE_BODY}}
             </div>
-        </header>
+        </main>
 
-        <!-- Article Body -->
-        <article class="article-body">
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
 
-            <!-- Intro Paragraph (Lead) -->
-            <p class="lead">
-                This is the opening paragraph. It usually has a slightly larger font weight or size to hook the reader.
-                Everything inside this 'article-body' section will automatically have the correct font
-                (Merriweather/Serif) and line-height.
-            </p>
+            <!-- Trending/Related -->
+            <div class="sidebar-widget">
+                <h4 class="widget-title">Related Analysis</h4>
+                <ul class="sidebar-list">
+                    {{RELATED_ARTICLES_HTML}}
+                </ul>
+            </div>
 
-            <hr style="border: 0; border-top: 1px solid var(--color-border); margin: 40px 0;">
+            <!-- Tool Suggestions -->
+            <div class="sidebar-widget">
+                <h4 class="widget-title">Tools You Might Like</h4>
+                <div class="mini-tool-list">
+                    <a href="https://cursor.com" class="mini-tool-item">
+                        <img src="https://img.logo.dev/cursor.com?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Cursor"
+                            loading="lazy">
+                        <div class="mini-tool-info">
+                            <span class="name">Cursor</span>
+                            <span class="desc">Coding / IDE</span>
+                        </div>
+                    </a>
+                    <a href="https://perplexity.ai" class="mini-tool-item">
+                        <img src="https://img.logo.dev/perplexity.ai?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Perplexity"
+                            loading="lazy">
+                        <div class="mini-tool-info">
+                            <span class="name">Perplexity</span>
+                            <span class="desc">Search / Research</span>
+                        </div>
+                    </a>
+                    <a href="https://claude.ai" class="mini-tool-item">
+                        <img src="https://img.logo.dev/claude.ai?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Claude"
+                            loading="lazy">
+                        <div class="mini-tool-info">
+                            <span class="name">Claude</span>
+                            <span class="desc">LLM / Writing</span>
+                        </div>
+                    </a>
+                </div>
+                <a href="../../tools/index.html" class="widget-link">View all tools &rarr;</a>
+            </div>
 
-            <!-- Content Sections -->
-            <h2>Section Heading</h2>
-            <p>
-                Standard paragraph text. You don't need to add any special classes here. The global CSS handles it all.
-            </p>
+            <!-- Ad Slot Sidebar -->
+            <div class="ad-container" style="margin-top: 40px;">
+                <span class="ad-label">Advertisement</span>
+                <div class="ad-slot ad-rectangle" style="width: 300px; height: 250px;"></div>
+            </div>
 
-            <blockquote>
-                "Use blockquotes for improved visual breaks and to highlight key takeaways."
-            </blockquote>
+        </aside>
 
-            <h3>Sub-Heading</h3>
-            <ul>
-                <li><strong>Point 1:</strong> Use bold for emphasis.</li>
-                <li><strong>Point 2:</strong> Lists are automatically styled with proper indentation.</li>
-            </ul>
+    </div>
 
-        </article>
-
-    </main>
-
-    <!-- 3. Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-brand">
                 PickAI.
                 <div class="meta-text" style="font-weight: normal; margin-top: 10px; font-size: 0.8rem;">
-                    &copy; 2026 PickAI Media. <br> All rights reserved.
+                    &copy; 2026 PickAI Media.
                 </div>
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="editorial-policy.html">Editorial Policy</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../editorial-policy.html">Editorial Policy</a></li>
+                    <li><a href="../../privacy.html">Privacy</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/search.js"></script>
-    <script src="js/app.js"></script>
+    <!-- Global Search -->
+    <script src="../../js/search.js"></script>
+    <script src="../../js/app.js"></script>
 
 </body>
 

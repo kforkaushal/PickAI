@@ -83,7 +83,10 @@ function renderCategorizedGrids(tools) {
     const order = [
         'LLM',
         'Hybrid LLM',
-        'Study Research', // New Study Section Start
+        'Reasoning Model', // New
+        'AI Search', // New
+        'Search',
+        'Study Research',
         'Study Writing',
         'Study Notes',
         'Study Tutor',
@@ -93,18 +96,20 @@ function renderCategorizedGrids(tools) {
         'Video Gen',
         'Video Edit',
         'Video Clip',
+        'Voice',
+        'Speech Rec', // New
+        'Audio',
+        'Music',
         'Writing',
         'Marketing',
         'Coding',
+        'App Builder', // New
         'Automaton',
         'Automation',
         'No-Code',
         'UI Design',
         'Design',
         'Image Edit',
-        'Search',
-        'Voice',
-        'Audio',
         'Conversational',
         'Chatbot',
         'Support',
@@ -113,15 +118,27 @@ function renderCategorizedGrids(tools) {
         'Productivity',
         'E-commerce',
         'Translation',
+        'BI', // New Batch 2
+        'Task Mgmt', // New Batch 2
         'Research',
         'Meetings',
         'Podcast',
+        'Audio Clean', // New Batch 2
         'Content',
         'Content Opt',
         'HR',
         'Security',
+        'Cybersecurity',
+        'Test Auto', // New Batch 2
         'ML',
-        'ML Platform'
+        'ML Platform',
+        'ML Model', // New Batch 2
+        'Enterprise ML',
+        'Enterprise AI',
+        'Medical AI',
+        'Indian AI',
+        'Video Short', // New Batch 2
+        'UI UX' // New Batch 2
     ];
 
     order.forEach(catKey => {

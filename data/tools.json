@@ -1,5 +1,375 @@
 [
     {
+        "name": "Tableau Einstein",
+        "url": "https://www.tableau.com/products/ai",
+        "logo_domain": "tableau.com",
+        "category": "BI",
+        "category_display": "BI / Predictive",
+        "description": "AI for predictive analytics and natural language data queries in visualizations.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Power BI Copilot",
+        "url": "https://powerbi.microsoft.com",
+        "logo_domain": "powerbi.microsoft.com",
+        "category": "BI",
+        "category_display": "BI / Insights",
+        "description": "Generates reports and insights via conversational AI prompts.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "ThoughtSpot Sage",
+        "url": "https://www.thoughtspot.com",
+        "logo_domain": "thoughtspot.com",
+        "category": "BI",
+        "category_display": "BI / Conversational",
+        "description": "Search-based analytics with AI answering business questions in plain English.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Applitools",
+        "url": "https://applitools.com",
+        "logo_domain": "applitools.com",
+        "category": "Test Auto",
+        "category_display": "Test / Visual",
+        "description": "AI visual testing for UI changes across devices and browsers.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Testim",
+        "url": "https://www.testim.io",
+        "logo_domain": "testim.io",
+        "category": "Test Auto",
+        "category_display": "Test / Codeless",
+        "description": "ML-powered codeless automation for stable test maintenance.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Lavalier AI",
+        "url": "https://lavalier.ai",
+        "logo_domain": "lavalier.ai",
+        "category": "Audio Clean",
+        "category_display": "Audio / Noise Removal",
+        "description": "Removes noise and enhances lavalier mic recordings automatically.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Otter.ai",
+        "url": "https://otter.ai",
+        "logo_domain": "otter.ai",
+        "category": "Audio Clean",
+        "category_display": "Audio / Transcription",
+        "description": "Real-time transcription and speaker identification for meetings.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Lunacy AI",
+        "url": "https://icons8.com/lunacy",
+        "logo_domain": "icons8.com",
+        "category": "UI UX",
+        "category_display": "UI / Offline",
+        "description": "Offline AI design tool with auto-layout and component generation.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Nano Banana",
+        "url": "https://nanobanana.ai",
+        "logo_domain": "nanobanana.ai",
+        "category": "Image Gen",
+        "category_display": "Image / Nano",
+        "description": "Compact image generation for quick creative iterations.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Todoist AI",
+        "url": "https://todoist.com",
+        "logo_domain": "todoist.com",
+        "category": "Task Mgmt",
+        "category_display": "Tasks / Habits",
+        "description": "AI for task prioritization, habit tracking, and smart reminders.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "ClickUp Brain",
+        "url": "https://clickup.com/brain",
+        "logo_domain": "clickup.com",
+        "category": "Task Mgmt",
+        "category_display": "Tasks / AI Brain",
+        "description": "Connected AI across projects for insights and automation.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Fathom",
+        "url": "https://fathom.video",
+        "logo_domain": "fathom.video",
+        "category": "Meetings",
+        "category_display": "Meetings / Highlights",
+        "description": "Automatic highlights, timestamps, and action items from video calls.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Nyota",
+        "url": "https://nyota.ai",
+        "logo_domain": "nyota.ai",
+        "category": "Meetings",
+        "category_display": "Meetings / Summary",
+        "description": "AI summaries and follow-ups for Zoom and Google Meet.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Pixian AI",
+        "url": "https://pixian.ai",
+        "logo_domain": "pixian.ai",
+        "category": "Image Edit",
+        "category_display": "Image / Background",
+        "description": "Accurate, watermark-free background removal for product photos.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "OpusClip",
+        "url": "https://www.opus.ai",
+        "logo_domain": "opus.ai",
+        "category": "Video Short",
+        "category_display": "Video / Viral Clips",
+        "description": "Turns long videos into optimized social media shorts.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Deep Research",
+        "url": "https://deepresearch.ai",
+        "logo_domain": "deepresearch.ai",
+        "category": "Research",
+        "category_display": "Research / Deep",
+        "description": "In-depth AI investigations with sources for complex topics.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "NotebookLM",
+        "url": "https://notebooklm.google",
+        "logo_domain": "notebooklm.google",
+        "category": "Research",
+        "category_display": "Research / Podcasts",
+        "description": "Generates audio podcasts from uploaded documents and notes.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "DeepSeek",
+        "url": "https://deepseek.com",
+        "logo_domain": "deepseek.com",
+        "category": "ML Model",
+        "category_display": "ML / Open Source",
+        "description": "Cost-effective open-source models rivaling top closed systems.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Mistral",
+        "url": "https://mistral.ai",
+        "logo_domain": "mistral.ai",
+        "category": "ML Model",
+        "category_display": "ML / Efficient",
+        "description": "High-performance models for edge deployment and low latency.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Runway Gen-4 Turbo",
+        "url": "https://runwayml.com",
+        "logo_domain": "runwayml.com",
+        "category": "Video Gen",
+        "category_display": "Video / Fast Motion",
+        "description": "Latest January 2026 release for fast, consistent video motion generation.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Firefly Image 4",
+        "url": "https://firefly.adobe.com",
+        "logo_domain": "firefly.adobe.com",
+        "category": "Image Gen",
+        "category_display": "Image / Commercial",
+        "description": "Adobe's refined model with better hands, textures, and text for commercial use.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Leonardo Lucid",
+        "url": "https://leonardo.ai",
+        "logo_domain": "leonardo.ai",
+        "category": "Image Gen",
+        "category_display": "Image / Lighting",
+        "description": "Dynamic lighting update in January 2026 for realistic shadows and portraits.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "ElevenLabs v3",
+        "url": "https://elevenlabs.io",
+        "logo_domain": "elevenlabs.io",
+        "category": "Voice",
+        "category_display": "Voice / Emotional",
+        "description": "Voice Engine v3 with improved pacing, Hindi support, and emotional stability.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Nemotron Speech ASR",
+        "url": "https://developer.nvidia.com/nemotron-speech-asr",
+        "logo_domain": "developer.nvidia.com",
+        "category": "Speech Rec",
+        "category_display": "Speech / Real-Time",
+        "description": "NVIDIA's open-source ASR model 10x faster for live captions and assistants.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Genspark",
+        "url": "https://genspark.ai",
+        "logo_domain": "genspark.ai",
+        "category": "AI Search",
+        "category_display": "Search / Sparkpages",
+        "description": "Generates synthesized Sparkpages for answers, context, and analysis.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Lovable",
+        "url": "https://lovable.dev",
+        "logo_domain": "lovable.dev",
+        "category": "App Builder",
+        "category_display": "App / Natural Language",
+        "description": "Builds full-stack web apps from natural language descriptions.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Falcon-H1R 7B",
+        "url": "https://www.tii.ae/falcon",
+        "logo_domain": "tii.ae",
+        "category": "Reasoning Model",
+        "category_display": "Reasoning / Efficient",
+        "description": "Compact hybrid Transformer-Mamba model matching larger systems in performance.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Google Vertex AI",
+        "url": "https://cloud.google.com/vertex-ai",
+        "logo_domain": "cloud.google.com",
+        "category": "Enterprise ML",
+        "category_display": "ML / Scalable",
+        "description": "Scalable model training with automated prompts and vector search.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "AWS Bedrock",
+        "url": "https://aws.amazon.com/bedrock",
+        "logo_domain": "aws.amazon.com",
+        "category": "Enterprise ML",
+        "category_display": "ML / Foundation",
+        "description": "Secure foundation models for enterprise integration.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "OpenEvidence",
+        "url": "https://www.openevidence.com",
+        "logo_domain": "openevidence.com",
+        "category": "Medical AI",
+        "category_display": "Medical / Insights",
+        "description": "Evidence-based medical insights from scientific literature for decisions.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Arrowhead",
+        "url": "https://arrowhead.ai",
+        "logo_domain": "arrowhead.ai",
+        "category": "Indian AI",
+        "category_display": "AI / Local",
+        "description": "Emerging Indian AI startup gaining traction in January 2026.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "NYAI",
+        "url": "https://nyai.in",
+        "logo_domain": "nyai.in",
+        "category": "Indian AI",
+        "category_display": "AI / Innovation",
+        "description": "New Indian AI firm for advanced applications spotted in January.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Magicroll AI",
+        "url": "https://magicroll.ai",
+        "logo_domain": "magicroll.ai",
+        "category": "Indian AI",
+        "category_display": "AI / Magic",
+        "description": "Creative AI tools from Indian startup highlighted this month.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Notion AI 3.0",
+        "url": "https://www.notion.so/product/ai",
+        "logo_domain": "notion.so",
+        "category": "Productivity",
+        "category_display": "Productivity / Workflow",
+        "description": "Latest update for AI-driven workflow automation in notes.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Pika Labs",
+        "url": "https://pika.art",
+        "logo_domain": "pika.art",
+        "category": "Video Gen",
+        "category_display": "Video / Labs",
+        "description": "Updated video generation features in January 2026 lineup.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Saviynt",
+        "url": "https://www.saviynt.com",
+        "logo_domain": "saviynt.com",
+        "category": "Cybersecurity",
+        "category_display": "Security / Identity",
+        "description": "Manages AI agents and identities with $700M funding surge.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Articul8 AI",
+        "url": "https://www.articul8.ai",
+        "logo_domain": "articul8.ai",
+        "category": "Enterprise AI",
+        "category_display": "Enterprise / GenAI",
+        "description": "GenAI platform with rapid valuation growth to $500M+.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
         "name": "OpenAI",
         "url": "https://openai.com",
         "logo_domain": "openai.com",
@@ -550,26 +920,6 @@
         "is_new": false
     },
     {
-        "name": "OpusClip",
-        "url": "https://www.opus.ai",
-        "logo_domain": "opus.ai",
-        "category": "Video Clip",
-        "category_display": "Video / Shorts",
-        "description": "AI for turning long videos into viral short clips.",
-        "is_trending": true,
-        "is_new": false
-    },
-    {
-        "name": "NotebookLM",
-        "url": "https://notebooklm.google",
-        "logo_domain": "notebooklm.google",
-        "category": "Research",
-        "category_display": "Research / Notes",
-        "description": "Google's AI for note-taking, podcast generation from docs.",
-        "is_trending": true,
-        "is_new": false
-    },
-    {
         "name": "Jamba 1.5",
         "url": "https://www.ai21.com/jamba",
         "logo_domain": "ai21.com",
@@ -578,16 +928,6 @@
         "description": "Hybrid model for efficient long-form content generation.",
         "is_trending": true,
         "is_new": true
-    },
-    {
-        "name": "Fathom",
-        "url": "https://fathom.video",
-        "logo_domain": "fathom.video",
-        "category": "Meetings",
-        "category_display": "Meetings / Summary",
-        "description": "AI notetaker with highlights and action items from calls.",
-        "is_trending": true,
-        "is_new": false
     },
     {
         "name": "Peltarion",
@@ -608,16 +948,6 @@
         "description": "AI agents for complex workflow automation.",
         "is_trending": true,
         "is_new": true
-    },
-    {
-        "name": "Nyota",
-        "url": "https://nyota.ai",
-        "logo_domain": "nyota.ai",
-        "category": "Content Opt",
-        "category_display": "Content / SEO",
-        "description": "AI for meeting summaries and content refinement.",
-        "is_trending": true,
-        "is_new": false
     },
     {
         "name": "ScholarAI",
@@ -726,16 +1056,6 @@
         "category": "Study Tutor",
         "category_display": "Tutor / Computational",
         "description": "Computational engine for step-by-step solutions in math, physics, and engineering.",
-        "is_trending": true,
-        "is_new": false
-    },
-    {
-        "name": "ClickUp Brain",
-        "url": "https://clickup.com",
-        "logo_domain": "clickup.com",
-        "category": "Study Productivity",
-        "category_display": "Productivity / Study Plans",
-        "description": "Predicts study gaps, schedules revisions, and tracks exam preparation progress.",
         "is_trending": true,
         "is_new": false
     },

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /cms/
+Disallow: /admin.html
 
 Sitemap: https://pickai.netlify.app/sitemap.xml

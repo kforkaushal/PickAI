@@ -1,6 +1,36 @@
 {
     "hero_slides": [
         {
+            "title": "Is the ₹99 Plan a Trap? Why I’m Canceling My Subscriptions in 2026",
+            "summary": "The 99-Plan Subscription Trap is the ultimate psychological hack—a price point so low you don't think twice, but so persistent it silently drains your wealth over time.",
+            "link": "articles/news/is-the-99-plan-a-trap-why-im-canceling-my-subscriptions-in-2026.html",
+            "image_url": "https://media.licdn.com/dms/image/v2/D5612AQHQsN24Pt81_Q/article-cover_image-shrink_720_1280/B56ZeTgGU9HQAM-/0/1750526361839?e=2147483647&v=beta&t=Qg88kA-mHQydyKHO0SXKXzJTrhHG2Muc2wWdTWx8or4",
+            "category": "Research",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1769318329252
+        },
+        {
+            "title": "Mastering Agentic Workflows for Productivity: The 2026 AI Blueprint",
+            "summary": "Move beyond simple prompts. Learn how to build self-correcting AI systems that multiply productivity.",
+            "link": "articles/news/mastering-agentic-workflows-for-productivity-the-2026-ai-blueprint.html",
+            "image_url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-roadmap-mastering-agentic-ai.jpeg",
+            "category": "News",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1769021839368
+        },
+        {
+            "title": "From Prompting to Building: Why \"AI Agents\" Are the 2026 Traffic Goldmine",
+            "summary": "Discover why content is shifting from \"How to use ChatGPT\" to \"Building Industry AI Agents.\" Learn how Nano Banana and Agentic Workflows are dominating 2026 SEO trends.",
+            "link": "articles/news/from-prompting-to-building-why-ai-agents-are-the-2026-traffic-goldmine.html",
+            "image_url": "https://miro.medium.com/v2/resize:fit:1400/1*rgd7TJl0AGoULBpE7wocVA.png",
+            "category": "Guide",
+            "author": "PickAI Editorial",
+            "date": "Just Now",
+            "id": 1769020355905
+        },
+        {
             "id": 1,
             "title": "Top AI Trending Prompts for ChatGPT in 2026",
             "summary": "From deep reasoning chains to full-stack coding agents, master the art of prompting with these 10 trending structures.",
@@ -55,53 +85,124 @@
     },
     "latest_updates": [
         {
+            "time": "10:48 GMT",
+            "title": "Is the ₹99 Plan a Trap? Why I’m Canceling My Subscriptions in 2026",
+            "link": "articles/news/is-the-99-plan-a-trap-why-im-canceling-my-subscriptions-in-2026.html",
+            "image_url": "https://media.licdn.com/dms/image/v2/D5612AQHQsN24Pt81_Q/article-cover_image-shrink_720_1280/B56ZeTgGU9HQAM-/0/1750526361839?e=2147483647&v=beta&t=Qg88kA-mHQydyKHO0SXKXzJTrhHG2Muc2wWdTWx8or4"
+        },
+        {
+            "time": "10:33 GMT",
+            "title": "Generating Intelligence: The Next Frontier in Reasoning Models",
+            "link": "articles/news/generating-intelligence-the-next-frontier-in-reasoning-models.html",
+            "image_url": "https://miro.medium.com/v2/resize:fit:1400/1*rgd7TJl0AGoULBpE7wocVA.png"
+        },
+        {
+            "id": 1769336220000,
+            "time": "10:17 GMT",
+            "title": "Generating Intelligence: The Next Frontier in Reasoning Models",
+            "link": "articles/news/generating-intelligence-the-next-frontier-in-reasoning-models.html",
+            "image_url": "https://miro.medium.com/v2/resize:fit:1400/1*rgd7TJl0AGoULBpE7wocVA.png"
+        },
+        {
+            "id": 1769336220001,
+            "time": "10:13 GMT",
+            "title": "Mastering Agentic Workflows for Productivity: The 2026 AI Blueprint",
+            "link": "articles/news/mastering-agentic-workflows-for-productivity-the-2026-ai-blueprint.html",
+            "image_url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-roadmap-mastering-agentic-ai.jpeg"
+        },
+        {
+            "id": 1769336220002,
+            "time": "00:02 GMT",
+            "title": "From Prompting to Building: Why \"AI Agents\" Are the 2026 Traffic Goldmine",
+            "link": "articles/news/from-prompting-to-building-why-ai-agents-are-the-2026-traffic-goldmine.html",
+            "image_url": "https://miro.medium.com/v2/resize:fit:1400/1*rgd7TJl0AGoULBpE7wocVA.png"
+        },
+        {
+            "id": 1769336220003,
             "time": "16:30 GMT",
             "title": "Top AI Trending Prompts for ChatGPT in 2026",
             "link": "articles/news/top-ai-trending-prompts-chatgpt.html",
             "image_url": "https://res.cloudinary.com/pickai/image/upload/f_auto,q_auto/v1769017575/best-ai-prompts_dwl2qn.webp"
         },
         {
+            "id": 1769336220004,
             "time": "16:00 GMT",
             "title": "Thoughtworks launches AI/works™ agentic platform.",
             "link": "articles/news/thoughtworks-ai-works.html"
         },
         {
+            "id": 1769336220005,
             "time": "15:45 GMT",
             "title": "DeepMind's Hassabis: China closing AI gap to 6 months.",
             "link": "articles/news/deepmind-china-ai-race.html"
         },
         {
+            "id": 1769336220006,
             "time": "15:30 GMT",
             "title": "Artemis II rocket reaches Kennedy Space Center pad.",
             "link": "articles/news/artemis-ii-launch-pad.html"
         },
         {
+            "id": 1769336220007,
             "time": "14:20 GMT",
             "title": "DeepSeek announces V4 coding model reaching 256k context.",
             "link": "articles/news/deepseek-v4-coding.html"
         },
         {
+            "id": 1769336220008,
             "time": "12:05 GMT",
             "title": "PwC Survey: 56% of CEOs report low AI ROI so far.",
             "link": "articles/news/ceo-confidence-ai-roi-2026.html"
         },
         {
+            "id": 1769336220009,
             "time": "10:45 GMT",
             "title": "SandboxAQ CEO Jack Hidary issues 'AI or Die' warning at Davos.",
             "link": "articles/news/davos-ai-or-die-2026.html"
         },
         {
+            "id": 1769336220010,
             "time": "09:30 GMT",
             "title": "OpenAI releases new safety benchmarks for reasoning tasks.",
             "link": "articles/news/openai-safety-benchmarks.html"
         },
         {
+            "id": 1769336220011,
             "time": "08:15 GMT",
             "title": "Google DeepMind's AlphaFold 3 expands access to researchers.",
             "link": "articles/news/alphafold-3-access.html"
         }
     ],
     "analysis_grid": [
+        {
+            "title": "Is the ₹99 Plan a Trap? Why I’m Canceling My Subscriptions in 2026",
+            "summary": "The 99-Plan Subscription Trap is the ultimate psychological hack—a price point so low you don't think twice, but so persistent it silently drains your wealth over time.",
+            "link": "articles/news/is-the-99-plan-a-trap-why-im-canceling-my-subscriptions-in-2026.html",
+            "image_url": "https://media.licdn.com/dms/image/v2/D5612AQHQsN24Pt81_Q/article-cover_image-shrink_720_1280/B56ZeTgGU9HQAM-/0/1750526361839?e=2147483647&v=beta&t=Qg88kA-mHQydyKHO0SXKXzJTrhHG2Muc2wWdTWx8or4",
+            "category": "Research",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1769318329361
+        },
+        {
+            "title": "Mastering Agentic Workflows for Productivity: The 2026 AI Blueprint",
+            "summary": "Move beyond simple prompts. Learn how to build self-correcting AI systems that multiply productivity.",
+            "link": "articles/news/mastering-agentic-workflows-for-productivity-the-2026-ai-blueprint.html",
+            "image_url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-roadmap-mastering-agentic-ai.jpeg",
+            "category": "News",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1769021839368
+        },
+        {
+            "title": "From Prompting to Building: Why \"AI Agents\" Are the 2026 Traffic Goldmine",
+            "summary": "Discover why content is shifting from \"How to use ChatGPT\" to \"Building Industry AI Agents.\" Learn how Nano Banana and Agentic Workflows are dominating 2026 SEO trends.",
+            "link": "articles/news/from-prompting-to-building-why-ai-agents-are-the-2026-traffic-goldmine.html",
+            "image_url": "https://miro.medium.com/v2/resize:fit:1400/1*rgd7TJl0AGoULBpE7wocVA.png",
+            "category": "Guide",
+            "author": "PickAI Editorial",
+            "date": "Just Now"
+        },
         {
             "category": "Guide",
             "title": "Top AI Trending Prompts for ChatGPT",
@@ -178,34 +279,6 @@
             "summary": "Report shows AI is boosting high-skilled, complex tasks faster than routine work.",
             "link": "articles/news/anthropic-economic-index.html",
             "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768803060/Copy_of_ETIHRTIH_Image_template_-_2026-01-16T123255.989_suwrmw.webp"
-        },
-        {
-            "category": "Market Watch",
-            "title": "The 'Claude Cowork' Disruption",
-            "summary": "Anthropic's new tool causes software stock slump as investors fear it will replace traditional SaaS.",
-            "link": "articles/news/claude-cowork-release.html",
-            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768802731/social_r8ms8n.avif"
-        },
-        {
-            "category": "Generative Video",
-            "title": "Google Veo 3.1: The Vertical Video Era Begins",
-            "summary": "Native 9:16 support and 1080p upscaling target the creator economy.",
-            "link": "./articles/news/google-veo-update.html",
-            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768764660/89dbca524bf04609e5ef7cc22f6c14cd_yd2hjo.webp"
-        },
-        {
-            "category": "Research",
-            "title": "The architecture of transformer replacements",
-            "summary": "Why state-space models are gaining traction in long-context tasks.",
-            "link": "articles/news/transformer-replacements.html",
-            "image_url": "https://picsum.photos/seed/ai1/800/450"
-        },
-        {
-            "category": "Policy",
-            "title": "EU AI Act: Compliance deadlines approaching",
-            "summary": "What enterprise CTOs need to know before Q3 2026.",
-            "link": "articles/news/eu-ai-act-compliance.html",
-            "image_url": "https://picsum.photos/seed/ai2/800/450"
         }
     ],
     "opinion_grid": [
@@ -236,6 +309,13 @@
             "summary": "Does hiding weights make us safer, or just more vulnerable to unpatched exploits?",
             "link": "articles/news/open-source-security.html",
             "image_url": "https://picsum.photos/seed/security/800/450"
+        },
+        {
+            "category": "Market",
+            "title": "The ROI Gap: Why CFOs are Nervous",
+            "summary": "56% of CEOs report low AI returns. Is it a bubble or just the deployment lag?",
+            "link": "articles/news/ceo-confidence-ai-roi-2026.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768917897/00e667198a8d819268a3f39759d4576883473f4bfbd77fc68d0be954bc2150ed_z2yems.webp"
         }
     ],
     "explainers_grid": [
@@ -266,6 +346,13 @@
             "summary": "How to shrink massive models to run on consumer hardware.",
             "link": "articles/news/explainer-quantization.html",
             "image_url": "https://picsum.photos/seed/quant/800/450"
+        },
+        {
+            "category": "Architecture",
+            "title": "What is a State Space Model (Mamba)?",
+            "summary": "The linear-time architecture challenging Transformers for the throne.",
+            "link": "articles/news/transformer-replacements.html",
+            "image_url": "https://picsum.photos/seed/mamba/800/450"
         }
     ],
     "research_papers": [
@@ -304,6 +391,18 @@
             ],
             "link": "articles/news/alphafold-3-access.html",
             "date": "Nov 2025"
+        },
+        {
+            "title": "DeepSeek-V4 Technical Report: Scaling Context to 256k",
+            "authors": "DeepSeek AI Research Team",
+            "abstract": "We present DeepSeek-V4, a Mixture-of-Experts model specialized for coding tasks with a 256k token context window. It achieves SOTA performance on HumanEval-X while reducing inference costs by 40%.",
+            "tags": [
+                "Coding",
+                "MoE",
+                "Long-Context"
+            ],
+            "link": "articles/news/deepseek-v4-coding.html",
+            "date": "Jan 2026"
         },
         {
             "title": "Generative Models for De Novo Protein Design",

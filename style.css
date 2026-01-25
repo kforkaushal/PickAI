@@ -767,7 +767,8 @@ ul {
     font-size: 0.9rem;
 }
 
-.news-grid-3 {
+.news-grid-3,
+.research-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
@@ -986,7 +987,8 @@ ul {
     }
 
     /* Grid & Lists */
-    .news-grid-3 {
+    .news-grid-3,
+    .research-grid {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
     }
@@ -2026,4 +2028,124 @@ ul {
     font-family: var(--font-ui);
     font-size: 0.8rem;
     color: var(--color-text-meta);
+}
+
+/* 
+  9. Additions: Article Layout & Tables
+  =========================================
+*/
+
+/* The Main Article Grid (Missing Link) */
+.article-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--space-2xl);
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .article-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Premium Table Styles for Content */
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-lg) 0;
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    border: 1px solid var(--color-border);
+}
+
+.article-body th {
+    background-color: #f8f9fa;
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-border);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.article-body td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+.article-body tr:last-child td {
+    border-bottom: none;
+}
+
+.article-body tr:hover td {
+    background-color: #fafafa;
+}
+
+/* Article Components - Added via Task Standardizing */
+.key-takeaways {
+    background-color: var(--color-highlight, #f5f5f5);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent, #000);
+    padding: var(--space-xl);
+    border-radius: 8px;
+    margin: var(--space-2xl) 0;
+}
+
+.key-takeaways h3 {
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    font-family: var(--font-serif);
+}
+
+.key-takeaways ul {
+    margin: 0;
+    padding-left: var(--space-lg);
+}
+
+.key-takeaways li {
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-secondary);
+}
+
+.faq-section {
+    margin-top: var(--space-3xl);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-2xl);
+}
+
+.faq-section h3 {
+    margin-bottom: var(--space-xl);
+    font-family: var(--font-serif);
+}
+
+.faq-item {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+    transition: background-color 0.2s ease;
+}
+
+.faq-item:hover {
+    background-color: var(--color-highlight, #f5f5f5);
+}
+
+.faq-question {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-xs) 0;
+    font-family: var(--font-ui);
+}
+
+.faq-answer {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
