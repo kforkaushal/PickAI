@@ -2221,4 +2221,168 @@ ul {
          c o l o r :   v a r ( - - c o l o r - t e x t - m e t a ) ;  
          f o n t - w e i g h t :   5 0 0 ;  
  }  
- 
+ /* 
+  Mobile Navigation Alignment 
+  =========================================
+*/
+@media (max-width: 768px) {
+    .site-header {
+        height: auto;
+        padding: var(--space-sm) 0;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .logo {
+        margin-bottom: var(--space-xs);
+    }
+
+    .main-nav {
+        width: 100%;
+        order: 2;
+    }
+
+    .main-nav ul {
+        justify-content: center;
+        gap: var(--space-lg);
+        padding: 0;
+        width: 100%;
+    }
+
+    .header-actions {
+        order: 3;
+    }
+}
+/* 
+  13. News Category Accordion
+  =========================================
+*/
+.accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.accordion-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) 0;
+    cursor: pointer;
+    list-style: none;
+    /* Remove default marker */
+}
+
+/* Hide default marker in Safari/Chrome */
+.accordion-trigger::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-trigger h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: var(--font-serif);
+    font-weight: 400;
+}
+
+.accordion-trigger .icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate icon when open */
+details[open] .accordion-trigger .icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    padding-bottom: var(--space-lg);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-md) var(--space-xl);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.category-list li {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px dotted var(--color-border);
+}
+
+.category-list li:last-child {
+    border-bottom: none;
+}
+
+.category-list a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    display: block;
+    transition: color 0.2s;
+}
+
+.category-list a:hover {
+    color: var(--color-text-secondary);
+    text-decoration: underline;
+}
+
+.category-list .meta {
+    font-size: 0.85rem;
+    color: var(--color-text-meta);
+    margin-top: 4px;
+    display: block;
+}
+
+.view-all {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.view-all:hover {
+    border-bottom-color: var(--color-text-primary);
+}
+
+/* Mobile Tweaks */
+@media (max-width: 768px) {
+    .accordion-trigger h3 {
+        font-size: 1.25rem;
+    }
+
+    .category-list {
+        grid-template-columns: 1fr;
+    }
+}

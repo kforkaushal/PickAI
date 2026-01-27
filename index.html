@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/stories.css">
     <script src="js/stories.js" defer></script>
+    <script src="js/accordion.js" defer></script>
 
     <!-- Typography: Playfair Display (Serif), Inter (Sans), Fira Code (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -351,6 +352,81 @@
             </div>
         </section>
     </div>
+
+    <!-- News Categories Accordion -->
+    <section class="container news-category-accordion"
+        style="margin-bottom: 60px; border-top: 1px solid var(--color-border); padding-top: 40px;">
+        <div class="accordion-header" style="margin-bottom: 24px;">
+            <h2>Browse by Topic</h2>
+        </div>
+        <div class="accordion-wrapper" id="category-accordion">
+            <!-- AI Models & Architecture -->
+            <details class="accordion-item" open>
+                <summary class="accordion-trigger">
+                    <h3>AI Models & Architecture</h3>
+                    <span class="icon">+</span>
+                </summary>
+                <div class="accordion-content">
+                    <ul class="category-list" data-category="models">
+                        <!-- Injected via JS -->
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Policy, Ethics & Safety -->
+            <details class="accordion-item">
+                <summary class="accordion-trigger">
+                    <h3>Policy, Ethics & Safety</h3>
+                    <span class="icon">+</span>
+                </summary>
+                <div class="accordion-content">
+                    <ul class="category-list" data-category="policy">
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Industry & Enterprise -->
+            <details class="accordion-item">
+                <summary class="accordion-trigger">
+                    <h3>Industry & Enterprise</h3>
+                    <span class="icon">+</span>
+                </summary>
+                <div class="accordion-content">
+                    <ul class="category-list" data-category="industry">
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Guides & Explainers -->
+            <details class="accordion-item">
+                <summary class="accordion-trigger">
+                    <h3>Guides & Explainers</h3>
+                    <span class="icon">+</span>
+                </summary>
+                <div class="accordion-content">
+                    <ul class="category-list" data-category="guides">
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- A to Z Index -->
+            <details class="accordion-item">
+                <summary class="accordion-trigger">
+                    <h3>A to Z Index</h3>
+                    <span class="icon">+</span>
+                </summary>
+                <div class="accordion-content">
+                    <ul class="category-list" data-category="atoz">
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </section>
 
 
     <!-- 5. Footer -->

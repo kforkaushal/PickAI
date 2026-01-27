@@ -1,6 +1,16 @@
 {
     "hero_slides": [
         {
+            "title": "What is Moltbot? The Sovereign AI Revolution",
+            "summary": "Discover why Peter Steinberger's Clawd.bot (now Moltbot) is trending. Learn how this open-source, self-hosted AI agent automates your life via WhatsApp and Telegram.",
+            "link": "articles/news/what-is-moltbot-the-clawdbot-phenomenon-and-the-future-of-ai-agents.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1769540424/XxjnxsFubv4LImNkmR2NW6uCLgc_bqzc63.avif",
+            "category": "Trend Analysis",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1769540455528
+        },
+        {
             "title": "Is the ₹99 Plan a Trap? Why I’m Canceling My Subscriptions in 2026",
             "summary": "The 99-Plan Subscription Trap is the ultimate psychological hack—a price point so low you don't think twice, but so persistent it silently drains your wealth over time.",
             "link": "articles/news/is-the-99-plan-a-trap-why-im-canceling-my-subscriptions-in-2026.html",
@@ -84,6 +94,12 @@
         "link": "articles/news/davos-ai-or-die-2026.html"
     },
     "latest_updates": [
+        {
+            "time": "00:30 GMT",
+            "title": "What is Moltbot? The Sovereign AI Revolution",
+            "link": "articles/news/what-is-moltbot-the-clawdbot-phenomenon-and-the-future-of-ai-agents.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1769540424/XxjnxsFubv4LImNkmR2NW6uCLgc_bqzc63.avif"
+        },
         {
             "time": "10:48 GMT",
             "title": "Is the ₹99 Plan a Trap? Why I’m Canceling My Subscriptions in 2026",
@@ -174,6 +190,16 @@
         }
     ],
     "analysis_grid": [
+        {
+            "title": "What is Moltbot? The Sovereign AI Revolution",
+            "summary": "Discover why Peter Steinberger's Clawd.bot (now Moltbot) is trending. Learn how this open-source, self-hosted AI agent automates your life via WhatsApp and Telegram.",
+            "link": "articles/news/what-is-moltbot-the-clawdbot-phenomenon-and-the-future-of-ai-agents.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1769540424/XxjnxsFubv4LImNkmR2NW6uCLgc_bqzc63.avif",
+            "category": "Trend Analysis",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1769540455708
+        },
         {
             "title": "Is the ₹99 Plan a Trap? Why I’m Canceling My Subscriptions in 2026",
             "summary": "The 99-Plan Subscription Trap is the ultimate psychological hack—a price point so low you don't think twice, but so persistent it silently drains your wealth over time.",
@@ -272,13 +298,6 @@
             "summary": "Chinese startup's new model specializes in extremely long prompts, outperforming Western giants in internal tests.",
             "link": "articles/news/deepseek-v4-coding.html",
             "image_url": "https://res.cloudinary.com/pickai/image/upload/e_improve,e_sharpen/v1768917638/Untitled-design-93_o2msdr.jpg"
-        },
-        {
-            "category": "Economic Analysis",
-            "title": "Anthropic’s Economic Index",
-            "summary": "Report shows AI is boosting high-skilled, complex tasks faster than routine work.",
-            "link": "articles/news/anthropic-economic-index.html",
-            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768803060/Copy_of_ETIHRTIH_Image_template_-_2026-01-16T123255.989_suwrmw.webp"
         }
     ],
     "opinion_grid": [
@@ -356,6 +375,18 @@
         }
     ],
     "research_papers": [
+        {
+            "title": "What is Moltbot? The Sovereign AI Revolution",
+            "authors": "PickAI Editorial Board",
+            "abstract": "Moltbot (formerly Clawd.bot) is the first true sovereign AI agent. It runs locally, controls your apps, and bypasses Big Tech guardrails. A deep dive into the future of personal automation.",
+            "tags": [
+                "Sovereign AI",
+                "Agents",
+                "Local LLMs"
+            ],
+            "link": "articles/news/what-is-moltbot-the-clawdbot-phenomenon-and-the-future-of-ai-agents.html",
+            "date": "Jan 2026"
+        },
         {
             "title": "Constitutional AI: Harmlessness from AI Feedback",
             "authors": "Yuntao Bai, Saurav Kadavath, et al. (Anthropic)",
