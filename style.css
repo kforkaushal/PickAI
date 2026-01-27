@@ -88,7 +88,8 @@
 }
 
 .ad-mobile {
-    max-width: 320px;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 @media (max-width: 1024px) {
@@ -305,6 +306,8 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll from ad blowouts */
 }
 
 h1,
@@ -323,6 +326,12 @@ h6 {
 h1 {
     font-size: 3rem;
     letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.25rem;
+    }
 }
 
 h2 {
@@ -909,8 +918,11 @@ ul {
     */
     .header-inner {
         flex-wrap: wrap;
-        align-content: space-between;
+        align-content: center;
+        /* Changed from space-between for better vertically centering */
         gap: var(--space-sm);
+        padding: 0 var(--space-xs);
+        /* Add slight padding on edges */
     }
 
     .logo {
@@ -1625,8 +1637,8 @@ ul {
 
 @media (max-width: 768px) {
     .hero-slider-container {
-        height: 500px;
-        /* Slightly shorter on mobile */
+        height: 380px;
+        /* Optimized for mobile view */
     }
 
     .slide-title-overlay {
