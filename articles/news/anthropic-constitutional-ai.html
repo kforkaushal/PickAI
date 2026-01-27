@@ -6,10 +6,14 @@
     <script src="../../js/analytics-setup.js"></script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthropic Publishes 'Constitutional AI' Whitepaper — PickAI</title>
+    <title>Anthropic Constitutional AI: Resolving the RLHF Bottleneck | PickAI</title>
+    <meta name="description"
+        content="Anthropic's new whitepaper on Constitutional AI proposes a method to train AI without expensive human feedback, making behavior more predictable and safe.">
+    <meta name="keywords"
+        content="Anthropic Constitutional AI, CAI Whitepaper, RLHF Alternatives, AI Safety Training, Reliable LLMs">
     <link rel="stylesheet" href="../../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,13 +27,15 @@
     <link rel="manifest" href="../../site.webmanifest">
 
     <!-- Meta -->
-    <meta name="description" content="Anthropic details its method for training AI assistants using a set of principles rather than just human feedback, aiming for scalable and transparent safety.">
+    <meta name="description"
+        content="Anthropic details its method for training AI assistants using a set of principles rather than just human feedback, aiming for scalable and transparent safety.">
     <meta name="author" content="PickAI Editorial Board">
     <link rel="canonical" href="https://pickai.netlify.app/articles/news/anthropic-constitutional-ai.html">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Anthropic Publishes 'Constitutional AI' Whitepaper — PickAI">
-    <meta property="og:description" content="Anthropic details its method for training AI assistants using a set of principles rather than just human feedback, aiming for scalable and transparent safety.">
+    <meta property="og:description"
+        content="Anthropic details its method for training AI assistants using a set of principles rather than just human feedback, aiming for scalable and transparent safety.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://pickai.netlify.app/articles/news/anthropic-constitutional-ai.html">
     <meta property="og:image" content="https://picsum.photos/seed/constitution/1200/675">
@@ -38,7 +44,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@PickAI">
     <meta name="twitter:title" content="Anthropic Publishes 'Constitutional AI' Whitepaper — PickAI">
-    <meta name="twitter:description" content="Anthropic details its method for training AI assistants using a set of principles rather than just human feedback, aiming for scalable and transparent safety.">
+    <meta name="twitter:description"
+        content="Anthropic details its method for training AI assistants using a set of principles rather than just human feedback, aiming for scalable and transparent safety.">
     <meta name="twitter:image" content="https://picsum.photos/seed/constitution/1200/675">
 
     <!-- JSON-LD BreadcrumbList -->
@@ -108,7 +115,8 @@
         });
     </script>
     <!-- Google Ad Blocker Recovery -->
-    <script async src="https://fundingchoicesmessages.google.com/i/pub-9227354288966999?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-9227354288966999?ers=1"></script>
+    <script>(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
 
 </head>
 
@@ -159,37 +167,41 @@
             </header>
 
             <!-- Featured Image -->
-            <img src="https://picsum.photos/seed/constitution/1200/675" alt="Anthropic Publishes 'Constitutional AI' Whitepaper" class="article-hero-image" loading="eager">
+            <img src="https://picsum.photos/seed/constitution/1200/675"
+                alt="Anthropic Publishes 'Constitutional AI' Whitepaper" class="article-hero-image" loading="eager">
 
             <div class="article-body">
                 <p class="lead">
-                In a move to make AI behavior more predictable and transparent, Anthropic has released a comprehensive
-                whitepaper on <strong>Constitutional AI (CAI)</strong>. This training methodology could solve one of the
-                industry's biggest bottlenecks: the reliance on expensive and inconsistent human contractors to rate
-                model outputs.
-            </p><p>
-                Traditionally, models like ChatGPT interact with human labelers who vote on which answers are "better"
-                (RLHF). However, human labelers can be biased, tired, or inconsistent. Constitutional AI replaces this
-                step by giving the model a set of written principles—a "constitution"—and asking it to critique and
-                revise its own work based on those rules.
-            </p>
-<!-- In-Article Ad -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9227354288966999"
-     data-ad-slot="5217219266"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<p>
-                As models grow larger, supervising them manually becomes impossible. CAI offers a path to scalable
-                oversight. It also makes safety more transparent: to understand a model's behavior, we can simply read
-                its constitution, rather than guessing at the hidden biases of thousands of anonymous human raters.
-            </p>
+                    In a move to make AI behavior more predictable and transparent, Anthropic has released a
+                    comprehensive
+                    whitepaper on <strong>Constitutional AI (CAI)</strong>. This training methodology could solve one of
+                    the
+                    industry's biggest bottlenecks: the reliance on expensive and inconsistent human contractors to rate
+                    model outputs.
+                </p>
+                <p>
+                    Traditionally, models like ChatGPT interact with human labelers who vote on which answers are
+                    "better"
+                    (RLHF). However, human labelers can be biased, tired, or inconsistent. Constitutional AI replaces
+                    this
+                    step by giving the model a set of written principles—a "constitution"—and asking it to critique and
+                    revise its own work based on those rules.
+                </p>
+                <!-- In-Article Ad -->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+                    data-ad-format="fluid" data-ad-client="ca-pub-9227354288966999" data-ad-slot="5217219266"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <p>
+                    As models grow larger, supervising them manually becomes impossible. CAI offers a path to scalable
+                    oversight. It also makes safety more transparent: to understand a model's behavior, we can simply
+                    read
+                    its constitution, rather than guessing at the hidden biases of thousands of anonymous human raters.
+                </p>
             </div>
         </main>
 
@@ -226,21 +238,24 @@
                 <h4 class="widget-title">Tools You Might Like</h4>
                 <div class="mini-tool-list">
                     <a href="https://cursor.com" class="mini-tool-item">
-                        <img src="https://img.logo.dev/cursor.com?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Cursor" loading="lazy">
+                        <img src="https://img.logo.dev/cursor.com?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Cursor"
+                            loading="lazy">
                         <div class="mini-tool-info">
                             <span class="name">Cursor</span>
                             <span class="desc">Coding / IDE</span>
                         </div>
                     </a>
                     <a href="https://perplexity.ai" class="mini-tool-item">
-                        <img src="https://img.logo.dev/perplexity.ai?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Perplexity" loading="lazy">
+                        <img src="https://img.logo.dev/perplexity.ai?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Perplexity"
+                            loading="lazy">
                         <div class="mini-tool-info">
                             <span class="name">Perplexity</span>
                             <span class="desc">Search / Research</span>
                         </div>
                     </a>
                     <a href="https://claude.ai" class="mini-tool-item">
-                        <img src="https://img.logo.dev/claude.ai?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Claude" loading="lazy">
+                        <img src="https://img.logo.dev/claude.ai?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Claude"
+                            loading="lazy">
                         <div class="mini-tool-info">
                             <span class="name">Claude</span>
                             <span class="desc">LLM / Writing</span>
@@ -254,17 +269,13 @@
             <div class="ad-container" style="margin-top: 40px;">
                 <span class="ad-label">Advertisement</span>
                 <div class="ad-slot ad-rectangle" style="width: 300px; height: 250px;">
-                <!-- PickAI -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-9227354288966999"
-                     data-ad-slot="6721872622"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
+                    <!-- PickAI -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9227354288966999"
+                        data-ad-slot="6721872622" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
             </div>
 
         </aside>

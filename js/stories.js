@@ -6,14 +6,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     let currentSlide = 0;
     let autoAdvanceTimer = null;
     let isPaused = false;
-    const SLIDE_DURATION = 5000;
+    // Auto-Scroll Variables
+    let scrollInterval = null;
+    let scrollSpeed = 0.8; // Pixels per frame
+    let isScrolling = true;
 
-    // DOM Elements
-    conststoriesContainer = document.getElementById('stories-container');
+    // DOM Elements - Fixed naming
+    const storiesContainerEl = document.getElementById('stories-container');
     const fullscreenModal = document.getElementById('fullscreen-modal');
     const fullscreenSlides = document.getElementById('fullscreen-slides');
     const fullscreenProgress = document.getElementById('fullscreen-progress');
-    const storiesContainerEl = document.getElementById('stories-container');
 
     // Init Logic
     try {
@@ -21,9 +23,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!response.ok) throw new Error('Failed to fetch news');
         const news = await response.json();
 
-        // Build stories (same logic as webslide)
+        // Build stories
         const heroLinks = new Set(news.hero_slides.map(item => item.link));
-        stories = [
+        const originalStories = [
             ...news.hero_slides.map(item => ({
                 title: item.title,
                 description: item.summary,
@@ -43,35 +45,71 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }))
         ];
 
-        renderStoryCards(stories);
+        // DUPLICATE CONTENT FOR INFINITE SCROLL
+        // We create a "display list" that is just double the original
+        stories = originalStories; // Keep original reference for fullscreen logic (no duplicates needed in modal)
+
+        // Render Duplicated List for Grid
+        renderStoryCards([...originalStories, ...originalStories]);
         setupFullscreen();
+        startInfiniteScroll();
 
     } catch (e) {
         console.error('Error initializing stories:', e);
     }
 
-    function renderStoryCards(stories) {
+    function renderStoryCards(displayStories) {
         if (!storiesContainerEl) return;
-        storiesContainerEl.innerHTML = stories.map((story, i) => `
-            <div class="story-card" data-index="${i}">
+        storiesContainerEl.innerHTML = displayStories.map((story, i) => `
+            <div class="story-card" data-index="${i % stories.length}" style="display: inline-block; white-space: normal;"> <!-- Inline block for nowrap container -->
                 <img src="${story.image}" alt="${story.title}" loading="lazy">
                 <div class="overlay"></div>
                 <div class="content">
                     <span class="category">${story.category}</span>
                     <h3>${story.title}</h3>
                 </div>
-                <svg class="progress-ring" viewBox="0 0 32 32">
-                    <circle class="bg" cx="16" cy="16" r="14"/>
-                    <circle class="progress" cx="16" cy="16" r="14"/>
-                </svg>
             </div>
         `).join('');
+    }
+
+    function startInfiniteScroll() {
+        let animationFrameId;
+
+        function scroll() {
+            if (isScrolling && !fullscreenModal.classList.contains('active')) {
+                storiesContainerEl.scrollLeft += scrollSpeed;
+
+                // Infinite Scroll Logic
+                // If we have scrolled past half the width (the first set of items), reset to 0
+                // We use scrollWidth / 2 because we duplicated the content exactly once
+                if (storiesContainerEl.scrollLeft >= (storiesContainerEl.scrollWidth / 2)) {
+                    storiesContainerEl.scrollLeft = 0;
+                    // Adjust for any small fractional overshot causing a "jump"?
+                    // Usually resetting to 0 is fine if widths are exact.
+                    // For more precision: storiesContainerEl.scrollLeft -= (storiesContainerEl.scrollWidth / 2);
+                    // But 0 is safer vs floating point drift.
+                }
+            }
+            animationFrameId = requestAnimationFrame(scroll);
+        }
+
+        animationFrameId = requestAnimationFrame(scroll);
+
+        // Hover Events
+        storiesContainerEl.addEventListener('mouseenter', () => isScrolling = false);
+        storiesContainerEl.addEventListener('mouseleave', () => isScrolling = true);
+
+        // Touch Interaction (Pause while touching)
+        storiesContainerEl.addEventListener('touchstart', () => isScrolling = false);
+        storiesContainerEl.addEventListener('touchend', () => {
+            setTimeout(() => isScrolling = true, 1000); // Resume after delays
+        });
     }
 
     function setupFullscreen() {
         if (!fullscreenModal || !fullscreenSlides || !fullscreenProgress) return;
 
-        // Build fullscreen slides
+        // Build fullscreen slides (ORIGINAL LIST only)
         fullscreenProgress.innerHTML = stories.map((_, i) => `
             <div class="bar ${i === 0 ? 'active' : ''}" data-index="${i}">
                 <div class="fill"></div>
@@ -94,6 +132,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         fullscreenSlides.insertAdjacentHTML('afterbegin', slidesHTML);
 
         // Events
+        // Note: querySelectorAll will pick up duplicates too, which is fine
         document.querySelectorAll('.story-card').forEach(card => {
             card.addEventListener('click', () => {
                 currentSlide = parseInt(card.dataset.index);
@@ -104,7 +143,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const openBtn = document.getElementById('open-fullscreen');
         if (openBtn) {
             openBtn.addEventListener('click', () => {
-                currentSlide = 0;
+                currentSlide = 0; // Default start
                 openFullscreen();
             });
         }
@@ -133,13 +172,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     function openFullscreen() {
         fullscreenModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        isScrolling = false; // Stop background scroll
         goToSlide(currentSlide);
+        // Do NOT auto advance fullscreen unless requested? 
+        // Original logic had it.
+        isPaused = false;
         startAutoAdvance();
     }
 
     function closeFullscreen() {
         fullscreenModal.classList.remove('active');
         document.body.style.overflow = '';
+        isScrolling = true; // Resume background scroll
         stopAutoAdvance();
     }
 
@@ -170,8 +214,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function startAutoAdvance() {
         stopAutoAdvance();
-        if (!isPaused) {
-            autoAdvanceTimer = setTimeout(nextSlide, SLIDE_DURATION);
+        // 5 seconds per slide in fullscreen
+        if (!isPaused && fullscreenModal.classList.contains('active')) {
+            autoAdvanceTimer = setTimeout(nextSlide, 5000);
         }
     }
 

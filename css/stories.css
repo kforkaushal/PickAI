@@ -54,12 +54,21 @@
     gap: var(--space-md);
     overflow-x: auto;
     padding: 0 var(--space-md) var(--space-md) var(--space-md);
-    scroll-snap-type: x mandatory;
+    /* Scroll Snap must be disabled for continuous JS scrolling */
+    /* scroll-snap-type: x mandatory; <- DISABLED */
+    white-space: nowrap;
+    /* Ensure items stay in a row */
     -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar for auto-scroll usage */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
 }
 
 .stories-container::-webkit-scrollbar {
-    height: 6px;
+    display: none;
+    /* Chrome/Safari */
 }
 
 .stories-container::-webkit-scrollbar-track {
@@ -79,7 +88,7 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; <- DISABLED */
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }

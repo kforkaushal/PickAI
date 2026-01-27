@@ -6,10 +6,14 @@
     <script src="../../js/analytics-setup.js"></script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explainer: How Quantization Shrinks Models — PickAI</title>
+    <title>AI Explainer: How Quantization Shrinks Models without Losing Intelligence | PickAI</title>
+    <meta name="description"
+        content="Model quantization is the secret to running powerful AI on your laptop. Learn how reducing precision from 16-bit to 4-bit saves memory and speed.">
+    <meta name="keywords"
+        content="Model Quantization, AI Inference Optimization, 4-bit Loading, LLM Compression, AI Explained">
     <link rel="stylesheet" href="../../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,13 +27,15 @@
     <link rel="manifest" href="../../site.webmanifest">
 
     <!-- Meta -->
-    <meta name="description" content="Running Llama 3 on a laptop? Thank quantization. We explain 4-bit, 8-bit, and FP16.">
+    <meta name="description"
+        content="Running Llama 3 on a laptop? Thank quantization. We explain 4-bit, 8-bit, and FP16.">
     <meta name="author" content="PickAI Editorial Board">
     <link rel="canonical" href="https://pickai.netlify.app/articles/news/explainer-quantization.html">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Explainer: How Quantization Shrinks Models — PickAI">
-    <meta property="og:description" content="Running Llama 3 on a laptop? Thank quantization. We explain 4-bit, 8-bit, and FP16.">
+    <meta property="og:description"
+        content="Running Llama 3 on a laptop? Thank quantization. We explain 4-bit, 8-bit, and FP16.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://pickai.netlify.app/articles/news/explainer-quantization.html">
     <meta property="og:image" content="https://picsum.photos/seed/quant/1200/675">
@@ -38,7 +44,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@PickAI">
     <meta name="twitter:title" content="Explainer: How Quantization Shrinks Models — PickAI">
-    <meta name="twitter:description" content="Running Llama 3 on a laptop? Thank quantization. We explain 4-bit, 8-bit, and FP16.">
+    <meta name="twitter:description"
+        content="Running Llama 3 on a laptop? Thank quantization. We explain 4-bit, 8-bit, and FP16.">
     <meta name="twitter:image" content="https://picsum.photos/seed/quant/1200/675">
 
     <!-- JSON-LD BreadcrumbList -->
@@ -108,7 +115,8 @@
         });
     </script>
     <!-- Google Ad Blocker Recovery -->
-    <script async src="https://fundingchoicesmessages.google.com/i/pub-9227354288966999?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-9227354288966999?ers=1"></script>
+    <script>(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
 
 </head>
 
@@ -159,25 +167,26 @@
             </header>
 
             <!-- Featured Image -->
-            <img src="https://picsum.photos/seed/quant/1200/675" alt="How Quantization Shrinks Models" class="article-hero-image" loading="eager">
+            <img src="https://picsum.photos/seed/quant/1200/675" alt="How Quantization Shrinks Models"
+                class="article-hero-image" loading="eager">
 
             <div class="article-body">
-                <p class="lead">Most AI models are trained in 16-bit precision. But for inference, you rarely need that much
-                detail. <strong>Quantization</strong> is the art of rounding down numbers to save space.</p><p>Imagine rounding 3.14159 to just 3. You lose some accuracy, but it's much easier to store. Quantization
-                does this for the billions of weights in a neural network, often reducing memory usage by 70% with
-                negligible performance loss.</p>
-<!-- In-Article Ad -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9227354288966999"
-     data-ad-slot="5217219266"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+                <p class="lead">Most AI models are trained in 16-bit precision. But for inference, you rarely need that
+                    much
+                    detail. <strong>Quantization</strong> is the art of rounding down numbers to save space.</p>
+                <p>Imagine rounding 3.14159 to just 3. You lose some accuracy, but it's much easier to store.
+                    Quantization
+                    does this for the billions of weights in a neural network, often reducing memory usage by 70% with
+                    negligible performance loss.</p>
+                <!-- In-Article Ad -->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+                    data-ad-format="fluid" data-ad-client="ca-pub-9227354288966999" data-ad-slot="5217219266"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
 
             </div>
         </main>
@@ -215,21 +224,24 @@
                 <h4 class="widget-title">Tools You Might Like</h4>
                 <div class="mini-tool-list">
                     <a href="https://cursor.com" class="mini-tool-item">
-                        <img src="https://img.logo.dev/cursor.com?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Cursor" loading="lazy">
+                        <img src="https://img.logo.dev/cursor.com?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Cursor"
+                            loading="lazy">
                         <div class="mini-tool-info">
                             <span class="name">Cursor</span>
                             <span class="desc">Coding / IDE</span>
                         </div>
                     </a>
                     <a href="https://perplexity.ai" class="mini-tool-item">
-                        <img src="https://img.logo.dev/perplexity.ai?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Perplexity" loading="lazy">
+                        <img src="https://img.logo.dev/perplexity.ai?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Perplexity"
+                            loading="lazy">
                         <div class="mini-tool-info">
                             <span class="name">Perplexity</span>
                             <span class="desc">Search / Research</span>
                         </div>
                     </a>
                     <a href="https://claude.ai" class="mini-tool-item">
-                        <img src="https://img.logo.dev/claude.ai?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Claude" loading="lazy">
+                        <img src="https://img.logo.dev/claude.ai?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="Claude"
+                            loading="lazy">
                         <div class="mini-tool-info">
                             <span class="name">Claude</span>
                             <span class="desc">LLM / Writing</span>
@@ -243,17 +255,13 @@
             <div class="ad-container" style="margin-top: 40px;">
                 <span class="ad-label">Advertisement</span>
                 <div class="ad-slot ad-rectangle" style="width: 300px; height: 250px;">
-                <!-- PickAI -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-9227354288966999"
-                     data-ad-slot="6721872622"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
+                    <!-- PickAI -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9227354288966999"
+                        data-ad-slot="6721872622" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
             </div>
 
         </aside>

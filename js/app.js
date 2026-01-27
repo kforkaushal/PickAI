@@ -406,34 +406,116 @@ function populateAnalysisGrid(gridItems) {
     const gridContainer = document.getElementById('secondary-grid');
     if (!gridContainer || !gridItems) return;
 
-    gridContainer.innerHTML = ''; // Clear placeholders
+    // Pagination Settings
+    const itemsPerPage = 12;
+    let currentPage = 1;
+    const totalPages = Math.ceil(gridItems.length / itemsPerPage);
 
-    gridItems.forEach(item => {
-        const article = document.createElement('article');
+    // Create a container for pagination controls right after the grid
+    // We need to check if one exists or create it.
+    // Ideally, we append it to the parent section of the grid.
+    let paginationContainer = document.getElementById('analysis-pagination');
+    if (!paginationContainer) {
+        paginationContainer = document.createElement('div');
+        paginationContainer.id = 'analysis-pagination';
+        paginationContainer.className = 'pagination-controls';
+        paginationContainer.style.marginTop = '40px';
+        paginationContainer.style.display = 'flex';
+        paginationContainer.style.justifyContent = 'center';
+        paginationContainer.style.gap = '20px';
+        // Insert after the grid
+        gridContainer.parentNode.insertBefore(paginationContainer, gridContainer.nextSibling);
+    }
 
-        // check if image exists for rich card layout
-        if (item.image_url) {
-            article.className = 'news-card-rich'; // New class or just structure change
-            article.innerHTML = `
-            <a href="${item.link}" class="card-image-container" style="display:block;">
-                <img src="${item.image_url}" alt="${item.title}" class="card-bg-image" loading="lazy">
-                <div class="card-overlay-gradient">
-                    <span class="card-overlay-category">${item.category}</span>
-                    <h3 class="card-overlay-title">${item.title}</h3>
-                </div>
-            </a>
-            <p style="margin-top: 8px; font-size: 0.95rem; color: var(--color-text-secondary);">${item.summary}</p>
-        `;
-        } else {
-            // Fallback to text only
-            article.className = 'news-card';
-            article.innerHTML = `
-            <span class="category">${item.category}</span>
-            <h3><a href="${item.link}">${item.title}</a></h3>
-            <p>${item.summary}</p>
-        `;
-        }
+    function render() {
+        gridContainer.innerHTML = ''; // Clear current items
 
-        gridContainer.appendChild(article);
-    });
+        // Validate page
+        if (currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageItems = gridItems.slice(start, end);
+
+        pageItems.forEach(item => {
+            const article = document.createElement('article');
+
+            // check if image exists for rich card layout
+            if (item.image_url) {
+                article.className = 'news-card-rich';
+                article.innerHTML = `
+                <a href="${item.link}" class="card-image-container" style="display:block;">
+                    <img src="${item.image_url}" alt="${item.title}" class="card-bg-image" loading="lazy">
+                    <div class="card-overlay-gradient">
+                        <span class="card-overlay-category">${item.category}</span>
+                        <h3 class="card-overlay-title">${item.title}</h3>
+                    </div>
+                </a>
+                <p style="margin-top: 8px; font-size: 0.95rem; color: var(--color-text-secondary);">${item.summary}</p>
+            `;
+            } else {
+                // Fallback to text only
+                article.className = 'news-card';
+                article.innerHTML = `
+                <span class="category">${item.category}</span>
+                <h3><a href="${item.link}">${item.title}</a></h3>
+                <p>${item.summary}</p>
+            `;
+            }
+
+            gridContainer.appendChild(article);
+        });
+
+        updatePaginationControls();
+    }
+
+    function updatePaginationControls() {
+        paginationContainer.innerHTML = '';
+
+        if (totalPages <= 1) return; // No controls needed if 1 page
+
+        // Prev Button
+        const prevBtn = document.createElement('button');
+        prevBtn.innerHTML = '&laquo; Previous';
+        prevBtn.className = 'pagination-btn';
+        prevBtn.disabled = currentPage === 1;
+        if (currentPage === 1) prevBtn.style.opacity = '0.5';
+        prevBtn.onclick = () => {
+            if (currentPage > 1) {
+                currentPage--;
+                render();
+                // Scroll to top of section
+                gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        };
+
+        // Info Text
+        const indicator = document.createElement('span');
+        indicator.className = 'pagination-info';
+        indicator.textContent = `Page ${currentPage} of ${totalPages}`;
+        indicator.style.display = 'flex';
+        indicator.style.alignItems = 'center';
+        indicator.style.fontWeight = '500';
+
+        // Next Button
+        const nextBtn = document.createElement('button');
+        nextBtn.innerHTML = 'Next &raquo;';
+        nextBtn.className = 'pagination-btn';
+        nextBtn.disabled = currentPage === totalPages;
+        if (currentPage === totalPages) nextBtn.style.opacity = '0.5';
+        nextBtn.onclick = () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                render();
+                gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        };
+
+        paginationContainer.appendChild(prevBtn);
+        paginationContainer.appendChild(indicator);
+        paginationContainer.appendChild(nextBtn);
+    }
+
+    render();
 }
