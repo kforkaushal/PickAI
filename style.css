@@ -308,6 +308,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     /* Prevent horizontal scroll from ad blowouts */
+    width: 100%;
+    /* Ensure body doesn't expand */
+    position: relative;
+    /* Context for anchor ads */
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 h1,
@@ -378,8 +387,12 @@ ul {
 */
 .container {
     max-width: var(--container-width);
+    width: 100%;
+    /* Force constraint against anchor ads */
     margin: 0 auto;
     padding: 0 var(--space-md);
+    overflow-x: hidden;
+    /* Prevent children from expanding container */
 }
 
 .grid {
@@ -1638,6 +1651,9 @@ ul {
 @media (max-width: 768px) {
     .hero-slider-container {
         height: 380px;
+        width: 100%;
+        max-width: 100vw;
+        /* Hard limit */
         /* Optimized for mobile view */
     }
 
