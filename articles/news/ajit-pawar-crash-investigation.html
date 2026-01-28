@@ -155,6 +155,7 @@
       }]
     }
     </script>
+    <link rel="stylesheet" href="../../css/newsletter.css">
 </head>
 
 <body>
@@ -298,6 +299,18 @@
 
         <!-- Sidebar -->
         <aside class="article-sidebar">
+
+            <!-- Newsletter Widget (Injected) -->
+            <div class="sidebar-widget newsletter-widget" id="newsletter-widget">
+                <h4 class="widget-title">The PickAI Briefing</h4>
+                <p>Join 15,000+ researchers tracking the future of intelligence.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Work email" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+                <div class="newsletter-feedback"></div>
+            </div>
+
             <div class="sidebar-widget">
                 <h4 class="widget-title">Related News</h4>
                 <ul class="sidebar-list">
@@ -386,6 +399,8 @@
     <script src="../../js/search.js"></script>
     <script src="../../js/consent.js" defer></script>
     <script src="../../js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/newsletter.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,205 @@
+/* 
+  Newsletter Section Styles - Premium Editorial Theme
+*/
+.newsletter-section {
+    background-color: #fafafa;
+    /* Light premium background instead of dark */
+    color: var(--color-text-primary);
+    padding: var(--space-3xl) var(--space-md);
+    margin: var(--space-3xl) auto 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    /* Full width strip */
+}
+
+.newsletter-content {
+    max-width: 580px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    /* Ensure content is above bg */
+}
+
+.newsletter-section h2 {
+    color: var(--color-text-primary);
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.02em;
+}
+
+.newsletter-section p {
+    color: var(--color-text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+    font-family: var(--font-sans);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 20;
+    /* Higher than content */
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: var(--color-text-primary);
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    border-radius: 0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+    position: relative;
+    z-index: 20;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--color-text-primary);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.newsletter-btn {
+    padding: 14px 28px;
+    background: var(--color-text-primary);
+    color: #fff;
+    border: 1px solid var(--color-text-primary);
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    border-radius: 0;
+    cursor: pointer !important;
+    /* Force pointer */
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 30;
+    /* Highest in form */
+}
+
+.newsletter-btn:hover {
+    background: #333;
+    border-color: #333;
+    transform: translateY(-1px);
+}
+
+/* Feedback messages */
+.newsletter-feedback {
+    margin-top: var(--space-md);
+    font-size: 0.9rem;
+    font-family: var(--font-ui);
+    min-height: 1.5em;
+    font-weight: 500;
+}
+
+.newsletter-feedback.success {
+    color: #1a8917;
+}
+
+.newsletter-feedback.error {
+    color: #d93025;
+}
+
+.newsletter-feedback.processing {
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+/* Sidebar Widget Variation - UPDATED FOR UI CLICKABILITY */
+.sidebar-widget.newsletter-widget {
+    background: #fafafa;
+    padding: 24px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    text-align: center;
+    margin-bottom: 40px;
+    /* Force stack order */
+    position: relative;
+    z-index: 100;
+}
+
+.sidebar-widget.newsletter-widget h4 {
+    margin-top: 0;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    margin-bottom: 8px;
+}
+
+.sidebar-widget.newsletter-widget p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-family: var(--font-sans);
+}
+
+.sidebar-widget .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    /* Ensure form is above widget bg */
+    position: relative;
+    z-index: 101;
+}
+
+.sidebar-widget .newsletter-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 102;
+    /* Input clickable */
+}
+
+.sidebar-widget .newsletter-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 103;
+    /* Button Topmost clickable */
+}
+
+.sidebar-widget .newsletter-feedback {
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .newsletter-form {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .newsletter-section h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter-input,
+    .newsletter-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .newsletter-section {
+        padding: var(--space-2xl) var(--space-md);
+    }
+}

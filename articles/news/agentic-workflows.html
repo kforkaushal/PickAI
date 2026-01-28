@@ -118,6 +118,7 @@
     <script async src="https://fundingchoicesmessages.google.com/i/pub-9227354288966999?ers=1"></script>
     <script>(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
 
+    <link rel="stylesheet" href="../../css/newsletter.css">
 </head>
 
 <body>
@@ -203,6 +204,18 @@
 
         <!-- Sidebar -->
         <aside class="article-sidebar">
+
+            <!-- Newsletter Widget (Injected) -->
+            <div class="sidebar-widget newsletter-widget" id="newsletter-widget">
+                <h4 class="widget-title">The PickAI Briefing</h4>
+                <p>Join 15,000+ researchers tracking the future of intelligence.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Work email" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+                <div class="newsletter-feedback"></div>
+            </div>
+
 
             <!-- Trending/Related -->
             <div class="sidebar-widget">
@@ -303,6 +316,8 @@
     <!-- Consent Banner -->
     <script src="../../js/consent.js" defer></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/newsletter.js"></script>
 </body>
 
 </html>

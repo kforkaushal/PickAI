@@ -17,6 +17,7 @@
     <!-- Design System / CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/stories.css">
+    <link rel="stylesheet" href="css/newsletter.css">
     <script src="js/stories.js" defer></script>
     <script src="js/accordion.js" defer></script>
 
@@ -53,11 +54,12 @@
         content="PickAI is your authority for deep-dive AI news, research analysis, and neutral tech updates.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pickai.netlify.app/">
-    <meta property="og:image" content="https://pickai.netlify.app/assets/og-home.jpg">
+    <meta property="og:image" content="assets/PickAI.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@PickAI">
+    <meta name="twitter:image" content="assets/PickAI.png">
 
     <!-- JSON-LD Structured Data (Organization) -->
     <script type="application/ld+json">
@@ -429,6 +431,22 @@
     </section>
 
 
+    <!-- 6. Newsletter Section -->
+    <section class="container newsletter-section" id="newsletter">
+        <div class="newsletter-content">
+            <h2>The PickAI Briefing</h2>
+            <p>Join 1500+ researchers and developers tracking the future of intelligence. No hype, just signal.</p>
+
+            <form id="newsletter-form" class="newsletter-form">
+                <input type="email" id="newsletter-email" class="newsletter-input"
+                    placeholder="enter your email address..." required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+
+            <div id="newsletter-feedback" class="newsletter-feedback"></div>
+        </div>
+    </section>
+
     <!-- 5. Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
@@ -482,6 +500,9 @@
 
     <!-- Logic -->
     <script src="js/app.js"></script>
+    <!-- Supabase & Newsletter Logic -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/newsletter.js"></script>
 </body>
 
 </html>
