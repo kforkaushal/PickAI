@@ -251,8 +251,13 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://pickai.netlify.app/articles/news/tsmc-packaging-tech.html</loc>
-        <lastmod>2026-01-25</lastmod>
-        <priority>0.7</priority>
+        <loc>https://pickai.netlify.app/articles/news/ajit-pawar-death-news.html</loc>
+        <lastmod>2026-01-28</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pickai.netlify.app/articles/news/ajit-pawar-crash-investigation.html</loc>
+        <lastmod>2026-01-28</lastmod>
+        <priority>0.8</priority>
     </url>
 </urlset>

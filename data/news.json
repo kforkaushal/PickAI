@@ -1,6 +1,26 @@
 {
     "hero_slides": [
         {
+            "title": "DGCA Probes Baramati Crash: What We Know About Flight VT-SSK",
+            "summary": "Investigation begins into the Learjet 45 crash. Questions raised about VSR Ventures and weather conditions.",
+            "link": "articles/news/ajit-pawar-crash-investigation.html",
+            "image_url": "assets/images/news/crash-investigation.png",
+            "category": "Investigation",
+            "author": "PickAI Editorial Board",
+            "date": "Developing",
+            "id": 1769618500000
+        },
+        {
+            "title": "Ajit Pawar Passes Away at 66: End of an Era",
+            "summary": "Maharashtra mourns as former Deputy CM Ajit Pawar passes away in a tragic plane crash near Baramati.",
+            "link": "articles/news/ajit-pawar-death-news.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1769617640/ajit-pawar-death-news_n3ajgr.png",
+            "category": "Obituary",
+            "author": "PickAI Editorial",
+            "date": "Breaking",
+            "id": 1769618000000
+        },
+        {
             "title": "What is Moltbot? The Sovereign AI Revolution",
             "summary": "Discover why Moltbot, the open-source self-hosted AI agent, is trending for automating life via WhatsApp and Telegram.",
             "link": "articles/news/what-is-moltbot-the-clawdbot-phenomenon-and-the-future-of-ai-agents.html",
@@ -94,6 +114,18 @@
         "link": "articles/news/davos-ai-or-die-2026.html"
     },
     "latest_updates": [
+        {
+            "time": "Breaking",
+            "title": "NCP Leader Ajit Pawar passes away at 66.",
+            "link": "articles/news/ajit-pawar-death-news.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1769617640/ajit-pawar-death-news_n3ajgr.png"
+        },
+        {
+            "time": "Updated",
+            "title": "Baramati Crash: DGCA begins probe into weather and Learjet 45 safety.",
+            "link": "articles/news/ajit-pawar-crash-investigation.html",
+            "image_url": "assets/images/news/crash-investigation.png"
+        },
         {
             "time": "00:30 GMT",
             "title": "What is Moltbot? The Sovereign AI Revolution",
@@ -190,6 +222,24 @@
         }
     ],
     "analysis_grid": [
+        {
+            "title": "Ajit Pawar Passes Away at 66: End of an Era",
+            "summary": "Maharashtra mourns as former Deputy CM Ajit Pawar passes away in a tragic plane crash near Baramati.",
+            "link": "articles/news/ajit-pawar-death-news.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1769617640/ajit-pawar-death-news_n3ajgr.png",
+            "category": "Obituary",
+            "author": "PickAI Editorial",
+            "date": "Breaking News"
+        },
+        {
+            "title": "DGCA Probes Baramati Crash: What We Know About Flight VT-SSK",
+            "summary": "Investigation begins into the Learjet 45 crash. Questions raised about VSR Ventures and weather conditions.",
+            "link": "articles/news/ajit-pawar-crash-investigation.html",
+            "image_url": "assets/images/news/crash-investigation.png",
+            "category": "Investigation",
+            "author": "PickAI Editorial Board",
+            "date": "Developing"
+        },
         {
             "title": "What is Moltbot? The Sovereign AI Revolution",
             "summary": "Discover why Moltbot, the open-source self-hosted AI agent, is trending for automating life via WhatsApp and Telegram.",
