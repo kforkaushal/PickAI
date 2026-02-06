@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics 4 + Consent Mode -->
+    <script src="js/analytics-setup.js" defer></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Current Affairs — PickAI</title>
+
+    <!-- Design System / CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Meta -->
+    <!-- Meta Tags (Indian Audience Focus) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <title>Crypto News India | Real-Time Market Analysis & INR Prices - PickAI</title>
+    <meta name="description"
+        content="Latest Cryptocurrency news for Indian investors. Get real-time Bitcoin & Ethereum prices in INR, crypto tax updates, and market analysis. Data-driven insights for smart trading on WazirX, CoinDCX, and Binance.">
+    <meta name="keywords"
+        content="crypto news india, bitcoin price in inr, ethereum to inr, crypto tax india, wazirx news, coindcx, rbi crypto updates, budget 2026 crypto, usdt to inr, pickai crypto">
+    <meta name="author" content="PickAI Editorial Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pickai.com/Financial.html">
+    <meta property="og:title" content="Crypto News India | Real-Time Market Analysis & INR Prices">
+    <meta property="og:description"
+        content="Latest Cryptocurrency news for Indian investors. Get real-time Bitcoin & Ethereum prices in INR, crypto tax updates, and market analysis.">
+    <meta property="og:image" content="assets/crypto-dashboard-og.jpg">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="PickAI">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pickai.com/Financial.html">
+    <meta property="twitter:title" content="Crypto News India | Real-Time Market Analysis & INR Prices">
+    <meta property="twitter:description"
+        content="Latest Cryptocurrency news for Indian investors. Get real-time Bitcoin & Ethereum prices in INR, and market analysis.">
+    <meta property="twitter:image" content="assets/crypto-dashboard-og.jpg">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "headline": "Crypto News India Dashboard",
+        "description": "Real-time cryptocurrency news, market analysis, and INR price tracking for Indian investors.",
+        "url": "https://pickai.com/Financial.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "PickAI",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pickai.com/assets/logo.png"
+            }
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Live Crypto Market Data"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Indian Crypto Regulatory Updates"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Technical Analysis & Sentiment"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <style>
+        .crypto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+            margin-bottom: 60px;
+        }
+
+        .crypto-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .crypto-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .crypto-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+        }
+
+        .crypto-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .crypto-source {
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .crypto-sentiment {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .sentiment-bullish {
+            background-color: #e6f4ea;
+            color: #1e7e34;
+        }
+
+        .sentiment-bearish {
+            background-color: #fce8e6;
+            color: #d93025;
+        }
+
+        .sentiment-neutral {
+            background-color: #f1f3f4;
+            color: #5f6368;
+        }
+
+        .crypto-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: var(--color-text-main);
+        }
+
+        .crypto-title a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .crypto-title a:hover {
+            text-decoration: underline;
+            text-decoration-color: var(--color-accent);
+        }
+
+        .crypto-summary {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .crypto-meta {
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+            margin-top: auto;
+        }
+
+        /* Ticker Styles (Dark Strip) */
+        .ticker-wrap {
+            width: 100%;
+            background-color: #0f172a;
+            /* Dark Navy/Black */
+            border-bottom: 1px solid #1e293b;
+            overflow: hidden;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .ticker-container {
+            display: flex;
+            animation: ticker 60s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-container:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            margin: 0 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #f1f5f9;
+            background: rgba(255, 255, 255, 0.05);
+            /* Glass effect */
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ticker-symbol {
+            font-weight: 700;
+            margin-right: 12px;
+            color: #fff;
+        }
+
+        .ticker-price {
+            margin-right: 12px;
+            font-variant-numeric: tabular-nums;
+            font-weight: 500;
+        }
+
+        .ticker-change {
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .change-positive {
+            color: #4ade80;
+        }
+
+        .change-negative {
+            color: #f87171;
+        }
+
+        /* Hide TradingView Branding */
+        .tradingview-widget-copyright {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
+        }
+
+        /* Bottom Widget Area specific styles */
+        .bottom-widget-area {
+            margin-top: 60px;
+            border-top: 1px solid var(--color-border);
+            padding-top: 0;
+            /* TradingView widget usually has its own padding/margin inside iframe, 
+               but we keep container clean */
+        }
+
+        /* --- Financial Dashboard Layout --- */
+        .dashboard-container {
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .dashboard-row {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .dashboard-col-full {
+            width: 100%;
+        }
+
+        .dashboard-col-70 {
+            flex: 2;
+            min-width: 600px;
+        }
+
+        .dashboard-col-30 {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* Widget Containers */
+        .widget-box {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            height: 600px;
+            /* Standard height for charts */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .widget-box-sm {
+            height: 400px;
+        }
+
+        .widget-box-auto {
+            height: auto;
+            min-height: 400px;
+        }
+
+        /* Section Headers */
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--color-text-main);
+            border-left: 4px solid var(--color-accent);
+            padding-left: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-row {
+                flex-direction: column;
+            }
+
+            .dashboard-col-70,
+            .dashboard-col-30 {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+
+        /* Learn More Button & Error Styles */
+        /* Learn More Button (Theme Aligned) */
+        .btn-learn-more {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 8px 0;
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-accent);
+            text-decoration: none;
+            border-bottom: 2px solid var(--color-border);
+            transition: all 0.2s;
+        }
+
+        .btn-learn-more:hover {
+            border-bottom-color: var(--color-accent);
+            color: var(--color-text-primary);
+        }
+
+        .error-message {
+            text-align: center;
+            padding: 40px;
+            background: #fff5f5;
+            color: #c53030;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: var(--font-ui);
+        }
+
+        /* Load More Button Container */
+        .load-more-container {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .btn-load-more {
+            background-color: transparent;
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
+            padding: 12px 32px;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .btn-load-more:hover {
+            background-color: var(--color-text-primary);
+            color: #fff;
+            border-color: var(--color-text-primary);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .widget-box {
+                height: 450px;
+                /* Reduce height on mobile */
+            }
+
+            .widget-box-sm {
+                height: 500px;
+                /* Market overview needs some height even on mobile */
+            }
+
+            .widget-box-auto {
+                height: auto !important;
+            }
+
+            .page-header-title {
+                font-size: 2rem;
+            }
+
+            .ticker-item {
+                padding: 6px 10px;
+                margin: 0 4px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Replaces Inline Styles */
+        .page-header-title {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: var(--space-sm);
+        }
+
+        .page-header-desc {
+            color: var(--color-text-secondary);
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+        }
+
+        /* Animation for Load More */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="/">PickAI.</a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="tools/index.html">Tools</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="opinion.html">Opinion</a></li>
+                    <li><a href="explainers.html">Explainers</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="/" class="back-link" style="font-size: 0.9rem; text-decoration: none; color: inherit;">&larr;
+                    Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Ticker: Finnhub (Dark Strip) -->
+    <div class="ticker-wrap">
+        <div class="ticker-container" id="crypto-ticker">
+            <div class="ticker-item">Loading market data...</div>
+        </div>
+    </div>
+
+    <!-- Main Content: Financial Dashboard -->
+    <main class="container dashboard-container">
+
+        <section class="page-header" style="margin-bottom: 30px;">
+            <h1 class="page-header-title">Financial Dashboard</h1>
+            <p class="page-header-desc">Comprehensive market intelligence: Crypto, Indices, and Economic Data.</p>
+        </section>
+
+        <!-- ROW 1: Market Overview (Indices/Forex/Crypto Mix) -->
+        <div class="dashboard-row">
+            <div class="dashboard-col-full">
+                <h2 class="section-heading">Global Market Pulse</h2>
+                <div class="widget-box widget-box-sm">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "colorTheme": "light",
+                                        "dateRange": "12M",
+                                            "showChart": true,
+                                                "locale": "en",
+                                                    "width": "100%",
+                                                        "height": "100%",
+                                                            "largeChartUrl": "",
+                                                                "isTransparent": true,
+                                                                    "showSymbolLogo": true,
+                                                                        "showFloatingTooltip": false,
+                                                                            "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+                                                                                "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+                                                                                    "gridLineColor": "rgba(240, 243, 250, 0)",
+                                                                                        "scaleFontColor": "rgba(106, 109, 120, 1)",
+                                                                                            "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+                                                                                                "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+                                                                                                    "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+                                                                                                        "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+                                                                                                            "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
+                                                                                                                "tabs": [
+                                                                                                                    {
+                                                                                                                        "title": "Indices",
+                                                                                                                        "symbols": [
+                                                                                                                            { "s": "FOREXCOM:SPXUSD", "d": "S&P 500" },
+                                                                                                                            { "s": "FOREXCOM:NSXUSD", "d": "US 100" },
+                                                                                                                            { "s": "FOREXCOM:DJI", "d": "Dow 30" },
+                                                                                                                            { "s": "INDEX:NKY", "d": "Nikkei 225" },
+                                                                                                                            { "s": "INDEX:DEU40", "d": "DAX Index" },
+                                                                                                                            { "s": "FOREXCOM:UKXGBP", "d": "UK 100" }
+                                                                                                                        ]
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "title": "Crypto",
+                                                                                                                        "symbols": [
+                                                                                                                            { "s": "BINANCE:BTCUSDT" },
+                                                                                                                            { "s": "BINANCE:ETHUSDT" },
+                                                                                                                            { "s": "BINANCE:SOLUSDT" },
+                                                                                                                            { "s": "BINANCE:XRPUSDT" },
+                                                                                                                            { "s": "COINBASE:BTCUSD" },
+                                                                                                                            { "s": "KRAKEN:ETHUSD" }
+                                                                                                                        ]
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "title": "Forex",
+                                                                                                                        "symbols": [
+                                                                                                                            { "s": "FX:EURUSD", "d": "EUR to USD" },
+                                                                                                                            { "s": "FX:GBPUSD", "d": "GBP to USD" },
+                                                                                                                            { "s": "FX:USDJPY", "d": "USD to JPY" },
+                                                                                                                            { "s": "FX:USDCHF", "d": "USD to CHF" },
+                                                                                                                            { "s": "FX:AUDUSD", "d": "AUD to USD" },
+                                                                                                                            { "s": "FX:USDCAD", "d": "USD to CAD" }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                }
+                            </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 2: Advanced Chart + Technical Analysis -->
+        <div class="dashboard-row">
+            <!-- Left: Main Chart -->
+            <div class="dashboard-col-70">
+                <h2 class="section-heading">Detailed Analysis</h2>
+                <div class="widget-box">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" style="height:100%;width:100%">
+                        <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%">
+                        </div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                                {
+                                    "autosize": true,
+                                        "symbol": "BINANCE:BTCUSDT",
+                                            "interval": "D",
+                                                "timezone": "Etc/UTC",
+                                                    "theme": "light",
+                                                        "style": "1",
+                                                            "locale": "en",
+                                                                "enable_publishing": false,
+                                                                    "allow_symbol_change": true,
+                                                                        "calendar": false,
+                                                                            "support_host": "https://www.tradingview.com"
+                                }
+                            </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+
+            <!-- Right: Technical Gauge -->
+            <div class="dashboard-col-30">
+                <h2 class="section-heading">Technical Signals</h2>
+                <div class="widget-box">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" style="height:100%;width:100%">
+                        <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%">
+                        </div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js"
+                            async>
+                                {
+                                    "interval": "1m",
+                                        "width": "100%",
+                                            "isTransparent": true,
+                                                "height": "100%",
+                                                    "symbol": "BINANCE:BTCUSDT",
+                                                        "showIntervalTabs": true,
+                                                            "displayMode": "single",
+                                                                "locale": "en",
+                                                                    "colorTheme": "light"
+                                }
+                            </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 3: Economic Calendar + Crypto News -->
+        <div class="dashboard-row">
+            <!-- Left: Economic Calendar -->
+            <div class="dashboard-col-30">
+                <h2 class="section-heading">Economic Calendar</h2>
+                <div class="widget-box widget-box-auto" style="height: 800px;">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" style="height:100%;width:100%">
+                        <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                                {
+                                    "colorTheme": "light",
+                                        "isTransparent": true,
+                                            "width": "100%",
+                                                "height": "100%",
+                                                    "locale": "en",
+                                                        "importanceFilter": "0,1",
+                                                            "currencyFilter": "USD,EUR,GBP"
+                                }
+                            </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+
+            <!-- Right: Crypto News (Existing) -->
+            <div class="dashboard-col-70">
+                <h2 class="section-heading">Latest Crypto News</h2>
+                <!-- News Grid Container -->
+                <div id="crypto-news-container" class="crypto-grid" style="margin-top: 0;">
+                    <!-- Skeleton Loading State -->
+                    <article class="crypto-card card-skeleton">
+                        <div class="skeleton skeleton-rect image-box" style="height: 180px;"></div>
+                        <div class="crypto-content">
+                            <div class="skeleton skeleton-text meta" style="width: 30%;"></div>
+                            <div class="skeleton skeleton-text title" style="margin-bottom: 15px;"></div>
+                            <div class="skeleton skeleton-text" style="width: 100%;"></div>
+                            <div class="skeleton skeleton-text" style="width: 80%;"></div>
+                        </div>
+                    </article>
+                    <article class="crypto-card card-skeleton">
+                        <div class="skeleton skeleton-rect image-box" style="height: 180px;"></div>
+                        <div class="crypto-content">
+                            <div class="skeleton skeleton-text meta" style="width: 30%;"></div>
+                            <div class="skeleton skeleton-text title" style="margin-bottom: 15px;"></div>
+                            <div class="skeleton skeleton-text" style="width: 100%;"></div>
+                            <div class="skeleton skeleton-text" style="width: 80%;"></div>
+                        </div>
+                    </article>
+                    <article class="crypto-card card-skeleton">
+                        <div class="skeleton skeleton-rect image-box" style="height: 180px;"></div>
+                        <div class="crypto-content">
+                            <div class="skeleton skeleton-text meta" style="width: 30%;"></div>
+                            <div class="skeleton skeleton-text title" style="margin-bottom: 15px;"></div>
+                            <div class="skeleton skeleton-text" style="width: 100%;"></div>
+                            <div class="skeleton skeleton-text" style="width: 80%;"></div>
+                        </div>
+                    </article>
+                    <article class="crypto-card card-skeleton">
+                        <div class="skeleton skeleton-rect image-box" style="height: 180px;"></div>
+                        <div class="crypto-content">
+                            <div class="skeleton skeleton-text meta" style="width: 30%;"></div>
+                            <div class="skeleton skeleton-text title" style="margin-bottom: 15px;"></div>
+                            <div class="skeleton skeleton-text" style="width: 100%;"></div>
+                            <div class="skeleton skeleton-text" style="width: 80%;"></div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button id="load-more-btn" class="btn-load-more">Load More News</button>
+                    <div id="news-loading" style="display: none; margin-top: 10px; text-align: center;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                            style="fill: var(--color-accent); animation: spin 1s linear infinite;">
+                            <path
+                                d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bottom Ticker: TradingView Widget -->
+    <div class="tradingview-widget-container bottom-widget-area">
+        <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js"></script>
+        <tv-ticker-tape
+            symbols='BINANCE:BTCUSDT,BINANCE:ETHUSDT,BINANCE:SOLUSDT,BINANCE:BNBUSDT,BINANCE:XRPUSDT,BINANCE:ADAUSDT,BINANCE:DOGEUSDT,BINANCE:SHIBUSDT,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD'
+            color-theme="light" display-mode="adaptive" large-chart-url="" locale="en">
+        </tv-ticker-tape>
+        <div class="tradingview-widget-copyright" style="display: none;">
+            <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">TradingView</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                PickAI.
+                <div class="meta-text" style="font-weight: normal; margin-top: 10px; font-size: 0.8rem;">
+                    &copy; 2026 PickAI Media. <br> All rights reserved.
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="editorial-policy.html">Editorial Policy</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">&uarr; Top</button>
+
+    <script src="js/crypto-news.js"></script>
+</body>
+
+</html>
