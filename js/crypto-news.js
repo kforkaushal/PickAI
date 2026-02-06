@@ -197,7 +197,7 @@ function renderNews(articles) {
         // Prepare Wrapper Link
         const encodedUrl = encodeURIComponent(article.url);
         const encodedTitle = encodeURIComponent(article.title);
-        const wrapperLink = `Financial-news?url=${encodedUrl}&title=${encodedTitle}`;
+        const wrapperLink = `Financial-news.html?url=${encodedUrl}&title=${encodedTitle}`;
 
         card.innerHTML = `
             <a href="${wrapperLink}" style="text-decoration: none; color: inherit; display: contents;">
