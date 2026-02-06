@@ -151,8 +151,8 @@
             <div class="sidebar-widget newsletter-widget" id="newsletter-widget">
                 <h4 class="widget-title">The PickAI Briefing</h4>
                 <p>Join 15,000+ researchers tracking the future of intelligence.</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Work email" required>
+                <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+                    <input type="email" name="email" class="newsletter-input" placeholder="Work email" required>
                     <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
                 <div class="newsletter-feedback"></div>

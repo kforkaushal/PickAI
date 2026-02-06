@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/stories.css">
     <link rel="stylesheet" href="css/newsletter.css">
+    <link rel="stylesheet" href="css/skeleton.css">
     <script src="js/stories.js" defer></script>
     <script src="js/accordion.js" defer></script>
 
@@ -177,11 +178,12 @@
                 <!-- Left: Main Feature Story -->
                 <!-- Left: Main Feature Story (Slideshow) -->
                 <div class="hero-slider-container" id="hero-slider">
-                    <!-- Slides injected via JS -->
-                    <div class="hero-slide active">
-                        <div class="slide-content">
-                            <div class="meta-text uppercase">Loading Briefing...</div>
-                        </div>
+                    <!-- Skeleton Loader -->
+                    <div class="hero-skeleton skeleton">
+                        <div class="skeleton-text title" style="width: 60%; height: 2.5em; margin-bottom: 20px;"></div>
+                        <div class="skeleton-text meta" style="width: 30%;"></div>
+                        <div class="skeleton-text" style="width: 80%;"></div>
+                        <div class="skeleton-text" style="width: 90%;"></div>
                     </div>
                 </div>
 
@@ -196,18 +198,22 @@
                     </div>
 
                     <div id="latest-updates-list">
-                        <!-- Items injected via JS -->
-                        <div class="update-item">
-                            <span class="time">14:20 GMT</span>
-                            <h4><a href="#">OpenAI releases new safety benchmarks for reasoning tasks.</a></h4>
+                        <!-- Skeleton Loader -->
+                        <div class="list-skeleton-item">
+                            <div class="skeleton skeleton-text meta" style="width: 20%;"></div>
+                            <div class="skeleton skeleton-text" style="height: 1.2em;"></div>
                         </div>
-                        <div class="update-item">
-                            <span class="time">12:05 GMT</span>
-                            <h4><a href="#">Google DeepMind's AlphaFold 3 expands access to researchers.</a></h4>
+                        <div class="list-skeleton-item">
+                            <div class="skeleton skeleton-text meta" style="width: 20%;"></div>
+                            <div class="skeleton skeleton-text" style="height: 1.2em;"></div>
                         </div>
-                        <div class="update-item">
-                            <span class="time">10:45 GMT</span>
-                            <h4><a href="#">Mistral releases lightweight 7B model for edge devices.</a></h4>
+                        <div class="list-skeleton-item">
+                            <div class="skeleton skeleton-text meta" style="width: 20%;"></div>
+                            <div class="skeleton skeleton-text" style="height: 1.2em;"></div>
+                        </div>
+                        <div class="list-skeleton-item">
+                            <div class="skeleton skeleton-text meta" style="width: 20%;"></div>
+                            <div class="skeleton skeleton-text" style="height: 1.2em;"></div>
                         </div>
                     </div>
                 </aside>
@@ -267,21 +273,24 @@
             </div>
 
             <div class="news-grid-3" id="secondary-grid">
-                <!-- Items injected via JS -->
-                <article class="news-card">
-                    <span class="category">Research</span>
-                    <h3><a href="#">The architecture of transformer replacements</a></h3>
-                    <p>Why state-space models are gaining traction in long-context tasks.</p>
+                <!-- Skeleton Loader -->
+                <article class="card-skeleton">
+                    <div class="skeleton skeleton-rect image-box"></div>
+                    <div class="skeleton skeleton-text meta"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                    <div class="skeleton skeleton-text"></div>
                 </article>
-                <article class="news-card">
-                    <span class="category">Policy</span>
-                    <h3><a href="#">EU AI Act: Compliance deadlines approaching</a></h3>
-                    <p>What enterprise CTOs need to know before Q3 2026.</p>
+                <article class="card-skeleton">
+                    <div class="skeleton skeleton-rect image-box"></div>
+                    <div class="skeleton skeleton-text meta"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                    <div class="skeleton skeleton-text"></div>
                 </article>
-                <article class="news-card">
-                    <span class="category">Hardware</span>
-                    <h3><a href="#">Nvidia's new chip architecture explained</a></h3>
-                    <p>Moving beyond H100s: The focus on memory bandwidth.</p>
+                <article class="card-skeleton">
+                    <div class="skeleton skeleton-rect image-box"></div>
+                    <div class="skeleton skeleton-text meta"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                    <div class="skeleton skeleton-text"></div>
                 </article>
             </div>
         </section>
@@ -293,8 +302,22 @@
                 <h2 class="section-title">Opinion & Perspectives</h2>
             </div>
             <div class="news-grid-3" id="opinion-grid">
-                <!-- Items injected via JS -->
-                <div style="text-align:center; grid-column: 1 / -1; color: #666;">Loading Opinions...</div>
+                <!-- Skeleton Loader -->
+                <article class="card-skeleton">
+                    <div class="skeleton skeleton-rect image-box"></div>
+                    <div class="skeleton skeleton-text meta"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                </article>
+                <article class="card-skeleton">
+                    <div class="skeleton skeleton-rect image-box"></div>
+                    <div class="skeleton skeleton-text meta"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                </article>
+                <article class="card-skeleton">
+                    <div class="skeleton skeleton-rect image-box"></div>
+                    <div class="skeleton skeleton-text meta"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                </article>
             </div>
         </section>
 
@@ -304,8 +327,22 @@
                 <h2 class="section-title">Explainers & Guides</h2>
             </div>
             <div class="news-grid-3" id="explainers-grid">
-                <!-- Items injected via JS -->
-                <div style="text-align:center; grid-column: 1 / -1; color: #666;">Loading Explainers...</div>
+                <!-- Skeleton Loader -->
+                <article class="card-skeleton">
+                    <div class="skeleton skeleton-text meta"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                    <div class="skeleton skeleton-text"></div>
+                </article>
+                <article class="card-skeleton">
+                    <div class="skeleton skeleton-text meta"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                    <div class="skeleton skeleton-text"></div>
+                </article>
+                <article class="card-skeleton">
+                    <div class="skeleton skeleton-text meta"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                    <div class="skeleton skeleton-text"></div>
+                </article>
             </div>
         </section>
 
@@ -371,7 +408,16 @@
                 <div class="accordion-content">
                     <ul class="category-list" data-category="models">
                         <!-- Injected via JS -->
-                        <li>Loading...</li>
+                        <!-- Skeleton Loader -->
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:80%;"></div>
+                        </li>
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:60%;"></div>
+                        </li>
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:70%;"></div>
+                        </li>
                     </ul>
                 </div>
             </details>
@@ -384,7 +430,16 @@
                 </summary>
                 <div class="accordion-content">
                     <ul class="category-list" data-category="policy">
-                        <li>Loading...</li>
+                        <!-- Skeleton Loader -->
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:80%;"></div>
+                        </li>
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:60%;"></div>
+                        </li>
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:70%;"></div>
+                        </li>
                     </ul>
                 </div>
             </details>
@@ -397,7 +452,16 @@
                 </summary>
                 <div class="accordion-content">
                     <ul class="category-list" data-category="industry">
-                        <li>Loading...</li>
+                        <!-- Skeleton Loader -->
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:80%;"></div>
+                        </li>
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:60%;"></div>
+                        </li>
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:70%;"></div>
+                        </li>
                     </ul>
                 </div>
             </details>
@@ -410,7 +474,16 @@
                 </summary>
                 <div class="accordion-content">
                     <ul class="category-list" data-category="guides">
-                        <li>Loading...</li>
+                        <!-- Skeleton Loader -->
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:80%;"></div>
+                        </li>
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:60%;"></div>
+                        </li>
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:70%;"></div>
+                        </li>
                     </ul>
                 </div>
             </details>
@@ -423,7 +496,16 @@
                 </summary>
                 <div class="accordion-content">
                     <ul class="category-list" data-category="atoz">
-                        <li>Loading...</li>
+                        <!-- Skeleton Loader -->
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:80%;"></div>
+                        </li>
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:60%;"></div>
+                        </li>
+                        <li>
+                            <div class="skeleton skeleton-text" style="width:70%;"></div>
+                        </li>
                     </ul>
                 </div>
             </details>
@@ -437,8 +519,8 @@
             <h2>The PickAI Briefing</h2>
             <p>Join 1500+ researchers and developers tracking the future of intelligence. No hype, just signal.</p>
 
-            <form id="newsletter-form" class="newsletter-form">
-                <input type="email" id="newsletter-email" class="newsletter-input"
+            <form id="newsletter-form" class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+                <input type="email" name="email" id="newsletter-email" class="newsletter-input"
                     placeholder="enter your email address..." required>
                 <button type="submit" class="newsletter-btn">Subscribe</button>
             </form>

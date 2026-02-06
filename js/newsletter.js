@@ -101,6 +101,8 @@ function updateFeedback(el, msg, type) {
 }
 
 // 3. Event Delegation (The Magic)
+// 3. Event Delegation (The Magic) - DISABLED FOR NETLIFY FORMS
+/*
 document.addEventListener('submit', (e) => {
     // Check if the submitted element is a newsletter form
     if (e.target && e.target.classList.contains('newsletter-form')) {
@@ -109,6 +111,7 @@ document.addEventListener('submit', (e) => {
         handleNewsletterSubmit(e.target);
     }
 });
+*/
 
 // 4. Initialize on Logic Load
 initClient();
