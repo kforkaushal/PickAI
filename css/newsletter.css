@@ -203,3 +203,103 @@
         padding: var(--space-2xl) var(--space-md);
     }
 }
+
+/* 
+   ----------------------------------------
+   SUCCESS MODAL POPUP (Added for Netlify AJAX)
+   ----------------------------------------
+*/
+.newsletter-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.newsletter-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.newsletter-modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.newsletter-modal-overlay.active .newsletter-modal-content {
+    transform: translateY(0);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+    color: #000;
+}
+
+.modal-icon {
+    font-size: 3rem;
+    color: #1a8917;
+    /* Success green */
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.newsletter-modal-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--color-text-primary);
+}
+
+.newsletter-modal-content p {
+    font-family: var(--font-sans);
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.modal-action-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--color-text-primary);
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modal-action-btn:hover {
+    background: #333;
+}

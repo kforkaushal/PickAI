@@ -1,118 +1,86 @@
-/**
- * PickAI Newsletter System (Clean Rewrite)
- * Uses Event Delegation to handle all newsletter forms on the site.
- */
+// PickAI Newsletter System - Netlify Forms AJAX Handler
+const SUCCESS_MODAL_HTML = `
+<div class="newsletter-modal-overlay" id="newsletter-success-modal">
+    <div class="newsletter-modal-content">
+        <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+        <div class="modal-icon">&#10003;</div>
+        <h3>Thank you!</h3>
+        <p>Your subscription has been confirmed.</p>
+        <button class="modal-action-btn" id="modal-action-btn">Back to reading</button>
+    </div>
+</div>
+`;
 
-const SUPABASE_URL = 'https://vurerooapkkvqjzbixjx.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1cmVyb29hcGtrdnFqemJpeGp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgyMzAwODQsImV4cCI6MjA4MzgwNjA4NH0.ryY3YxIs4z4kDHzUY3BNdtUbXHP_ub1yMRjpwJkiW48';
+function showSuccessModal() {
+    // Check if modal already exists
+    let modal = document.getElementById('newsletter-success-modal');
+    if (!modal) {
+        document.body.insertAdjacentHTML('beforeend', SUCCESS_MODAL_HTML);
+        modal = document.getElementById('newsletter-success-modal');
 
-let client = null;
+        // Attach events
+        const closeBtn = document.getElementById('modal-close-btn');
+        const actionBtn = document.getElementById('modal-action-btn');
 
-// 1. Initialize Supabase
-function initClient() {
-    if (window.supabase) {
-        try {
-            const { createClient } = window.supabase;
-            client = createClient(SUPABASE_URL, SUPABASE_KEY);
-            console.log("PickAI: Supabase connected.");
-        } catch (err) {
-            console.error("PickAI: Supabase init failed", err);
-        }
-    } else {
-        console.warn("PickAI: Supabase SDK not found.");
+        const closeModal = () => {
+            modal.classList.remove('active');
+            setTimeout(() => modal.remove(), 300); // Remove after animation
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        actionBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
     }
+
+    // Small delay to allow DOM render before adding active class (for animation)
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
 }
 
-// 2. Main Submission Handler
-async function handleNewsletterSubmit(form) {
-    const emailInput = form.querySelector('input[type="email"]');
-    // Feedback is likely a sibling, not a child. Check parent.
-    let feedback = form.querySelector('.newsletter-feedback');
-    if (!feedback) {
-        feedback = form.parentElement.querySelector('.newsletter-feedback');
-    }
+const handleNewsletterSubmit = async (form) => {
     const btn = form.querySelector('button');
+    const feedback = form.parentElement.querySelector('.newsletter-feedback') || form.querySelector('.newsletter-feedback');
+    const OriginalBtnText = btn ? btn.textContent : 'Subscribe';
 
-    if (!emailInput) return; // Not a valid form
-
-    // -- Validation --
-    const email = emailInput.value.trim();
-    if (!email || !email.includes('@')) {
-        updateFeedback(feedback, 'Please enter a valid email.', 'error');
-        return;
-    }
-
-    // -- Checking System --
-    if (!client) {
-        // Try init one more time just in case script loaded late
-        initClient();
-        if (!client) {
-            updateFeedback(feedback, 'System unavailable. Please reload.', 'error');
-            return;
-        }
-    }
-
-    // -- UI Loading --
-    const btnOriginal = btn ? btn.textContent : 'Subscribe';
-    if (btn) btn.textContent = '...';
-    updateFeedback(feedback, 'Joining...', 'processing');
+    if (btn) btn.textContent = 'Joining...';
 
     try {
-        // -- API Call --
-        const { error } = await client
-            .from('subscribers')
-            .insert([{ email: email }]);
+        const formData = new FormData(form);
+        const body = new URLSearchParams(formData).toString();
 
-        if (error) {
-            // Unique Index Violation (Code 23505)
-            if (error.code === '23505') {
-                updateFeedback(feedback, 'You are already subscribed!', 'error');
-            } else {
-                console.error("Supabase Error:", error);
-                updateFeedback(feedback, 'Error: ' + error.message, 'error');
-            }
-        } else {
-            // -- Success --
-            updateFeedback(feedback, 'Thank you for subscribing!', 'success');
+        const response = await fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: body,
+        });
+
+        if (response.ok) {
+            // Success
+            showSuccessModal();
             form.reset();
+            if (feedback) feedback.style.display = 'none'; // Hide any previous errors
+        } else {
+            throw new Error(`Submission failed: ${response.statusText}`);
         }
-
-    } catch (err) {
-        console.error("Network Error:", err);
-        updateFeedback(feedback, 'Network error. Try again.', 'error');
+    } catch (error) {
+        console.error("Newsletter Error:", error);
+        if (feedback) {
+            feedback.textContent = "Something went wrong. Please try again.";
+            feedback.className = "newsletter-feedback error";
+            feedback.style.display = "block";
+        }
     } finally {
-        if (btn) btn.textContent = btnOriginal;
-
-        // Clear success message after delay
-        if (feedback && feedback.classList.contains('success')) {
-            setTimeout(() => {
-                feedback.style.display = 'none';
-            }, 5000);
-        }
+        if (btn) btn.textContent = OriginalBtnText;
     }
-}
+};
 
-// Helper: Update UI text
-function updateFeedback(el, msg, type) {
-    if (!el) return;
-    el.textContent = msg;
-    el.className = `newsletter-feedback ${type}`;
-    el.style.display = 'block';
-}
-
-// 3. Event Delegation (The Magic)
-// 3. Event Delegation (The Magic) - DISABLED FOR NETLIFY FORMS
-/*
+// Event Delegation
 document.addEventListener('submit', (e) => {
-    // Check if the submitted element is a newsletter form
     if (e.target && e.target.classList.contains('newsletter-form')) {
-        e.preventDefault(); // STOP standard submit
-        e.stopPropagation(); // Stop bubbling
+        e.preventDefault();
         handleNewsletterSubmit(e.target);
     }
 });
-*/
-
-// 4. Initialize on Logic Load
-initClient();
-// Also listen for button clicks to ensure focus? Not needed for submit.
