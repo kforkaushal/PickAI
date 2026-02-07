@@ -7,73 +7,68 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function fetchCryptoPrices() {
-    const token = 'd630fl1r01qnpqnvbh0gd630fl1r01qnpqnvbh10';
-    const cryptoSymbols = ['BTC', 'ETH', 'SOL', 'ADA'];
+    // 1. Binance 24hr Ticker (BTC, ETH, SOL, ADA)
+    const binanceSymbols = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'ADAUSDT'];
+    const binanceUrl = `https://api4.binance.com/api/v3/ticker/24hr?symbols=${JSON.stringify(binanceSymbols)}`;
 
-    // Check for containers
-    const mainTicker = document.getElementById('crypto-ticker');
-    const homeTicker = document.getElementById('home-ticker-container');
+    // 2. NBP Official Gold Fixing (PLN per gram, will convert to USD approx or show as Fixing)
+    const nbpGoldUrl = 'https://api.nbp.pl/api/cenyzlota/last/1/?format=json';
 
-    if (!mainTicker && !homeTicker) return;
+    // 3. Exchange Rate (Fixing USD/INR for conversion)
+    const exchangeUrl = 'https://open.er-api.com/v6/latest/USD';
 
     try {
-        // 1. Fetch Crypto
-        const cryptoPromises = cryptoSymbols.map(sym =>
-            fetch(`https://finnhub.io/api/v1/quote?symbol=BINANCE:${sym}USDT&token=${token}`)
-                .then(res => res.json())
-                .then(data => ({ symbol: sym, ...data, type: 'crypto' }))
-        );
+        const [binanceRes, nbpRes, exchangeRes] = await Promise.all([
+            fetch(binanceUrl).then(res => res.json()),
+            fetch(nbpGoldUrl).then(res => res.json()),
+            fetch(exchangeUrl).then(res => res.json())
+        ]);
 
-        // 2. Fetch Gold/Silver/INR
-        // Using Generic/OANDA symbols
-        const marketPromises = [
-            fetch(`https://finnhub.io/api/v1/quote?symbol=BINANCE:PAXGUSDT&token=${token}`) // Gold Proxy
-                .then(res => res.json())
-                .then(data => ({ symbol: 'GOLD', ...data, type: 'comm' })),
-            fetch(`https://finnhub.io/api/v1/quote?symbol=FX_IDC:USDINR&token=${token}`)
-                .then(res => res.json())
-                .then(data => ({ symbol: 'USD/INR', ...data, type: 'forex' }))
-        ];
+        const inrRate = exchangeRes.rates.INR;
+        const plnToUsd = 1 / exchangeRes.rates.PLN; // Approx from USD base
 
-        const results = await Promise.all([...marketPromises, ...cryptoPromises]);
-
-        // Build HTML
         let html = '';
-        results.forEach(item => {
-            if (!item.c) return;
 
-            let priceStr = '';
-            let label = item.symbol;
+        // Process Gold (NBP)
+        if (nbpRes && nbpRes[0]) {
+            const pricePlnGram = nbpRes[0].cena;
+            const priceUsdOunce = (pricePlnGram * 31.1035) * plnToUsd; // Gram to Ounce * USD/PLN
+            const priceInr = priceUsdOunce * inrRate;
 
-            if (item.type === 'crypto') {
-                priceStr = parseFloat(item.c).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-            } else if (item.symbol === 'GOLD') {
-                label = 'GOLD (XAU)';
-                priceStr = '$' + parseFloat(item.c).toFixed(2);
-            } else if (item.symbol === 'USD/INR') {
-                priceStr = '₹' + parseFloat(item.c).toFixed(2);
-            }
+            html += `
+                <div class="ticker-item">
+                    <span class="ticker-symbol">GOLD (NBP Fixed)</span>
+                    <span class="ticker-price">$${priceUsdOunce.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                    <span class="ticker-change change-positive">FIXED</span>
+                </div>
+            `;
+        }
 
-            const change = parseFloat(item.dp).toFixed(2);
+        // Process Binance Crypto
+        binanceRes.forEach(item => {
+            const symbol = item.symbol.replace('USDT', '');
+            const price = parseFloat(item.lastPrice).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            const change = parseFloat(item.priceChangePercent).toFixed(2);
             const changeClass = change >= 0 ? 'change-positive' : 'change-negative';
             const arrow = change >= 0 ? '▲' : '▼';
 
             html += `
                 <div class="ticker-item">
-                    <span class="ticker-symbol">${label}</span>
-                    <span class="ticker-price">${priceStr}</span>
+                    <span class="ticker-symbol">${symbol}</span>
+                    <span class="ticker-price">${price}</span>
                     <span class="ticker-change ${changeClass}">${arrow} ${Math.abs(change)}%</span>
                 </div>
             `;
         });
 
-        // Add Silver manually (approx ratio or fixed fallback if no API)
-        // Silver ~ 1/85 of Gold if actual API fails widely
-        // For now, let's skip Silver in main ticker to keep it fast, or add static if needed.
-        // Adding Silver via visual estimation logic from Silver Page is complex here without duplicating code.
-        // We'll stick to Gold/USDINR/Crypto for the main ticker as they are high impact.
+        // Add USD/INR
+        html += `
+            <div class="ticker-item">
+                <span class="ticker-symbol">USD/INR</span>
+                <span class="ticker-price">₹${inrRate.toFixed(2)}</span>
+            </div>
+        `;
 
-        // Loop through all potential ticker containers
         const containers = [
             document.getElementById('crypto-ticker'),
             document.getElementById('home-ticker-container')
@@ -81,12 +76,12 @@ async function fetchCryptoPrices() {
 
         containers.forEach(container => {
             if (container) {
-                container.innerHTML = html + html + html; // Infinite scroll dupes
+                container.innerHTML = html + html + html;
             }
         });
 
     } catch (error) {
-        console.error('Error fetching prices:', error);
+        console.error('Error fetching authentic prices:', error);
     }
 }
 
