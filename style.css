@@ -3268,3 +3268,108 @@ details[open] .accordion-trigger .icon {
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
+
+/* 
+   Weather Sidebar Widget 
+   =========================================
+*/
+.sidebar-weather {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.weather-widget-mini {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: var(--color-highlight);
+    border-radius: 4px;
+}
+
+.weather-widget-info {
+    flex: 1;
+}
+
+.weather-widget-city {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.weather-widget-temp {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.weather-widget-desc {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+}
+
+.weather-widget-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #52b788;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    border-radius: 50%;
+    box-shadow: 0 0 5px currentColor;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 
+   Sidebar Date Integration 
+   =========================================
+*/
+.sidebar-date {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar-date-label {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    margin-bottom: 5px;
+}
+
+.sidebar-date-value {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
