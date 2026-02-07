@@ -14,6 +14,7 @@
     <!-- Design System / CSS -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/newsletter.css">
 
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,6 +113,35 @@
 
             100% {
                 opacity: 1;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .dashboard-row {
+                flex-direction: column;
+            }
+
+            .dashboard-col-70,
+            .dashboard-col-30 {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .widget-box {
+                height: 400px !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-header-title {
+                font-size: 1.8rem;
+            }
+
+            .gold-table th,
+            .gold-table td {
+                padding: 10px 8px;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -436,22 +466,20 @@
         </div>
 
         <!-- Newsletter Section -->
-        <section class="newsletter-section"
-            style="margin-top: 60px; background: #f8f9fa; padding: 40px; border-radius: 12px; text-align: center;">
-            <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 16px;">Get Market Updates</h2>
-            <p
-                style="color: var(--color-text-secondary); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Subscribe to PickAI's financial newsletter. Get daily gold rates, crypto trends, and market insights
-                delivered to your inbox.
-            </p>
-            <form id="newsletter-form" class="newsletter-form"
-                style="max-width: 400px; margin: 0 auto; display: flex; gap: 10px;">
-                <input type="email" name="email" placeholder="Your email address" required
-                    style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
-                <button type="submit"
-                    style="background: var(--color-accent); color: #fff; border: none; padding: 12px 24px; border-radius: 4px; font-weight: 600; cursor: pointer;">Subscribe</button>
-            </form>
-            <p id="newsletter-message" style="margin-top: 12px; font-size: 0.9rem;"></p>
+        <section class="newsletter-section" id="newsletter">
+            <div class="newsletter-content">
+                <h2>The PickAI Briefing</h2>
+                <p>Join 1500+ investors tracking the future of financial intelligence. Daily rates, deep dives, and
+                    market signal.</p>
+
+                <form id="newsletter-form" class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+                    <input type="email" name="email" id="newsletter-email" class="newsletter-input"
+                        placeholder="enter your email address..." required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+
+                <div id="newsletter-feedback" class="newsletter-feedback"></div>
+            </div>
         </section>
 
     </main>
