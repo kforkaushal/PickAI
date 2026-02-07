@@ -1,0 +1,211 @@
+/* Live Currency Card - Professional Editorial & Terminal Theme */
+.live-currency-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    grid-column: 1 / -1;
+    /* Spans all available columns */
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 992px) {
+    .live-currency-card {
+        grid-column: span 1;
+    }
+}
+
+.live-currency-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Subtle Header instead of stark black */
+.currency-header {
+    background: #fcfcfc;
+    border-bottom: 1px solid var(--color-border);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.currency-label {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #10b981;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.live-pulse {
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    position: relative;
+}
+
+.live-pulse::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    animation: currency-pulse 2s infinite;
+}
+
+@keyframes currency-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    70% {
+        transform: scale(3);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* Body Layout - Horizontal Flex */
+.currency-body {
+    padding: 48px 64px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Space out elements in full width */
+    gap: 48px;
+}
+
+@media (max-width: 640px) {
+    .currency-body {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+}
+
+.currency-main-data {
+    flex: 0 0 auto;
+}
+
+.currency-pair-small {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-meta);
+    margin-bottom: 4px;
+    display: block;
+}
+
+.currency-value-display {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.currency-base {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    opacity: 0.8;
+}
+
+.currency-symbol {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--color-text-primary);
+}
+
+.currency-rate {
+    font-family: var(--font-sans);
+    /* Terminal style for numbers */
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.currency-details {
+    flex: 1;
+    text-align: right;
+    /* Align text to right at full width */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+@media (max-width: 900px) {
+    .currency-body {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px;
+    }
+
+    .currency-details {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.currency-title-hero {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--color-text-primary);
+}
+
+.currency-desc-refined {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 320px;
+}
+
+@media (max-width: 640px) {
+    .currency-desc-refined {
+        margin: 0 auto 20px;
+    }
+}
+
+.currency-footer {
+    background: #fafafa;
+    border-top: 1px solid var(--color-border);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    color: var(--color-text-meta);
+}
+
+.update-val {
+    color: var(--color-text-secondary);
+    font-weight: 600;
+}

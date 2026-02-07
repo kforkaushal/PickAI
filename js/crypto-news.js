@@ -2,11 +2,25 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchCryptoPrices(); // Finnhub Live Feed
     fetchCryptoNews(); // Alpha Vantage News
 
-    // Auto-refresh prices every 60 seconds
-    setInterval(fetchCryptoPrices, 60000);
+    // Auto-refresh prices every 5 minutes (300,000ms) to reduce API hits
+    setInterval(fetchCryptoPrices, 300000);
 });
 
 async function fetchCryptoPrices() {
+    const CACHE_KEY = 'crypto_prices_cache';
+    const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
+    // 1. Check Cache
+    const cachedData = localStorage.getItem(CACHE_KEY);
+    if (cachedData) {
+        const { timestamp, data } = JSON.parse(cachedData);
+        if (Date.now() - timestamp < CACHE_DURATION) {
+            console.log('Serving prices from cache');
+            updatePriceUI(data.inrRate, data.priceUsdOunce, data.binanceData);
+            return;
+        }
+    }
+
     // 1. Binance 24hr Ticker (BTC, ETH, SOL, ADA)
     const binanceSymbols = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'ADAUSDT'];
     const binanceUrl = `https://api4.binance.com/api/v3/ticker/24hr?symbols=${JSON.stringify(binanceSymbols)}`;
@@ -14,8 +28,9 @@ async function fetchCryptoPrices() {
     // 2. NBP Official Gold Fixing (PLN per gram, will convert to USD approx or show as Fixing)
     const nbpGoldUrl = 'https://api.nbp.pl/api/cenyzlota/last/1/?format=json';
 
-    // 3. Exchange Rate (Fixing USD/INR for conversion)
-    const exchangeUrl = 'https://open.er-api.com/v6/latest/USD';
+    // 3. Authenticated Exchange Rate (USD/INR)
+    const apiKey = 'effff990e7bcd506495b1b0d';
+    const exchangeUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 
     try {
         const [binanceRes, nbpRes, exchangeRes] = await Promise.all([
@@ -24,64 +39,98 @@ async function fetchCryptoPrices() {
             fetch(exchangeUrl).then(res => res.json())
         ]);
 
-        const inrRate = exchangeRes.rates.INR;
-        const plnToUsd = 1 / exchangeRes.rates.PLN; // Approx from USD base
-
-        let html = '';
+        // ExchangeRate-API v6 uses 'conversion_rates'
+        const inrRate = exchangeRes.conversion_rates.INR;
+        const plnToUsd = 1 / exchangeRes.conversion_rates.PLN;
 
         // Process Gold (NBP)
+        let priceUsdOunce = null;
         if (nbpRes && nbpRes[0]) {
             const pricePlnGram = nbpRes[0].cena;
-            const priceUsdOunce = (pricePlnGram * 31.1035) * plnToUsd; // Gram to Ounce * USD/PLN
-            const priceInr = priceUsdOunce * inrRate;
-
-            html += `
-                <div class="ticker-item">
-                    <span class="ticker-symbol">GOLD (NBP Fixed)</span>
-                    <span class="ticker-price">$${priceUsdOunce.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
-                    <span class="ticker-change change-positive">FIXED</span>
-                </div>
-            `;
+            priceUsdOunce = (pricePlnGram * 31.1035) * plnToUsd;
         }
 
-        // Process Binance Crypto
-        binanceRes.forEach(item => {
-            const symbol = item.symbol.replace('USDT', '');
-            const price = parseFloat(item.lastPrice).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-            const change = parseFloat(item.priceChangePercent).toFixed(2);
-            const changeClass = change >= 0 ? 'change-positive' : 'change-negative';
-            const arrow = change >= 0 ? '▲' : '▼';
-
-            html += `
-                <div class="ticker-item">
-                    <span class="ticker-symbol">${symbol}</span>
-                    <span class="ticker-price">${price}</span>
-                    <span class="ticker-change ${changeClass}">${arrow} ${Math.abs(change)}%</span>
-                </div>
-            `;
-        });
-
-        // Add USD/INR
-        html += `
-            <div class="ticker-item">
-                <span class="ticker-symbol">USD/INR</span>
-                <span class="ticker-price">₹${inrRate.toFixed(2)}</span>
-            </div>
-        `;
-
-        const containers = [
-            document.getElementById('crypto-ticker'),
-            document.getElementById('home-ticker-container')
-        ];
-
-        containers.forEach(container => {
-            if (container) {
-                container.innerHTML = html + html + html;
+        // Cache the raw data we need
+        localStorage.setItem(CACHE_KEY, JSON.stringify({
+            timestamp: Date.now(),
+            data: {
+                inrRate,
+                priceUsdOunce,
+                binanceData: binanceRes
             }
-        });
+        }));
+
+        updatePriceUI(inrRate, priceUsdOunce, binanceRes);
 
     } catch (error) {
         console.error('Error fetching authentic prices:', error);
+        // Fallback to stale cache on error
+        if (cachedData) {
+            const { data } = JSON.parse(cachedData);
+            updatePriceUI(data.inrRate, data.priceUsdOunce, data.binanceData);
+        }
+    }
+}
+
+function updatePriceUI(inrRate, priceUsdOunce, binanceData) {
+    let html = '';
+
+    // Process Gold
+    if (priceUsdOunce) {
+        html += `
+            <div class="ticker-item">
+                <span class="ticker-symbol">GOLD (NBP Fixed)</span>
+                <span class="ticker-price">$${priceUsdOunce.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                <span class="ticker-change change-positive">FIXED</span>
+            </div>
+        `;
+    }
+
+    // Process Binance Crypto
+    binanceData.forEach(item => {
+        const symbol = item.symbol.replace('USDT', '');
+        const price = parseFloat(item.lastPrice).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        const change = parseFloat(item.priceChangePercent).toFixed(2);
+        const changeClass = change >= 0 ? 'change-positive' : 'change-negative';
+        const arrow = change >= 0 ? '▲' : '▼';
+
+        html += `
+            <div class="ticker-item">
+                <span class="ticker-symbol">${symbol}</span>
+                <span class="ticker-price">${price}</span>
+                <span class="ticker-change ${changeClass}">${arrow} ${Math.abs(change)}%</span>
+            </div>
+        `;
+    });
+
+    // Add USD/INR
+    html += `
+        <div class="ticker-item">
+            <span class="ticker-symbol">USD/INR</span>
+            <span class="ticker-price">₹${inrRate.toFixed(2)}</span>
+        </div>
+    `;
+
+    const containers = [
+        document.getElementById('crypto-ticker'),
+        document.getElementById('home-ticker-container')
+    ];
+
+    containers.forEach(container => {
+        if (container) {
+            container.innerHTML = html + html + html;
+        }
+    });
+
+    // Update Dedicated Currency Card
+    const currencyValueEl = document.getElementById('usd-inr-value');
+    const updateTimeEl = document.getElementById('currency-update-time');
+    if (currencyValueEl) {
+        currencyValueEl.textContent = inrRate.toFixed(4);
+    }
+    if (updateTimeEl) {
+        const now = new Date();
+        updateTimeEl.textContent = `Updated: ${now.toLocaleTimeString()}`;
     }
 }
 

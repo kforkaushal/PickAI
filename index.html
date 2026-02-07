@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/stories.css">
     <link rel="stylesheet" href="css/newsletter.css">
     <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/currency-card.css">
     <script src="js/stories.js" defer></script>
     <script src="js/accordion.js" defer></script>
 
@@ -514,6 +515,38 @@
                 </div>
             </article>
         </div>
+
+        <!-- Live Currency Card (USD to INR) - Intelligence Terminal Layout -->
+        <article class="crypto-card live-currency-card" id="live-currency-card">
+            <div class="currency-header">
+                <span class="currency-label">Forex Terminal</span>
+                <div class="live-indicator">
+                    <span class="live-pulse"></span>
+                    LIVE MARKET DATA
+                </div>
+            </div>
+            <div class="currency-body">
+                <div class="currency-main-data">
+                    <span class="currency-pair-small">USD / INR</span>
+                    <div class="currency-value-display">
+                        <span class="currency-symbol">₹</span>
+                        <span class="currency-rate" id="usd-inr-value">Loading...</span>
+                    </div>
+                </div>
+                <div class="currency-details">
+                    <h3 class="currency-title-hero">US Dollar / Indian Rupee</h3>
+                    <p class="currency-desc-refined">Real-time exchange rate intelligence powered by primary
+                        liquidity sources.</p>
+                    <a href="Financial.html" class="btn-learn-more">Market Depth &rarr;</a>
+                </div>
+            </div>
+            <div class="currency-footer">
+                <span>Liquidity: Institutional</span>
+                <span>Updated: <span class="update-val" id="currency-update-time">Just now</span></span>
+            </div>
+        </article>
+
+
 
         <!-- Latest News Grid (Top 3) -->
         <div class="crypto-grid crypto-grid-home" id="home-financial-news">

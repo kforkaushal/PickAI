@@ -14,6 +14,7 @@
     <!-- Design System / CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/currency-card.css">
 
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -237,6 +238,37 @@
                         </h3>
                         <p class="crypto-summary">Live Scrap prices for Wire, Armature, and Utensils.</p>
                         <a href="Financial/copper-price.html" class="btn-learn-more">Check Rates &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Live Currency Card (USD to INR) - Intelligence Terminal Layout -->
+                <article class="crypto-card live-currency-card" id="live-currency-card">
+                    <div class="currency-header">
+                        <span class="currency-label">Forex Terminal</span>
+                        <div class="live-indicator">
+                            <span class="live-pulse"></span>
+                            LIVE MARKET DATA
+                        </div>
+                    </div>
+                    <div class="currency-body">
+                        <div class="currency-main-data">
+                            <span class="currency-pair-small">USD / INR</span>
+                            <div class="currency-value-display">
+                                <span class="currency-base">1 USD = </span>
+                                <span class="currency-symbol">₹</span>
+                                <span class="currency-rate" id="usd-inr-value">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="currency-details">
+                            <h3 class="currency-title-hero">US Dollar / Indian Rupee</h3>
+                            <p class="currency-desc-refined">Real-time exchange rate intelligence powered by primary
+                                liquidity sources.</p>
+                            <a href="#" class="btn-learn-more">Market Depth &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="currency-footer">
+                        <span>Liquidity: Institutional</span>
+                        <span>Updated: <span class="update-val" id="currency-update-time">Just now</span></span>
                     </div>
                 </article>
             </div>
