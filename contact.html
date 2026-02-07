@@ -89,11 +89,62 @@
 </head>
 
 <body>
+    <!-- Slide-out Sidebar -->
+    <div class="sidebar-overlay"></div>
+    <aside class="sidebar-menu">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">PickAI.</div>
+            <button class="close-sidebar" aria-label="Close Menu">&times;</button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-search">
+                <form action="./search.html" method="get">
+                    <input type="text" name="q" placeholder="Search articles...">
+                </form>
+            </div>
+            <div class="sidebar-topics">
+                <h3>Browse by Topic</h3>
+                <ul>
+                    <li><a href="./tools/index.html">AI Tools</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./opinion.html">Opinion</a></li>
+                    <li><a href="./explainers.html">Explainers</a></li>
+                    <li><a href="./redirect.html?to=https://jobs.pickai.com">Jobs</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
 
     <!-- Header -->
-    <header class="site-header">
+        <header class="site-header">
         <div class="container header-inner">
-            <div class="logo"><a href="index.html">PickAI.</a></div>
+            <!-- Top Row: Menu | Logo | Search -->
+            <div class="header-top">
+                <button class="menu-toggle" aria-label="Open Menu">
+                    <span class="hamburger-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="logo">
+                    <a href="index.html">PickAI.</a>
+                </div>
+
+                <div class="header-actions">
+                    <!-- Simple search icon SVG -->
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Navigation -->
             <nav class="main-nav">
                 <ul>
                     <li><a href="tools/index.html">Tools</a></li>
@@ -102,13 +153,6 @@
                     <li><a href="explainers.html">Explainers</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
-                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </div>
         </div>
     </header>
 
@@ -169,6 +213,9 @@
     <script src="js/app.js"></script>
     <!-- Consent Banner -->
     <script src="js/consent.js" defer></script>
+<script src="./js/hamburger.js"></script>
 </body>
 
 </html>
+
+

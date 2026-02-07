@@ -43,9 +43,9 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="canonical" href="https://pickai.netlify.app/">
     <meta name="description"
-        content="PickAI is the #1 source for AI news, tutorials, and expert analysis. Master Large Language Models (LLMs) like ChatGPT, Claude, and DeepSeek with our guides on agentic workflows, prompt engineering, and future tech trends.">
+        content="PickAI is the #1 source for AI news, tutorials, and Financial Intelligence. Master LLMs and track live Gold, Silver, and Copper prices in India. Expert analysis on Agentic AI and Market Trends.">
     <meta name="keywords"
-        content="LLMs, Large Language Models, Artificial Intelligence, AI News, Agentic AI, ChatGPT Prompts, DeepSeek Coding, Claude Guides, Tech News, LLM Analysis, Prompt Engineering 2026, AI Tools, Software Development">
+        content="AI News, LLMs, ChatGPT Prompts, Gold Price India, Silver Rate, Copper Scrap Price, Agentic AI, Tech News, Financial Markets, Commodity Rates, PickAI">
     <meta name="author" content="PickAI Editorial Board">
     <meta name="google-site-verification" content="z9baZD0DStp9JpQQe0HGzAQ521cuvyJGlJHMPfrAqzc" />
 
@@ -139,14 +139,66 @@
 </head>
 
 <body>
+    <!-- Slide-out Sidebar -->
+    <div class="sidebar-overlay"></div>
+    <aside class="sidebar-menu">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">PickAI.</div>
+            <button class="close-sidebar" aria-label="Close Menu">&times;</button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-search">
+                <form action="./search.html" method="get">
+                    <input type="text" name="q" placeholder="Search articles...">
+                </form>
+            </div>
+            <div class="sidebar-topics">
+                <h3>Browse by Topic</h3>
+                <ul>
+                    <li><a href="./tools/index.html">AI Tools</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./opinion.html">Opinion</a></li>
+                    <li><a href="./explainers.html">Explainers</a></li>
+                    <li><a href="./redirect.html?to=https://jobs.pickai.com">Jobs</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
 
+    <!-- 1. Editorial Header -->
     <!-- 1. Editorial Header -->
     <header class="site-header">
         <div class="container header-inner">
-            <div class="logo">
-                <a href="/">PickAI.</a>
+            <!-- Top Row: Menu | Logo | Search -->
+            <div class="header-top">
+                <button class="menu-toggle" aria-label="Open Menu">
+                    <span class="hamburger-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="logo">
+                    <a href="/">PickAI.</a>
+                </div>
+
+                <div class="header-actions">
+                    <!-- Simple search icon SVG -->
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
             </div>
 
+            <!-- Bottom Row: Navigation -->
             <nav class="main-nav">
                 <ul>
                     <li><a href="tools/index.html">Tools</a></li>
@@ -155,16 +207,10 @@
                     <li><a href="explainers.html">Explainers</a></li>
                 </ul>
             </nav>
-
-            <div class="header-actions">
-                <!-- Simple search icon SVG -->
-                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </div>
         </div>
+    </header>
+    </div>
+    </div>
     </header>
 
     <!-- 2. Main Content Area -->
@@ -392,6 +438,113 @@
         </section>
     </div>
 
+    <!-- Financial Pulse Section (Homepage Feed) -->
+    <!-- Financial Pulse Section (Homepage Feed) -->
+    <section class="container financial-feed-section">
+        <!-- Header -->
+        <div class="section-header section-header-home">
+            <div>
+                <span class="category-label category-label-accent">Market
+                    Intel</span>
+                <h2 class="section-title" style="margin-bottom: 0;">Financial Pulse</h2>
+            </div>
+            <a href="Financial.html" class="btn-learn-more btn-view-dashboard">View Full Dashboard &rarr;</a>
+        </div>
+
+        <!-- Mini Ticker Strip -->
+        <div class="ticker-wrap ticker-wrap-home light-theme">
+            <div class="ticker-container" id="home-ticker-container">
+                <div class="ticker-item ticker-item-home">Loading market
+                    data...</div>
+            </div>
+        </div>
+
+        <!-- Commodities Grid (Hardcoded Gold/Silver) -->
+        <div class="crypto-grid crypto-grid-home" style="margin-bottom: 24px;">
+            <!-- Gold Card -->
+            <article class="crypto-card">
+                <a href="Financial/gold-price.html" style="text-decoration: none; color: inherit; display: contents;">
+                    <img src="assets/gold-price-og.jpg" class="crypto-image" alt="Gold Price India">
+                </a>
+                <div class="crypto-content">
+                    <div class="crypto-source">
+                        <span>Commodities</span>
+                        <span class="crypto-sentiment sentiment-bullish">Live</span>
+                    </div>
+                    <h3 class="crypto-title">
+                        <a href="Financial/gold-price.html">Today's Gold Price in India</a>
+                    </h3>
+                    <p class="crypto-summary">Check live 24K, 22K, and 18K Gold rates (XAU/INR) across major Indian
+                        cities.</p>
+                    <a href="Financial/gold-price.html" class="btn-learn-more">Check Rates &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Silver Card -->
+            <article class="crypto-card">
+                <a href="Financial/silver-price.html" style="text-decoration: none; color: inherit; display: contents;">
+                    <img src="assets/silver-price-og.jpg" class="crypto-image" alt="Silver Price India">
+                </a>
+                <div class="crypto-content">
+                    <div class="crypto-source">
+                        <span>Commodities</span>
+                        <span class="crypto-sentiment sentiment-bullish">Live</span>
+                    </div>
+                    <h3 class="crypto-title">
+                        <a href="Financial/silver-price.html">Today's Silver Price in India</a>
+                    </h3>
+                    <p class="crypto-summary">Live prices for Fine Silver (999) and Sterling Silver (925) per 10g and
+                        1kg.</p>
+                    <a href="Financial/silver-price.html" class="btn-learn-more">Check Rates &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Copper Card -->
+            <article class="crypto-card">
+                <a href="Financial/copper-price.html" style="text-decoration: none; color: inherit; display: contents;">
+                    <img src="assets/copper-price-og.jpg" class="crypto-image" alt="Copper Scrap Price India">
+                </a>
+                <div class="crypto-content">
+                    <div class="crypto-source">
+                        <span>Commodities</span>
+                        <span class="crypto-sentiment sentiment-bullish">Live</span>
+                    </div>
+                    <h3 class="crypto-title">
+                        <a href="Financial/copper-price.html">Today's Copper Rate in India</a>
+                    </h3>
+                    <p class="crypto-summary">Live Scrap prices for Copper Wire, Armature, and Utensils per 1kg.</p>
+                    <a href="Financial/copper-price.html" class="btn-learn-more">Check Rates &rarr;</a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Latest News Grid (Top 3) -->
+        <div class="crypto-grid crypto-grid-home" id="home-financial-news">
+            <!-- Skeleton Loader for Homepage -->
+            <article class="crypto-card card-skeleton card-home-override">
+                <div class="skeleton skeleton-rect image-box" style="aspect-ratio: 16/9; border-radius: 8px;"></div>
+                <div class="crypto-content" style="padding: 15px 0 0 0;">
+                    <div class="skeleton skeleton-text meta" style="width: 30%;"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                </div>
+            </article>
+            <article class="crypto-card card-skeleton card-home-override">
+                <div class="skeleton skeleton-rect image-box" style="aspect-ratio: 16/9; border-radius: 8px;"></div>
+                <div class="crypto-content" style="padding: 15px 0 0 0;">
+                    <div class="skeleton skeleton-text meta" style="width: 30%;"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                </div>
+            </article>
+            <article class="crypto-card card-skeleton card-home-override">
+                <div class="skeleton skeleton-rect image-box" style="aspect-ratio: 16/9; border-radius: 8px;"></div>
+                <div class="crypto-content" style="padding: 15px 0 0 0;">
+                    <div class="skeleton skeleton-text meta" style="width: 30%;"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
     <!-- News Categories Accordion -->
     <section class="container news-category-accordion"
         style="margin-bottom: 60px; border-top: 1px solid var(--color-border); padding-top: 40px;">
@@ -585,6 +738,8 @@
     <!-- Supabase & Newsletter Logic -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/newsletter.js"></script>
+    <script src="js/crypto-news.js" defer></script>
+    <script src="./js/hamburger.js"></script>
 </body>
 
 </html>

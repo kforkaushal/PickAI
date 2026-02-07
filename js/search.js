@@ -63,7 +63,46 @@ async function initializeSearch() {
 
     input.addEventListener('input', (e) => handleSearch(e.target.value));
 
-    // 3. Pre-fetch Data
+    // 3. Bind Sidebar Search (New)
+    const sidebarForm = document.querySelector('.sidebar-search form');
+    const sidebarInput = document.querySelector('.sidebar-search input');
+
+    if (sidebarForm) {
+        sidebarForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = sidebarInput.value;
+            if (query) {
+                openSearch();
+                const globalInput = document.getElementById('global-search-input');
+                if (globalInput) {
+                    globalInput.value = query;
+                    handleSearch(query);
+                }
+                // Close sidebar if open
+                document.querySelector('.sidebar-menu')?.classList.remove('active');
+                document.querySelector('.sidebar-overlay')?.classList.remove('active');
+            }
+        });
+    }
+
+    if (sidebarInput) {
+        sidebarInput.addEventListener('focus', () => {
+            // Optional: User clicks sidebar input -> open global search immediately? 
+            // Or let them type? Let's let them type, but maybe mirror to global?
+            // Simpler: Redirect focus to global search
+            openSearch();
+            const globalInput = document.getElementById('global-search-input');
+            if (globalInput) {
+                globalInput.value = sidebarInput.value;
+                globalInput.focus();
+            }
+            // Close sidebar to show results overlay clearly
+            document.querySelector('.sidebar-menu')?.classList.remove('active');
+            document.querySelector('.sidebar-overlay')?.classList.remove('active');
+        });
+    }
+
+    // 4. Pre-fetch Data
     await loadSearchData();
 }
 

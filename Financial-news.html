@@ -9,7 +9,7 @@
         crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Reader — PickAI</title>
+    <title>News Redirect — PickAI</title>
 
     <!-- Design System / CSS -->
     <link rel="stylesheet" href="style.css">
@@ -21,201 +21,72 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700;900&display=swap"
         rel="stylesheet">
-
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .reader-header {
-            background: #fff;
-            border-bottom: 1px solid var(--color-border);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .reader-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .article-title {
-            font-family: var(--font-serif);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--color-text-primary);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 60%;
-        }
-
-        .btn-external {
-            background-color: var(--color-accent);
-            color: #fff;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: background 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .btn-external:hover {
-            background-color: var(--color-text-primary);
-            color: #fff;
-        }
-
-        .reader-layout {
-            display: flex;
-            flex: 1;
-            height: calc(100vh - 140px);
-            /* Approx height removing header */
-        }
-
-        .news-frame-container {
-            flex: 1;
-            background: #f0f0f0;
-            position: relative;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-
-        .sidebar-ads {
-            width: 320px;
-            background: #fff;
-            border-left: 1px solid var(--color-border);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            overflow-y: auto;
-        }
-
-        .ad-placeholder {
-            width: 300px;
-            height: 250px;
-            background: #fafafa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ccc;
-            border: 1px dashed #ddd;
-            font-size: 0.8rem;
-        }
-
-        @media (max-width: 900px) {
-            .reader-layout {
-                flex-direction: column;
-                height: auto;
-            }
-
-            .sidebar-ads {
-                width: 100%;
-                border-left: none;
-                border-top: 1px solid var(--color-border);
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                padding: 10px;
-                gap: 10px;
-            }
-
-            .news-frame-container {
-                height: 90vh;
-                /* Increased for better reading */
-            }
-
-            /* Mobile Header Optimizations */
-            .reader-controls {
-                gap: 10px;
-                padding: 0 15px;
-                /* Ensure padding inside container */
-            }
-
-            .article-title {
-                font-size: 0.9rem;
-                max-width: 40%;
-                /* Give more space to buttons */
-            }
-
-            .btn-external {
-                padding: 6px 10px;
-                font-size: 0.8rem;
-            }
-
-            .btn-external span {
-                display: none;
-                /* Hide icon if needed */
-            }
-        }
-
-        /* Extra small screens: Hide title, show only controls */
-        @media (max-width: 400px) {
-            .article-title {
-                display: none;
-            }
-
-            .reader-controls {
-                justify-content: space-between;
-                width: 100%;
-            }
-
-            .btn-external::after {
-                content: "";
-                /* Removed redundant text */
-            }
-
-            .btn-external {
-                font-size: 0.75rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Sidebar Injection (Manual Include for Safety) -->
+    <div class="sidebar-overlay"></div>
+    <aside class="sidebar-menu">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">PickAI.</div>
+            <button class="close-sidebar" aria-label="Close Menu">&times;</button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-search">
+                <form action="./search.html" method="get">
+                    <input type="text" name="q" placeholder="Search articles...">
+                </form>
+            </div>
+            <div class="sidebar-topics">
+                <h3>Browse by Topic</h3>
+                <ul>
+                    <li><a href="./tools/index.html">AI Tools</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./opinion.html">Opinion</a></li>
+                    <li><a href="./explainers.html">Explainers</a></li>
+                    <li><a href="./redirect.html?to=https://jobs.pickai.com">Jobs</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
 
-    <!-- Simplified Header -->
+    <!-- Reader Header -->
     <header class="reader-header">
         <div class="container reader-controls">
-            <a href="Financial.html"
-                style="text-decoration: none; font-weight: 500; display:flex; align-items:center; gap:5px;">
-                &larr; Back
+            <a href="Financial.html" class="reader-back-link">
+                &larr; Back to News
             </a>
-            <div class="article-title" id="page-title">Loading Article...</div>
-            <a href="#" id="open-original" class="btn-external" target="_blank" rel="noopener noreferrer">
-                Open Original <span>&nearr;</span>
-            </a>
+            <div class="reader-page-title" id="header-title">Redirecting...</div>
+            <span style="width: 80px;"></span> <!-- Spacer for balance -->
         </div>
     </header>
 
     <!-- Main Content -->
-    <div class="reader-layout">
-        <!-- Iframe Area -->
-        <div class="news-frame-container">
-            <iframe id="news-frame" src=""></iframe>
+    <main class="redirect-main">
+
+        <div class="redirect-card">
+            <div class="redirect-status">You are being redirected</div>
+            <h1 class="redirect-title-preview" id="preview-title">Loading Article Info...</h1>
+
+            <div class="timer-display">
+                <div class="timer-number" id="timer">10</div>
+                <div class="timer-label">Seconds Remaining</div>
+            </div>
+
+            <a href="#" id="manual-link" class="btn-primary"
+                style="display: inline-block; width: auto; padding: 12px 32px; font-size: 1rem; text-decoration: none;">
+                Open Article Now
+            </a>
+            <div style="margin-top: 15px; font-size: 0.8rem; color: var(--color-text-meta);">
+                (Popup blocker may prevent automatic new tab)
+            </div>
         </div>
 
-        <!-- Ad Sidebar -->
-        <aside class="sidebar-ads">
+        <!-- Ads Grid -->
+        <div class="redirect-ads-grid">
             <!-- Ad Unit 1 -->
-            <div class="ad-container">
-                <span class="ad-label"
-                    style="font-size: 0.7rem; color: #999; margin-bottom: 5px; display:block;">Advertisement</span>
+            <div class="ad-unit-clean">
+                <span class="ad-unit-label">Advertisement</span>
                 <!-- Google AdSense MPU -->
                 <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
                     data-ad-client="ca-pub-9227354288966999" data-ad-slot="AUTO_GENERATED_ID"></ins>
@@ -223,11 +94,9 @@
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
-
             <!-- Ad Unit 2 -->
-            <div class="ad-container">
-                <span class="ad-label"
-                    style="font-size: 0.7rem; color: #999; margin-bottom: 5px; display:block;">Advertisement</span>
+            <div class="ad-unit-clean">
+                <span class="ad-unit-label">Advertisement</span>
                 <!-- Google AdSense MPU -->
                 <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
                     data-ad-client="ca-pub-9227354288966999" data-ad-slot="AUTO_GENERATED_ID"></ins>
@@ -235,36 +104,91 @@
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
-        </aside>
-    </div>
+        </div>
 
+    </main>
+
+    <!-- Scripts -->
     <script>
-        // Parse URL Parameters
-        const params = new URLSearchParams(window.location.search);
-        const url = params.get('url');
-        const title = params.get('title');
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const url = params.get('url');
+            const title = params.get('title');
 
-        const frame = document.getElementById('news-frame');
-        const titleEl = document.getElementById('page-title');
-        const btn = document.getElementById('open-original');
+            const headerTitle = document.getElementById('header-title');
+            const previewTitle = document.getElementById('preview-title');
+            const manualLink = document.getElementById('manual-link');
+            const timerEl = document.getElementById('timer');
 
-        if (url) {
-            frame.src = url;
-            btn.href = url;
-            // Handle loading error event for frame (minimal check)
-            frame.onerror = function () {
-                titleEl.textContent = "Unable to load here. Please open original.";
-            };
-        } else {
-            document.body.innerHTML = '<div style="padding:40px; text-align:center;">Invalid Article Link. <a href="Financial.html">Go Back</a></div>';
-        }
+            // 1. Validation
+            if (!url) {
+                document.body.innerHTML = `
+                    <div class="redirect-main">
+                        <div class="redirect-card">
+                            <h2>Invalid Link</h2>
+                            <p>No article URL provided.</p>
+                            <a href="Financial.html" class="btn-primary" style="margin-top:20px; display:inline-block;">Return to News</a>
+                        </div>
+                    </div>`;
+                return;
+            }
 
-        if (title) {
-            titleEl.textContent = title;
-            document.title = `${title} — PickAI Reader`;
-        }
+            // 2. Set Content
+            if (title) {
+                // Shorten title for header if needed
+                headerTitle.textContent = title.length > 30 ? title.substring(0, 30) + '...' : title;
+                previewTitle.textContent = title;
+                document.title = `Redirecting to ${title} — PickAI`;
+            } else {
+                headerTitle.textContent = "External Article";
+                previewTitle.textContent = "External Article";
+            }
+
+            manualLink.href = url;
+            // Ensure manual click opens new tab as requested
+            manualLink.target = "_blank";
+            manualLink.rel = "noopener noreferrer";
+
+            // 3. Countdown
+            let timeLeft = 10;
+            const interval = setInterval(() => {
+                timeLeft--;
+                timerEl.textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    timerEl.textContent = "0";
+                    performRedirect();
+                }
+            }, 1000);
+
+            // 4. Redirect Logic
+            function performRedirect() {
+                try {
+                    const newWin = window.open(url, '_blank');
+                    if (!newWin || newWin.closed || typeof newWin.closed == 'undefined') {
+                        // Popup blocked.
+                        timerEl.style.fontSize = "3rem";
+                        timerEl.textContent = "Ready";
+                        const label = document.querySelector('.timer-label');
+                        if (label) label.textContent = "Click button below";
+
+                        manualLink.style.transform = "scale(1.05)";
+                        manualLink.style.transition = "transform 0.3s";
+                    } else {
+                        // Success - Opened in new tab.
+                        timerEl.innerHTML = "&check;";
+                        const label = document.querySelector('.timer-label');
+                        if (label) label.textContent = "Opened in new tab";
+                    }
+                } catch (e) {
+                    // Fallback
+                    window.location.href = url;
+                }
+            }
+        });
     </script>
-
+    <script src="./js/hamburger.js"></script>
 </body>
 
 </html>
