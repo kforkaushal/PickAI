@@ -141,10 +141,12 @@
                 <div class="newsletter-card">
                     <h3>Get Daily Insights</h3>
                     <p>Never miss a poll or a trend. Subscribe to our daily intelligence brief.</p>
-                    <form id="poll-newsletter-form" class="newsletter-form-inline">
-                        <input type="email" placeholder="Enter your email" required>
+                    <form id="poll-newsletter-form" class="newsletter-form" name="poll-newsletter" method="POST"
+                        data-netlify="true">
+                        <input type="email" name="email" placeholder="Enter your email" required>
                         <button type="submit" class="button-primary">Subscribe</button>
                     </form>
+                    <div class="newsletter-feedback"></div>
                 </div>
             </div>
         </section>
@@ -169,6 +171,7 @@
         </div>
     </footer>
 
+    <script src="js/newsletter.js" defer></script>
     <script src="js/hamburger.js"></script>
 </body>
 
