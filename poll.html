@@ -93,52 +93,59 @@
         </div>
     </header>
 
-    <main class="container">
+    <main>
         <section class="poll-hero">
-            <span class="poll-badge">Poll of the Day</span>
-            <h1 class="poll-question" id="daily-question">Which AI Assistant is currently your primary choice for
-                coding?</h1>
-            <p class="poll-meta">Market sentiment analysis. New poll every 24 hours.</p>
+            <div class="container">
+                <span class="poll-badge">Poll of the Day</span>
+                <h1 class="poll-question" id="daily-question">Which AI Assistant is currently your primary choice for
+                    coding?</h1>
+                <p class="poll-meta">Market sentiment analysis. New poll every 24 hours.</p>
+            </div>
         </section>
 
         <section class="poll-container">
-            <div class="poll-card" id="poll-card">
-                <div class="poll-options" id="poll-options">
-                    <div style="padding: 40px; text-align: center; color: var(--color-text-meta);">
-                        <p>Loading today's intelligence poll...</p>
+            <div class="container">
+                <div class="poll-card" id="poll-card">
+                    <div class="poll-options" id="poll-options">
+                        <div style="padding: 40px; text-align: center; color: var(--color-text-meta);">
+                            <p>Loading today's intelligence poll...</p>
+                        </div>
+                    </div>
+
+                    <div class="poll-results" id="poll-results" style="display: none;">
+                        <h3>Live Community Results</h3>
+                        <div id="results-list">
+                            <!-- JS Dynamic Inject -->
+                        </div>
+                        <button id="change-vote" class="btn-text">Interested in other polls? Check Archive
+                            &rarr;</button>
                     </div>
                 </div>
 
-                <div class="poll-results" id="poll-results" style="display: none;">
-                    <h3>Live Community Results</h3>
-                    <div id="results-list">
+                <!-- Poll Archive Section (JS Toggled) -->
+                <div id="poll-archive" class="poll-archive">
+                    <div class="archive-header">
+                        <h3>Recent Polls Archive</h3>
+                        <p>Trends and community sentiment from the past week.</p>
+                    </div>
+                    <div id="archive-list" class="archive-grid">
                         <!-- JS Dynamic Inject -->
                     </div>
-                    <button id="change-vote" class="btn-text">Interested in other polls? Check Archive &rarr;</button>
-                </div>
-            </div>
-
-            <!-- Poll Archive Section (JS Toggled) -->
-            <div id="poll-archive" class="poll-archive">
-                <div class="archive-header">
-                    <h3>Recent Polls Archive</h3>
-                    <p>Trends and community sentiment from the past week.</p>
-                </div>
-                <div id="archive-list" class="archive-grid">
-                    <!-- JS Dynamic Inject -->
                 </div>
             </div>
         </section>
 
         <!-- Newsletter Sub-Section -->
         <section class="newsletter-highlight">
-            <div class="newsletter-card">
-                <h3>Get Daily Insights</h3>
-                <p>Never miss a poll or a trend. Subscribe to our daily intelligence brief.</p>
-                <form id="poll-newsletter-form" class="newsletter-form-inline">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="button-primary">Subscribe</button>
-                </form>
+            <div class="container">
+                <div class="newsletter-card">
+                    <h3>Get Daily Insights</h3>
+                    <p>Never miss a poll or a trend. Subscribe to our daily intelligence brief.</p>
+                    <form id="poll-newsletter-form" class="newsletter-form-inline">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="button-primary">Subscribe</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>

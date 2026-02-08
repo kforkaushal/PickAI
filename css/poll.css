@@ -15,38 +15,13 @@
     text-align: center;
 }
 
-.poll-badge {
-    font-family: var(--font-ui);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--color-text-meta);
-    letter-spacing: 0.1em;
-    margin-bottom: var(--space-sm);
-    display: block;
-}
-
-.poll-question {
-    font-family: var(--font-serif);
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    color: var(--color-text-primary);
-    margin: 0 auto var(--space-md);
-    letter-spacing: -0.03em;
+.poll-hero .container {
     max-width: 900px;
-}
-
-.poll-meta {
-    font-family: var(--font-ui);
-    color: var(--color-text-secondary);
-    font-size: 0.95rem;
-    margin-bottom: var(--space-2xl);
 }
 
 .poll-container {
     background-color: #fafafa;
-    padding: 60px 0;
+    padding: 80px 0;
     margin-top: 40px;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
@@ -150,51 +125,53 @@
     text-align: center;
 }
 
-/* Completion state styles */
-.poll-completion {
+.poll-archive {
+    display: none;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+}
+
+.poll-archive.active {
+    display: block;
+}
+
+.archive-header {
     text-align: center;
-    padding: var(--space-2xl) var(--space-md);
-    animation: fadeIn 0.6s ease-out;
+    margin-bottom: var(--space-xl);
 }
 
-.completion-icon {
-    font-size: 3rem;
-    margin-bottom: var(--space-lg);
+.archive-header h3 {
+    font-size: 2rem;
+    margin-bottom: 8px;
 }
 
-.completion-title {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-sm);
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
 }
 
-.completion-message {
-    color: var(--color-text-meta);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    max-width: 400px;
-    margin: 0 auto var(--space-xl);
+.archive-item {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    padding: 24px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
 
-.completion-footer {
-    border-top: 1px solid var(--poll-border);
-    padding-top: var(--space-xl);
+.archive-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.countdown-label {
+.archive-meta {
     font-family: var(--font-ui);
     font-size: 0.75rem;
-    text-transform: uppercase;
     font-weight: 700;
     color: var(--color-text-meta);
-    letter-spacing: 0.1em;
-}
-
-#poll-countdown {
-    color: var(--color-text-primary);
-    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
 .result-item.user-selection {
