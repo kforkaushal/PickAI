@@ -16,6 +16,7 @@
 
     <!-- Design System / CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/astrology.css">
     <link rel="stylesheet" href="css/stories.css">
     <link rel="stylesheet" href="css/newsletter.css">
     <link rel="stylesheet" href="css/skeleton.css">
@@ -158,6 +159,7 @@
                 <ul>
                     <li><a href="./tools/index.html">AI Tools</a></li>
                     <li><a href="./Financial.html">Financial</a></li>
+                    <li><a href="./astrology.html">Astrology</a></li>
                     <li><a href="./poll.html">Daily Poll</a></li>
                     <li><a href="./research.html">Research</a></li>
                     <li><a href="./opinion.html">Opinion</a></li>
@@ -577,6 +579,36 @@
         </div>
     </section>
 
+    <!-- Cosmic Outlook Section (Mirroring Astrology Hub) -->
+    <section class="container" style="margin-bottom: 60px;">
+        <div class="cosmic-outlook-card"
+            style="position: relative; overflow: hidden; border-radius: 12px; border: 1px solid var(--color-border); background: #fff; padding: 40px 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+            <div class="astrology-header-meta"
+                style="justify-content: center; margin-bottom: 20px; background: transparent; padding: 0;">
+                <span class="today-date">Loading...</span>
+                <span class="separator">•</span>
+                <div class="moon-phase">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4V20Z" />
+                    </svg>
+                    <span>...</span>
+                </div>
+            </div>
+            <div class="cosmic-hero" style="padding: 0; max-width: 100%;">
+                <span class="theme-tag" style="border-bottom: 2px solid var(--color-accent);">Theme of the Day</span>
+                <h2 style="font-size: 2rem; margin: 15px 0 10px;">Loading Cosmic Energy...</h2>
+                <p class="page-header-desc"
+                    style="max-width: 600px; margin: 0 auto; color: var(--color-text-secondary);">
+                    Aligning with the stars...
+                </p>
+                <a href="astrology.html" class="btn-primary" style="margin-top: 25px; display: inline-block;">View
+                    Horoscope &rarr;</a>
+            </div>
+        </div>
+    </section>
+
     <!-- News Categories Accordion -->
     <section class="container news-category-accordion"
         style="margin-bottom: 60px; border-top: 1px solid var(--color-border); padding-top: 40px;">
@@ -771,10 +803,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/newsletter.js"></script>
     <script src="js/crypto-news.js" defer></script>
+    <script src="js/astrology.js" defer></script>
     <script src="./js/hamburger.js"></script>
 </body>
 
 </html>
-
-
-

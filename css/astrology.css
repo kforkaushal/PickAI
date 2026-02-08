@@ -1,0 +1,324 @@
+/* 
+  PickAI - Astrology Hub Styles
+  =========================================
+*/
+
+/* Header Meta (Date/Moon) */
+.astrology-header-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    font-family: var(--font-ui);
+    color: var(--color-text-meta);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-xl);
+    padding: var(--space-md);
+    background: var(--color-highlight);
+    border-radius: 50px;
+    display: inline-flex;
+}
+
+.today-date {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.moon-phase {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* Cosmic Outlook Hero - Editorial */
+.cosmic-hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-xl) 0;
+}
+
+.theme-tag {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--color-accent);
+    /* Matched to site accent */
+    padding-bottom: 4px;
+}
+
+.cosmic-hero h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-text-primary);
+}
+
+.cosmic-hero p {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+/* Zodiac Navigation Grid */
+.zodiac-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xl);
+}
+
+.zodiac-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-sm);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition: all 0.2s ease;
+    /* Removed box styling for cleaner "Story" look */
+    background: transparent;
+    border: none;
+}
+
+.zodiac-tile:hover {
+    transform: translateY(-2px);
+    background: transparent;
+    /* No hover bg */
+}
+
+.zodiac-icon {
+    display: none;
+    /* Hide font icon if present */
+}
+
+.zodiac-icon-img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--space-sm);
+    transition: all 0.2s ease;
+    border: 1px solid #000;
+    /* Black Border as requested */
+    border-radius: 50%;
+    /* Circular Shape */
+    padding: 12px;
+    /* Inner spacing for icon */
+    background: #fff;
+    /* Clean background inside circle */
+}
+
+.zodiac-tile:hover .zodiac-icon-img {
+    transform: scale(1.05);
+    border-width: 2px;
+    /* Thicker border on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.zodiac-name {
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.zodiac-date {
+    font-family: var(--font-ui);
+    font-size: 0.6rem;
+    color: var(--color-text-meta);
+    margin-top: 2px;
+}
+
+/* Enhanced Horoscope Card - Premium Editorial */
+.horoscope-card {
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    /* Sharper to match site */
+    padding: var(--space-xl);
+    background: #fff;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    /* Matched to Poll Card base shadow */
+}
+
+.horoscope-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Sophisticated lift */
+}
+
+.sign-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-highlight);
+}
+
+.sign-title h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
+
+.sign-glyph {
+    display: none;
+    /* Hide font glyph */
+}
+
+.sign-glyph-img {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    padding: 8px;
+    background: #fff;
+    object-fit: contain;
+}
+
+.sign-date-range {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--color-text-meta);
+    margin-top: 4px;
+    display: block;
+}
+
+/* Vibe Ratings - Monochrome */
+.vibe-ratings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px dashed var(--color-border);
+}
+
+.vibe-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--color-text-meta);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stars {
+    color: var(--color-accent);
+    /* Site Accent (Dark Gray/Black) */
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+/* Daily Attributes */
+.daily-attributes {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: auto;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-highlight);
+}
+
+.attribute-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.attr-label {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--color-text-meta);
+    margin-bottom: 2px;
+}
+
+.attr-value {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .zodiac-nav-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Deep Dive / Newsletter Section */
+.deep-dive-section {
+    margin-top: var(--space-3xl);
+    text-align: center;
+    border-radius: 12px;
+    padding: var(--space-xl) var(--space-md);
+    background: var(--color-highlight);
+    border: 1px solid var(--color-border);
+}
+
+.deep-dive-section h2 {
+    font-family: var(--font-serif);
+    margin-bottom: var(--space-md);
+    font-size: 1.8rem;
+}
+
+.deep-dive-section p {
+    margin-bottom: var(--space-lg);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--font-serif);
+    font-style: italic;
+}
+
+.newsletter-section {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.newsletter-form input {
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    /* Theme standard */
+    font-family: var(--font-ui);
+    flex-grow: 1;
+}
+
+.newsletter-form button {
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--color-text-primary);
+    color: #fff;
+    border: none;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.newsletter-form button:hover {
+    opacity: 0.9;
+}

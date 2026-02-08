@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics 4 + Consent Mode -->
+    <script src="js/analytics-setup.js"></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Astrology Horoscope — PickAI Premium Insights</title>
+
+    <!-- Design System / CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/astrology.css">
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="canonical" href="https://pickai.netlify.app/astrology.html">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Get your daily premium astrology horoscope from PickAI. Expert analysis of zodiac signs, planetary alignments, and cosmic trends for the digital age.">
+    <meta name="keywords"
+        content="Astrology, Daily Horoscope, Zodiac Signs, PickAI Astrology, Planetary Alignments, Horoscope Insights">
+    <meta name="author" content="PickAI Editorial Board">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Daily Astrology Horoscope — PickAI Premium Insights">
+    <meta property="og:description"
+        content="Explore the cosmos with PickAI's premium daily horoscopes. Deep-dive analysis for all 12 zodiac signs.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://pickai.netlify.app/astrology.html">
+    <meta property="og:image" content="https://pickai.netlify.app/assets/horoscope-og">
+    <meta property="og:site_name" content="PickAI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@PickAI">
+    <meta name="twitter:title" content="Daily Astrology Horoscope">
+    <meta name="twitter:description"
+        content="Explore the cosmos with PickAI's premium daily horoscopes. Deep-dive analysis for all 12 zodiac signs.">
+    <meta name="twitter:image" content="https://pickai.netlify.app/assets/horoscope-og">
+
+    <!-- Article Meta -->
+    <meta property="article:published_time" content="2026-01-25T08:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-08T12:00:00+00:00">
+
+    <!-- JSON-LD BreadcrumbList & WebPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pickai.netlify.app/"
+          },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Astrology",
+            "item": "https://pickai.netlify.app/astrology.html"
+          }]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://pickai.netlify.app/astrology.html",
+          "url": "https://pickai.netlify.app/astrology.html",
+          "name": "Daily Astrology Horoscope — PickAI Premium Insights",
+          "description": "Get your daily premium astrology horoscope from PickAI. Expert analysis of zodiac signs, planetary alignments, and cosmic trends.",
+          "inLanguage": "en-US",
+          "datePublished": "2026-01-25T08:00:00+00:00",
+          "dateModified": "2026-02-08T12:00:00+00:00",
+          "publisher": {
+            "@type": "Organization",
+            "name": "PickAI",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://pickai.netlify.app/assets/horoscope-og"
+            }
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Slide-out Sidebar -->
+    <div class="sidebar-overlay"></div>
+    <aside class="sidebar-menu">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">PickAI.</div>
+            <button class="close-sidebar" aria-label="Close Menu">&times;</button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-search">
+                <form action="./search.html" method="get">
+                    <input type="text" name="q" placeholder="Search articles...">
+                </form>
+            </div>
+            <div class="sidebar-topics">
+                <h3>Browse by Topic</h3>
+                <ul>
+                    <li><a href="./tools/index.html">AI Tools</a></li>
+                    <li><a href="./Financial.html">Financial</a></li>
+                    <li><a href="./astrology.html">Astrology</a></li>
+                    <li><a href="./poll.html">Daily Poll</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./opinion.html">Opinion</a></li>
+                    <li><a href="./explainers.html">Explainers</a></li>
+                    <li><a href="./redirect.html?to=https://jobs.pickai.com">Jobs</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Editorial Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="header-top">
+                <button class="menu-toggle" aria-label="Open Menu">
+                    <span class="hamburger-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+                <div class="logo">
+                    <a href="index.html">PickAI.</a>
+                </div>
+                <div class="header-actions">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" width="32" height="32">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="tools/index.html">Tools</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="opinion.html">Opinion</a></li>
+                    <li><a href="explainers.html">Explainers</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: var(--space-2xl) var(--space-md);">
+        <header class="section-header" style="text-align: center; margin-bottom: var(--space-xl);">
+            <!-- Daily Meta -->
+            <div class="astrology-header-meta">
+                <span class="today-date">February 8, 2026</span>
+                <span class="separator">•</span>
+                <div class="moon-phase">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4V20Z" />
+                    </svg>
+                    <span>Waning Gibbous</span>
+                </div>
+            </div>
+
+            <!-- Cosmic Hero -->
+            <div class="cosmic-hero">
+                <span class="theme-tag">Theme of the Day</span>
+                <h2>Precision in Motion</h2>
+                <p class="page-header-desc">
+                    The alignment of Mercury and Saturn brings a rare clarity to complex problems.
+                    It's a day for strategic planning and executing long-awaited decisions with surgical precision.
+                </p>
+            </div>
+            </div>
+
+            <!-- Navigation Grid -->
+            <h3
+                style="font-family: var(--font-serif); font-size: 1rem; font-weight: 400; font-style: italic; letter-spacing: 0.5px; margin-bottom: var(--space-lg); color: var(--color-text-secondary); text-align: center; position: relative; display: inline-block;">
+                Select Your Sign
+            </h3>
+            <div class="zodiac-nav-grid">
+                <a href="#aries" class="zodiac-tile"><img src="./assets/zodiac/aries.svg" alt="Aries"
+                        class="zodiac-icon-img"><span class="zodiac-name">Aries</span><span class="zodiac-date">Mar 21 -
+                        Apr 19</span></a>
+                <a href="#taurus" class="zodiac-tile"><img src="./assets/zodiac/taurus.svg" alt="Taurus"
+                        class="zodiac-icon-img"><span class="zodiac-name">Taurus</span><span class="zodiac-date">Apr 20
+                        - May 20</span></a>
+                <a href="#gemini" class="zodiac-tile"><img src="./assets/zodiac/gemini.svg" alt="Gemini"
+                        class="zodiac-icon-img"><span class="zodiac-name">Gemini</span><span class="zodiac-date">May 21
+                        - Jun 20</span></a>
+                <a href="#cancer" class="zodiac-tile"><img src="./assets/zodiac/cancer.svg" alt="Cancer"
+                        class="zodiac-icon-img"><span class="zodiac-name">Cancer</span><span class="zodiac-date">Jun 21
+                        - Jul 22</span></a>
+                <a href="#leo" class="zodiac-tile"><img src="./assets/zodiac/leo.svg" alt="Leo"
+                        class="zodiac-icon-img"><span class="zodiac-name">Leo</span><span class="zodiac-date">Jul 23 -
+                        Aug 22</span></a>
+                <a href="#virgo" class="zodiac-tile"><img src="./assets/zodiac/virgo.svg" alt="Virgo"
+                        class="zodiac-icon-img"><span class="zodiac-name">Virgo</span><span class="zodiac-date">Aug 23 -
+                        Sep 22</span></a>
+                <a href="#libra" class="zodiac-tile"><img src="./assets/zodiac/libra.svg" alt="Libra"
+                        class="zodiac-icon-img"><span class="zodiac-name">Libra</span><span class="zodiac-date">Sep 23 -
+                        Oct 22</span></a>
+                <a href="#scorpio" class="zodiac-tile"><img src="./assets/zodiac/scorpio.svg" alt="Scorpio"
+                        class="zodiac-icon-img"><span class="zodiac-name">Scorpio</span><span class="zodiac-date">Oct 23
+                        - Nov 21</span></a>
+                <a href="#sagittarius" class="zodiac-tile"><img src="./assets/zodiac/sagittarius.svg" alt="Sagittarius"
+                        class="zodiac-icon-img"><span class="zodiac-name">Sagittarius</span><span
+                        class="zodiac-date">Nov 22 - Dec 21</span></a>
+                <a href="#capricorn" class="zodiac-tile"><img src="./assets/zodiac/capricorn.svg" alt="Capricorn"
+                        class="zodiac-icon-img"><span class="zodiac-name">Capricorn</span><span class="zodiac-date">Dec
+                        22 - Jan 19</span></a>
+                <a href="#aquarius" class="zodiac-tile"><img src="./assets/zodiac/aquarius.svg" alt="Aquarius"
+                        class="zodiac-icon-img"><span class="zodiac-name">Aquarius</span><span class="zodiac-date">Jan
+                        20 - Feb 18</span></a>
+                <a href="#pisces" class="zodiac-tile"><img src="./assets/zodiac/pisces.svg" alt="Pisces"
+                        class="zodiac-icon-img"><span class="zodiac-name">Pisces</span><span class="zodiac-date">Feb 19
+                        - Mar 20</span></a>
+            </div>
+        </header>
+
+        <div class="grid news-grid-3">
+            <!-- Aries -->
+            <article class="horoscope-card" id="aries">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Aries</h3><span class="sign-date-range">Mar 21 - Apr 19</span>
+                    </div>
+                    <img src="./assets/zodiac/aries.svg" alt="Aries" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★★★</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★★☆☆</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★★☆</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Career & Ambition</h4>
+                <p style="margin-bottom: var(--space-md);">Don't rush a decision; the best move is a calculated one.</p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">9</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span class="attr-value">Red</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Taurus -->
+            <article class="horoscope-card" id="taurus">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Taurus</h3><span class="sign-date-range">Apr 20 - May 20</span>
+                    </div>
+                    <img src="./assets/zodiac/taurus.svg" alt="Taurus" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★☆☆</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★★★☆</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★☆☆</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Learning & Expansion</h4>
+                <p style="margin-bottom: var(--space-md);">Explore a new topic or hobby that sparks your curiosity.</p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">6</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span
+                            class="attr-value">Green</span></div>
+                </div>
+            </article>
+
+            <!-- Gemini -->
+            <article class="horoscope-card" id="gemini">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Gemini</h3><span class="sign-date-range">May 21 - Jun 20</span>
+                    </div>
+                    <img src="./assets/zodiac/gemini.svg" alt="Gemini" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★★☆</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★★☆☆</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★★★</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Financial Introspection</h4>
+                <p style="margin-bottom: var(--space-md);">Review your budgets or shared resources; clarity is coming.
+                </p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">5</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span
+                            class="attr-value">Yellow</span></div>
+                </div>
+            </article>
+
+            <!-- Cancer -->
+            <article class="horoscope-card" id="cancer">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Cancer</h3><span class="sign-date-range">Jun 21 - Jul 22</span>
+                    </div>
+                    <img src="./assets/zodiac/cancer.svg" alt="Cancer" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★☆☆</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★★★★</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★☆☆☆</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Relationships</h4>
+                <p style="margin-bottom: var(--space-md);">A heart-to-heart conversation could resolve a lingering
+                    doubt.</p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">2</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span
+                            class="attr-value">Silver</span></div>
+                </div>
+            </article>
+
+            <!-- Leo -->
+            <article class="horoscope-card" id="leo">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Leo</h3><span class="sign-date-range">Jul 23 - Aug 22</span>
+                    </div>
+                    <img src="./assets/zodiac/leo.svg" alt="Leo" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★★★</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★★★☆</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★★★</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Health & Wellness</h4>
+                <p style="margin-bottom: var(--space-md);">Focus on small habits rather than a total lifestyle overhaul.
+                </p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">1</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span class="attr-value">Gold</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Virgo -->
+            <article class="horoscope-card" id="virgo">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Virgo</h3><span class="sign-date-range">Aug 23 - Sep 22</span>
+                    </div>
+                    <img src="./assets/zodiac/virgo.svg" alt="Virgo" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★★☆</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★☆☆☆</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★★☆</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Creativity & Fun</h4>
+                <p style="margin-bottom: var(--space-md);">Let your inner child lead today; spontaneity will reward you.
+                </p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">5</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span class="attr-value">Navy</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Libra -->
+            <article class="horoscope-card" id="libra">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Libra</h3><span class="sign-date-range">Sep 23 - Oct 22</span>
+                    </div>
+                    <img src="./assets/zodiac/libra.svg" alt="Libra" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★☆☆</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★★★★</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★☆☆</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Home & Roots</h4>
+                <p style="margin-bottom: var(--space-md);">Focus on your sanctuary. A tidy space leads to a tidy mind.
+                </p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">6</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span class="attr-value">Pink</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Scorpio -->
+            <article class="horoscope-card" id="scorpio">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Scorpio</h3><span class="sign-date-range">Oct 23 - Nov 21</span>
+                    </div>
+                    <img src="./assets/zodiac/scorpio.svg" alt="Scorpio" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★★☆</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★★★☆</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★★★</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Communication</h4>
+                <p style="margin-bottom: var(--space-md);">Words carry weight today. Be direct but remain compassionate.
+                </p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">9</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span
+                            class="attr-value">Black</span></div>
+                </div>
+            </article>
+
+            <!-- Sagittarius -->
+            <article class="horoscope-card" id="sagittarius">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Sagittarius</h3><span class="sign-date-range">Nov 22 - Dec 21</span>
+                    </div>
+                    <img src="./assets/zodiac/sagittarius.svg" alt="Sagittarius" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★★★</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★★☆☆</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★★☆</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Values & Assets</h4>
+                <p style="margin-bottom: var(--space-md);">Check your spending, but don't be afraid to invest in
+                    quality.</p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">3</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span
+                            class="attr-value">Purple</span></div>
+                </div>
+            </article>
+
+            <!-- Capricorn -->
+            <article class="horoscope-card" id="capricorn">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Capricorn</h3><span class="sign-date-range">Dec 22 - Jan 19</span>
+                    </div>
+                    <img src="./assets/zodiac/capricorn.svg" alt="Capricorn" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★★★</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★☆☆☆</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★★☆</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Self-Identity</h4>
+                <p style="margin-bottom: var(--space-md);">The spotlight is on you. Trust your instincts over outside
+                    noise.</p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">8</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span
+                            class="attr-value">Brown</span></div>
+                </div>
+            </article>
+
+            <!-- Aquarius -->
+            <article class="horoscope-card" id="aquarius">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Aquarius</h3><span class="sign-date-range">Jan 20 - Feb 18</span>
+                    </div>
+                    <img src="./assets/zodiac/aquarius.svg" alt="Aquarius" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★★☆</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★★☆☆</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★☆☆</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Rest & Release</h4>
+                <p style="margin-bottom: var(--space-md);">Prioritize solitude. You need a mental recharge before the
+                    week ahead.</p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">4</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span class="attr-value">Blue</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Pisces -->
+            <article class="horoscope-card" id="pisces">
+                <div class="sign-header">
+                    <div class="sign-title">
+                        <h3>Pisces</h3><span class="sign-date-range">Feb 19 - Mar 20</span>
+                    </div>
+                    <img src="./assets/zodiac/pisces.svg" alt="Pisces" class="sign-glyph-img">
+                </div>
+                <div class="vibe-ratings">
+                    <div class="vibe-item"><span>Career</span><span class="stars">★★★☆☆</span></div>
+                    <div class="vibe-item"><span>Love</span><span class="stars">★★★★★</span></div>
+                    <div class="vibe-item"><span>Energy</span><span class="stars">★★★☆☆</span></div>
+                </div>
+                <h4 style="font-family: var(--font-serif); margin-bottom: 8px;">Community & Networking</h4>
+                <p style="margin-bottom: var(--space-md);">Reach out to an old friend; they might have the insight you
+                    need.</p>
+                <div class="daily-attributes">
+                    <div class="attribute-box"><span class="attr-label">Lucky Number</span><span
+                            class="attr-value">7</span></div>
+                    <div class="attribute-box"><span class="attr-label">Color</span><span class="attr-value">Sea
+                            Green</span></div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Call to Action / Footer Section -->
+        <!-- Call to Action / Footer Section -->
+        <section class="deep-dive-section">
+            <div class="container">
+                <h2>Cosmic Intelligence</h2>
+                <p>
+                    Stay ahead of the stars. Subscribe to our weekend cosmic briefing.
+                </p>
+                <div class="newsletter-section">
+                    <form name="cosmic-briefing" method="POST" data-netlify="true" class="newsletter-form">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                PickAI.
+                <div class="meta-text" style="font-weight: normal; margin-top: 10px; font-size: 0.8rem;">
+                    &copy; 2026 PickAI Media. <br> All rights reserved.
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="editorial-policy.html">Editorial Policy</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/search.js" defer></script>
+    <script src="js/hamburger.js"></script>
+    <script src="js/consent.js" defer></script>
+    <script src="js/astrology.js" defer></script>
+</body>
+
+</html>
