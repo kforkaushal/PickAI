@@ -287,6 +287,69 @@
 }
 
 /* 
+  1f. Section Headers (Divider Style)
+  =========================================
+*/
+.section-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+    justify-content: center;
+    /* Center content when wrapped */
+}
+
+/* Container for Title + Subtitle */
+.section-divider-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-divider::before,
+.section-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.section-divider h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222222;
+    /* Dark Red to match "Top News Today" branding */
+    margin: 0;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .section-divider h2 {
+        font-size: 1.5rem;
+        white-space: normal;
+    }
+
+    .section-divider {
+        gap: var(--space-sm);
+    }
+
+    /* Ensure buttons stack below title on mobile */
+    .section-divider .btn-view-dashboard,
+    .section-divider .fullscreen-btn {
+        margin-left: 0 !important;
+        /* Override inline styles */
+        margin-top: var(--space-sm);
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+}
+
+/* 
   2. Reset & Base
   =========================================
 */
@@ -888,7 +951,7 @@ ul {
 
 .analysis-card {
     border: 1px solid var(--color-border);
-    background: #FFF;
+    background: #ffffff;
     padding: var(--space-lg);
     transition: box-shadow 0.2s ease;
 }
@@ -3496,4 +3559,13 @@ details[open] .accordion-trigger .icon {
 .copy-toast.active {
     transform: translateX(-50%) translateY(0);
 }
+/* Sidebar Overrides for Section Divider */
+.sidebar-topics .section-divider {
+    margin-bottom: var(--space-md);
+    gap: var(--space-sm);
+}
 
+.sidebar-topics .section-divider h2 {
+    font-size: 1.25rem;
+    white-space: nowrap;
+}

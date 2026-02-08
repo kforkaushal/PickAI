@@ -25,7 +25,7 @@ function updateCosmicHeader() {
 
     // 3. Update Daily Theme
     const theme = getDailyTheme(today);
-    const themeTitleEl = document.querySelector('.cosmic-hero h2');
+    const themeTitleEl = document.querySelector('.cosmic-theme-title');
     const themeDescEl = document.querySelector('.cosmic-hero p');
 
     if (themeTitleEl) themeTitleEl.textContent = theme.title;

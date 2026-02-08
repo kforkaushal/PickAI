@@ -310,8 +310,8 @@
 
         <!-- 3. Secondary News Grid -->
         <section class="secondary-news" id="news">
-            <div class="section-header">
-                <h2 class="section-title">Analysis & Reports</h2>
+            <div class="section-divider">
+                <h2>Analysis & Reports</h2>
             </div>
 
             <!-- AD SLOT: In-Feed (Optional, spans full width or grid) -->
@@ -345,9 +345,9 @@
 
         <!-- 4. Opinion Grid Section -->
         <section class="secondary-news" id="opinion"
-            style="background-color: #fafafa; padding-top: 40px; padding-bottom: 40px;">
-            <div class="section-header">
-                <h2 class="section-title">Opinion & Perspectives</h2>
+            style="background-color: #ffffff; padding-top: 40px; padding-bottom: 40px;">
+            <div class="section-divider">
+                <h2>Opinion & Perspectives</h2>
             </div>
             <div class="news-grid-3" id="opinion-grid">
                 <!-- Skeleton Loader -->
@@ -371,8 +371,8 @@
 
         <!-- 5. Explainers Grid Section -->
         <section class="secondary-news" id="explainers" style="padding-top: 40px; padding-bottom: 40px;">
-            <div class="section-header">
-                <h2 class="section-title">Explainers & Guides</h2>
+            <div class="section-divider">
+                <h2>Explainers & Guides</h2>
             </div>
             <div class="news-grid-3" id="explainers-grid">
                 <!-- Skeleton Loader -->
@@ -397,25 +397,29 @@
         <!-- 4. Deep Dive Section -->
         <section class="deep-dive-section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Deep Dives</h2>
+                <div class="section-divider">
+                    <h2>Deep Dives</h2>
                 </div>
                 <!-- Single wide editorial or different layout? Keeping simple grid for now but styled differently -->
                 <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
                     <article class="analysis-card">
                         <span class="category">Long Read</span>
-                        <h2><a href="articles/news/alignment-problem-2026.html">The Alignment Problem in 2026: Progress
+                        <h2><a href="articles/news/alignment-problem-2026.html">The Alignment Problem in
+                                2026: Progress
                                 or
                                 Stagnation?</a></h2>
-                        <p class="summary" style="margin-top: 10px;">A comprehensive look at the current state of inner
+                        <p class="summary" style="margin-top: 10px;">A comprehensive look at the current
+                            state of inner
                             alignment research across top labs.</p>
                         <div class="meta-text" style="margin-top: 15px;">Read Analysis &rarr;</div>
                     </article>
                     <article class="analysis-card">
                         <span class="category">Opinion</span>
-                        <h2><a href="articles/news/agentic-consumer-hype.html">Why Agentic Workflows are Overhyped for
+                        <h2><a href="articles/news/agentic-consumer-hype.html">Why Agentic Workflows are
+                                Overhyped for
                                 Consumers</a></h2>
-                        <p class="summary" style="margin-top: 10px;">While enterprise use cases soar, the consumer "AI
+                        <p class="summary" style="margin-top: 10px;">While enterprise use cases soar, the
+                            consumer "AI
                             Agent" remains elusive. Here is why.</p>
                         <div class="meta-text" style="margin-top: 15px;">Read Analysis &rarr;</div>
                     </article>
@@ -428,7 +432,7 @@
     <!-- Web Slide Stories Section -->
     <div class="container" style="margin-bottom: 40px;">
         <section class="stories-section">
-            <div class="stories-header">
+            <div class="section-divider">
                 <h2>Today's Stories</h2>
                 <button class="fullscreen-btn" id="open-fullscreen">
                     View Fullscreen
@@ -444,10 +448,10 @@
     <!-- Financial Pulse Section (Homepage Feed) -->
     <section class="container financial-feed-section">
         <!-- Header -->
-        <div class="section-header section-header-home">
-            <div>
-                <span class="category-label category-label-accent">Market
-                    Intel</span>
+        <!-- Header -->
+        <div class="section-divider">
+            <div class="section-divider-content">
+                <span class="category-label category-label-accent" style="margin-bottom: 5px;">Market Intel</span>
                 <h2 class="section-title" style="margin-bottom: 0;">Financial Pulse</h2>
             </div>
             <a href="Financial.html" class="btn-learn-more btn-view-dashboard">View Full Dashboard &rarr;</a>
@@ -597,8 +601,12 @@
                 </div>
             </div>
             <div class="cosmic-hero" style="padding: 0; max-width: 100%;">
+                <div class="section-divider" style="margin-bottom: 20px;">
+                    <h2 style="font-size: 1.5rem; color: var(--color-accent);">Daily Cosmic Outlook</h2>
+                </div>
                 <span class="theme-tag" style="border-bottom: 2px solid var(--color-accent);">Theme of the Day</span>
-                <h2 style="font-size: 2rem; margin: 15px 0 10px;">Loading Cosmic Energy...</h2>
+                <h2 class="cosmic-theme-title" style="font-size: 2rem; margin: 15px 0 10px;">Loading Cosmic Energy...
+                </h2>
                 <p class="page-header-desc"
                     style="max-width: 600px; margin: 0 auto; color: var(--color-text-secondary);">
                     Aligning with the stars...
@@ -612,7 +620,7 @@
     <!-- News Categories Accordion -->
     <section class="container news-category-accordion"
         style="margin-bottom: 60px; border-top: 1px solid var(--color-border); padding-top: 40px;">
-        <div class="accordion-header" style="margin-bottom: 24px;">
+        <div class="section-divider">
             <h2>Browse by Topic</h2>
         </div>
         <div class="accordion-wrapper" id="category-accordion">
