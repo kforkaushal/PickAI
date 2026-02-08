@@ -259,6 +259,28 @@
 @media (max-width: 768px) {
     .zodiac-nav-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .horoscope-card {
+        padding: var(--space-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .zodiac-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .astrology-header-meta {
+        flex-direction: column;
+        gap: var(--space-xs);
+        border-radius: 20px;
+        padding: var(--space-md) var(--space-lg);
+    }
+
+    .cosmic-hero h2 {
+        font-size: 1.75rem;
     }
 }
 

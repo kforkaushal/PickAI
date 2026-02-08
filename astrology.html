@@ -14,6 +14,7 @@
     <!-- Design System / CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/astrology.css">
+    <link rel="stylesheet" href="css/newsletter.css">
 
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -527,19 +528,19 @@
         </div>
 
         <!-- Call to Action / Footer Section -->
-        <!-- Call to Action / Footer Section -->
-        <section class="deep-dive-section">
-            <div class="container">
+        <section class="container newsletter-section" id="newsletter"
+            style="margin-top: var(--space-3xl); margin-bottom: var(--space-2xl);">
+            <div class="newsletter-content">
                 <h2>Cosmic Intelligence</h2>
-                <p>
-                    Stay ahead of the stars. Subscribe to our weekend cosmic briefing.
-                </p>
-                <div class="newsletter-section">
-                    <form name="cosmic-briefing" method="POST" data-netlify="true" class="newsletter-form">
-                        <input type="email" name="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn-primary">Subscribe</button>
-                    </form>
-                </div>
+                <p>Stay ahead of the stars. Subscribe to our weekend cosmic briefing.</p>
+
+                <form id="newsletter-form" class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+                    <input type="email" name="email" id="newsletter-email" class="newsletter-input"
+                        placeholder="enter your email address..." required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+
+                <div id="newsletter-feedback" class="newsletter-feedback"></div>
             </div>
         </section>
     </main>
@@ -567,6 +568,7 @@
     <script src="js/search.js" defer></script>
     <script src="js/hamburger.js"></script>
     <script src="js/consent.js" defer></script>
+    <script src="js/newsletter.js"></script>
     <script src="js/astrology.js" defer></script>
 </body>
 
