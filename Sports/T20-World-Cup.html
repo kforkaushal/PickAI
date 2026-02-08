@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics 4 + Consent Mode -->
+    <script src="../js/analytics-setup.js"></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T20 World Cup 2024 Stats — PickAI</title>
+
+    <!-- Global Design System -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="canonical" href="https://pickai.netlify.app/Sports/T20-World-Cup.html">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Live stats and updates for the ICC Men's T20 World Cup 2024. Track series stats, leaderboards, and player performance.">
+    <meta name="keywords" content="T20 World Cup, ICC Men's T20, Cricket Stats, T20 Leaderboard, PickAI Sports">
+    <meta name="author" content="PickAI Sports Desk">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="T20 World Cup 2024 Stats — PickAI">
+    <meta property="og:description" content="Live stats and updates for the ICC Men's T20 World Cup 2024.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pickai.netlify.app/Sports/T20-World-Cup.html">
+    <meta property="og:image" content="../assets/PickAI.png">
+    <meta property="og:site_name" content="PickAI">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pickai.netlify.app/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sports",
+        "item": "https://pickai.netlify.app/Sports/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "T20 World Cup",
+        "item": "https://pickai.netlify.app/Sports/T20-World-Cup.html"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- 1. Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="../index.html">PickAI.</a>
+                </div>
+                <div class="header-actions">
+                    <a href="../index.html" style="font-size: 0.9rem; font-weight: 500;">&larr; Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Main Content -->
+    <main class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-3xl);">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" style="margin-top: 24px;">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Sports</span>
+            <span class="separator">/</span>
+            <span class="current">T20 World Cup</span>
+        </nav>
+
+        <div class="section-header">
+            <h1 style="font-size: 3rem; margin-bottom: var(--space-sm);">ICC Men's T20 World Cup 2024</h1>
+        </div>
+
+        <!-- API Stats Section -->
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>Series Stats & Leaderboard</h2>
+            </div>
+
+            <div id="t20-loading"
+                style="text-align: center; padding: 40px; font-size: 1.2rem; color: var(--color-text-secondary);">
+                Fetching live stats from RapidAPI...
+            </div>
+
+            <div id="t20-error" style="display: none; text-align: center; padding: 40px; color: red;">
+                Failed to load stats. Please check the API configuration.
+            </div>
+
+            <!-- Stats Container -->
+            <div id="t20-stats-container" class="news-grid-3" style="display: none;">
+                <!-- Content injected via JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 3. Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                PickAI.
+                <div class="meta-text" style="font-weight: normal; margin-top: 10px; font-size: 0.8rem;">
+                    &copy; 2026 PickAI Media. <br> All rights reserved.
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../editorial-policy.html">Editorial Policy</a></li>
+                    <li><a href="../privacy.html">Privacy</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script src="../js/t20-api.js"></script>
+</body>
+
+</html>
