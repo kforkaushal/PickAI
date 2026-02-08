@@ -10,6 +10,7 @@
 
     <!-- Design System / CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/newsletter.css">
     <link rel="stylesheet" href="css/poll.css">
     <script src="js/poll.js" defer></script>
 
@@ -136,18 +137,16 @@
         </section>
 
         <!-- Newsletter Sub-Section -->
-        <section class="newsletter-highlight">
-            <div class="container">
-                <div class="newsletter-card">
-                    <h3>Get Daily Insights</h3>
-                    <p>Never miss a poll or a trend. Subscribe to our daily intelligence brief.</p>
-                    <form id="poll-newsletter-form" class="newsletter-form" name="poll-newsletter" method="POST"
-                        data-netlify="true">
-                        <input type="email" name="email" placeholder="Enter your email" required>
-                        <button type="submit" class="button-primary">Subscribe</button>
-                    </form>
-                    <div class="newsletter-feedback"></div>
-                </div>
+        <section class="newsletter-section" id="newsletter">
+            <div class="newsletter-content">
+                <h2>Get Daily Insights</h2>
+                <p>Never miss a poll or a trend. Subscribe to our daily intelligence brief.</p>
+                <form id="poll-newsletter-form" class="newsletter-form" name="poll-newsletter" method="POST"
+                    data-netlify="true">
+                    <input type="email" name="email" class="newsletter-input" placeholder="Enter your email" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+                <div class="newsletter-feedback"></div>
             </div>
         </section>
     </main>

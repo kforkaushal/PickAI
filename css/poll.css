@@ -306,46 +306,6 @@
     color: var(--color-text-secondary);
 }
 
-/* Newsletter Section */
-.newsletter-card {
-    background: #f5f5f5;
-    padding: 60px 24px;
-    text-align: center;
-    margin-top: 80px;
-    border-radius: var(--poll-card-radius);
-}
-
-.newsletter-card h3 {
-    font-family: var(--font-serif);
-    font-size: 2.2rem;
-    font-weight: 900;
-    margin-bottom: 16px;
-}
-
-.newsletter-form-inline {
-    display: flex;
-    gap: 12px;
-    max-width: 500px;
-    margin: 30px auto 0;
-}
-
-.newsletter-form-inline input {
-    flex-grow: 1;
-    padding: 12px 16px;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    font-family: var(--font-ui);
-}
-
-.newsletter-form-inline .button-primary {
-    background: #000;
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-}
 
 /* --- Mobile-First Adjustments --- */
 @media (max-width: 768px) {
