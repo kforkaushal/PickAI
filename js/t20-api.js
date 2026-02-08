@@ -8,17 +8,14 @@ async function fetchT20Stats() {
     const container = document.getElementById('t20-stats-container');
 
     // API Configuration
-    const apiKey = '547a76d7c6msh88b7dff12485ddcp1972c9jsn135c4ad31ad4';
-    const apiHost = 'cricbuzz-cricket.p.rapidapi.com';
-    // Series ID 6122 (T20 World Cup 2024) - Using stats endpoint
-    const seriesId = '6122';
-    const url = `https://${apiHost}/stats/v1/series/${seriesId}`;
+    // We now use a Netlify Function Proxy to hide the key and bypass CORS
+    // Local fallback logic remains in the catch block if the function isn't running locally
+    const url = '/.netlify/functions/t20-proxy';
 
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': apiKey,
-            'X-RapidAPI-Host': apiHost
+            'Content-Type': 'application/json'
         }
     };
 
@@ -74,7 +71,7 @@ async function fetchT20Stats() {
         // Show Mock Data Warning
         const warning = document.createElement('div');
         warning.style.cssText = 'background: #fff3cd; color: #856404; padding: 10px; margin-bottom: 20px; border-radius: 4px; text-align: center;';
-        warning.innerHTML = '<strong>Demo Mode:</strong> showing mock data because live API calls are blocked by browser security (CORS) on local files.';
+        warning.innerHTML = '<strong>Demo Mode:</strong> Showing mock data. Needs live Netlify deployment to reach Proxy.';
         container.parentNode.insertBefore(warning, container);
 
         container.style.display = 'grid';
