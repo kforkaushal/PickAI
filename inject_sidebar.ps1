@@ -35,6 +35,7 @@ foreach ($file in $files) {
                 <ul>
                     <li><a href="${prefix}tools/index.html">AI Tools</a></li>
                     <li><a href="${prefix}Financial.html">Financial</a></li>
+                    <li><a href="${prefix}poll.html">Daily Poll</a></li>
                     <li><a href="${prefix}research.html">Research</a></li>
                     <li><a href="${prefix}opinion.html">Opinion</a></li>
                     <li><a href="${prefix}explainers.html">Explainers</a></li>
