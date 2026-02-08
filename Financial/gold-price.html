@@ -116,20 +116,103 @@
             }
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 900px) {
+        /* FAQ Styles (Enhanced for Mobile-First) */
+        .faq-simple-container {
+            padding: 12px 0;
+            background: transparent;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            background: #fff;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-accent);
+        }
+
+        .faq-summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--color-text-primary);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            user-select: none;
+        }
+
+        .faq-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-summary span {
+            font-size: 1.4rem;
+            color: var(--color-accent);
+            transition: transform 0.3s ease;
+            line-height: 1;
+        }
+
+        details[open] .faq-summary span {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            padding: 0 16px 16px;
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive Table Wrap */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 16px;
+            border-radius: 8px;
+        }
+
+        /* Mobile-First Layout (Default < 900px) */
+        .dashboard-row {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .dashboard-col-70,
+        .dashboard-col-30,
+        .dashboard-col-100 {
+            width: 100%;
+        }
+
+        .widget-box:not(.faq-simple-container) {
+            height: 400px;
+        }
+
+        /* Desktop Enhancement (> 900px) */
+        @media (min-width: 901px) {
             .dashboard-row {
-                flex-direction: column;
+                flex-direction: row;
+                align-items: flex-start;
             }
 
-            .dashboard-col-70,
+            .dashboard-col-70 {
+                width: 70%;
+            }
+
             .dashboard-col-30 {
-                width: 100%;
-                margin-bottom: 30px;
+                width: 30%;
             }
 
-            .widget-box {
-                height: 400px !important;
+            .widget-box:not(.faq-simple-container) {
+                height: 500px;
+                /* Taller charts on desktop */
             }
         }
 
@@ -140,7 +223,7 @@
 
             .gold-table th,
             .gold-table td {
-                padding: 10px 8px;
+                padding: 12px 10px;
                 font-size: 0.85rem;
             }
         }
@@ -242,25 +325,30 @@
                         <span id="last-updated">Updating...</span>
                     </div>
 
-                    <table class="gold-table" id="gold-rate-table">
-                        <thead>
-                            <tr>
-                                <th>Weight</th>
-                                <th>24K (99.9%) <br><span style="font-size:0.7em; font-weight:normal;">Pure Gold</span>
-                                </th>
-                                <th>22K (91.6%) <br><span style="font-size:0.7em; font-weight:normal;">Standard</span>
-                                </th>
-                                <th>18K (75.0%) <br><span style="font-size:0.7em; font-weight:normal;">Jewellery</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- JS Injected Rows -->
-                            <tr>
-                                <td colspan="4" style="text-align:center;">Fetching live market data...</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="gold-table" id="gold-rate-table">
+                            <thead>
+                                <tr>
+                                    <th>Weight</th>
+                                    <th>24K (99.9%) <br><span style="font-size:0.7em; font-weight:normal;">Pure
+                                            Gold</span>
+                                    </th>
+                                    <th>22K (91.6%) <br><span
+                                            style="font-size:0.7em; font-weight:normal;">Standard</span>
+                                    </th>
+                                    <th>18K (75.0%) <br><span
+                                            style="font-size:0.7em; font-weight:normal;">Jewellery</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- JS Injected Rows -->
+                                <tr>
+                                    <td colspan="4" style="text-align:center;">Fetching live market data...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <p style="font-size: 0.8rem; color: #888; margin-top: 16px; font-style: italic;">
                         *Rates exclude GST (3%) and Making Charges. Prices are derived from International Spot Gold
                         (XAU) adjusted for Indian Import Duties and Dollar Rate.
@@ -321,32 +409,34 @@
                 <!-- Global Gold Parity -->
                 <h2 class="section-heading" style="margin-top: 32px;">Gold Across Currencies</h2>
                 <div class="gold-calculator" style="padding: 0; overflow: hidden;">
-                    <table class="gold-table">
-                        <thead>
-                            <tr>
-                                <th>Currency</th>
-                                <th>Price (10g)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="global-gold-table">
-                            <tr>
-                                <td>USD ($)</td>
-                                <td id="price-usd">...</td>
-                            </tr>
-                            <tr>
-                                <td>EUR (€)</td>
-                                <td id="price-eur">...</td>
-                            </tr>
-                            <tr>
-                                <td>AED (Dhs)</td>
-                                <td id="price-aed">...</td>
-                            </tr>
-                            <tr>
-                                <td>GBP (£)</td>
-                                <td id="price-gbp">...</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="gold-table">
+                            <thead>
+                                <tr>
+                                    <th>Currency</th>
+                                    <th>Price (10g)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="global-gold-table">
+                                <tr>
+                                    <td>USD ($)</td>
+                                    <td id="price-usd">...</td>
+                                </tr>
+                                <tr>
+                                    <td>EUR (€)</td>
+                                    <td id="price-eur">...</td>
+                                </tr>
+                                <tr>
+                                    <td>AED (Dhs)</td>
+                                    <td id="price-aed">...</td>
+                                </tr>
+                                <tr>
+                                    <td>GBP (£)</td>
+                                    <td id="price-gbp">...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- Gold Purity Guide -->
@@ -407,62 +497,61 @@
         </div>
 
         <!-- FAQ Section -->
-        <!-- Cross-Link Section -->
-        <div class="dashboard-row" style="margin-top: 20px;">
-            <div class="dashboard-col-100" style="text-align: center;">
-                <a href="silver-price.html" class="button button-primary"
-                    style="background: #bdc3c7; color: #2c3e50; font-weight: 600; border: none;">
-                    Check Today's Silver Rates &rarr;
-                </a>
-            </div>
-        </div>
-
-        <!-- FAQ Section -->
         <h2 class="section-heading" style="margin-top: 40px;">Frequently Asked Questions</h2>
-        <div class="widget-box"
-            style="padding: 24px; border: none; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">Why is the gold
-                    rate different in 22K and 24K?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+        <div class="faq-simple-container">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    Why is the gold rate different in 22K and 24K?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     24K gold is 99.9% pure and is used for investment (coins/bars). 22K gold contains 91.6% gold mixed
                     with other metals (copper/zinc) for durability, making it the standard for jewellery.
-                </p>
+                </div>
             </details>
-            <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">Does the displayed
-                    price include GST?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    Does the displayed price include GST?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     No. The live rates displayed are base market prices. You must add <strong>3% GST</strong> and
                     relevant <strong>Making Charges</strong> (usually 8-25%) to calculate the final jewellery price.
-                </p>
+                </div>
             </details>
-            <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">What is the
-                    difference between KDM and Hallmarked gold?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    What is the difference between KDM and Hallmarked gold?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     Hallmarked gold (BIS) certifies purity (e.g., 916 for 22K). KDM (Cadmium) was an old soldering
                     method now banned due to health risks. Always buy BIS Hallmarked gold for resale value.
-                </p>
+                </div>
             </details>
-            <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">Is Digital Gold
-                    better than Physical Gold?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    Is Digital Gold better than Physical Gold?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     Digital Gold offers convenience (buy for as low as ₹1, no storage worries). However, Physical Gold
                     allows you to use it as jewellery. For pure investment, Digital Gold or Sovereign Gold Bonds (SGB)
                     are often more efficient due to lower making charges.
-                </p>
+                </div>
             </details>
-            <details>
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">When is the best
-                    time to buy Gold?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    When is the best time to buy Gold?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     Historically, gold prices dip during equity market rallies and rise during economic uncertainty.
                     Buying during festive seasons (Akshaya Tritiya, Dhanteras) is auspicious, but buying on dips is
                     financially smarter.
-                </p>
+                </div>
             </details>
+        </div>
         </div>
 
         <!-- Newsletter Section -->

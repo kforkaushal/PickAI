@@ -117,20 +117,102 @@
             }
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 900px) {
+        /* FAQ Styles (Enhanced for Mobile-First) */
+        .faq-simple-container {
+            padding: 12px 0;
+            background: transparent;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            background: #fff;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-accent);
+        }
+
+        .faq-summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--color-text-primary);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            user-select: none;
+        }
+
+        .faq-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-summary span {
+            font-size: 1.4rem;
+            color: var(--color-accent);
+            transition: transform 0.3s ease;
+            line-height: 1;
+        }
+
+        details[open] .faq-summary span {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            padding: 0 16px 16px;
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive Table Wrap */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 16px;
+            border-radius: 8px;
+        }
+
+        /* Mobile-First Layout (Default < 900px) */
+        .dashboard-row {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .dashboard-col-70,
+        .dashboard-col-30,
+        .dashboard-col-100 {
+            width: 100%;
+        }
+
+        .widget-box:not(.faq-simple-container) {
+            height: 400px;
+        }
+
+        /* Desktop Enhancement (> 900px) */
+        @media (min-width: 901px) {
             .dashboard-row {
-                flex-direction: column;
+                flex-direction: row;
+                align-items: flex-start;
             }
 
-            .dashboard-col-70,
+            .dashboard-col-70 {
+                width: 70%;
+            }
+
             .dashboard-col-30 {
-                width: 100%;
-                margin-bottom: 30px;
+                width: 30%;
             }
 
-            .widget-box {
-                height: 400px !important;
+            .widget-box:not(.faq-simple-container) {
+                height: 500px;
             }
         }
 
@@ -141,7 +223,7 @@
 
             .gold-table th,
             .gold-table td {
-                padding: 10px 8px;
+                padding: 12px 10px;
                 font-size: 0.85rem;
             }
         }
@@ -243,20 +325,22 @@
                         <span id="last-updated">Updating...</span>
                     </div>
 
-                    <table class="gold-table" id="copper-rate-table">
-                        <thead>
-                            <tr>
-                                <th>Category</th>
-                                <th>Rate (per Kg)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- JS Injected Rows -->
-                            <tr>
-                                <td colspan="2" style="text-align:center;">Fetching live market data...</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="gold-table" id="copper-rate-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Rate (per Kg)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- JS Injected Rows -->
+                                <tr>
+                                    <td colspan="2" style="text-align:center;">Fetching live market data...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <p style="font-size: 0.8rem; color: #888; margin-top: 16px; font-style: italic;">
                         *Rates are indicative local scrap market averages. Prices linked to MCX/LME futures. GST extra.
                     </p>
@@ -363,33 +447,39 @@
         </div>
 
         <!-- FAQ Section -->
+        <!-- FAQ Section -->
         <h2 class="section-heading" style="margin-top: 40px;">Frequently Asked Questions</h2>
-        <div class="widget-box"
-            style="padding: 24px; border: none; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">What is "Bright"
-                    Copper Wire?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+        <div class="faq-simple-container">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    What is Bright Copper Wire?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     Bright Copper Wire is stripped, unburnt, and shiny wire. It fetches the highest scrap price (~98-99%
                     of MCX rate) because it is pure and ready for recycling without processing.
-                </p>
+                </div>
             </details>
-            <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">What is the
-                    difference between MCX and Scrap Rate?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    How is Scrap Rate different from MCX?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     **MCX (Multi Commodity Exchange)** is the futures market rate for pure ingots. **Scrap Rate** is
                     local cash price, usually 5-10% lower than MCX depending on the scrap quality (insulation, burnt,
                     oxidized).
-                </p>
+                </div>
             </details>
-            <details>
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">Is burning wire to
-                    remove insulation good?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    Is burning wire to remove insulation good?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     No! Burning wire degrades the copper (makes it brittle) and lowers the grade to "Burnt Copper,"
                     fetching a lower price. Always strip insulation mechanically for "Bright" rates.
-                </p>
+                </div>
             </details>
         </div>
 

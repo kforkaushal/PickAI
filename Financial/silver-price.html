@@ -116,20 +116,102 @@
             }
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 900px) {
+        /* FAQ Styles (Enhanced for Mobile-First) */
+        .faq-simple-container {
+            padding: 12px 0;
+            background: transparent;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            background: #fff;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-accent);
+        }
+
+        .faq-summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--color-text-primary);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            user-select: none;
+        }
+
+        .faq-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-summary span {
+            font-size: 1.4rem;
+            color: var(--color-accent);
+            transition: transform 0.3s ease;
+            line-height: 1;
+        }
+
+        details[open] .faq-summary span {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            padding: 0 16px 16px;
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive Table Wrap */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 16px;
+            border-radius: 8px;
+        }
+
+        /* Mobile-First Layout (Default < 900px) */
+        .dashboard-row {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .dashboard-col-70,
+        .dashboard-col-30,
+        .dashboard-col-100 {
+            width: 100%;
+        }
+
+        .widget-box:not(.faq-simple-container) {
+            height: 400px;
+        }
+
+        /* Desktop Enhancement (> 900px) */
+        @media (min-width: 901px) {
             .dashboard-row {
-                flex-direction: column;
+                flex-direction: row;
+                align-items: flex-start;
             }
 
-            .dashboard-col-70,
+            .dashboard-col-70 {
+                width: 70%;
+            }
+
             .dashboard-col-30 {
-                width: 100%;
-                margin-bottom: 30px;
+                width: 30%;
             }
 
-            .widget-box {
-                height: 400px !important;
+            .widget-box:not(.faq-simple-container) {
+                height: 500px;
             }
         }
 
@@ -242,23 +324,25 @@
                         <span id="last-updated">Updating...</span>
                     </div>
 
-                    <table class="gold-table" id="silver-rate-table">
-                        <thead>
-                            <tr>
-                                <th>Weight</th>
-                                <th>Fine Silver (99.9%) <br><span
-                                        style="font-size:0.7em; font-weight:normal;">Industrial/Bars</span></th>
-                                <th>Sterling (92.5%) <br><span
-                                        style="font-size:0.7em; font-weight:normal;">Jewellery/Tableware</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- JS Injected Rows -->
-                            <tr>
-                                <td colspan="3" style="text-align:center;">Fetching live market data...</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="gold-table" id="silver-rate-table">
+                            <thead>
+                                <tr>
+                                    <th>Weight</th>
+                                    <th>Fine Silver (99.9%) <br><span
+                                            style="font-size:0.7em; font-weight:normal;">Industrial/Bars</span></th>
+                                    <th>Sterling (92.5%) <br><span
+                                            style="font-size:0.7em; font-weight:normal;">Jewellery/Tableware</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- JS Injected Rows -->
+                                <tr>
+                                    <td colspan="3" style="text-align:center;">Fetching live market data...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <p style="font-size: 0.8rem; color: #888; margin-top: 16px; font-style: italic;">
                         *Rates exclude GST (3%) and Making Charges. Prices derived from International Spot Silver (XAG).
                     </p>
@@ -365,41 +449,48 @@
 
         <!-- FAQ Section -->
         <h2 class="section-heading" style="margin-top: 40px;">Frequently Asked Questions</h2>
-        <div class="widget-box"
-            style="padding: 24px; border: none; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">What is Sterling
-                    Silver?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+        <div class="faq-simple-container">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    What is Sterling Silver?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     Sterling Silver is an alloy of 92.5% silver and 7.5% other metals (usually copper). Pure silver is
                     too soft for functional objects, so sterling is the standard for jewellery and tableware.
-                </p>
+                </div>
             </details>
-            <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">Does Silver
-                    attract GST?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    Does Silver attract GST?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     Yes, just like Gold, Silver attracts a <strong>3% GST</strong> on the value. Making charges are
                     extra for jewellery items.
-                </p>
+                </div>
             </details>
-            <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">Why does Silver
-                    turn black (tarnish)?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    Why does Silver turn black (tarnish)?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     Silver tarnishes when it reacts with sulfur in the air (hydrogen sulfide). This black layer is
                     silver sulfide. It is natural for genuine silver to tarnish, but it can be cleaned easily with
                     polish.
-                </p>
+                </div>
             </details>
-            <details>
-                <summary style="font-weight: 600; cursor: pointer; color: var(--color-text-primary);">Which form of
-                    Silver is best for investment?</summary>
-                <p style="margin-top: 8px; color: var(--color-text-secondary); font-size: 0.95rem;">
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    Which form of Silver is best for investment?
+                    <span>+</span>
+                </summary>
+                <div class="faq-content">
                     For investment, **Silver Bars (Fine Silver 999)** are best due to lower making charges and higher
                     purity compared to jewellery or coins. Digital Silver is also gaining popularity for ease of
                     storage.
-                </p>
+                </div>
             </details>
         </div>
 
