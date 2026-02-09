@@ -1,18 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- Google Analytics 4 + Consent Mode -->
-    <script src="../js/analytics-setup.js"></script>
+    <script src="../js/analytics-setup.js" defer></script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
         crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T20 World Cup 2024 Stats — PickAI</title>
+    <title>2026 ICC Men's T20 World Cup: Schedule, Venues, Teams & Format | India & Sri Lanka</title>
 
     <!-- Global Design System -->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/newsletter.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
 
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,21 +28,132 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Live stats and updates for the ICC Men's T20 World Cup 2024. Track series stats, leaderboards, and player performance.">
-    <meta name="keywords" content="T20 World Cup, ICC Men's T20, Cricket Stats, T20 Leaderboard, PickAI Sports">
+        content="Complete guide to the 2026 ICC Men's T20 World Cup: 20 teams, 55 matches across 8 venues in India & Sri Lanka (Feb 7-Mar 8). Tournament format, qualification, defending champions India, Italy's first World Cup appearance." />
+    <meta name="keywords"
+        content="T20 World Cup 2026, ICC Men's T20, India Sri Lanka hosts, tournament format, venues, qualification, defending champions, Italy first World Cup, Scotland, match schedule, cricket tournament 2026" />
     <meta name="author" content="PickAI Sports Desk">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="T20 World Cup 2024 Stats — PickAI">
-    <meta property="og:description" content="Live stats and updates for the ICC Men's T20 World Cup 2024.">
+    <meta property="og:title" content="2026 ICC Men's T20 World Cup: Complete Tournament Guide | India & Sri Lanka" />
+    <meta property="og:description"
+        content="20 teams, 55 matches, 8 iconic venues. Complete tournament format, venues, qualification details from Feb 7-Mar 8, 2026. India defending champions." />
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pickai.netlify.app/Sports/T20-World-Cup.html">
-    <meta property="og:image" content="../assets/PickAI.png">
+    <meta property="og:image" content="https://pickai.netlify.app/assets/PickAI.png">
     <meta property="og:site_name" content="PickAI">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap"
         rel="stylesheet">
+
+    <!-- Match Card Styles -->
+    <style>
+        .match-card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .match-info {
+            font-weight: 500;
+        }
+
+        .match-time {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .match-teams {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 12px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .team-home {
+            justify-content: flex-end;
+        }
+
+        .team-away {
+            justify-content: flex-start;
+        }
+
+        .team-flag {
+            width: 32px;
+            height: 24px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .vs-divider {
+            font-weight: 700;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .match-venue {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .venue-icon {
+            font-size: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 640px) {
+            .match-teams {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .team {
+                width: 100%;
+                justify-content: center !important;
+            }
+
+            .vs-divider {
+                margin: 4px 0;
+            }
+
+            .team-flag {
+                width: 28px;
+                height: 21px;
+            }
+
+            .team-name {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
 
     <!-- JSON-LD BreadcrumbList -->
     <script type="application/ld+json">
@@ -68,17 +181,76 @@
 </head>
 
 <body>
-    <!-- 1. Header -->
+    <!-- Slide-out Sidebar -->
+    <div class="sidebar-overlay"></div>
+    <aside class="sidebar-menu">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">PickAI.</div>
+            <button class="close-sidebar" aria-label="Close Menu">&times;</button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-search">
+                <form action="../search.html" method="get">
+                    <input type="text" name="q" placeholder="Search articles...">
+                </form>
+            </div>
+            <div class="sidebar-topics">
+                <h3>Browse by Topic</h3>
+                <ul>
+                    <li><a href="../tools/index.html">AI Tools</a></li>
+                    <li><a href="../Financial.html">Financial</a></li>
+                    <li><a href="../astrology.html">Astrology</a></li>
+                    <li><a href="../poll.html">Daily Poll</a></li>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../opinion.html">Opinion</a></li>
+                    <li><a href="../explainers.html">Explainers</a></li>
+                    <li><a href="../redirect.html?to=https://jobs.pickai.com">Jobs</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 1. Editorial Header -->
     <header class="site-header">
         <div class="container header-inner">
+            <!-- Top Row: Menu | Logo | Search -->
             <div class="header-top">
+                <button class="menu-toggle" aria-label="Open Menu">
+                    <span class="hamburger-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+
                 <div class="logo">
                     <a href="../index.html">PickAI.</a>
                 </div>
+
                 <div class="header-actions">
-                    <a href="../index.html" style="font-size: 0.9rem; font-weight: 500;">&larr; Back to Home</a>
+                    <!-- Simple search icon SVG -->
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
                 </div>
             </div>
+
+            <!-- Bottom Row: Navigation -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../tools/index.html">Tools</a></li>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../opinion.html">Opinion</a></li>
+                    <li><a href="../explainers.html">Explainers</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -94,31 +266,1900 @@
         </nav>
 
         <div class="section-header">
-            <h1 style="font-size: 3rem; margin-bottom: var(--space-sm);">ICC Men's T20 World Cup 2024</h1>
+            <h1 style="font-size: 3rem; margin-bottom: var(--space-sm);">ICC Men's T20 World Cup 2026</h1>
         </div>
 
-        <!-- API Stats Section -->
+        <!-- Tournament Overview -->
         <section style="margin-bottom: var(--space-3xl);">
             <div class="section-divider">
-                <h2>Series Stats & Leaderboard</h2>
+                <h2>Tournament Overview</h2>
             </div>
 
-            <div id="t20-loading"
-                style="text-align: center; padding: 40px; font-size: 1.2rem; color: var(--color-text-secondary);">
-                Fetching live stats from RapidAPI...
+            <article class="analysis-card" style="grid-column: 1 / -1; margin-top: var(--space-lg);">
+                <span class="category">Tenth Edition • 2026</span>
+                <h3>The 2026 ICC Men's T20 World Cup</h3>
+                <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.8;">
+                    The <strong>2026 ICC Men's T20 World Cup</strong> is the tenth edition of the ICC Men's T20 World
+                    Cup,
+                    co-hosted by the <strong>Board of Control for Cricket in India (BCCI)</strong> and <strong>Sri Lanka
+                        Cricket</strong>
+                    from <strong>7 February to 8 March 2026</strong>.
+                </p>
+                <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.8;">
+                    Sri Lanka previously hosted the competition in 2012, while India hosted it in 2016. A total of
+                    <strong>twenty teams</strong> are competing in <strong>55 matches</strong> across five venues in
+                    India
+                    and three in Sri Lanka.
+                </p>
+                <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.8;">
+                    <strong>India</strong> are the <strong>defending champions</strong>, having won the previous edition
+                    in 2024 by defeating South Africa in the final. <strong>Italy</strong> qualified for the Men's T20
+                    World Cup
+                    for the first time in history.
+                </p>
+            </article>
+        </section>
+
+        <!-- Participating Teams -->
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>Participating Teams</h2>
             </div>
 
-            <div id="t20-error" style="display: none; text-align: center; padding: 40px; color: red;">
-                Failed to load stats. Please check the API configuration.
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/afg.png"
+                        alt="Afghanistan"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Afghanistan</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/1188/afghanistan/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/aus.png"
+                        alt="Australia"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Australia</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/1/australia/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/can.png"
+                        alt="Canada"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Canada</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/12/canada/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/eng.png"
+                        alt="England"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">England</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/3/england/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ind.png" alt="India"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">India</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/4/india/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ire.png"
+                        alt="Ireland"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Ireland</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/13/ireland/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ita.png" alt="Italy"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Italy</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/1298/italy/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nam.png"
+                        alt="Namibia"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Namibia</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/20/namibia/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nep.png" alt="Nepal"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Nepal</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/637/nepal/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ned.png"
+                        alt="Netherlands"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Netherlands</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/15/netherlands/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nz.png"
+                        alt="New Zealand"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">New Zealand</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/5/new-zealand/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/oma.png" alt="Oman"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Oman</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/28/oman/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/pak.png"
+                        alt="Pakistan"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Pakistan</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/6/pakistan/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sco.png"
+                        alt="Scotland"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Scotland</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/16/scotland/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sa.png"
+                        alt="South Africa"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">South Africa</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/7/south-africa/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sl.png"
+                        alt="Sri Lanka"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Sri Lanka</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/8/sri-lanka/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/uae.png"
+                        alt="United Arab Emirates"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">UAE</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/21/united-arab-emirates/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/usa.png" alt="USA"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">USA</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/22/usa/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/wi.png"
+                        alt="West Indies"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">West Indies</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/9/west-indies/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+
+                <article class="analysis-card">
+                    <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/zim.png"
+                        alt="Zimbabwe"
+                        style="width: 60px; height: 40px; object-fit: cover; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 1rem;">Zimbabwe</h3>
+                    <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/10/zimbabwe/"
+                        target="_blank" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-xs);">View Profile →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Background & History -->
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>Background & History</h2>
             </div>
 
-            <!-- Stats Container -->
-            <div id="t20-stats-container" class="news-grid-3" style="display: none;">
-                <!-- Content injected via JS -->
+            <div class="news-grid-2" style="margin-top: var(--space-lg);">
+                <article class="analysis-card">
+                    <span class="category">Tournament History</span>
+                    <h3>The T20 World Cup Legacy</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        The ICC Men's T20 World Cup is a biennial world cup for cricket in Twenty20 International (T20I)
+                        format,
+                        organised by the International Cricket Council (ICC). It was first played in 2007 in South
+                        Africa,
+                        making the 2026 tournament its tenth edition.
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Previous Edition</span>
+                    <h3>2024 Champions: India</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        The ninth edition, held in 2024 in the West Indies and the United States, was contested by 20
+                        teams.
+                        India emerged victorious after defeating South Africa in a thrilling final, claiming their
+                        second T20 World Cup title.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Tournament Format -->
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>Tournament Format</h2>
+            </div>
+
+            <article class="analysis-card" style="grid-column: 1 / -1; margin-top: var(--space-lg);">
+                <span class="category">Competition Structure</span>
+                <h3>From Group Stage to Championship</h3>
+                <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.8;">
+                    The tournament follows the same format as the previous edition. The 20 qualifying teams are divided
+                    into
+                    <strong>four groups of five</strong> each.
+                </p>
+
+                <h4 style="margin-top: var(--space-md); margin-bottom: var(--space-sm); font-size: 1.1rem;">Group Stage
+                </h4>
+                <p class="meta-text" style="line-height: 1.7;">
+                    Each team plays the other teams in their group once in a round-robin format. The top two teams from
+                    each group advance to the Super 8 stage, featuring a total of 40 matches.
+                </p>
+
+                <h4 style="margin-top: var(--space-md); margin-bottom: var(--space-sm); font-size: 1.1rem;">Super 8
+                    Stage</h4>
+                <p class="meta-text" style="line-height: 1.7;">
+                    The eight qualified teams are divided into two groups of four. Each team plays against the others in
+                    their group once. The ICC pre-seeded eight teams based on T20I rankings, who occupy predetermined
+                    positions regardless of their group stage finish.
+                </p>
+
+                <h4 style="margin-top: var(--space-md); margin-bottom: var(--space-sm); font-size: 1.1rem;">Knockout
+                    Stage</h4>
+                <p class="meta-text" style="line-height: 1.7;">
+                    The top two teams from each Super 8 group advance to the semifinals, with the winners facing off in
+                    the final at Narendra Modi Stadium in Ahmedabad on <strong>8 March 2026</strong>.
+                </p>
+            </article>
+        </section>
+
+        <!-- Venues -->
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>Tournament Venues</h2>
+            </div>
+
+            <article class="analysis-card"
+                style="grid-column: 1 / -1; margin-top: var(--space-lg); margin-bottom: var(--space-lg);">
+                <span class="category">8 Iconic Stadiums</span>
+                <h3>Five Venues in India, Three in Sri Lanka</h3>
+                <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                    The tournament is being played across eight world-class cricket venues, with five in India
+                    and three in Sri Lanka, each bringing its own unique atmosphere and history.
+                </p>
+            </article>
+
+            <div class="news-grid-2" style="margin-top: var(--space-lg);">
+                <article class="analysis-card">
+                    <span class="category">Ahmedabad, India</span>
+                    <h3>Narendra Modi Stadium</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        <strong>Capacity:</strong> 132,000 (World's Largest Cricket Stadium)<br>
+                        <strong>Matches:</strong> 7 (including the Final)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Kolkata, India</span>
+                    <h3>Eden Gardens</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        <strong>Capacity:</strong> 68,000<br>
+                        <strong>Matches:</strong> 7 (including Semi-final 1*)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Mumbai, India</span>
+                    <h3>Wankhede Stadium</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        <strong>Capacity:</strong> 33,108<br>
+                        <strong>Matches:</strong> 8 (including Semi-final 2)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Chennai, India</span>
+                    <h3>M. A. Chidambaram Stadium</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        <strong>Capacity:</strong> 39,000<br>
+                        <strong>Matches:</strong> 7
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Delhi, India</span>
+                    <h3>Arun Jaitley Stadium</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        <strong>Capacity:</strong> 55,000<br>
+                        <strong>Matches:</strong> 6
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Colombo, Sri Lanka</span>
+                    <h3>R. Premadasa Stadium</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        <strong>Capacity:</strong> 35,000<br>
+                        <strong>Matches:</strong> 10 (Semi-final 1 & Final if Pakistan qualifies*)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Kandy, Sri Lanka</span>
+                    <h3>Pallekele Cricket Stadium</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        <strong>Capacity:</strong> 35,000<br>
+                        <strong>Matches:</strong> 7
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Colombo, Sri Lanka</span>
+                    <h3>Sinhalese Sports Club Ground</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        <strong>Capacity:</strong> 10,000<br>
+                        <strong>Matches:</strong> 5
+                    </p>
+                </article>
+            </div>
+
+            <p
+                style="margin-top: var(--space-md); font-size: 0.9rem; color: var(--text-secondary); font-style: italic;">
+                * If Pakistan qualifies for the semifinals or final, those matches will be held at R. Premadasa Stadium
+                in Colombo.
+            </p>
+        </section>
+
+        <!-- Qualification -->
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>Qualification & Teams</h2>
+            </div>
+
+            <div class="news-grid-2" style="margin-top: var(--space-lg);">
+                <article class="analysis-card">
+                    <span class="category">Automatic Qualification</span>
+                    <h3>Hosts & Top Performers</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        <strong>India</strong> and <strong>Sri Lanka</strong> qualified automatically as co-hosts.
+                        The top seven teams from the 2024 tournament earned direct qualification. The remaining three
+                        spots
+                        went to the next best-ranked teams in the ICC Men's T20I Team Rankings as of 30 June 2024.
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Regional Qualifiers</span>
+                    <h3>Pathway to the World Cup</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        Eight teams qualified through ICC regional qualifiers: <strong>2 from Africa</strong> (Namibia,
+                        Zimbabwe),
+                        <strong>2 from Europe</strong> (Italy, Netherlands), <strong>3 from Asia-EAP</strong> (Nepal,
+                        Oman, UAE),
+                        and <strong>1 from Americas</strong> (Canada).
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Historic Achievement</span>
+                    <h3>Italy's First World Cup</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        Italy qualified for the Men's T20 World Cup for the first time in history, marking a significant
+                        milestone for European cricket. They earned their spot through the Europe qualifier in July
+                        2025.
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Notable Change</span>
+                    <h3>Scotland Replaces Bangladesh</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        Following Bangladesh's refusal to play matches in India citing security concerns, the ICC
+                        officially
+                        replaced them with Scotland, the next highest-ranked team in the ICC T20 rankings, on 24 January
+                        2026.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Match Schedule -->
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>09 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 7 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sco.png"
+                                alt="Scotland" class="team-flag">
+                            <span class="team-name">Scotland</span>
+                        </div>
+
+                        <span class="vs-divider">vs</span>
+
+                        <div class="team team-away">
+                            <span class="team-name">Italy</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ita.png"
+                                alt="Italy" class="team-flag">
+                        </div>
+                    </div>
+
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Eden Gardens, Kolkata</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 8 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/zim.png"
+                                alt="Zimbabwe" class="team-flag">
+                            <span class="team-name">Zimbabwe</span>
+                        </div>
+
+                        <span class="vs-divider">vs</span>
+
+                        <div class="team team-away">
+                            <span class="team-name">Oman</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/oma.png"
+                                alt="Oman" class="team-flag">
+                        </div>
+                    </div>
+
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Sinhalese Sports Club, Colombo</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 9 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sa.png"
+                                alt="South Africa" class="team-flag">
+                            <span class="team-name">South Africa</span>
+                        </div>
+
+                        <span class="vs-divider">vs</span>
+
+                        <div class="team team-away">
+                            <span class="team-name">Canada</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/can.png"
+                                alt="Canada" class="team-flag">
+                        </div>
+                    </div>
+
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Wankhede Stadium, Mumbai</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>10 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 10 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ned.png"
+                                alt="Netherlands" class="team-flag">
+                            <span class="team-name">Netherlands</span>
+                        </div>
+
+                        <span class="vs-divider">vs</span>
+
+                        <div class="team team-away">
+                            <span class="team-name">Namibia</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nam.png"
+                                alt="Namibia" class="team-flag">
+                        </div>
+                    </div>
+
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Arun Jaitley Stadium, Delhi</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 11 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nz.png"
+                                alt="New Zealand" class="team-flag">
+                            <span class="team-name">New Zealand</span>
+                        </div>
+
+                        <span class="vs-divider">vs</span>
+
+                        <div class="team team-away">
+                            <span class="team-name">UAE</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/uae.png"
+                                alt="UAE" class="team-flag">
+                        </div>
+                    </div>
+
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>MA Chidambaram Stadium, Chennai</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 12 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/pak.png"
+                                alt="Pakistan" class="team-flag">
+                            <span class="team-name">Pakistan</span>
+                        </div>
+
+                        <span class="vs-divider">vs</span>
+
+                        <div class="team team-away">
+                            <span class="team-name">USA</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/usa.png"
+                                alt="USA" class="team-flag">
+                        </div>
+                    </div>
+
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Sinhalese Sports Club, Colombo</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>11 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 13 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sa.png"
+                                alt="South Africa" class="team-flag">
+                            <span class="team-name">South Africa</span>
+                        </div>
+
+                        <span class="vs-divider">vs</span>
+
+                        <div class="team team-away">
+                            <span class="team-name">Afghanistan</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/afg.png"
+                                alt="Afghanistan" class="team-flag">
+                        </div>
+                    </div>
+
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Wankhede Stadium, Mumbai</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 14 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/aus.png"
+                                alt="Australia" class="team-flag">
+                            <span class="team-name">Australia</span>
+                        </div>
+
+                        <span class="vs-divider">vs</span>
+
+                        <div class="team team-away">
+                            <span class="team-name">Ireland</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ire.png"
+                                alt="Ireland" class="team-flag">
+                        </div>
+                    </div>
+
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>R.Premadasa Stadium, Colombo</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 15 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/eng.png"
+                                alt="England" class="team-flag">
+                            <span class="team-name">England</span>
+                        </div>
+
+                        <span class="vs-divider">vs</span>
+
+                        <div class="team team-away">
+                            <span class="team-name">West Indies</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/wi.png"
+                                alt="West Indies" class="team-flag">
+                        </div>
+                    </div>
+
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Narendra Modi Stadium, Ahmedabad</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>12 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 16 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sl.png"
+                                alt="Sri Lanka" class="team-flag">
+                            <span class="team-name">Sri Lanka</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Oman</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/oma.png"
+                                alt="Oman" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Pallekele International Cricket Stadium, Kandy</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 17 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nep.png"
+                                alt="Nepal" class="team-flag">
+                            <span class="team-name">Nepal</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Italy</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ita.png"
+                                alt="Italy" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Wankhede Stadium, Mumbai</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 18 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ind.png"
+                                alt="India" class="team-flag">
+                            <span class="team-name">India</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Namibia</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nam.png"
+                                alt="Namibia" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Arun Jaitley Stadium, Delhi</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>13 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 19 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/aus.png"
+                                alt="Australia" class="team-flag">
+                            <span class="team-name">Australia</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Zimbabwe</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/zim.png"
+                                alt="Zimbabwe" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>R.Premadasa Stadium, Colombo</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 20 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/can.png"
+                                alt="Canada" class="team-flag">
+                            <span class="team-name">Canada</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">UAE</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/uae.png"
+                                alt="UAE" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Arun Jaitley Stadium, Delhi</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 21 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/usa.png"
+                                alt="USA" class="team-flag">
+                            <span class="team-name">USA</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Netherlands</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ned.png"
+                                alt="Netherlands" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>MA Chidambaram Stadium, Chennai</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>14 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 22 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ire.png"
+                                alt="Ireland" class="team-flag">
+                            <span class="team-name">Ireland</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Oman</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/oma.png"
+                                alt="Oman" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Sinhalese Sports Club, Colombo</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 23 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/eng.png"
+                                alt="England" class="team-flag">
+                            <span class="team-name">England</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Scotland</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sco.png"
+                                alt="Scotland" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Narendra Modi Stadium, Ahmedabad</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 24 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/pak.png"
+                                alt="Pakistan" class="team-flag">
+                            <span class="team-name">Pakistan</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Nepal</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nep.png"
+                                alt="Nepal" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Wankhede Stadium, Mumbai</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>15 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 25 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/wi.png"
+                                alt="West Indies" class="team-flag">
+                            <span class="team-name">West Indies</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Nepal</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nep.png"
+                                alt="Nepal" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Wankhede Stadium, Mumbai</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 26 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/usa.png"
+                                alt="USA" class="team-flag">
+                            <span class="team-name">USA</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Namibia</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nam.png"
+                                alt="Namibia" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>MA Chidambaram Stadium, Chennai</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 27 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ind.png"
+                                alt="India" class="team-flag">
+                            <span class="team-name">India</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Pakistan</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/pak.png"
+                                alt="Pakistan" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>R.Premadasa Stadium, Colombo</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>16 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 28 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/afg.png"
+                                alt="Afghanistan" class="team-flag">
+                            <span class="team-name">Afghanistan</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">UAE</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/uae.png"
+                                alt="UAE" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Arun Jaitley Stadium, Delhi</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 29 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/eng.png"
+                                alt="England" class="team-flag">
+                            <span class="team-name">England</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Italy</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ita.png"
+                                alt="Italy" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Eden Gardens, Kolkata</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 30 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/aus.png"
+                                alt="Australia" class="team-flag">
+                            <span class="team-name">Australia</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Sri Lanka</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sl.png"
+                                alt="Sri Lanka" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Pallekele International Cricket Stadium, Kandy</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>17 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 31 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nz.png"
+                                alt="New Zealand" class="team-flag">
+                            <span class="team-name">New Zealand</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Canada</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/can.png"
+                                alt="Canada" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>MA Chidambaram Stadium, Chennai</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 32 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ire.png"
+                                alt="Ireland" class="team-flag">
+                            <span class="team-name">Ireland</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Zimbabwe</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/zim.png"
+                                alt="Zimbabwe" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Pallekele International Cricket Stadium, Kandy</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 33 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sco.png"
+                                alt="Scotland" class="team-flag">
+                            <span class="team-name">Scotland</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Nepal</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nep.png"
+                                alt="Nepal" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Wankhede Stadium, Mumbai</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>18 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 34 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sa.png"
+                                alt="South Africa" class="team-flag">
+                            <span class="team-name">South Africa</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">UAE</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/uae.png"
+                                alt="UAE" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Arun Jaitley Stadium, Delhi</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 35 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/pak.png"
+                                alt="Pakistan" class="team-flag">
+                            <span class="team-name">Pakistan</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Namibia</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/nam.png"
+                                alt="Namibia" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Sinhalese Sports Club, Colombo</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 36 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ind.png"
+                                alt="India" class="team-flag">
+                            <span class="team-name">India</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Netherlands</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ned.png"
+                                alt="Netherlands" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Narendra Modi Stadium, Ahmedabad</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>19 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 37 • Group Stage</span>
+                        <span class="match-time">11:00 AM</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/wi.png"
+                                alt="West Indies" class="team-flag">
+                            <span class="team-name">West Indies</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Italy</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/ita.png"
+                                alt="Italy" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Eden Gardens, Kolkata</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 38 • Group Stage</span>
+                        <span class="match-time">15:00 (3:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/sl.png"
+                                alt="Sri Lanka" class="team-flag">
+                            <span class="team-name">Sri Lanka</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Zimbabwe</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/zim.png"
+                                alt="Zimbabwe" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>R.Premadasa Stadium, Colombo</span>
+                    </div>
+                </article>
+
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 39 • Group Stage</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/afg.png"
+                                alt="Afghanistan" class="team-flag">
+                            <span class="team-name">Afghanistan</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Canada</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/can.png"
+                                alt="Canada" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>MA Chidambaram Stadium, Chennai</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>20 February, 2026</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="match-card analysis-card">
+                    <div class="match-header">
+                        <span class="match-info">Match 40 • Group Stage Final</span>
+                        <span class="match-time">19:00 (7:00 PM)</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team team-home">
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/aus.png"
+                                alt="Australia" class="team-flag">
+                            <span class="team-name">Australia</span>
+                        </div>
+                        <span class="vs-divider">vs</span>
+                        <div class="team team-away">
+                            <span class="team-name">Oman</span>
+                            <img src="https://images.icc-cricket.com/image/upload/t_q-good/prd/assets/flags/oma.png"
+                                alt="Oman" class="team-flag">
+                        </div>
+                    </div>
+                    <div class="match-venue">
+                        <span class="venue-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></span>
+                        <span>Pallekele International Cricket Stadium, Kandy</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Super 8 Stage -->
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>Super 8 Stage</h2>
+            </div>
+
+            <article class="analysis-card" style="grid-column: 1 / -1; margin-top: var(--space-lg);">
+                <span class="category">Knockout Phase</span>
+                <h3>Super 8 Matches (21 Feb - 01 Mar)</h3>
+                <p class="meta-text" style="margin-top: var(--space-sm);">
+                    The top 8 teams from the Group Stage advance to the Super 8 round. Teams to be confirmed based on
+                    group
+                    standings.
+                </p>
+            </article>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="analysis-card">
+                    <span class="category">21 Feb • Super 8 Match 1</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        R.Premadasa Stadium, Colombo<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">22 Feb • Super 8 Match 2</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Pallekele International Stadium, Kandy<br>
+                        15:00 (3:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">22 Feb • Super 8 Match 3</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Narendra Modi Stadium, Ahmedabad<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">23 Feb • Super 8 Match 4</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Wankhede Stadium, Mumbai<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">24 Feb • Super 8 Match 5</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Pallekele International Stadium, Kandy<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">25 Feb • Super 8 Match 6</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        R.Premadasa Stadium, Colombo<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">26 Feb • Super 8 Match 7</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Narendra Modi Stadium, Ahmedabad<br>
+                        15:00 (3:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">26 Feb • Super 8 Match 8</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        MA Chidambaram Stadium, Chennai<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">27 Feb • Super 8 Match 9</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        R.Premadasa Stadium, Colombo<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">28 Feb • Super 8 Match 10</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Pallekele International Stadium, Kandy<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">01 Mar • Super 8 Match 11</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Arun Jaitley Stadium, Delhi<br>
+                        15:00 (3:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">01 Mar • Super 8 Match 12</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Eden Gardens, Kolkata<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Semi-Finals & Final -->
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>Knockout Stage</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="analysis-card">
+                    <span class="category">04 March • Semi-Final 1</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Venue To Be Confirmed<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">05 March • Semi-Final 2</span>
+                    <h3>TBC vs TBC</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Wankhede Stadium, Mumbai<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">08 March • FINAL</span>
+                    <h3>GRAND FINAL</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm);">
+                        Venue To Be Confirmed<br>
+                        19:00 (7:00 PM)
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- News Stories from the Tournament -->
+        <section style="margin-bottom: var(--space-3xl);">
+            <div class="section-divider">
+                <h2>News Stories from the Tournament</h2>
+            </div>
+
+            <div class="news-grid-3" style="margin-top: var(--space-lg);">
+                <article class="analysis-card">
+                    <span class="category">Match Report • 7 Feb 2026</span>
+                    <h3>India Extend T20 World Cup Winning Streak to Nine</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        Defending champions India defeated USA by 29 runs in their opening match at Wankhede Stadium.
+                        Suryakumar Yadav's unbeaten 84 powered India to 161/9, marking their ninth consecutive T20 World
+                        Cup victory.
+                    </p>
+                    <a href="#" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-sm); color: var(--accent-color);">
+                        Read Full Report →
+                    </a>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Historic Moment • 9 Feb 2026</span>
+                    <h3>Italy Make T20 World Cup History</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        Italy made their T20 World Cup debut against Scotland at Eden Gardens, becoming the latest
+                        European
+                        nation to compete at cricket's premier Twenty20 tournament after qualifying through the Europe
+                        regional qualifiers.
+                    </p>
+                    <a href="#" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-sm); color: var(--accent-color);">
+                        Read Full Story →
+                    </a>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Tournament News • 7 Feb 2026</span>
+                    <h3>Spectacular Opening Ceremony Lights Up Mumbai</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        The 2026 T20 World Cup kicked off with a star-studded opening ceremony at Wankhede Stadium
+                        featuring
+                        performances by Badshah, Nora Fatehi, Rishab Sharma and Shivamani before the India vs USA match.
+                    </p>
+                    <a href="#" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-sm); color: var(--accent-color);">
+                        View Highlights →
+                    </a>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Controversy • 24 Jan 2026</span>
+                    <h3>Scotland Replace Bangladesh After Security Concerns</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        The ICC officially replaced Bangladesh with Scotland after the BCB refused to play matches in
+                        India
+                        citing security concerns. Scotland, the next highest-ranked team, stepped in as the 20th
+                        participant.
+                    </p>
+                    <a href="#" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-sm); color: var(--accent-color);">
+                        Full Details →
+                    </a>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Record Breaking • 7 Feb 2026</span>
+                    <h3>West Indies' Shepherd Takes Hat-Trick vs Scotland</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        Romario Shepherd claimed a hat-trick and career-best 5/20 as West Indies crushed Scotland by 35
+                        runs.
+                        This was the 10th hat-trick in T20 World Cup history and first of the 2026 tournament.
+                    </p>
+                    <a href="#" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-sm); color: var(--accent-color);">
+                        Match Analysis →
+                    </a>
+                </article>
+
+                <article class="analysis-card">
+                    <span class="category">Player Milestone • 8 Feb 2026</span>
+                    <h3>Sri Lanka Celebrate 100th T20I Victory</h3>
+                    <p class="meta-text" style="margin-top: var(--space-sm); line-height: 1.7;">
+                        Co-hosts Sri Lanka achieved their 100th T20I win with a 20-run victory over Ireland at R.
+                        Premadasa Stadium.
+                        Kusal Mendis' 56* and Maheesh Theekshana's 3/23 led the Lankans to the milestone triumph.
+                    </p>
+                    <a href="#" class="meta-text"
+                        style="display: inline-block; margin-top: var(--space-sm); color: var(--accent-color);">
+                        Read More →
+                    </a>
+                </article>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-xl);">
+                <a href="#"
+                    style="display: inline-block; padding: 12px 24px; background: var(--accent-color); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: all 0.3s ease;">
+                    View All Tournament News
+                </a>
             </div>
         </section>
 
     </main>
+
+    <!-- Newsletter Section -->
+    <section class="container newsletter-section" id="newsletter">
+        <div class="newsletter-content">
+            <h2>The PickAI Briefing</h2>
+            <p>Get the latest sports updates, match reports, and tournament insights delivered to your inbox.</p>
+
+            <form id="newsletter-form" class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+                <input type="email" name="email" id="newsletter-email" class="newsletter-input"
+                    placeholder="enter your email address..." required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+
+            <div id="newsletter-feedback" class="newsletter-feedback"></div>
+        </div>
+    </section>
 
     <!-- 3. Footer -->
     <footer class="site-footer">
@@ -140,8 +2181,20 @@
         </div>
     </footer>
 
-    <!-- Logic -->
-    <script src="../js/t20-api.js"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">&uarr; Top</button>
+
+    <!-- Scripts -->
+    <script src="../js/search.js" defer></script>
+    <script src="../js/app.js"></script>
+
+    <!-- Supabase & Newsletter Logic -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/newsletter.js"></script>
+
+    <!-- Consent Banner -->
+    <script src="../js/consent.js" defer></script>
+    <script src="../js/hamburger.js"></script>
 </body>
 
 </html>

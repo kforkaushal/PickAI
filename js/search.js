@@ -126,8 +126,8 @@ async function loadSearchData() {
 
     if (path.includes('/articles/news/')) {
         prefix = '../../';
-    } else if (path.includes('/tools/') || path.includes('/articles/')) {
-        // Covers /tools/index.html and any future /articles/ subfolders if depth is 1
+    } else if (path.includes('/tools/') || path.includes('/articles/') || path.includes('/Sports/') || path.includes('/Financial/')) {
+        // Covers /tools/, /articles/, /Sports/, /Financial/ and any future subfolders at depth 1
         prefix = '../';
     } else if (path.endsWith('.html') && !path.includes('/')) {
         // Root files like about.html, contact.html
