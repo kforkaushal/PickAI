@@ -1,9 +1,11 @@
 import os
 import datetime
 import json
+import requests
 from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
+
 
 # Configuration
 BASE_URL = "https://pickai.netlify.app"
@@ -11,6 +13,15 @@ ROOT_DIR = r"c:\Users\bitbu\OneDrive\Documents\GitHub\PickAI"
 NEWS_DIR = os.path.join(ROOT_DIR, "articles", "news")
 OUTPUT_SITEMAP = os.path.join(ROOT_DIR, "sitemap.xml")
 OUTPUT_RSS = os.path.join(ROOT_DIR, "rss.xml")
+
+# IndexNow Configuration
+INDEXNOW_KEY = "1805cf36ce56461181d2317aa4867207"
+INDEXNOW_ENDPOINTS = [
+    "https://www.bing.com/IndexNow",
+    "https://yandex.com/indexnow",
+    "https://search.naver.com/indexnow"
+]
+
 
 # Static pages priority map
 PRIORITY_MAP = {
@@ -124,12 +135,43 @@ def generate_rss():
             ET.SubElement(item, "pubDate").text = art["pubDate"]
             ET.SubElement(item, "guid").text = art['link']
 
-    # Write RSS
     xml_str = minidom.parseString(ET.tostring(rss)).toprettyxml(indent="    ")
     with open(OUTPUT_RSS, "w", encoding="utf-8") as f:
         f.write(xml_str)
     print(f"Generated rss.xml with {len(articles)} items.")
 
+def ping_indexnow(urls):
+    """Notify search engines about new/updated URLs via IndexNow API."""
+    if not urls:
+        return
+
+    data = {
+        "host": BASE_URL.replace("https://", ""),
+        "key": INDEXNOW_KEY,
+        "keyLocation": f"{BASE_URL}/{INDEXNOW_KEY}.txt",
+        "urlList": urls
+    }
+
+    for endpoint in INDEXNOW_ENDPOINTS:
+        try:
+            response = requests.post(endpoint, json=data, headers={"Content-Type": "application/json; charset=utf-8"})
+            if response.status_code == 200:
+                print(f"Successfully pinged IndexNow endpoint: {endpoint}")
+            else:
+                print(f"Failed to ping IndexNow endpoint: {endpoint} (Status: {response.status_code})")
+        except Exception as e:
+            print(f"Error pinging IndexNow endpoint {endpoint}: {e}")
+
 if __name__ == "__main__":
     generate_sitemap()
     generate_rss()
+    
+    # Collect URLs for IndexNow
+    tree = ET.parse(OUTPUT_SITEMAP)
+    root = tree.getroot()
+    urls = [url.find('{http://www.sitemaps.org/schemas/sitemap/0.9}loc').text for url in root.findall('{http://www.sitemaps.org/schemas/sitemap/0.9}url')]
+    
+    if urls:
+        print(f"Pinging IndexNow for {len(urls)} URLs...")
+        ping_indexnow(urls)
+

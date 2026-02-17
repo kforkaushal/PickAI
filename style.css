@@ -686,14 +686,19 @@ ul {
 /* Mobile Optimizations */
 @media (max-width: 768px) {
     .filter-btn {
-        padding: 6px 10px;
-        font-size: 0.85rem;
+        padding: 12px 16px;
+        min-height: 48px;
+        font-size: 0.9rem;
         background: var(--color-highlight);
         /* Add background on mobile for touch targets */
-        border-radius: 20px;
+        border-radius: 24px;
         /* Pills on mobile for better touch */
         border-bottom: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+
 
     .filter-btn.active {
         background: var(--color-text-primary);
@@ -3559,6 +3564,7 @@ details[open] .accordion-trigger .icon {
 .copy-toast.active {
     transform: translateX(-50%) translateY(0);
 }
+
 /* Sidebar Overrides for Section Divider */
 .sidebar-topics .section-divider {
     margin-bottom: var(--space-md);

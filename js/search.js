@@ -216,7 +216,8 @@ function renderResults(tools, news, query) {
             el.target = "_blank";
             el.className = 'search-result-item tool-result';
             el.innerHTML = `
-                <img src="https://img.logo.dev/${tool.logo_domain}?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="${tool.name}" class="result-logo">
+                <img src="https://img.logo.dev/${tool.logo_domain}?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="${tool.name} logo" class="result-logo">
+
                 <div class="result-info">
                     <div class="result-name">${tool.name}</div>
                     <div class="result-desc">${tool.category} • ${tool.description.substring(0, 60)}...</div>

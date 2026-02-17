@@ -54,9 +54,10 @@ function renderFeatured(tools) {
         const div = document.createElement('div');
         div.className = 'featured-tool-mini';
         div.innerHTML = `
-            <img src="https://img.logo.dev/${tool.logo_domain}?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="${tool.name}">
+            <img src="https://img.logo.dev/${tool.logo_domain}?token=pk_Mg3XAPU3QqSkLxHtf5tWww" alt="${tool.name} logo">
             <h4><a href="redirect.html?url=${encodeURIComponent(tool.url)}&name=${encodeURIComponent(tool.name)}" target="_blank">${tool.name}</a></h4>
         `;
+
         container.appendChild(div);
     });
 }

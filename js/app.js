@@ -278,8 +278,9 @@ function initHeroSlideshow(slides) {
     const container = document.getElementById('hero-slider');
     if (!container) return;
 
-    // Clear loading state
+    // Clear loading state and fallbacks
     container.innerHTML = '';
+
 
     // Create Slides Wrapper
     slides.forEach((slide, index) => {

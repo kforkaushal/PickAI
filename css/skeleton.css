@@ -47,7 +47,7 @@
 /* Hero Slider Skeleton */
 .hero-skeleton {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 9;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -56,7 +56,9 @@
     /* Light grey placeholder background */
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
 }
+
 
 /* News Card Skeleton */
 .card-skeleton {
@@ -67,8 +69,10 @@
 
 .card-skeleton .image-box {
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
 }
+
 
 /* List Item Skeleton */
 .list-skeleton-item {
