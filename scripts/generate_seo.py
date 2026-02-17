@@ -17,10 +17,12 @@ OUTPUT_RSS = os.path.join(ROOT_DIR, "rss.xml")
 # IndexNow Configuration
 INDEXNOW_KEY = "1805cf36ce56461181d2317aa4867207"
 INDEXNOW_ENDPOINTS = [
+    "https://api.indexnow.org/IndexNow",
     "https://www.bing.com/IndexNow",
     "https://yandex.com/indexnow",
     "https://search.naver.com/indexnow"
 ]
+
 
 
 # Static pages priority map
