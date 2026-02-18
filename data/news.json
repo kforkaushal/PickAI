@@ -1,6 +1,16 @@
 {
     "hero_slides": [
         {
+            "title": "India’s AI Impact Summit 2026: Leading the Global South’s Digital Renaissance",
+            "summary": "The India AI Impact Summit 2026, held from February 16–20 at Bharat Mandapam, New Delhi, has officially solidified India’s position as a global nerve center for artificial intelligence.",
+            "link": "articles/news/indias-ai-impact-summit-2026-leading-the-global-souths-digital-renaissance.html",
+            "image_url": "https://dailypioneer.com/uploads/2026/story/images/big/beyond-the-it-act--why-the-2026-global-india-ai-summit-is-a-legal-milestone-2026-02-16.jpg",
+            "category": "News",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1771418850158
+        },
+        {
             "title": "DGCA Probes Baramati Crash: What We Know About Flight VT-SSK",
             "summary": "Investigation begins into the Learjet 45 crash. Questions raised about VSR Ventures and weather conditions.",
             "link": "articles/news/ajit-pawar-crash-investigation.html",
@@ -39,71 +49,6 @@
             "author": "PickAI Editorial Board",
             "date": "Just Now",
             "id": 1769318329252
-        },
-        {
-            "title": "Mastering Agentic Workflows for Productivity: The 2026 AI Blueprint",
-            "summary": "Learn to build self-correcting AI systems that multiply productivity beyond simple prompts.",
-            "link": "articles/news/mastering-agentic-workflows-for-productivity-the-2026-ai-blueprint.html",
-            "image_url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-roadmap-mastering-agentic-ai.jpeg",
-            "category": "News",
-            "author": "PickAI Editorial Board",
-            "date": "Just Now",
-            "id": 1769021839368
-        },
-        {
-            "title": "From Prompting to Building: Why \"AI Agents\" Are the 2026 Traffic Goldmine",
-            "summary": "Discover why content is shifting to building industry AI agents and how agentic workflows dominate 2026 SEO trends.",
-            "link": "articles/news/from-prompting-to-building-why-ai-agents-are-the-2026-traffic-goldmine.html",
-            "image_url": "https://miro.medium.com/v2/resize:fit:1400/1*rgd7TJl0AGoULBpE7wocVA.png",
-            "category": "Guide",
-            "author": "PickAI Editorial",
-            "date": "Just Now",
-            "id": 1769020355905
-        },
-        {
-            "id": 1,
-            "title": "Top AI Trending Prompts for ChatGPT in 2026",
-            "summary": "Master the art of prompting with 10 trending structures, from deep reasoning chains to full-stack coding agents.",
-            "author": "Practical AI",
-            "date": "Top Guide",
-            "link": "articles/news/top-ai-trending-prompts-chatgpt.html",
-            "image_url": "https://res.cloudinary.com/pickai/image/upload/f_auto,q_auto/v1769017575/best-ai-prompts_dwl2qn.webp"
-        },
-        {
-            "id": 2,
-            "title": "DeepMind: China Closing AI Gap",
-            "summary": "Demis Hassabis warns at Davos that China is now only 6-12 months behind the US in AI capabilities.",
-            "author": "Policy Analysis",
-            "date": "Breaking",
-            "link": "articles/news/deepmind-china-ai-race.html",
-            "image_url": "https://res.cloudinary.com/pickai/image/upload/f_auto,q_auto/v1769013178/Demis_Hassabis_DeepMind_qavepp.jpg"
-        },
-        {
-            "id": 3,
-            "title": "Samsung Galaxy Z TriFold Reviews",
-            "summary": "The world's first tri-folding phone hits shelves: ultimate productivity tool or just a novelty?",
-            "author": "Gadget Lab",
-            "date": "Review",
-            "link": "articles/news/samsung-galaxy-trifold.html",
-            "image_url": "https://res.cloudinary.com/pickai/image/upload/f_auto,q_auto/v1769013063/fA11-16x9-New-25-Nov-Offline-1_wrmo5b.jpg"
-        },
-        {
-            "id": 2,
-            "title": "\"AI or Die\" — The Davos 2026 Warning",
-            "summary": "SandboxAQ CEO Jack Hidary warns world leaders that embracing AI is now crucial for survival.",
-            "author": "PickAI Editorial",
-            "date": "Top Story",
-            "link": "articles/news/davos-ai-or-die-2026.html",
-            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1768917841/f5e31b28-884c-4474-b2b0-7b8eaad586f5-Yf46yZ_ilyfpd.avif"
-        },
-        {
-            "id": 3,
-            "title": "The Rise of Agentic Workflows",
-            "summary": "Analyze why agentic workflows, the 'autonomous employees' of 2026, are taking over sectors globally.",
-            "author": "Trend Analysis",
-            "date": "Feature",
-            "link": "articles/news/agentic-ai-2026.html",
-            "image_url": "https://www.uniconvergetech.in/blog/wp-content/uploads/2024/07/Untitled-design-22.jpg"
         }
     ],
     "hero": {
@@ -114,6 +59,12 @@
         "link": "articles/news/davos-ai-or-die-2026.html"
     },
     "latest_updates": [
+        {
+            "time": "18:17 GMT",
+            "title": "India’s AI Impact Summit 2026: Leading the Global South’s Digital Renaissance",
+            "link": "articles/news/indias-ai-impact-summit-2026-leading-the-global-souths-digital-renaissance.html",
+            "image_url": "https://dailypioneer.com/uploads/2026/story/images/big/beyond-the-it-act--why-the-2026-global-india-ai-summit-is-a-legal-milestone-2026-02-16.jpg"
+        },
         {
             "time": "Breaking",
             "title": "NCP Leader Ajit Pawar passes away at 66.",
@@ -222,6 +173,16 @@
         }
     ],
     "analysis_grid": [
+        {
+            "title": "India’s AI Impact Summit 2026: Leading the Global South’s Digital Renaissance",
+            "summary": "The India AI Impact Summit 2026, held from February 16–20 at Bharat Mandapam, New Delhi, has officially solidified India’s position as a global nerve center for artificial intelligence.",
+            "link": "articles/news/indias-ai-impact-summit-2026-leading-the-global-souths-digital-renaissance.html",
+            "image_url": "https://dailypioneer.com/uploads/2026/story/images/big/beyond-the-it-act--why-the-2026-global-india-ai-summit-is-a-legal-milestone-2026-02-16.jpg",
+            "category": "News",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1771418850268
+        },
         {
             "title": "Ajit Pawar Passes Away at 66: End of an Era",
             "summary": "Maharashtra mourns as former Deputy CM Ajit Pawar passes away in a tragic plane crash near Baramati.",

@@ -31,16 +31,11 @@ app.get('/api/articles', (req, res) => {
         add(newsData.hero_slides);
         add(newsData.latest_updates);
         add(newsData.analysis_grid);
-
-        add(newsData.analysis_grid);
-
-        add(newsData.analysis_grid);
+        add(newsData.opinion_grid || []);
+        add(newsData.explainers_grid || []);
 
         console.log("Total raw articles found:", all.length);
 
-        add(newsData.analysis_grid);
-
-        console.log("Total raw articles found:", all.length);
 
         // Normalize link function: remove ./ or / prefix
         const clean = (l) => l ? l.replace(/^\.?\/?/, '') : '';
@@ -189,7 +184,13 @@ app.get('/api/article/:filename', (req, res) => {
 app.post('/publish', (req, res) => {
     try {
         const data = req.body;
-        console.log("Publishing:", data.title);
+        console.log("Publishing Request:", data.title || "Manual Update");
+
+        if (data.triggerOnly) {
+            triggerSEOUpdate("manual-trigger");
+            return res.json({ success: true, message: "SEO Update Triggered" });
+        }
+
 
         // A. Helpers
         const slug = data.title.toLowerCase()
@@ -366,13 +367,26 @@ app.post('/publish', (req, res) => {
 
         if (data.isAnalysis) {
             upsert(newsData.analysis_grid, newEntry);
-            // Ensure limit matches array size if we added one
-            if (newsData.analysis_grid.length > 12) newsData.analysis_grid.pop();
+            if (newsData.analysis_grid.length > 20) newsData.analysis_grid.pop();
+        }
+
+        if (data.isOpinion) {
+            upsert(newsData.opinion_grid, newEntry);
+            if (newsData.opinion_grid.length > 10) newsData.opinion_grid.pop();
+        }
+
+        if (data.isExplainer) {
+            upsert(newsData.explainers_grid, newEntry);
+            if (newsData.explainers_grid.length > 10) newsData.explainers_grid.pop();
         }
 
         fs.writeFileSync(jsonPath, JSON.stringify(newsData, null, 4));
 
+        // F. Trigger SEO & IndexNow
+        triggerSEOUpdate(newEntry.link);
+
         res.json({ success: true, path: relativePath });
+
 
     } catch (err) {
         console.error(err);
@@ -383,3 +397,21 @@ app.post('/publish', (req, res) => {
 app.listen(PORT, () => {
     console.log(`CMS Server running at http://localhost:${PORT}`);
 });
+
+function triggerSEOUpdate(newLink) {
+    const { exec } = require('child_process');
+    const pythonCmd = process.platform === "win32" ? "py" : "python3";
+    const scriptPath = path.join(__dirname, '../scripts/generate_seo.py');
+
+    console.log(`Triggering SEO Update: ${pythonCmd} ${scriptPath}`);
+
+    exec(`${pythonCmd} "${scriptPath}"`, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`SEO Script Error: ${error.message}`);
+            return;
+        }
+        console.log(`SEO Script Output: ${stdout}`);
+        if (stderr) console.error(`SEO Script Stderr: ${stderr}`);
+    });
+}
+
