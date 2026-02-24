@@ -1078,5 +1078,495 @@
         "description": "Generates engineering project slides from notes or research outlines.",
         "is_trending": true,
         "is_new": false
+    },
+    {
+        "name": "Gemini 3 Flash",
+        "url": "https://gemini.google.com",
+        "logo_domain": "gemini.google.com",
+        "category": "LLM",
+        "category_display": "LLM / Fast",
+        "description": "Google's affordable and performant model with exceptional world knowledge, multimodal understanding, and optional thinking levels at a fraction of the cost.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Claude Opus 4.6",
+        "url": "https://claude.ai",
+        "logo_domain": "claude.ai",
+        "category": "LLM",
+        "category_display": "LLM / Deep Reasoning",
+        "description": "Anthropic's most advanced model for deep reasoning, complex coding, and long-running autonomous tasks with a 1M-token context window.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Claude Sonnet 4.6",
+        "url": "https://claude.ai",
+        "logo_domain": "claude.ai",
+        "category": "LLM",
+        "category_display": "LLM / Agentic",
+        "description": "Built for high-quality conversations, advanced coding, and agentic workflows at scale with a 1M token context window.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Gemini 3.1 Pro",
+        "url": "https://gemini.google.com",
+        "logo_domain": "gemini.google.com",
+        "category": "LLM",
+        "category_display": "LLM / State-of-the-Art",
+        "description": "State-of-the-art model for complex problem-solving, advanced reasoning, and creative coding with 77.1% on ARC-AGI-2 benchmark.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "GPT-5.2",
+        "url": "https://openai.com",
+        "logo_domain": "openai.com",
+        "category": "LLM",
+        "category_display": "LLM / Flagship",
+        "description": "OpenAI's state-of-the-art AI model designed for real work across writing, analysis, coding, and problem solving with 400k token context.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "GLM-5",
+        "url": "https://zhipuai.cn",
+        "logo_domain": "zhipuai.cn",
+        "category": "LLM",
+        "category_display": "LLM / System Engineering",
+        "description": "Opus-class open-source model for complex system engineering and long-horizon agent tasks with senior-architect-level planning capabilities.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Qwen 3.5 Plus",
+        "url": "https://qwen.alibaba.com",
+        "logo_domain": "alibaba.com",
+        "category": "LLM",
+        "category_display": "LLM / Multimodal",
+        "description": "State-of-the-art multimodal model with 1M token context, supporting text, image, and video with hybrid architecture for efficient deep thinking.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Kimi K2.5",
+        "url": "https://kimi.moonshot.cn",
+        "logo_domain": "moonshot.cn",
+        "category": "LLM",
+        "category_display": "LLM / Agentic",
+        "description": "Moonshot AI's flagship MoE model with native multimodal architecture, thinking modes, and breakthrough frontend development capabilities.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "MiniMax M2.5",
+        "url": "https://minimaxi.com",
+        "logo_domain": "minimaxi.com",
+        "category": "LLM",
+        "category_display": "LLM / Productivity",
+        "description": "SOTA large language model for real-world productivity, trained in complex digital working environments for office work, coding, and agentic tasks.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Grok 4.1 Fast",
+        "url": "https://x.ai",
+        "logo_domain": "x.ai",
+        "category": "LLM",
+        "category_display": "LLM / Agentic Tools",
+        "description": "xAI's best agentic tool-calling model with a 2M-token context window for customer support, deep research, and advanced analytical reasoning.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Claude Haiku 4.5",
+        "url": "https://claude.ai",
+        "logo_domain": "claude.ai",
+        "category": "LLM",
+        "category_display": "LLM / Fast",
+        "description": "Anthropic's fastest and most efficient model with frontier-level capability, matching Sonnet 4's performance and 73%+ SWE-bench score.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Grok 4",
+        "url": "https://x.ai",
+        "logo_domain": "x.ai",
+        "category": "LLM",
+        "category_display": "LLM / Flagship",
+        "description": "xAI's latest and most intelligent language model excelling at complex and multi-step tasks in coding, reasoning, and answering questions.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "DeepSeek V3.2",
+        "url": "https://deepseek.com",
+        "logo_domain": "deepseek.com",
+        "category": "ML Model",
+        "category_display": "ML / Efficient",
+        "description": "Next-generation foundation model introducing DeepSeek Sparse Attention (DSA) for high computational efficiency with GPT-5-level performance.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Qwen 3.5 397B",
+        "url": "https://qwen.alibaba.com",
+        "logo_domain": "alibaba.com",
+        "category": "ML Model",
+        "category_display": "ML / Open Source",
+        "description": "Massive 397B MoE vision-language model with 262k token context for language understanding, reasoning, coding, and GUI interaction.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Gemini 3 Pro",
+        "url": "https://gemini.google.com",
+        "logo_domain": "gemini.google.com",
+        "category": "LLM",
+        "category_display": "LLM / Advanced",
+        "description": "State-of-the-art model for math, coding, computer use, and long-horizon agent tasks with 1M input context window.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Runway Gen 4.5",
+        "url": "https://runwayml.com",
+        "logo_domain": "runwayml.com",
+        "category": "Video Gen",
+        "category_display": "Video / Cinematic",
+        "description": "Advanced video model generating cinematic, high-fidelity video from natural language and images with fine-grained motion and camera control.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Grok Imagine",
+        "url": "https://x.ai",
+        "logo_domain": "x.ai",
+        "category": "Image Gen",
+        "category_display": "Image / Creative",
+        "description": "Create creative and artistic images with xAI's Grok Imagine, supporting text-to-image and image editing with aspect ratio controls.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "GPT Image 1.5",
+        "url": "https://openai.com",
+        "logo_domain": "openai.com",
+        "category": "Image Gen",
+        "category_display": "Image / Frontier",
+        "description": "OpenAI's frontier image generation model with exceptional prompt adherence, precise edits, facial preservation, and improved generation times.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Imagen 4",
+        "url": "https://deepmind.google",
+        "logo_domain": "deepmind.google",
+        "category": "Image Gen",
+        "category_display": "Image / Ultra",
+        "description": "Google DeepMind's text-to-image model with exceptional prompt adherence, great detail, rich lighting, and few distracting artifacts.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "FLUX 2 Pro",
+        "url": "https://blackforestlabs.ai",
+        "logo_domain": "blackforestlabs.ai",
+        "category": "Image Gen",
+        "category_display": "Image / Multi-Ref",
+        "description": "Black Forest Labs' state-of-the-art model with multi-reference support, fine-grained text rendering, and image editing capabilities.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Dreamina 3.1",
+        "url": "https://dreamina.jianying.com",
+        "logo_domain": "jianying.com",
+        "category": "Image Gen",
+        "category_display": "Image / Aesthetic",
+        "description": "ByteDance's Dreamina 3.1 with superior picture effects, improved aesthetics, precise diverse styles, and rich image details.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Kling 2.6 Pro",
+        "url": "https://klingai.com",
+        "logo_domain": "klingai.com",
+        "category": "Video Gen",
+        "category_display": "Video / Audio",
+        "description": "Generate high-quality videos with native audio from text and images using Kling 2.6 Pro with flexible duration and aspect ratio controls.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Hunyuan Video 1.5",
+        "url": "https://hunyuan.tencent.com",
+        "logo_domain": "tencent.com",
+        "category": "Video Gen",
+        "category_display": "Video / 1080p",
+        "description": "Tencent's 8.3B-parameter video model delivering high-quality 720p-1080p text-to-video and image-to-video with strong temporal coherence.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "ElevenLabs Music",
+        "url": "https://elevenlabs.io",
+        "logo_domain": "elevenlabs.io",
+        "category": "Music",
+        "category_display": "Music / AI Composer",
+        "description": "Generative AI system composing original music from text prompts with genre, mood, and structure controls for royalty-free tracks.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Gemini Flash TTS",
+        "url": "https://gemini.google.com",
+        "logo_domain": "gemini.google.com",
+        "category": "Voice",
+        "category_display": "Voice / Low-Latency",
+        "description": "Google's low-latency text-to-speech model supporting single and multi-speaker voices with controllable style, accent, and expressive tone.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Deepgram Nova 3",
+        "url": "https://deepgram.com",
+        "logo_domain": "deepgram.com",
+        "category": "Speech Rec",
+        "category_display": "Speech / Transcription",
+        "description": "State-of-the-art automatic speech recognition with multi-language support, speaker diarization, and smart formatting.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "GPT-5.2 Codex",
+        "url": "https://openai.com",
+        "logo_domain": "openai.com",
+        "category": "Coding",
+        "category_display": "Coding / Expert",
+        "description": "OpenAI's GPT-5.2 extended for software development, understanding complex codebases, debugging, and full-stack coding workflows.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Qwen3 Coder",
+        "url": "https://qwen.alibaba.com",
+        "logo_domain": "alibaba.com",
+        "category": "Coding",
+        "category_display": "Coding / Agentic",
+        "description": "Open-weight model for coding agents with only 3B activated parameters, excelling at long-horizon reasoning and complex tool usage.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Nova Pro 1.0",
+        "url": "https://aws.amazon.com/nova",
+        "logo_domain": "aws.amazon.com",
+        "category": "LLM",
+        "category_display": "LLM / Multimodal",
+        "description": "Amazon Nova Pro's highly capable multimodal foundation model with 300k token context for processing text, images, and video.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Gemini Deep Research",
+        "url": "https://gemini.google.com",
+        "logo_domain": "gemini.google.com",
+        "category": "Research",
+        "category_display": "Research / Deep",
+        "description": "Gemini plans, executes, and synthesizes complex multi-step investigations by querying the web, producing detailed structured reports with best-in-world performance.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Perplexity Deep Research",
+        "url": "https://perplexity.ai",
+        "logo_domain": "perplexity.ai",
+        "category": "Research",
+        "category_display": "Research / Agentic",
+        "description": "Research-focused model for multi-step retrieval, synthesis, and reasoning across complex topics—autonomously searches, reads, and evaluates sources.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Exa Research",
+        "url": "https://exa.ai",
+        "logo_domain": "exa.ai",
+        "category": "AI Search",
+        "category_display": "Search / Neural",
+        "description": "Creates asynchronous research tasks that explore the web, gather sources, synthesize findings, and return results with citations.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Claude Code",
+        "url": "https://claude.ai",
+        "logo_domain": "claude.ai",
+        "category": "Coding",
+        "category_display": "Coding / Agent SDK",
+        "description": "Powerful assistant built on Anthropic's Agent SDK that reads, writes, and analyzes files across formats and delegates to other bots for complex tasks.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "GLM-4.7 Flash",
+        "url": "https://zhipuai.cn",
+        "logo_domain": "zhipuai.cn",
+        "category": "LLM",
+        "category_display": "LLM / Efficient",
+        "description": "State-of-the-art 30B-class model for agentic coding with top results on public benchmarks, excelling in complex agent tasks and instruction following.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "DeepSeek R1",
+        "url": "https://deepseek.com",
+        "logo_domain": "deepseek.com",
+        "category": "Reasoning Model",
+        "category_display": "Reasoning / Open Source",
+        "description": "Top open-source reasoning LLM rivaling OpenAI's o1, with top-tier performance across math, code, and reasoning tasks using the latest May 2025 snapshot.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Stable Audio 2.5",
+        "url": "https://stability.ai",
+        "logo_domain": "stability.ai",
+        "category": "Music",
+        "category_display": "Music / Long-Form",
+        "description": "Generates high-quality audio up to 3 minutes long from text prompts, supporting text-to-audio, audio-to-audio transformations, and inpainting.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "GPT-5",
+        "url": "https://openai.com",
+        "logo_domain": "openai.com",
+        "category": "LLM",
+        "category_display": "LLM / General",
+        "description": "OpenAI's most advanced general model with improved coding skills, 400k token context, native vision, and instruction following.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "o3",
+        "url": "https://openai.com",
+        "logo_domain": "openai.com",
+        "category": "Reasoning Model",
+        "category_display": "Reasoning / SOTA",
+        "description": "OpenAI's state-of-the-art reasoning model excelling in science, math, and coding with selectable effort levels and 200k token context.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "o4-mini",
+        "url": "https://openai.com",
+        "logo_domain": "openai.com",
+        "category": "Reasoning Model",
+        "category_display": "Reasoning / Affordable",
+        "description": "High intelligence reasoning model for science, math, and coding at an affordable price point with 200k input and 100k output context.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Qwen3 Max",
+        "url": "https://qwen.alibaba.com",
+        "logo_domain": "alibaba.com",
+        "category": "LLM",
+        "category_display": "LLM / Reasoning",
+        "description": "Significant improvements in reasoning, instruction following, and multilingual support with higher accuracy in complex coding and math tasks.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Kimi K2",
+        "url": "https://kimi.moonshot.cn",
+        "logo_domain": "moonshot.cn",
+        "category": "ML Model",
+        "category_display": "ML / MoE",
+        "description": "State-of-the-art 1T parameter MoE language model trained with Muon optimizer, exceptional at frontier knowledge, reasoning, and coding tasks.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Mercury Coder",
+        "url": "https://inceptionlabs.ai",
+        "logo_domain": "inceptionlabs.ai",
+        "category": "Coding",
+        "category_display": "Coding / Diffusion LLM",
+        "description": "First diffusion large language model for code, running 5-10x faster than speed-optimized models like Claude 3.5 Haiku while matching their performance.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Perplexity Sonar Pro",
+        "url": "https://perplexity.ai",
+        "logo_domain": "perplexity.ai",
+        "category": "AI Search",
+        "category_display": "Search / Citations",
+        "description": "Advanced AI model enhancing real-time web-connected search with double the citations, 200k context, and complex query support.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Hunyuan Image 3",
+        "url": "https://hunyuan.tencent.com",
+        "logo_domain": "tencent.com",
+        "category": "Image Gen",
+        "category_display": "Image / Open Source",
+        "description": "Tencent's next-generation open-source text-to-image model producing high-fidelity photorealistic images with multilingual text rendering.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Kling Image O1",
+        "url": "https://klingai.com",
+        "logo_domain": "klingai.com",
+        "category": "Image Gen",
+        "category_display": "Image / Multi-Ref",
+        "description": "Advanced image generation and editing supporting up to 10 reference images for precise multi-reference creative outputs.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Claude Sonnet 4.5",
+        "url": "https://claude.ai",
+        "logo_domain": "claude.ai",
+        "category": "LLM",
+        "category_display": "LLM / Advanced",
+        "description": "Major leap forward in AI with dramatic improvements in reasoning, mathematics, and real-world coding with 1M token context.",
+        "is_trending": true,
+        "is_new": true
+    },
+    {
+        "name": "Minimax M2.1",
+        "url": "https://minimaxi.com",
+        "logo_domain": "minimaxi.com",
+        "category": "Coding",
+        "category_display": "Coding / Multi-Language",
+        "description": "Cutting-edge AI model with enhanced multi-language programming support, 22% faster response times, and full-stack development capabilities.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Gemini 2.5 Pro",
+        "url": "https://gemini.google.com",
+        "logo_domain": "gemini.google.com",
+        "category": "LLM",
+        "category_display": "LLM / Frontier",
+        "description": "Google's advanced model with frontier performance on key benchmarks, supporting web search and 1 million tokens of input context.",
+        "is_trending": true,
+        "is_new": false
+    },
+    {
+        "name": "Gemini 2.5 Flash",
+        "url": "https://gemini.google.com",
+        "logo_domain": "gemini.google.com",
+        "category": "LLM",
+        "category_display": "LLM / Fast",
+        "description": "Major upgrade in reasoning capabilities, search, and image/video understanding built on the popular 2.0 Flash foundation at high speed.",
+        "is_trending": true,
+        "is_new": false
     }
 ]
