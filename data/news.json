@@ -1,6 +1,36 @@
 {
     "hero_slides": [
         {
+            "title": "GPT-5.4 vs Gemini 3.1 vs Claude Sonnet 4.6 — Which AI Model Wins in 2026?",
+            "summary": "Three flagship AI models dropped in early 2026. We compare GPT-5.4, Google Gemini 3.1, and Anthropic Claude Sonnet 4.6 on speed, price, coding, and real-world tasks.",
+            "link": "articles/news/ai-model-comparison-2026.html",
+            "image_url": "https://media.nanobananaproapi.com/uploads/2026/03/05/20260305-1772725466.webp",
+            "category": "Trending Analysis",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1789318329610
+        },
+        {
+            "title": "NVIDIA GTC 2026: Jensen Huang's Biggest AI Announcements You Should Not Miss",
+            "summary": "NVIDIA's GTC 2026 conference (March 16–19) is live. From Vera Rubin chips to AI-powered cybersecurity, here are all the major announcements explained simply.",
+            "link": "articles/news/nvidia-gtc-2026-announcements.html",
+            "image_url": "https://www.reuters.com/resizer/v2/KQ2AWGXVAVLJXNLMM5OIJFXDGI.jpg?auth=9355fcd7ef38ac35f76da78932e92ace6be0d1df783accd218cf0753006c2327&width=1920&quality=80",
+            "category": "Breaking News",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1789318329600
+        },
+        {
+            "title": "Apple's New Siri Gets Google Gemini Brain",
+            "summary": "Apple is replacing Siri's core with Google's 1.2 trillion parameter Gemini model. Here's what changes, when it drops, and why it matters.",
+            "link": "articles/news/apple-siri-gemini-2026.html",
+            "image_url": "https://img.mathrubhumi.com/view/acePublic/alias/contentid/1orb0nuya62uqxjyrog/0/siri-gemini-jpg.webp",
+            "category": "Tech News",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1789318329240
+        },
+        {
             "title": "India’s AI Impact Summit 2026: Leading the Global South’s Digital Renaissance",
             "summary": "The India AI Impact Summit 2026 at Bharat Mandapam officially establishes New Delhi",
             "link": "articles/news/indias-ai-impact-summit-2026-leading-the-global-souths-digital-renaissance.html",
@@ -59,6 +89,24 @@
         "link": "articles/news/davos-ai-or-die-2026.html"
     },
     "latest_updates": [
+        {
+            "time": "Just Now",
+            "title": "GPT-5.4 vs Gemini 3.1 vs Claude Sonnet 4.6 — Which AI Model Wins in 2026?",
+            "link": "articles/news/ai-model-comparison-2026.html",
+            "image_url": "https://media.nanobananaproapi.com/uploads/2026/03/05/20260305-1772725466.webp"
+        },
+        {
+            "time": "Just Now",
+            "title": "NVIDIA GTC 2026: Jensen Huang's Biggest AI Announcements You Should Not Miss",
+            "link": "articles/news/nvidia-gtc-2026-announcements.html",
+            "image_url": "https://www.reuters.com/resizer/v2/KQ2AWGXVAVLJXNLMM5OIJFXDGI.jpg?auth=9355fcd7ef38ac35f76da78932e92ace6be0d1df783accd218cf0753006c2327&width=1920&quality=80"
+        },
+        {
+            "time": "Just Now",
+            "title": "Apple's New Siri Gets Google Gemini Brain — Everything You Need to Know (2026)",
+            "link": "articles/news/apple-siri-gemini-2026.html",
+            "image_url": "https://img.mathrubhumi.com/view/acePublic/alias/contentid/1orb0nuya62uqxjyrog/0/siri-gemini-jpg.webp"
+        },
         {
             "time": "18:17 GMT",
             "title": "India’s AI Impact Summit 2026: Leading the Global South’s Digital Renaissance",
@@ -173,6 +221,36 @@
         }
     ],
     "analysis_grid": [
+        {
+            "title": "GPT-5.4 vs Gemini 3.1 vs Claude Sonnet 4.6 — Which AI Model Wins in 2026?",
+            "summary": "Three flagship AI models dropped in early 2026. We compare GPT-5.4, Google Gemini 3.1, and Anthropic Claude Sonnet 4.6 on speed, price, coding, and real-world tasks.",
+            "link": "articles/news/ai-model-comparison-2026.html",
+            "image_url": "https://media.nanobananaproapi.com/uploads/2026/03/05/20260305-1772725466.webp",
+            "category": "Trending Analysis",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1789318329611
+        },
+        {
+            "title": "NVIDIA GTC 2026: Jensen Huang's Biggest AI Announcements You Should Not Miss",
+            "summary": "NVIDIA's GTC 2026 conference (March 16–19) is live. From Vera Rubin chips to AI-powered cybersecurity, here are all the major announcements explained simply.",
+            "link": "articles/news/nvidia-gtc-2026-announcements.html",
+            "image_url": "https://www.reuters.com/resizer/v2/KQ2AWGXVAVLJXNLMM5OIJFXDGI.jpg?auth=9355fcd7ef38ac35f76da78932e92ace6be0d1df783accd218cf0753006c2327&width=1920&quality=80",
+            "category": "Breaking News",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1789318329601
+        },
+        {
+            "title": "Apple's New Siri Gets Google Gemini Brain — Everything You Need to Know (2026)",
+            "summary": "Apple is replacing Siri's core with Google's 1.2 trillion parameter Gemini model. Here's what changes, when it drops, and why it matters.",
+            "link": "articles/news/apple-siri-gemini-2026.html",
+            "image_url": "https://img.mathrubhumi.com/view/acePublic/alias/contentid/1orb0nuya62uqxjyrog/0/siri-gemini-jpg.webp",
+            "category": "Tech News",
+            "author": "PickAI Editorial Board",
+            "date": "Just Now",
+            "id": 1789318329241
+        },
         {
             "title": "India’s AI Impact Summit 2026: Leading the Global South’s Digital Renaissance",
             "summary": "The India AI Impact Summit 2026 at Bharat Mandapam officially establishes New Delhi",

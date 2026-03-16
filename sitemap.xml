@@ -275,4 +275,19 @@
         <lastmod>2026-02-07</lastmod>
         <priority>0.9</priority>
     </url>
+    <url>
+        <loc>https://pickai.netlify.app/articles/news/apple-siri-gemini-2026.html</loc>
+        <lastmod>2026-03-16</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pickai.netlify.app/articles/news/nvidia-gtc-2026-announcements.html</loc>
+        <lastmod>2026-03-16</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pickai.netlify.app/articles/news/ai-model-comparison-2026.html</loc>
+        <lastmod>2026-03-16</lastmod>
+        <priority>0.8</priority>
+    </url>
 </urlset>
