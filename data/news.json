@@ -1,16 +1,6 @@
 {
     "hero_slides": [
         {
-            "title": "GPT-5.4 vs Gemini 3.1 vs Claude Sonnet 4.6 — Which AI Model Wins in 2026?",
-            "summary": "Three flagship AI models dropped in early 2026. We compare GPT-5.4, Google Gemini 3.1, and Anthropic Claude Sonnet 4.6 on speed, price, coding, and real-world tasks.",
-            "link": "articles/news/ai-model-comparison-2026.html",
-            "image_url": "https://media.nanobananaproapi.com/uploads/2026/03/05/20260305-1772725466.webp",
-            "category": "Trending Analysis",
-            "author": "PickAI Editorial Board",
-            "date": "Just Now",
-            "id": 1789318329610
-        },
-        {
             "title": "NVIDIA GTC 2026: Jensen Huang's Biggest AI Announcements You Should Not Miss",
             "summary": "NVIDIA's GTC 2026 conference (March 16–19) is live. From Vera Rubin chips to AI-powered cybersecurity, here are all the major announcements explained simply.",
             "link": "articles/news/nvidia-gtc-2026-announcements.html",
@@ -91,15 +81,15 @@
     "latest_updates": [
         {
             "time": "Just Now",
-            "title": "The Death of Keywords and the Rise of Utility: SEO in the Age of Claude 4.6",
-            "link": "articles/news/agentic-seo-2026.html",
-            "image_url": "https://picsum.photos/seed/agenticseo/1200/675"
+            "title": "MSBTE Diploma Result 2026: Direct Link & Step-by-Step Guide",
+            "link": "articles/news/msbte-diploma-result-summer-2026.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1781179082/tm40q8rg_msbte-_625x300_20_June_25_bxqmul.avif"
         },
         {
             "time": "Just Now",
-            "title": "GPT-5.4 vs Gemini 3.1 vs Claude Sonnet 4.6 — Which AI Model Wins in 2026?",
-            "link": "articles/news/ai-model-comparison-2026.html",
-            "image_url": "https://media.nanobananaproapi.com/uploads/2026/03/05/20260305-1772725466.webp"
+            "title": "The Death of Keywords and the Rise of Utility: SEO in the Age of Claude 4.6",
+            "link": "articles/news/agentic-seo-2026.html",
+            "image_url": "https://picsum.photos/seed/agenticseo/1200/675"
         },
         {
             "time": "Just Now",
@@ -228,6 +218,16 @@
     ],
     "analysis_grid": [
         {
+            "title": "MSBTE Diploma Result 2026: Direct Link & Step-by-Step Guide",
+            "summary": "The MSBTE is set to declare the Summer 2026 diploma exam results soon. Find the direct link and a step-by-step guide to download your scorecard.",
+            "link": "articles/news/msbte-diploma-result-summer-2026.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1781179082/tm40q8rg_msbte-_625x300_20_June_25_bxqmul.avif",
+            "category": "Education",
+            "author": "PickAI Editorial Board",
+            "date": "Jun 11, 2026",
+            "id": 1789318330000
+        },
+        {
             "title": "The Death of Keywords and the Rise of Utility: SEO in the Age of Claude 4.6",
             "summary": "As we move through 2026, the SEO landscape hasn't just changed—it has been completely re-architected by Generative AI.",
             "link": "articles/news/agentic-seo-2026.html",
@@ -236,16 +236,6 @@
             "author": "PickAI Editorial Board",
             "date": "Apr 11, 2026",
             "id": 1789318329620
-        },
-        {
-            "title": "GPT-5.4 vs Gemini 3.1 vs Claude Sonnet 4.6 — Which AI Model Wins in 2026?",
-            "summary": "Three flagship AI models dropped in early 2026. We compare GPT-5.4, Google Gemini 3.1, and Anthropic Claude Sonnet 4.6 on speed, price, coding, and real-world tasks.",
-            "link": "articles/news/ai-model-comparison-2026.html",
-            "image_url": "https://media.nanobananaproapi.com/uploads/2026/03/05/20260305-1772725466.webp",
-            "category": "Trending Analysis",
-            "author": "PickAI Editorial Board",
-            "date": "Just Now",
-            "id": 1789318329611
         },
         {
             "title": "NVIDIA GTC 2026: Jensen Huang's Biggest AI Announcements You Should Not Miss",
