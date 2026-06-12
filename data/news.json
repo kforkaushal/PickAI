@@ -81,6 +81,10 @@
     "latest_updates": [
         {
             "time": "Just Now",
+            "title": "MHT CET 2026 PCM Results: Everything You Need to Know",
+            "link": "articles/news/mht-cet-2026-pcm-results.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1781236754/1781185931phpbrGIzu_xaccax.jpg"
+        },
             "title": "MSBTE Diploma Result 2026: Direct Link & Step-by-Step Guide",
             "link": "articles/news/msbte-diploma-result-summer-2026.html",
             "image_url": "https://res.cloudinary.com/pickai/image/upload/v1781179082/tm40q8rg_msbte-_625x300_20_June_25_bxqmul.avif"
@@ -217,6 +221,16 @@
         }
     ],
     "analysis_grid": [
+        {
+            "title": "MHT CET 2026 PCM Results: Everything You Need to Know",
+            "summary": "The Maharashtra State CET Cell is expected to release the MHT CET 2026 PCM First Attempt Results shortly. Find out how to download your scorecard.",
+            "link": "articles/news/mht-cet-2026-pcm-results.html",
+            "image_url": "https://res.cloudinary.com/pickai/image/upload/v1781236754/1781185931phpbrGIzu_xaccax.jpg",
+            "category": "Education",
+            "author": "PickAI Editorial Board",
+            "date": "Jun 12, 2026",
+            "id": 1789318340000
+        },
         {
             "title": "MSBTE Diploma Result 2026: Direct Link & Step-by-Step Guide",
             "summary": "The MSBTE is set to declare the Summer 2026 diploma exam results soon. Find the direct link and a step-by-step guide to download your scorecard.",
